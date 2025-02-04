@@ -5,7 +5,6 @@
 }
 
 .content {
-  max-width: 1920px;
   display: flex;
 }
 
@@ -64,6 +63,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  max-width: 1920px;
 }
 
 .headerRight {
@@ -86,11 +86,17 @@
   height: 48px;
   width: 48px;
   border-radius: 30px;
+  color: #29abe2;
+  font-weight: bold;
 }
 
 header {
-  background-color: #f6f7f8;
+  background-color: #ffffff;
   height: 96px;
+}
+
+.mainContent {
+  background-color: #f6f7f8;
 }
 
 /* Standard-Classes */
