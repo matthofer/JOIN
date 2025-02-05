@@ -4,8 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/login.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/icons/fav_join_logo.png"
+    />
   </head>
   <body>
-    <main></main>
+    <header>
+      <div class="headerLogo">
+        <img src="./assets/icons/logo-blue.svg" alt="" />
+      </div>
+      <div class="headerSignUp">
+        <div class="signUpText">
+          <p>Not a Join user?</p>
+        </div>
+        <button class="signUpButton">Sign up</button>
+      </div>
+    </header>
+    <main>
+      <div class="loginContainer">
+        <div class="loginForm">
+          <h1>Log in</h1>
+          <div class="separator"></div>
+          <form action="#">
+            <div class="formGroup">
+              <input placeholder="Email" type="email" id="email" required />
+              <img src="./assets/icons/mail.svg" alt="" />
+            </div>
+            <div class="formGroup">
+              <input
+                placeholder="Password"
+                type="password"
+                id="password"
+                required
+              />
+              <img src="./assets/icons/lock.svg" alt="" />
+            </div>
+            <div class="formGroup">
+              <button type="submit">Login</button>
+              <button>Guest Log in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
