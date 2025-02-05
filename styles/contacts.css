@@ -310,6 +310,64 @@ main {
   background-color: #2a3647;
 }
 
+.contactGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.contactGroup h3 {
+  font-size: 20;
+  font-weight: 400;
+}
+
+.dividerContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dividerContactGroups {
+  width: 90%;
+  height: 1px;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+}
+
+.singleContact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.singleContact p {
+  margin-bottom: 0;
+}
+
+.initials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(161, 91, 228);
+  color: white;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+}
+
+.name {
+  font-size: 20px;
+}
+
+.email {
+  color: #29abe2;
+}
+
 /*Responsiv */
 
 @media (max-width: 1400px) {
