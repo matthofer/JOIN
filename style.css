@@ -8,6 +8,7 @@
 .content {
   display: flex;
   min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 .sidebar {
@@ -109,6 +110,10 @@
   max-width: 1920px;
 }
 
+.headerLogoResp {
+  display: none;
+}
+
 .headerRight {
   display: flex;
   align-items: center;
@@ -184,8 +189,9 @@ main {
   background-color: yellow;
 }
 
-.taskContainer {
+.testContainer {
   display: flex;
+  gap: 16px;
 }
 
 /*Responsiv */
@@ -203,12 +209,26 @@ main {
     margin-left: 0;
   }
 
+  .headerText {
+    display: none;
+  }
+
+  .helpIcon {
+    display: none;
+  }
+
+  .headerLogoResp {
+    display: flex;
+    height: 39px;
+    width: 32px;
+  }
+
   .stdPadding {
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  .taskContainer {
+  .testContainer {
     flex-direction: column;
   }
 
