@@ -7,11 +7,12 @@
 
 .content {
   display: flex;
+  min-height: 100dvh;
 }
 
 .sidebar {
   width: 232px;
-  height: 100dvh;
+  min-height: 100dvh;
   background-color: #2a3647;
   display: flex;
   justify-content: space-between;
@@ -58,7 +59,7 @@
 }
 
 .navButton a {
-  color: white;
+  color: #cdcdcd;
   text-decoration: none;
   font-size: 16px;
 }
@@ -69,6 +70,10 @@
 
 .navButton:focus {
   background-color: #091931;
+}
+
+.sidebarBottom {
+  padding-bottom: 64px;
 }
 
 .headerAndMain {
@@ -110,6 +115,15 @@
 header {
   background-color: #ffffff;
   height: 96px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.headerText {
+  font-weight: 400;
+}
+
+main {
+  background-color: #f6f7f8;
 }
 
 .mainContent {
@@ -117,9 +131,15 @@ header {
   max-width: 1920px;
 }
 
+.mainHeadline {
+  font-size: 51px;
+  font-weight: 700;
+  padding-top: 64px;
+}
+
 /* Standard-Classes */
 
 .stdPadding {
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 64px;
+  padding-right: 64px;
 }
