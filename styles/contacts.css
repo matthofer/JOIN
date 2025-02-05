@@ -1,0 +1,536 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "Inter", serif;
+}
+
+.contactScrollContainer::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.contactScrollContainer::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 20px;
+}
+
+.contactScrollContainer::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 20px;
+  border: 8px solid #ffffff;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .contactScrollContainer {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+.contactScrollContainer {
+  position: fixed;
+  left: 232px;
+  top: 96px;
+  bottom: 0px;
+  overflow-y: scroll;
+  width: 450px;
+  height: 100dvh;
+  background-color: #ffffff;
+  --sb-track-color: #ffffff;
+  --sb-thumb-color: #a8a8a8;
+  --sb-size: 20px;
+}
+
+.buttonContainer {
+  background-color: #ffffff;
+  width: 438px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 96px;
+}
+
+.addNewContactButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 356px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #2a3647;
+  color: white;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.addNewContactButton p {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.addNewContactButton:hover {
+  background-color: #29abe2;
+}
+
+.contactList {
+  margin-top: 96px;
+  height: 100dvh;
+  padding-bottom: 30px;
+}
+
+.contactViewContainer {
+  position: fixed;
+  left: calc(232px + 450px);
+  top: 96px;
+  bottom: 0px;
+}
+
+.contactHeader {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.contactHeader h1 {
+  font-size: 61px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.divider {
+  height: 59px;
+  width: 3px;
+  background-color: #29abe2;
+}
+
+.contactHeader p {
+  font-size: 27px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "Inter", serif;
+}
+
+.content {
+  display: flex;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+.sidebar {
+  width: 232px;
+  background-color: #2a3647;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100dvh;
+  position: fixed;
+}
+
+.sidebarLogo {
+  width: 100px;
+  height: 122px;
+  margin-top: 64px;
+}
+
+.sidebarTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 55%;
+}
+
+.navContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  padding-left: 64px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.navSvg {
+  width: 25px;
+  height: 25px;
+}
+
+.navButton a {
+  color: #cdcdcd;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navButton:hover {
+  background-color: #091931;
+}
+
+.navButton:hover .navSvg {
+  filter: brightness(0) invert(1);
+}
+
+.navButton:hover a {
+  color: white;
+}
+
+.navButton:focus {
+  background-color: #091931;
+}
+
+.navButton:focus a {
+  color: white;
+}
+
+.navButton:focus .navSvg {
+  filter: brightness(0) invert(1);
+}
+
+.sidebarBottom {
+  padding-bottom: 64px;
+}
+
+.headerAndMain {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100dvh;
+  margin-left: 232px;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1920px;
+}
+
+.headerLogoResp {
+  display: none;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.headerRight img {
+  width: 20px;
+  height: 20px;
+}
+
+.userIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border: #2a3647 2px solid;
+  height: 48px;
+  width: 48px;
+  border-radius: 30px;
+  color: #29abe2;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.helpIcon {
+  cursor: pointer;
+}
+
+header {
+  flex-shrink: 0;
+  background-color: #ffffff;
+  height: 96px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.headerText {
+  font-weight: 400;
+}
+
+main {
+  flex-grow: 1;
+  background-color: #f6f7f8;
+}
+
+.mainContent {
+  background-color: #f6f7f8;
+  max-width: 1920px;
+}
+
+.mainHeadline {
+  font-size: 51px;
+  font-weight: 700;
+  padding-top: 64px;
+}
+
+.stdPadding {
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
+.respNavbar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2a3647;
+  z-index: 10;
+}
+
+.respAddButton {
+  display: none;
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  height: 56px;
+  width: 56px;
+  border-radius: 60px;
+  background-color: #2a3647;
+}
+
+.contactGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.contactGroup h3 {
+  font-size: 20;
+  font-weight: 400;
+}
+
+.dividerContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dividerContactGroups {
+  width: 90%;
+  height: 1px;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+}
+
+.singleContact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.singleContact p {
+  margin-bottom: 0;
+}
+
+.initials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(161, 91, 228);
+  color: white;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+}
+
+.name {
+  font-size: 20px;
+}
+
+.email {
+  color: #29abe2;
+}
+
+/*Responsiv */
+
+@media (max-width: 1400px) {
+  .contactScrollContainer {
+    left: 0px;
+  }
+
+  .contactViewContainer {
+    left: 450px;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .mainContent {
+    margin-top: 60px;
+    margin-bottom: 100px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .headerAndMain {
+    margin-left: 0;
+  }
+
+  .headerText {
+    display: none;
+  }
+
+  .helpIcon {
+    display: none;
+  }
+
+  .headerLogoResp {
+    display: flex;
+    height: 39px;
+    width: 32px;
+  }
+
+  .stdPadding {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .testContainer {
+    flex-direction: column;
+  }
+
+  .respNavbar {
+    display: flex;
+    height: 80px;
+  }
+
+  .respNavbarContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .respNavButton {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    height: 100%;
+    width: 90px;
+    border-radius: 16px;
+  }
+
+  .respNavButton a {
+    text-decoration: none;
+    color: #cdcdcd;
+  }
+
+  .respNavButton:hover {
+    background-color: #091931;
+  }
+
+  .respNavButton:hover .navSvg {
+    filter: brightness(0) invert(1);
+  }
+
+  .respNavButton:hover a {
+    color: white;
+  }
+
+  .respNavButton:focus {
+    background-color: #091931;
+  }
+
+  .respNavButton:focus a {
+    color: white;
+  }
+
+  .respNavButton:focus .navSvg {
+    filter: brightness(0) invert(1);
+  }
+}
+
+@media (max-width: 1100px) {
+  .contactViewContainer {
+    display: none;
+  }
+
+  .contactScrollContainer {
+    width: 100%;
+  }
+
+  .buttonContainer {
+    display: none;
+  }
+
+  .contactList {
+    margin-top: 16px;
+  }
+
+  .respAddButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .respAddButton:hover {
+    background-color: #29abe2;
+  }
+}
+
+@media (max-width: 450px) {
+  .respNavbarContent {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .navSvg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .respNavButton a {
+    font-size: 14px;
+  }
+
+  .respNavButtonMid a {
+    font-size: 14px;
+  }
+
+  .respNavButtonRight a {
+    font-size: 14px;
+  }
+}
