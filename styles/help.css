@@ -1,0 +1,78 @@
+
+.mainContent {
+    --sb-track-color: #ffffff;
+    --sb-thumb-color: #a8a8a8;
+    --sb-size: 20px;
+  }
+  
+  .mainContent::-webkit-scrollbar {
+    width: var(--sb-size)
+  }
+  
+  .mainContent::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 20px;
+  }
+  
+  .mainContent::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 20px;
+    border: 8px solid #ffffff;
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+    .mainContent {
+      scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+  }
+
+
+
+.helpList{
+    display: flex;
+    gap: 32px;
+    margin-bottom: 16px;
+}
+
+
+.lightBlueFont{
+    color: #29ABE2;
+}
+
+
+.mainContent{
+    position: fixed;
+    left: 296px;
+    top: 96px;
+    bottom: 0px;
+    overflow-y: scroll;
+}
+
+.backBTN{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    float: right;
+}
+
+.mainHeadline{
+    padding-top: 0;
+}
+
+.headlineWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 64px;
+}
+
+@media (max-width: 850px) {
+    .mainContent{
+        position: unset;
+    }
+
+    .helpList{
+        gap: 12px;
+    }
+}
