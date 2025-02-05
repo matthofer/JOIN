@@ -55,7 +55,7 @@
   padding-bottom: 6px;
 }
 
-.navButton img {
+.navSvg {
   width: 25px;
   height: 25px;
 }
@@ -247,10 +247,13 @@ main {
   .respNavButton {
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     cursor: pointer;
-    padding: 12px;
+    height: 100%;
+    width: 100px;
     border-radius: 16px;
   }
 
@@ -281,5 +284,16 @@ main {
 
   .respNavButton:focus .navSvg {
     filter: brightness(0) invert(1);
+  }
+}
+
+@media (max-width: 360px) {
+  .navSvg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .respNavButton a {
+    font-size: 14px;
   }
 }
