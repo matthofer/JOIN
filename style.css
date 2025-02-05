@@ -68,8 +68,24 @@
   background-color: #091931;
 }
 
+.navButton:hover .navSvg {
+  filter: brightness(0) invert(1);
+}
+
+.navButton:hover a {
+  color: white;
+}
+
 .navButton:focus {
   background-color: #091931;
+}
+
+.navButton:focus a {
+  color: white;
+}
+
+.navButton:focus .navSvg {
+  filter: brightness(0) invert(1);
 }
 
 .sidebarBottom {
