@@ -302,7 +302,7 @@ main {
 .respAddButton {
   display: none;
   position: absolute;
-  bottom: 200px;
+  bottom: 100px;
   right: 20px;
   height: 56px;
   width: 56px;
