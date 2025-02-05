@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "Inter", serif;
+}
+
+.contactScrollContainer::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.contactScrollContainer::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 20px;
+}
+
+.contactScrollContainer::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 20px;
+  border: 8px solid #ffffff;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .contactScrollContainer {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+.contactScrollContainer {
+  position: fixed;
+  left: 232px;
+  top: 96px;
+  bottom: 0px;
+  overflow-y: scroll;
+  width: 450px;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  --sb-track-color: #ffffff;
+  --sb-thumb-color: #a8a8a8;
+  --sb-size: 20px;
+}
+
+.addNewContactButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 356px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #2a3647;
+  color: white;
+  margin-top: 16px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.addNewContactButton p {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.addNewContactButton:hover {
+  background-color: #29abe2;
+}
+
+.contactList {
+  margin-top: 16px;
+}
