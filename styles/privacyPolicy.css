@@ -1,0 +1,61 @@
+.mainContent {
+    --sb-track-color: #ffffff;
+    --sb-thumb-color: #a8a8a8;
+    --sb-size: 20px;
+  }
+  
+  .mainContent::-webkit-scrollbar {
+    width: var(--sb-size)
+  }
+  
+  .mainContent::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 20px;
+  }
+  
+  .mainContent::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 20px;
+    border: 8px solid #ffffff;
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+    .mainContent {
+      scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+  }
+
+  .mainContent{
+    position: fixed;
+    left: 232px;
+    top: 96px;
+    bottom: 0px;
+    overflow-y: scroll;
+}
+
+
+ul{
+    padding-left: 16px;
+}
+
+li{
+    margin-bottom: 12px;
+}
+
+.policyWrapper a{
+color:  #29ABE2;
+text-decoration: none;
+cursor: pointer;
+}
+
+@media (max-width: 850px) {
+    .mainContent{
+        position: unset;
+    }
+
+    .mainHeadline{
+        font-size: 40px;
+    }
+    
+}
