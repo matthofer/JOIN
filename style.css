@@ -191,6 +191,7 @@ main {
 }
 
 .testContainer {
+  flex-wrap: wrap;
   display: flex;
   gap: 16px;
 }
@@ -242,7 +243,6 @@ main {
 
   .testContainer {
     flex-direction: column;
-    flex-wrap: wrap;
   }
 
   .respNavbar {
