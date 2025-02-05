@@ -12,11 +12,12 @@
 
 .sidebar {
   width: 232px;
-  min-height: 100dvh;
   background-color: #2a3647;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  height: 100dvh;
+  position: fixed;
 }
 
 .sidebarLogo {
@@ -93,7 +94,11 @@
 }
 
 .headerAndMain {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  min-height: 100dvh;
+  margin-left: 232px;
 }
 
 .headerContent {
@@ -134,6 +139,7 @@
 }
 
 header {
+  flex-shrink: 0;
   background-color: #ffffff;
   height: 96px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
@@ -144,6 +150,7 @@ header {
 }
 
 main {
+  flex-grow: 1;
   background-color: #f6f7f8;
 }
 
@@ -165,6 +172,20 @@ main {
 
 .respNavbar {
   display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2a3647;
+  z-index: 10;
+}
+
+.test {
+  background-color: yellow;
+}
+
+.taskContainer {
+  display: flex;
 }
 
 /*Responsiv */
@@ -178,10 +199,22 @@ main {
     display: none;
   }
 
+  .headerAndMain {
+    margin-left: 0;
+  }
+
+  .stdPadding {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .taskContainer {
+    flex-direction: column;
+  }
+
   .respNavbar {
     display: flex;
     height: 80px;
-    background-color: #2a3647;
   }
 
   .respNavbarContent {
