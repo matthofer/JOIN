@@ -321,4 +321,12 @@ main {
   .respNavButton a {
     font-size: 14px;
   }
+
+  .respNavButtonMid a {
+    font-size: 14px;
+  }
+
+  .respNavButtonRight a {
+    font-size: 14px;
+  }
 }

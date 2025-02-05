@@ -1,0 +1,105 @@
+.sidebarTop {
+    height: 35%;
+}
+
+.mobileFooterUnlogged {
+    display: flex;
+    gap: 12px;
+}
+
+.respNavbarContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 16px;
+}
+
+.mobileFooter {
+    display: flex;
+    height: 100%;
+}
+
+.respNavButtonMid {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    height: 100%;
+    width: 90px;
+    border-radius: 16px;
+}
+
+.respNavButtonMid a {
+    text-decoration: none;
+    color: #cdcdcd;
+}
+
+.respNavButtonMid:hover {
+    background-color: #091931;
+}
+
+.respNavButtonMid:hover .navSvg {
+    filter: brightness(0) invert(1);
+}
+
+.respNavButtonMid:hover a {
+    color: white;
+}
+
+.respNavButtonMid:focus {
+    background-color: #091931;
+}
+
+.respNavButtonMid:focus a {
+    color: white;
+}
+
+.respNavButtonMid:focus .navSvg {
+    filter: brightness(0) invert(1);
+}
+
+.respNavButtonRight {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    height: 100%;
+    width: 90px;
+    border-radius: 16px;
+}
+
+.respNavButtonRight a {
+    text-decoration: none;
+    color: #cdcdcd;
+}
+
+.respNavButtonRight:hover {
+    background-color: #091931;
+}
+
+.respNavButtonRight:hover .navSvg {
+    filter: brightness(0) invert(1);
+}
+
+.respNavButtonRight:hover a {
+    color: white;
+}
+
+.respNavButtonRight:focus {
+    background-color: #091931;
+}
+
+.respNavButtonRight:focus a {
+    color: white;
+}
+
+.respNavButtonRight:focus .navSvg {
+    filter: brightness(0) invert(1);
+}
