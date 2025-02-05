@@ -203,6 +203,11 @@ main {
     flex-direction: column;
   }
 
+  ::-webkit-scrollbar {
+    width: 4px;
+    display: none;
+  }
+
   header {
     position: fixed;
     top: 0;
