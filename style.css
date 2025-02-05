@@ -271,7 +271,7 @@ main {
     gap: 6px;
     cursor: pointer;
     height: 100%;
-    width: 100px;
+    width: 90px;
     border-radius: 16px;
   }
 
@@ -302,6 +302,13 @@ main {
 
   .respNavButton:focus .navSvg {
     filter: brightness(0) invert(1);
+  }
+}
+
+@media (max-width: 450px) {
+  .respNavbarContent {
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 
