@@ -201,6 +201,17 @@ main {
     flex-direction: column;
   }
 
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .mainContent {
+    margin-top: 60px;
+    margin-bottom: 100px;
+  }
+
   .sidebar {
     display: none;
   }
@@ -230,6 +241,7 @@ main {
 
   .testContainer {
     flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .respNavbar {
