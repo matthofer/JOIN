@@ -52,26 +52,6 @@ function renderContacts() {
   }
 }
 
-function getContactHeaderTemplate(firstLetter) {
-  return `  <div class="contactGroup">
-                <h3>${firstLetter}</h3>
-                <div class="dividerContainer">
-                <div class="dividerContactGroups"></div>
-                </div>
-                <div id="${firstLetter.toLowerCase()}"></div>
-            </div>`;
-}
-
-function getSingleContactTemplate(i, intials) {
-  return `  <div class="singleContact">
-                <div id="initial${i}" class="initials">${intials}</div>
-                <div class="nameAndMail">
-                    <p class="name">${contacts[i].name}</p>
-                    <p class="email">${contacts[i].email}</p>
-                </div>
-            </div>`;
-}
-
 function getIntialsOfContact(contact) {
   let intials = "";
   let splittedContact = contact.split(" ");

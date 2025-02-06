@@ -377,10 +377,6 @@ main {
     padding-bottom: 120px;
   }
 
-  .contactList {
-    margin-top: 16px;
-  }
-
   .contactViewContainer {
     left: 450px;
   }
@@ -493,6 +489,10 @@ main {
 
   .contactScrollContainer {
     width: 100%;
+  }
+
+  .contactList {
+    margin-top: 16px;
   }
 
   .buttonContainer {
