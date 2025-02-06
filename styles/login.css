@@ -66,6 +66,7 @@ header {
   justify-content: center;
   flex: 1;
   margin-top: 32px;
+  margin-bottom: 80px;
 }
 
 .loginForm {
@@ -102,7 +103,7 @@ h1 {
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 12px 16px;
-  width: 400px;
+  width: 350px;
 }
 
 .formGroup input::placeholder {
@@ -132,13 +133,14 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 30px;
+  margin-top: 40px;
 }
 
 .loginButton {
   background-color: #2a3647;
   color: #ffffff;
   border: none;
-  padding: 8px 20px;
+  padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
@@ -178,9 +180,10 @@ footer {
   align-items: center;
   background-color: #f6f7f8;
   padding: 24px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
+  max-width: 1920px;
 }
 
 .privacyLink a {

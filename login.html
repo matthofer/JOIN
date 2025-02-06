@@ -29,7 +29,7 @@
         <div class="loginForm">
           <h1>Log in</h1>
           <div class="separator"></div>
-          <form action="#">
+          <form action="">
             <div class="formGroup">
               <input placeholder="Email" type="email" id="email" required />
             </div>
@@ -42,8 +42,15 @@
               />
             </div>
             <div class="loginButtonsContainer">
-              <button class="loginButton" type="submit">Log in</button>
-              <button class="guestLoginButton">Guest Log in</button>
+              <a href="./template.html">
+                <button class="loginButton" type="submit">Log in</button>
+              </a>
+              <button
+                onclick="window.location.href='./template.html'"
+                class="guestLoginButton"
+              >
+                Guest Log in
+              </button>
             </div>
           </form>
         </div>
