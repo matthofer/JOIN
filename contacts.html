@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/contacts.css" />
+    <script src="navigation.js"></script>
     <script src="./scripts/contacts_templates.js"></script>
     <script src="./scripts/contacts.js"></script>
     <title>Contacts</title>
@@ -54,7 +55,11 @@
           <div class="navButton" tabindex="0">
             <a href="./privacy-policy.html">Privacy Policy</a>
           </div>
-          <div class="navButton" tabindex="0">
+          <div
+            onclick="openPage('legal-notice.html')"
+            class="navButton"
+            tabindex="0"
+          >
             <a href="./legal-notice.html">Legal notice</a>
           </div>
         </div>
