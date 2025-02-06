@@ -11,6 +11,7 @@
       type="image/x-icon"
       href="./assets/icons/fav_join_logo.png"
     />
+    <script src="./scripts/navigation.js"></script>
   </head>
   <body>
     <header>
@@ -29,7 +30,7 @@
         <div class="loginForm">
           <h1>Log in</h1>
           <div class="separator"></div>
-          <form action="#">
+          <form action="./template.html" method="get">
             <div class="formGroup">
               <input placeholder="Email" type="email" id="email" required />
             </div>
@@ -43,7 +44,12 @@
             </div>
             <div class="loginButtonsContainer">
               <button class="loginButton" type="submit">Log in</button>
-              <button class="guestLoginButton">Guest Log in</button>
+              <button
+                onclick="openPage('template.html')"
+                class="guestLoginButton"
+              >
+                Guest Log in
+              </button>
             </div>
           </form>
         </div>
