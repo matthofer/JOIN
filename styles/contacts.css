@@ -427,21 +427,25 @@ main {
   font-weight: 500;
 }
 
-.editDeleteBtn {
+.editDeleteBtnContainer {
   display: flex;
   gap: 16px;
 }
 
-.edit {
+.editDeleteBtn {
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
 
-.delete {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.editDeleteBtn:hover {
+  color: #29abe2;
+}
+
+.editDeleteBtn:hover .svg {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(93%) saturate(423%)
+    hue-rotate(173deg) brightness(92%) contrast(94%);
 }
 
 .contactInfo h3 {
@@ -464,193 +468,4 @@ main {
 
 .detailEmail {
   color: #29abe2;
-}
-/*Responsiv */
-
-@media (max-width: 1400px) {
-  .contactScrollContainer {
-    left: 0px;
-    padding-bottom: 120px;
-  }
-
-  .contactViewContainer {
-    left: 450px;
-  }
-
-  .content {
-    flex-direction: column;
-  }
-
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-
-  .mainContent {
-    margin-top: 60px;
-    margin-bottom: 100px;
-  }
-
-  .sidebar {
-    display: none;
-  }
-
-  .headerAndMain {
-    margin-left: 0;
-  }
-
-  .headerText {
-    display: none;
-  }
-
-  .helpIcon {
-    display: none;
-  }
-
-  .headerLogoResp {
-    display: flex;
-    height: 39px;
-    width: 32px;
-  }
-
-  .stdPadding {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .testContainer {
-    flex-direction: column;
-  }
-
-  .respNavbar {
-    display: flex;
-    height: 80px;
-  }
-
-  .respNavbarContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-  }
-
-  .respNavButton {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    cursor: pointer;
-    height: 100%;
-    width: 90px;
-    border-radius: 16px;
-  }
-
-  .respNavButton a {
-    text-decoration: none;
-    color: #cdcdcd;
-  }
-
-  .respNavButton:hover {
-    background-color: #091931;
-  }
-
-  .respNavButton:hover .navSvg {
-    filter: brightness(0) invert(1);
-  }
-
-  .respNavButton:hover a {
-    color: white;
-  }
-
-  .respNavButton:focus {
-    background-color: #091931;
-  }
-
-  .respNavButton:focus a {
-    color: white;
-  }
-
-  .respNavButton:focus .navSvg {
-    filter: brightness(0) invert(1);
-  }
-}
-
-@media (max-width: 1100px) {
-  .contactViewContainer {
-    display: none;
-  }
-
-  .contactScrollContainer {
-    width: 100%;
-  }
-
-  .contactList {
-    margin-top: 16px;
-  }
-
-  .buttonContainer {
-    display: none;
-  }
-
-  .respAddButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .respAddButton:hover {
-    background-color: #29abe2;
-  }
-
-  .contactScrollContainer {
-    left: 0px;
-    padding-bottom: 60px;
-  }
-}
-
-@media (max-width: 450px) {
-  .respNavbarContent {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  .firstLetterContainer {
-    padding-left: 32px;
-  }
-
-  .singleContact {
-    margin-left: 16px;
-    gap: 16px;
-    width: 280px;
-  }
-
-  .name {
-    font-size: 16px;
-  }
-  .email {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 360px) {
-  .navSvg {
-    width: 25px;
-    height: 25px;
-  }
-
-  .respNavButton a {
-    font-size: 14px;
-  }
-
-  .respNavButtonMid a {
-    font-size: 14px;
-  }
-
-  .respNavButtonRight a {
-    font-size: 14px;
-  }
 }
