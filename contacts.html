@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/contacts.css" />
+    <script src="./scripts/contacts_templates.js"></script>
+    <script src="./scripts/contacts.js"></script>
     <title>Contacts</title>
     <link
       rel="icon"
@@ -12,7 +14,7 @@
       href="./assets/icons/fav_join_logo.png"
     />
   </head>
-  <body>
+  <body onload="init()">
     <div class="content">
       <div class="sidebar">
         <div class="sidebarTop">
@@ -81,143 +83,7 @@
                   <img src="./assets/icons/person_add.svg" />
                 </div>
               </div>
-              <div class="contactList">
-                <div class="contactGroup">
-                  <h3>A</h3>
-                  <div class="dividerContainer">
-                    <div class="dividerContactGroups"></div>
-                  </div>
-                  <div id="${firstLetter.toLowerCase()}">
-                    <div class="singleContact">
-                      <div id="initial${i}" class="initials">MH</div>
-                      <div class="nameAndMail">
-                        <p class="name">Manuel Horn</p>
-                        <p class="email">manuhorn93@mail.de</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="contactGroup">
-                  <h3>A</h3>
-                  <div class="dividerContainer">
-                    <div class="dividerContactGroups"></div>
-                  </div>
-                  <div id="${firstLetter.toLowerCase()}">
-                    <div class="singleContact">
-                      <div id="initial${i}" class="initials">MH</div>
-                      <div class="nameAndMail">
-                        <p class="name">Manuel Horn</p>
-                        <p class="email">manuhorn93@mail.de</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="contactGroup">
-                  <h3>A</h3>
-                  <div class="dividerContainer">
-                    <div class="dividerContactGroups"></div>
-                  </div>
-                  <div id="${firstLetter.toLowerCase()}">
-                    <div class="singleContact">
-                      <div id="initial${i}" class="initials">MH</div>
-                      <div class="nameAndMail">
-                        <p class="name">Manuel Horn</p>
-                        <p class="email">manuhorn93@mail.de</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="contactGroup">
-                  <h3>A</h3>
-                  <div class="dividerContainer">
-                    <div class="dividerContactGroups"></div>
-                  </div>
-                  <div id="${firstLetter.toLowerCase()}">
-                    <div class="singleContact">
-                      <div id="initial${i}" class="initials">MH</div>
-                      <div class="nameAndMail">
-                        <p class="name">Manuel Horn</p>
-                        <p class="email">manuhorn93@mail.de</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="contactGroup">
-                  <h3>A</h3>
-                  <div class="dividerContainer">
-                    <div class="dividerContactGroups"></div>
-                  </div>
-                  <div id="${firstLetter.toLowerCase()}">
-                    <div class="singleContact">
-                      <div id="initial${i}" class="initials">MH</div>
-                      <div class="nameAndMail">
-                        <p class="name">Manuel Horn</p>
-                        <p class="email">manuhorn93@mail.de</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="contactGroup">
-                  <h3>A</h3>
-                  <div class="dividerContainer">
-                    <div class="dividerContactGroups"></div>
-                  </div>
-                  <div id="${firstLetter.toLowerCase()}">
-                    <div class="singleContact">
-                      <div id="initial${i}" class="initials">MH</div>
-                      <div class="nameAndMail">
-                        <p class="name">Manuel Horn</p>
-                        <p class="email">manuhorn93@mail.de</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="contactGroup">
-                  <h3>A</h3>
-                  <div class="dividerContainer">
-                    <div class="dividerContactGroups"></div>
-                  </div>
-                  <div id="${firstLetter.toLowerCase()}">
-                    <div class="singleContact">
-                      <div id="initial${i}" class="initials">MH</div>
-                      <div class="nameAndMail">
-                        <p class="name">Manuel Horn</p>
-                        <p class="email">manuhorn93@mail.de</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="contactGroup">
-                  <h3>A</h3>
-                  <div class="dividerContainer">
-                    <div class="dividerContactGroups"></div>
-                  </div>
-                  <div id="${firstLetter.toLowerCase()}">
-                    <div class="singleContact">
-                      <div id="initial${i}" class="initials">MH</div>
-                      <div class="nameAndMail">
-                        <p class="name">Manuel Horn</p>
-                        <p class="email">manuhorn93@mail.de</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="contactGroup">
-                  <h3>A</h3>
-                  <div class="dividerContainer">
-                    <div class="dividerContactGroups"></div>
-                  </div>
-                  <div id="${firstLetter.toLowerCase()}">
-                    <div class="singleContact">
-                      <div id="initial${i}" class="initials">MH</div>
-                      <div class="nameAndMail">
-                        <p class="name">Manuel Horn</p>
-                        <p class="email">manuhorn93@mail.de</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div id="contactList" class="contactList"></div>
             </div>
             <div class="contactViewContainer stdPadding">
               <div class="contactHeader">

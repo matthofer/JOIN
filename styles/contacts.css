@@ -33,7 +33,7 @@
   bottom: 0px;
   overflow-y: scroll;
   width: 450px;
-  height: 100dvh;
+  padding-bottom: 80px;
   background-color: #ffffff;
   --sb-track-color: #ffffff;
   --sb-thumb-color: #a8a8a8;
@@ -76,8 +76,8 @@
 
 .contactList {
   margin-top: 96px;
-  height: 100dvh;
-  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .contactViewContainer {
@@ -317,6 +317,7 @@ main {
 }
 
 .contactGroup h3 {
+  padding-left: 80px;
   font-size: 20;
   font-weight: 400;
 }
@@ -338,7 +339,7 @@ main {
 .singleContact {
   display: flex;
   align-items: center;
-  justify-content: center;
+  margin-left: 60px;
   gap: 35px;
   margin-top: 8px;
   padding: 8px;
@@ -373,6 +374,11 @@ main {
 @media (max-width: 1400px) {
   .contactScrollContainer {
     left: 0px;
+    padding-bottom: 120px;
+  }
+
+  .contactList {
+    margin-top: 16px;
   }
 
   .contactViewContainer {
@@ -491,10 +497,6 @@ main {
 
   .buttonContainer {
     display: none;
-  }
-
-  .contactList {
-    margin-top: 16px;
   }
 
   .respAddButton {
