@@ -58,6 +58,11 @@ function setBackgroundColorOfIntial(i) {
   initialRef.style.backgroundColor = contacts[i].color;
 }
 
+function setBackgroundColorOfBigIntial(i) {
+  let initialRef = document.getElementById("bigInitial" + i);
+  initialRef.style.backgroundColor = contacts[i].color;
+}
+
 function getIntialsOfContact(contact) {
   let intials = "";
   let splittedContact = contact.split(" ");
@@ -75,4 +80,22 @@ async function postData(path, data = {}) {
     },
     body: JSON.stringify(data),
   });
+}
+
+function openDetails(i) {
+  let contactInfoRef = document.getElementById("contactInfo");
+  if (!contactInfoRef.classList.contains("detailClosed")) {
+    renderContactInfo(i);
+  } else {
+    contactInfoRef.classList.remove("detailClosed");
+    renderContactInfo(i);
+  }
+}
+
+function renderContactInfo(i) {
+  let contactInfoRef = document.getElementById("contactInfo");
+  contactInfoRef.innerHTML = "";
+  let initials = getIntialsOfContact(contacts[i].name);
+  contactInfoRef.innerHTML = getContactInfoTemplate(i, initials);
+  setBackgroundColorOfBigIntial(i);
 }

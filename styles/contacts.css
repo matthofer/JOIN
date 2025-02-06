@@ -401,6 +401,7 @@ main {
 
 .contactInfo {
   margin-top: 32px;
+  transition: all 100ms ease-in-out;
 }
 
 .general {
@@ -468,4 +469,8 @@ main {
 
 .detailEmail {
   color: #29abe2;
+}
+
+.detailClosed {
+  transform: translateX(500%);
 }

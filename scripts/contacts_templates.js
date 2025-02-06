@@ -28,7 +28,7 @@ function getContactHeaderTemplate(firstLetter) {
 }
 
 function getSingleContactTemplate(i, intials) {
-  return ` <div class="singleContactContainer"> 
+  return ` <div id="singleContact${i}" onclick="openDetails(${i})" class="singleContactContainer"> 
               <div class="singleContact" tabindex="0">
                     <div id="initial${i}" class="initials">${intials}</div>
                     <div class="nameAndMail">
@@ -37,4 +37,36 @@ function getSingleContactTemplate(i, intials) {
                   </div>
               </div>
             </div>`;
+}
+
+function getContactInfoTemplate(i, initials) {
+  return `<div class="general">
+                  <div id="bigInitial${i}" class="intialBig">${initials}</div>
+                  <div class="nameAndButtons">
+                    <h2>${contacts[i].name}</h2>
+                    <div class="editDeleteBtnContainer">
+                      <div class="editDeleteBtn">
+                        <img
+                          class="svg"
+                          src="./assets/icons/edit_contact.svg"
+                        />
+                        <p>Edit</p>
+                      </div>
+                      <div class="editDeleteBtn">
+                        <img
+                          class="svg"
+                          src="./assets/icons/delete_contact.svg"
+                        />
+                        <p>Delete</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h3>Contact Information</h3>
+                <div class="contactDetails">
+                  <p class="detailheader">Email</p>
+                  <p class="detailEmail">${contacts[i].email}</p>
+                  <p class="detailheader">Phone</p>
+                  <p>${contacts[i].phone}</p>
+                </div>`;
 }
