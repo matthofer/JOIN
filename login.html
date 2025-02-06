@@ -32,7 +32,6 @@
           <form action="#">
             <div class="formGroup">
               <input placeholder="Email" type="email" id="email" required />
-              <img src="./assets/icons/mail.svg" alt="" />
             </div>
             <div class="formGroup">
               <input
@@ -41,15 +40,22 @@
                 id="password"
                 required
               />
-              <img src="./assets/icons/lock.svg" alt="" />
             </div>
-            <div class="formGroup">
-              <button type="submit">Login</button>
-              <button>Guest Log in</button>
+            <div class="loginButtonsContainer">
+              <button class="loginButton" type="submit">Log in</button>
+              <button class="guestLoginButton">Guest Log in</button>
             </div>
           </form>
         </div>
       </div>
     </main>
+    <footer>
+      <div class="privacyLink">
+        <a href="./privacy-policy.html">Privacy Policy</a>
+      </div>
+      <div class="legalLink">
+        <a href="./legal-notice.html">Legal notice</a>
+      </div>
+    </footer>
   </body>
 </html>
