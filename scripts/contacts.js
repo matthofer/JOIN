@@ -49,7 +49,13 @@ function renderContacts() {
     let contactGroupRef = document.getElementById(firstCharContact);
     let intials = getIntialsOfContact(contacts[i].name);
     contactGroupRef.innerHTML += getSingleContactTemplate(i, intials);
+    setBackgroundColorOfIntial(i);
   }
+}
+
+function setBackgroundColorOfIntial(i) {
+  let initialRef = document.getElementById("initial" + i);
+  initialRef.style.backgroundColor = contacts[i].color;
 }
 
 function getIntialsOfContact(contact) {

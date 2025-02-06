@@ -33,7 +33,7 @@
   bottom: 0px;
   overflow-y: scroll;
   width: 450px;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
   background-color: #ffffff;
   --sb-track-color: #ffffff;
   --sb-thumb-color: #a8a8a8;
@@ -314,12 +314,21 @@ main {
   display: flex;
   flex-direction: column;
   align-items: start;
+  padding-bottom: 16px;
+  width: 100%;
 }
 
 .contactGroup h3 {
-  padding-left: 80px;
   font-size: 20;
   font-weight: 400;
+  padding-bottom: 16px;
+}
+
+.firstLetterContainer {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding-left: 52px;
 }
 
 .dividerContainer {
@@ -336,18 +345,39 @@ main {
   justify-content: center;
 }
 
+.singleContactContainer {
+  width: 100%;
+  display: flex;
+}
+
 .singleContact {
   display: flex;
   align-items: center;
-  margin-left: 60px;
   gap: 35px;
-  margin-top: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   padding: 8px;
   border-radius: 8px;
+  width: 350px;
+  cursor: pointer;
+  margin-left: 52px;
 }
 
 .singleContact p {
   margin-bottom: 0;
+}
+
+.singleContact:hover {
+  background-color: rgb(241, 239, 239);
+}
+
+.singleContact:focus {
+  color: white;
+  background-color: #2a3647;
+}
+
+.singleContact:focus .initials {
+  border: 1px solid white;
 }
 
 .initials {
