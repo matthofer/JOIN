@@ -399,6 +399,72 @@ main {
   color: #29abe2;
 }
 
+.contactInfo {
+  margin-top: 32px;
+}
+
+.general {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.intialBig {
+  height: 120px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff7400;
+  border-radius: 60px;
+  border-radius: 2px solid white;
+  font-size: 47px;
+  color: white;
+}
+
+.nameAndButtons h2 {
+  font-size: 47px;
+  font-weight: 500;
+}
+
+.editDeleteBtn {
+  display: flex;
+  gap: 16px;
+}
+
+.edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.delete {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contactInfo h3 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailheader {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.detailEmail {
+  color: #29abe2;
+}
 /*Responsiv */
 
 @media (max-width: 1400px) {
