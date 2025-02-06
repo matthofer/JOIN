@@ -83,6 +83,8 @@ async function postData(path, data = {}) {
 }
 
 function openDetails(i) {
+  let screenWidth = window.innerWidth;
+  console.log(screenWidth);
   let contactInfoRef = document.getElementById("contactInfo");
   contactInfoRef.classList.remove("detailClosed");
   renderContactInfo(i);

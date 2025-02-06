@@ -8,6 +8,7 @@
 
   .contactViewContainer {
     left: 450px;
+    padding-left: 64px;
   }
 
   .content {
@@ -48,8 +49,8 @@
   }
 
   .stdPadding {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 64px;
+    padding-right: 64px;
   }
 
   .testContainer {
