@@ -474,3 +474,7 @@ main {
 .detailClosed {
   transform: translateX(500%);
 }
+
+.dNone {
+  display: none;
+}

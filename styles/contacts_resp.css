@@ -144,6 +144,56 @@
     left: 0px;
     padding-bottom: 60px;
   }
+
+  .general {
+    gap: 20px;
+  }
+
+  .respInfo {
+    margin-top: 40px;
+  }
+
+  .respInfo h3 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .intialBig {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff7400;
+    border-radius: 60px;
+    border-radius: 2px solid white;
+    font-size: 27px;
+    color: white;
+  }
+
+  .general h2 {
+    font-size: 27px;
+  }
+
+  .respEditButton {
+    position: absolute;
+    bottom: 200px;
+    right: 16px;
+    height: 56px;
+    width: 56px;
+    background-color: #2a3647;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+    cursor: pointer;
+  }
+
+  .respEditButton:hover {
+    background-color: #29abe2;
+  }
 }
 
 @media (max-width: 450px) {
@@ -187,4 +237,48 @@
   .respNavButtonRight a {
     font-size: 14px;
   }
+}
+
+.respDetailInfo {
+  position: absolute;
+  top: 96px;
+  left: 0;
+  width: 100%;
+  background-color: #f6f7f8;
+  height: 100dvh;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 32px;
+}
+
+.respDetailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.respDetailHeadText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.respDetailHeadText h1 {
+  font-size: 47px;
+  font-weight: 700;
+}
+
+.respDetailHeadText h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.respDivider {
+  height: 3px;
+  width: 90px;
+  background-color: #29abe2;
+}
+
+.backFromDetail {
+  cursor: pointer;
 }

@@ -1,6 +1,7 @@
 let FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
 
 let contacts = [];
+let activeContact = null;
 
 async function init() {
   await loadContactsData();
@@ -82,12 +83,25 @@ async function postData(path, data = {}) {
   });
 }
 
-function openDetails(i) {
+function openDetails(i, contactID) {
   let screenWidth = window.innerWidth;
-  console.log(screenWidth);
+  if (screenWidth <= 1100) {
+    console.log("mobileview");
+  } else {
+    openDetailsDesktop(i, contactID);
+  }
+}
+
+function openDetailsDesktop(i, contactID) {
   let contactInfoRef = document.getElementById("contactInfo");
+  if (activeContact == contactID) {
+    contactInfoRef.classList.add("detailClosed");
+    activeContact = null;
+    return;
+  }
   contactInfoRef.classList.remove("detailClosed");
   renderContactInfo(i);
+  activeContact = contactID;
 }
 
 function renderContactInfo(i) {

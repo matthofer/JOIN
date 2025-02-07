@@ -28,7 +28,7 @@ function getContactHeaderTemplate(firstLetter) {
 }
 
 function getSingleContactTemplate(i, intials) {
-  return ` <div id="singleContact${i}" onclick="openDetails(${i})" class="singleContactContainer"> 
+  return ` <div id="singleContact${i}" onclick="openDetails(${i}, 'singleContact${i}')" class="singleContactContainer"> 
               <div class="singleContact" tabindex="0">
                     <div id="initial${i}" class="initials">${intials}</div>
                     <div class="nameAndMail">
