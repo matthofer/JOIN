@@ -88,7 +88,7 @@
                 </div>
               </div>
               <div id="contactList" class="contactList"></div>
-              <div class="respAddButton">
+              <div onclick="openOverlay()" class="respAddButton">
                 <img src="./assets/icons/person_add.svg" alt="" />
               </div>
             </div>
@@ -124,52 +124,7 @@
           </div>
         </div>
       </div>
-      <div id="overlay" class="overlay overlayClosed">
-        <div class="overlayContent">
-          <div class="overlayLeftHalf">
-            <div class="overlaytext">
-              <img src="./assets/icons/logo.svg" />
-              <h2>Add contact</h2>
-              <h3>Tasks are better with a team!</h3>
-              <div class="respDivider"></div>
-            </div>
-          </div>
-          <div class="overlayRightHalf">
-            <div class="overlayHead">
-              <img onclick="closeOverlay()" src="./assets/icons/close.svg" />
-            </div>
-            <div class="inputWrapper">
-              <div class="personIcon">
-                <img src="./assets/icons/person_white.svg" />
-              </div>
-              <div class="inputAndButtons">
-                <div class="inputContainer">
-                  <input type="text" placeholder="Name" />
-                  <i class="icon"></i>
-                </div>
-                <div class="inputContainer">
-                  <input type="text" placeholder="Email" />
-                  <i class="icon"></i>
-                </div>
-                <div class="inputContainer">
-                  <input type="text" placeholder="Phone" />
-                  <i class="icon"></i>
-                </div>
-                <div class="overLayButtonWrapper">
-                  <div class="overLayButton cancel">
-                    <p>Cancel</p>
-                    <img src="./assets/icons/close.svg" alt="" />
-                  </div>
-                  <div class="overLayButton create">
-                    <p>Create contact</p>
-                    <img src="./assets/icons/check.svg" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="overlay" class="overlay overlayClosed"></div>
     </div>
   </body>
 </html>

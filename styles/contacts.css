@@ -395,7 +395,7 @@ main {
 
 .contactInfo {
   margin-top: 32px;
-  transition: all 100ms ease-in-out;
+  transition: all 75ms ease-in-out;
 }
 
 .general {
@@ -611,5 +611,5 @@ main {
 }
 
 .overlayClosed {
-  transform: translateX(100%);
+  transform: translateX(1000%);
 }

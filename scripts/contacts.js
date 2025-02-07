@@ -135,6 +135,8 @@ function openMobileEditButton() {
 }
 
 function openOverlay() {
+  document.getElementById("overlay").innerHTML = "";
+  document.getElementById("overlay").innerHTML = getAddContactDesktopContent();
   document.getElementById("overlay").classList.remove("overlayClosed");
 }
 
