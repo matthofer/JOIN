@@ -9,7 +9,7 @@ let intialColors = [
   "#00BEE8",
 ];
 
-function getRandomColor() {
+function getRandomIntialColor() {
   let randIndex = Math.floor(Math.random() * intialColors.length - 1);
   let randomColor = intialColors[randIndex];
   return randomColor;
