@@ -610,3 +610,7 @@ main {
   height: 22px;
   width: 22px;
 }
+
+.overlayClosed {
+  display: none;
+}
