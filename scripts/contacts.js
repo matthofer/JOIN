@@ -104,7 +104,6 @@ function renderContactInfo(i) {
 
 function openDetailsMobile(i, contactID) {
   let contactInfoRef = document.getElementById("mobileContactInfo");
-  document.getElementsByTagName("body")[0].style.overflow = "hidden";
   if (activeContact == contactID) {
     contactInfoRef.classList.add("dNone");
     activeContact = null;
@@ -126,7 +125,6 @@ function renderContactInfoMobile(i) {
 function closeMobileInfo() {
   let contactInfoRef = document.getElementById("mobileContactInfo");
   contactInfoRef.classList.add("dNone");
-  document.getElementsByTagName("body")[0].style.overflow = "auto";
   activeContact = null;
 }
 
@@ -152,6 +150,7 @@ function createNewContact() {
   let validationResult = validateInputs(contactName, contactMail, contactPhone);
   if (validationResult) {
     console.log("Kontakt erstellt");
+    /* closeOverlay(); */
   }
 }
 

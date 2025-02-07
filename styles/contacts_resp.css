@@ -272,7 +272,7 @@
 }
 
 .respDetailInfo {
-  position: absolute;
+  position: fixed;
   top: 96px;
   left: 0;
   width: 100%;
