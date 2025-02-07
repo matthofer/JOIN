@@ -73,16 +73,6 @@ function getIntialsOfContact(contact) {
   return intials;
 }
 
-async function postData(path, data = {}) {
-  await fetch(FB_URL + path + ".json", {
-    method: "POST",
-    header: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-}
-
 function openDetails(i, contactID) {
   let screenWidth = window.innerWidth;
   if (screenWidth <= 1100) {
