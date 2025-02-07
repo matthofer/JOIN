@@ -133,15 +133,15 @@ function getAddContactDesktopContent() {
               <div class="inputAndButtons">
                 <div class="inputContainer">
                   <input type="text" placeholder="Name" />
-                  <i class="icon"></i>
+                  <img src="./assets/icons/person.svg" class="icon">
                 </div>
                 <div class="inputContainer">
                   <input type="text" placeholder="Email" />
-                  <i class="icon"></i>
+                  <img src="./assets/icons/mail.svg" class="icon">
                 </div>
                 <div class="inputContainer">
                   <input type="text" placeholder="Phone" />
-                  <i class="icon"></i>
+                  <img src="./assets/icons/call.svg" class="icon">
                 </div>
                 <div class="overLayButtonWrapper">
                   <div class="overLayButton cancel">
