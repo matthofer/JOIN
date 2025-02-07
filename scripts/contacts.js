@@ -114,6 +114,7 @@ function renderContactInfo(i) {
 
 function openDetailsMobile(i, contactID) {
   let contactInfoRef = document.getElementById("mobileContactInfo");
+  document.getElementsByTagName("body")[0].style.overflow = "hidden";
   if (activeContact == contactID) {
     contactInfoRef.classList.add("dNone");
     activeContact = null;
@@ -136,4 +137,9 @@ function closeMobileInfo() {
   let contactInfoRef = document.getElementById("mobileContactInfo");
   contactInfoRef.classList.add("dNone");
   activeContact = null;
+}
+
+function openMobileEditButton() {
+  document.getElementById("mobileEditButton").classList.toggle("respBtnclosed");
+  document.getElementsByTagName("body")[0].style.overflow = "auto";
 }

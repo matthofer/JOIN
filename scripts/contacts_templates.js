@@ -97,7 +97,7 @@ function getContactInfoTemplateMobile(i, initials) {
                 <p>${contacts[i].phone}</p>
               </div>
             </div>
-            <div class="respContactBtnContainer respBtnclosed">
+            <div id="mobileEditButton" class="respContactBtnContainer respBtnclosed">
               <div class="editDeleteBtn">
                 <img class="svg" src="./assets/icons/edit_contact.svg" />
                 <p>Edit</p>
@@ -107,7 +107,7 @@ function getContactInfoTemplateMobile(i, initials) {
                 <p>Delete</p>
               </div>
             </div>
-            <div class="respEditButton">
+            <div onclick="openMobileEditButton()" class="respEditButton">
               <img src="./assets/icons/more_vert.svg" />
             </div>`;
 }
