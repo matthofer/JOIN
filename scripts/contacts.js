@@ -143,3 +143,66 @@ function openOverlay() {
 function closeOverlay() {
   document.getElementById("overlay").classList.add("overlayClosed");
 }
+
+function createNewContact() {
+  document.getElementById("validationErrorMessage").innerHTML = "";
+  let contactName = document.getElementById("contactName").value;
+  let contactMail = document.getElementById("contactMail").value;
+  let contactPhone = document.getElementById("contactPhone").value;
+  let validationResult = validateInputs(contactName, contactMail, contactPhone);
+  if (validationResult) {
+    console.log("Kontakt erstellt");
+  }
+}
+
+function validateInputs(contactName, contactMail, contactPhone) {
+  if (
+    checkEmptyInput(contactName, contactMail, contactPhone) &&
+    checkEmail(contactMail) &&
+    checkPhone(contactPhone)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkEmptyInput(contactName, contactMail, contactPhone) {
+  if (contactName === "" || contactMail === "" || contactPhone === "") {
+    document.getElementById("validationErrorMessage").innerHTML =
+      "<p>Bitte alle drei Eingabefelder ausfüllen!</p>";
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function checkEmail(contactMail) {
+  if (!validateEmail(contactMail)) {
+    document.getElementById("validationErrorMessage").innerHTML +=
+      "<p>Bitte eine gültige Emailadresse eingeben</p>";
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function checkPhone(contactPhone) {
+  if (!validatePhoneNumber(contactPhone)) {
+    document.getElementById("validationErrorMessage").innerHTML +=
+      "<p>Telefonnummer ungültig! (Muss mit +49 beginnen und darf max. 15 Stellen lang sein)</p>";
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function validateEmail(email) {
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{1,3}$/;
+  return emailRegex.test(email);
+}
+
+function validatePhoneNumber(phoneNumber) {
+  let phoneRegex = /^\+49\d{0,12}$/;
+  return phoneRegex.test(phoneNumber);
+}

@@ -653,3 +653,9 @@ main {
 .inputContainer input:focus {
   border-color: #29abe2;
 }
+
+#validationErrorMessage p {
+  color: red;
+  text-align: center;
+  margin-top: 24px;
+}

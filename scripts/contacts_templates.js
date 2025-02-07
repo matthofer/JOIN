@@ -132,29 +132,30 @@ function getAddContactDesktopContent() {
               </div>
               <div class="inputAndButtons">
                 <div class="inputContainer">
-                  <input type="text" placeholder="Name" />
+                  <input id="contactName" type="text" placeholder="Name" />
                   <img src="./assets/icons/person.svg" class="icon">
                 </div>
                 <div class="inputContainer">
-                  <input type="text" placeholder="Email" />
+                  <input id="contactMail" type="text" placeholder="Email" />
                   <img src="./assets/icons/mail.svg" class="icon">
                 </div>
                 <div class="inputContainer">
-                  <input type="text" placeholder="Phone" />
+                  <input id="contactPhone" type="text" placeholder="Phone" />
                   <img src="./assets/icons/call.svg" class="icon">
                 </div>
                 <div class="overLayButtonWrapper">
-                  <div class="overLayButton cancel">
+                  <div onclick="closeOverlay()" class="overLayButton cancel">
                     <p>Cancel</p>
                     <img src="./assets/icons/close.svg" alt="" />
                   </div>
-                  <div class="overLayButton create">
+                  <div onclick="createNewContact()" class="overLayButton create">
                     <p>Create contact</p>
                     <img src="./assets/icons/check.svg" />
                   </div>
                 </div>
               </div>
             </div>
+            <div id="validationErrorMessage"></div>
           </div>
         </div>`;
 }
