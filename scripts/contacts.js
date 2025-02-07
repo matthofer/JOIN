@@ -86,7 +86,7 @@ async function postData(path, data = {}) {
 function openDetails(i, contactID) {
   let screenWidth = window.innerWidth;
   if (screenWidth <= 1100) {
-    console.log("mobileview");
+    openDetailsMobile(i, contactID);
   } else {
     openDetailsDesktop(i, contactID);
   }
@@ -108,6 +108,32 @@ function renderContactInfo(i) {
   let contactInfoRef = document.getElementById("contactInfo");
   contactInfoRef.innerHTML = "";
   let initials = getIntialsOfContact(contacts[i].name);
-  contactInfoRef.innerHTML = getContactInfoTemplate(i, initials);
+  contactInfoRef.innerHTML = getContactInfoTemplateDesktop(i, initials);
   setBackgroundColorOfBigIntial(i);
+}
+
+function openDetailsMobile(i, contactID) {
+  let contactInfoRef = document.getElementById("mobileContactInfo");
+  if (activeContact == contactID) {
+    contactInfoRef.classList.add("dNone");
+    activeContact = null;
+    return;
+  }
+  contactInfoRef.classList.remove("dNone");
+  renderContactInfoMobile(i);
+  activeContact = contactID;
+}
+
+function renderContactInfoMobile(i) {
+  let contactInfoRef = document.getElementById("mobileContactInfo");
+  contactInfoRef.innerHTML = "";
+  let initials = getIntialsOfContact(contacts[i].name);
+  contactInfoRef.innerHTML = getContactInfoTemplateMobile(i, initials);
+  setBackgroundColorOfBigIntial(i);
+}
+
+function closeMobileInfo() {
+  let contactInfoRef = document.getElementById("mobileContactInfo");
+  contactInfoRef.classList.add("dNone");
+  activeContact = null;
 }

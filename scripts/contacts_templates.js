@@ -39,7 +39,7 @@ function getSingleContactTemplate(i, intials) {
             </div>`;
 }
 
-function getContactInfoTemplate(i, initials) {
+function getContactInfoTemplateDesktop(i, initials) {
   return `<div class="general">
                   <div id="bigInitial${i}" class="intialBig">${initials}</div>
                   <div class="nameAndButtons">
@@ -69,4 +69,45 @@ function getContactInfoTemplate(i, initials) {
                   <p class="detailheader">Phone</p>
                   <p>${contacts[i].phone}</p>
                 </div>`;
+}
+
+function getContactInfoTemplateMobile(i, initials) {
+  return `<div class="respDetailHeader">
+              <div class="respDetailHeadText">
+                <h1>Contacts</h1>
+                <h3>Better with a team</h3>
+                <div class="respDivider"></div>
+              </div>
+              <img
+                onclick="closeMobileInfo()"
+                class="backFromDetail"
+                src="./assets/icons/arrow-left-line.svg"
+              />
+            </div>
+            <div class="respInfo">
+              <div class="general">
+                <div id="bigInitial${i}" class="intialBig">${initials}</div>
+                <h2>${contacts[i].name}</h2>
+              </div>
+              <h3>Contact Information</h3>
+              <div class="contactDetails">
+                <p class="detailheader">Email</p>
+                <p class="detailEmail">${contacts[i].email}</p>
+                <p class="detailheader">Phone</p>
+                <p>${contacts[i].phone}</p>
+              </div>
+            </div>
+            <div class="respContactBtnContainer respBtnclosed">
+              <div class="editDeleteBtn">
+                <img class="svg" src="./assets/icons/edit_contact.svg" />
+                <p>Edit</p>
+              </div>
+              <div class="editDeleteBtn">
+                <img class="svg" src="./assets/icons/delete_contact.svg" />
+                <p>Delete</p>
+              </div>
+            </div>
+            <div class="respEditButton">
+              <img src="./assets/icons/more_vert.svg" />
+            </div>`;
 }

@@ -194,6 +194,30 @@
   .respEditButton:hover {
     background-color: #29abe2;
   }
+
+  .respContactBtnContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    height: 100px;
+    width: 116px;
+    position: absolute;
+    bottom: 250px;
+    right: 64px;
+    border-radius: 10px 10px 0px 20px;
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.2));
+  }
+
+  .editDeleteBtn {
+    width: 80px;
+  }
+
+  .respBtnclosed {
+    display: none;
+  }
 }
 
 @media (max-width: 450px) {
