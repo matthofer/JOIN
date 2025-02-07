@@ -136,10 +136,10 @@ function renderContactInfoMobile(i) {
 function closeMobileInfo() {
   let contactInfoRef = document.getElementById("mobileContactInfo");
   contactInfoRef.classList.add("dNone");
+  document.getElementsByTagName("body")[0].style.overflow = "auto";
   activeContact = null;
 }
 
 function openMobileEditButton() {
   document.getElementById("mobileEditButton").classList.toggle("respBtnclosed");
-  document.getElementsByTagName("body")[0].style.overflow = "auto";
 }
