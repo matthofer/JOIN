@@ -82,7 +82,7 @@
           <div class="contactContent">
             <div class="contactScrollContainer">
               <div class="buttonContainer">
-                <div class="addNewContactButton">
+                <div onclick="openOverlay()" class="addNewContactButton">
                   <p>Add new contact</p>
                   <img src="./assets/icons/person_add.svg" />
                 </div>
@@ -124,7 +124,7 @@
           </div>
         </div>
       </div>
-      <div class="overlay overlayClosed">
+      <div id="overlay" class="overlay overlayClosed">
         <div class="overlayContent">
           <div class="overlayLeftHalf">
             <div class="overlaytext">
@@ -136,7 +136,7 @@
           </div>
           <div class="overlayRightHalf">
             <div class="overlayHead">
-              <img src="./assets/icons/close.svg" />
+              <img onclick="closeOverlay()" src="./assets/icons/close.svg" />
             </div>
             <div class="inputWrapper">
               <div class="personIcon">

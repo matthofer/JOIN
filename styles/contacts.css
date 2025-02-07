@@ -3,7 +3,6 @@
   box-sizing: border-box;
   padding: 0;
   font-family: "Inter", serif;
-  overflow: hidden;
 }
 
 .contactScrollContainer::-webkit-scrollbar {
@@ -117,6 +116,8 @@
 .content {
   display: flex;
   min-height: 100dvh;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .sidebar {
@@ -481,6 +482,7 @@ main {
   height: 100dvh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+  transition: all 100ms ease-in-out;
 }
 
 .overlayContent {
@@ -532,6 +534,10 @@ main {
   justify-content: end;
   padding-right: 32px;
   padding-top: 48px;
+}
+
+.overlayHead img {
+  cursor: pointer;
 }
 
 .inputWrapper {

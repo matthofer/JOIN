@@ -133,3 +133,11 @@ function closeMobileInfo() {
 function openMobileEditButton() {
   document.getElementById("mobileEditButton").classList.toggle("respBtnclosed");
 }
+
+function openOverlay() {
+  document.getElementById("overlay").classList.remove("overlayClosed");
+}
+
+function closeOverlay() {
+  document.getElementById("overlay").classList.add("overlayClosed");
+}
