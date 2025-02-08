@@ -257,6 +257,7 @@ async function fillInputfields(i) {
 }
 
 async function editContact(i) {
+  document.getElementById("validationErrorMessage").innerHTML = "";
   let editedName = document.getElementById("contactName").value;
   let editedMail = document.getElementById("contactMail").value;
   let editedPhone = document.getElementById("contactPhone").value;
