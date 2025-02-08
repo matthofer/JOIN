@@ -1,0 +1,195 @@
+@media (max-width: 1260px) {
+    .sidebar {
+        display: none;
+    }
+
+    .headerAndMain {
+        margin: 0;
+    }
+
+    .stdPadding {
+        padding: 0 32px;
+    }
+
+    .divider {
+        margin: 0 32px;
+    }
+
+    .leftColumn {
+        min-width: 350px;
+    }
+
+    .rightColumn {
+        min-width: 350px;
+    }
+}
+
+
+
+@media (max-width: 1259.99px) {
+    .prioSection img {
+        margin-left: 6px;
+    }
+
+    .respNavbar {
+        display: flex;
+        height: 80px;
+    }
+
+    .respNavbarContent {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .respNavButton {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        cursor: pointer;
+        height: 100%;
+        width: 90px;
+        border-radius: 16px;
+    }
+
+    .respNavButton a {
+        text-decoration: none;
+        color: #cdcdcd;
+    }
+
+    .respNavButton:hover {
+        background-color: #091931;
+    }
+
+    .respNavButton:hover .navSvg {
+        filter: brightness(0) invert(1);
+    }
+
+    .respNavButton:hover a {
+        color: white;
+    }
+
+    .respNavButton:focus {
+        background-color: #091931;
+    }
+
+    .respNavButton:focus a {
+        color: white;
+    }
+
+    .respNavButton:focus .navSvg {
+        filter: brightness(0) invert(1);
+    }
+}
+
+@media(max-width: 850px) {
+    .information {
+        display: none;
+    }
+
+    .buttonArea {
+        position: fixed;
+        bottom: 72px;
+        right: 0;
+        width: 100%;
+        min-height: 50px;
+        justify-content: end;
+        background-color: #f6f7f8;
+        padding: 12px 32px 24px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .formWrapper {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .leftColumn {
+        min-width: unset;
+        max-width: unset;
+        gap: 32px;
+    }
+
+    .rightColumn {
+        padding-top: 32px;
+        min-width: unset;
+        max-width: unset;
+        gap: 32px;
+        padding-bottom: 128px;
+    }
+
+    form {
+        padding-top: 42px;
+    }
+}
+
+@media(max-width:500px) {
+    .stdPadding {
+        padding: 0 16px;
+    }
+
+    .buttonArea {
+        padding: 12px 16px 24px;
+    }
+
+    .mainHeadline {
+        font-size: 47px;
+        font-weight: 700;
+        line-height: 56.4px;
+    }
+
+    form {
+        padding-top: 42px;
+    }
+
+    .titles {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.2px;
+    }
+
+    input{
+        height: 40px;
+    }
+
+    textarea{
+        height: 80px;
+    }
+
+    ::placeholder{
+        font-size: 16px;
+    }
+
+    input[name="contactsDropdown"]::placeholder {
+        font-size: 16px;
+    }
+
+    input[name="category"]::placeholder {
+        font-size: 16px;
+    }
+
+    .prioSection button{
+        padding: 8px 6px;
+        font-size: 16px;
+    }
+
+    .clear {
+        padding: 6px 10px;
+        font-size: 16px;
+
+    }
+
+    .submit {
+        padding: 6px 10px;
+        font-size: 16px;
+
+    }
+
+}

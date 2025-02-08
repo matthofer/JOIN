@@ -1,5 +1,5 @@
   .formWrapper {
-      margin-top: 150px;
+      margin-top: 64px;
       display: flex;
   }
 
@@ -107,6 +107,12 @@
       background-color: white;
       padding: 16px 10px;
       min-width: 30%;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 25.2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
   }
 
   .prioSection img {
@@ -154,7 +160,6 @@
 
   .information {
       float: left;
-      margin-top: 164px;
       display: flex;
       gap: 2px;
   }
@@ -173,9 +178,12 @@
 
   }
 
+  .bottomSection{
+    padding-top: 100px;
+  }
+
   .buttonArea {
       float: right;
-      margin-top: 164px;
       display: flex;
       gap: 16px;
   }
