@@ -1,0 +1,230 @@
+  .formWrapper {
+      margin-top: 150px;
+      display: flex;
+  }
+
+  form {
+      max-width: 1300px;
+  }
+
+  .leftColumn {
+      min-width: 400px;
+      max-width: 600px;
+      flex: 1;
+      height: 376px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .leftColumn div {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .titles {
+      display: flex;
+      gap: 8px;
+  }
+
+  .titles span {
+      color: #2A3647;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 400;
+      display: flex;
+  }
+
+  .titles p {
+      color: #FF8190;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 400;
+  }
+
+  input {
+      height: 48px;
+      border-radius: 10px;
+      border: 1px solid #D1D1D1;
+      padding: 12px 21px;
+  }
+
+  ::placeholder {
+      color: #D1D1D1;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 300;
+  }
+
+  textarea {
+      height: 120px;
+      resize: none;
+      border-radius: 10px;
+      border: 1px solid #D1D1D1;
+      padding: 12px 21px;
+  }
+
+  select {
+      height: 48px;
+      border-radius: 10px;
+      border: 1px solid #D1D1D1;
+      padding: 12px 21px;
+  }
+
+  .divider {
+      background-color: #D1D1D1;
+      width: 1px;
+      height: 424px;
+      margin: 0 48px;
+  }
+
+
+
+  .rightColumn {
+      min-width: 400px;
+      max-width: 600px;
+      flex: 1;
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .rightColumn div {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .prioSection {
+      display: flex;
+      flex-direction: row !important;
+      justify-content: space-between;
+  }
+
+  .prioSection button {
+      border-radius: 10px;
+      border: 1px solid #D1D1D1;
+      background-color: white;
+      padding: 16px 10px;
+      min-width: 30%;
+  }
+
+  .prioSection img {
+      margin-left: 12px;
+  }
+
+
+  input[name="contactsDropdown"] {
+      background-image: url(../assets/icons/arrow_drop_down-down.svg);
+      background-repeat: no-repeat;
+      background-position: 95%;
+  }
+
+  input[name="contactsDropdown"]::placeholder {
+      color: black;
+  }
+
+
+  input[name="date"] {
+      background-image: url(../assets/icons/event.svg);
+      background-repeat: no-repeat;
+      background-position: 95%;
+  }
+
+  input[name="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0;
+  }
+
+  input[name="category"] {
+      background-image: url(../assets/icons/arrow_drop_down-down.svg);
+      background-repeat: no-repeat;
+      background-position: 95%;
+  }
+
+  input[name="category"]::placeholder {
+      color: black;
+  }
+
+
+  input[name="subtask"] {
+      background-image: url(../assets/icons/subtasks.svg);
+      background-repeat: no-repeat;
+      background-position: 95%;
+  }
+
+  .information {
+      float: left;
+      margin-top: 164px;
+      display: flex;
+      gap: 2px;
+  }
+
+  .information p {
+      color: #FF8190;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 400;
+  }
+
+  .information span {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+
+  }
+
+  .buttonArea {
+      float: right;
+      margin-top: 164px;
+      display: flex;
+      gap: 16px;
+  }
+
+  .clear {
+      background-color: #F6F7F8;
+      border-radius: 10px;
+      border: 1px solid #2A3647;
+      padding: 16px;
+      cursor: pointer;
+      font-size: 20px;
+      color: #2A3647;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .clear:hover {
+      border: 1px solid #29ABE2;
+      color: #29ABE2;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+  }
+
+  .clear:hover path {
+      stroke: #29ABE2;
+  }
+
+  .submit {
+    background-color: #2A3647;
+    border-radius: 10px;
+    border: 1px solid #2A3647;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px
+  }
+
+  .submit path{
+    stroke: white;
+  }
+
+  .submit:hover{
+    border: none;
+    background-color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+
+  }

@@ -1,123 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/addTask.css">
+    <link rel="stylesheet" href="./styles/addTask_resp.css">
     <script src="scripts/navigation.js"></script>
     <title>Add Task</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="./assets/icons/fav_join_logo.png"
-    />
-  </head>
-  <body>
+    <link rel="icon" type="image/x-icon" href="./assets/icons/fav_join_logo.png" />
+</head>
+
+<body>
     <div class="content">
-      <div class="sidebar">
-        <div class="sidebarTop">
-          <img class="sidebarLogo" src="./assets/icons/logo.svg" alt="Logo" />
-          <div class="navContent">
-            <div class="navButton" tabindex="0">
-              <img
-                class="navSvg"
-                src="./assets/icons/summary_grey.svg"
-                alt=""
-              />
-              <a href="./summary.html">Summary</a>
+        <div class="sidebar">
+            <div class="sidebarTop">
+                <img class="sidebarLogo" src="./assets/icons/logo.svg" alt="Logo" />
+                <div class="navContent">
+                    <div class="navButton" tabindex="0">
+                        <img class="navSvg" src="./assets/icons/summary_grey.svg" alt="" />
+                        <a href="./summary.html">Summary</a>
+                    </div>
+                    <div class="navButton" tabindex="0">
+                        <img class="navSvg" src="./assets/icons/add-task-grey.svg" alt="" />
+                        <a href="./addTask.html">Add Task</a>
+                    </div>
+                    <div class="navButton" tabindex="0">
+                        <img class="navSvg" src="./assets/icons/board-grey.svg" alt="" />
+                        <a href="./board.html">Board</a>
+                    </div>
+                    <div class="navButton" tabindex="0">
+                        <img class="navSvg" src="./assets/icons/contacts-grey.svg" alt="" />
+                        <a href="./contacts.html">Contacts</a>
+                    </div>
+                </div>
             </div>
-            <div class="navButton" tabindex="0">
-              <img
-                class="navSvg"
-                src="./assets/icons/add-task-grey.svg"
-                alt=""
-              />
-              <a href="./addTask.html">Add Task</a>
+            <div class="sidebarBottom">
+                <div class="navButton" tabindex="0">
+                    <a href="./privacy-policy.html">Privacy Policy</a>
+                </div>
+                <div class="navButton" tabindex="0">
+                    <a href="./legal-notice.html">Legal notice</a>
+                </div>
             </div>
-            <div class="navButton" tabindex="0">
-              <img class="navSvg" src="./assets/icons/board-grey.svg" alt="" />
-              <a href="./board.html">Board</a>
-            </div>
-            <div class="navButton" tabindex="0">
-              <img
-                class="navSvg"
-                src="./assets/icons/contacts-grey.svg"
-                alt=""
-              />
-              <a href="./contacts.html">Contacts</a>
-            </div>
-          </div>
         </div>
-        <div class="sidebarBottom">
-          <div class="navButton" tabindex="0">
-            <a href="./privacy-policy.html">Privacy Policy</a>
-          </div>
-          <div class="navButton" tabindex="0">
-            <a href="./legal-notice.html">Legal notice</a>
-          </div>
+
+        <div class="headerAndMain">
+            <header>
+                <div class="headerContent stdPadding">
+                    <img class="headerLogoResp" src="./assets/icons/resp_logo.svg" />
+                    <h3 class="headerText">Kanban Project Management Tool</h3>
+                    <div class="headerRight">
+                        <a href="./help.html"><img src="./assets/icons/help.svg" alt="" srcset="" /></a>
+                        <div class="userIcon">SM</div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <div class="mainContent stdPadding">
+                    <h1 class="mainHeadline">Add Task</h1>
+
+
+
+                    <form onsubmit="; return false">
+                        <div class="formWrapper">
+                            <div class="leftColumn">
+                                <div class="titles">
+                                    <span>Title <p>*</p></span>
+                                    <input type="text" placeholder="Enter a title">
+                                </div>
+
+                                <div class="titles">
+                                    <span>Description</span>
+                                    <textarea name="description" id="" placeholder="Enter a Description"></textarea>
+                                </div>
+
+                                <div class="titles">
+                                    <span>Assigned to</span>
+                                    <input type="text" name="contactsDropdown" placeholder="Select contacts to assign">
+                                </div>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="rightColumn">
+                                <div class="titles">
+                                    <span>Due date <p>*</p></span>
+                                    <input type="text" name="date" placeholder="dd/mm/yyyy"
+                                        onfocus="(this.type='date')">
+                                </div>
+
+                                <div class="titles">
+                                    <span>Prio</span>
+                                    <div class="prioSection">
+                                        <button>Urgent <img src="./assets/icons/urgent.svg" alt="" srcset=""></button>
+                                        <button>Medium <img src="./assets/icons/equal.svg" alt="" srcset=""></button>
+                                        <button>Low <img src="./assets/icons/lowPrio.svg" alt=""></button>
+                                    </div>
+                                </div>
+
+                                <div class="titles">
+                                    <span>Category <p>*</p></span>
+                                    <input type="text" name="category" placeholder="Select task category">
+                                </div>
+
+                                <div class="titles">
+                                    <span>Subtasks</span>
+                                    <input type="text" name="subtask" placeholder="Add new subtask">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottomSection" >
+                            <div class="information">
+                                <p>*</p>
+                                <span>This field is required</span>
+                            </div>
+                            <div class="buttonArea">
+                                <button class="clear" type="button">Clear
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.2496 11.9998L17.4926 17.2428M7.00659 17.2428L12.2496 11.9998L7.00659 17.2428ZM17.4926 6.75684L12.2486 11.9998L17.4926 6.75684ZM12.2486 11.9998L7.00659 6.75684L12.2486 11.9998Z" stroke="#2A3647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </button>
+                                <button class="submit">Create Task
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 8.96582L5 12.9658L13 1.46582" stroke="#2A3647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </main>
         </div>
-      </div>
 
-      <div class="headerAndMain">
-        <header>
-          <div class="headerContent stdPadding">
-            <img class="headerLogoResp" src="./assets/icons/resp_logo.svg" />
-            <h3 class="headerText">Kanban Project Management Tool</h3>
-            <div class="headerRight">
-              <a href="./help.html"
-                ><img src="./assets/icons/help.svg" alt="" srcset=""
-              /></a>
-              <div class="userIcon">SM</div>
+        <div class="respNavbar">
+            <div class="respNavbarContent">
+                <div class="respNavButton" tabindex="0">
+                    <img class="navSvg" src="./assets/icons/summary_grey.svg" alt="" />
+                    <a href="./summary.html">Summary</a>
+                </div>
+                <div class="respNavButton" tabindex="0">
+                    <img class="navSvg" src="./assets/icons/board-grey.svg" alt="" />
+                    <a href="./board.html">Board</a>
+                </div>
+                <div class="respNavButton" tabindex="0">
+                    <img class="navSvg" src="./assets/icons/add-task-grey.svg" alt="" />
+                    <a href="./addTask.html">Add Tasks</a>
+                </div>
+                <div class="respNavButton" tabindex="0">
+                    <img class="navSvg" src="./assets/icons/contacts-grey.svg" alt="" />
+                    <a href="./contacts.html">contacts</a>
+                </div>
             </div>
-          </div>
-        </header>
-
-        <main>
-          <div class="mainContent stdPadding">
-            <h1 class="mainHeadline">Add Task</h1>
-            <div class="testContainer">
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-              <div class="test"><h1>test</h1></div>
-            </div>
-          </div>
-        </main>
-      </div>
-
-      <div class="respNavbar">
-        <div class="respNavbarContent">
-          <div class="respNavButton" tabindex="0">
-            <img class="navSvg" src="./assets/icons/summary_grey.svg" alt="" />
-            <a href="./summary.html">Summary</a>
-          </div>
-          <div class="respNavButton" tabindex="0">
-            <img class="navSvg" src="./assets/icons/board-grey.svg" alt="" />
-            <a href="./board.html">Board</a>
-          </div>
-          <div class="respNavButton" tabindex="0">
-            <img class="navSvg" src="./assets/icons/add-task-grey.svg" alt="" />
-            <a href="./addTask.html">Add Tasks</a>
-          </div>
-          <div class="respNavButton" tabindex="0">
-            <img class="navSvg" src="./assets/icons/contacts-grey.svg" alt="" />
-            <a href="./contacts.html">contacts</a>
-          </div>
         </div>
-      </div>
     </div>
-  </body>
-</html>
+</body>
 
+</html>
