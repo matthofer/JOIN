@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="./styles/addTask.css">
     <link rel="stylesheet" href="./styles/addTask_resp.css">
     <script src="scripts/navigation.js"></script>
+    <script src="./scripts/contacts.js"></script>
+    <script src="./scripts/addTask.js"></script>
+    <script src="./scripts/addTask_template.js"></script>
+
     <title>Add Task</title>
     <link rel="icon" type="image/x-icon" href="./assets/icons/fav_join_logo.png" />
 </head>
 
-<body>
+<body onload="initAddTask()">
     <div class="content">
         <div class="sidebar">
             <div class="sidebarTop">
@@ -80,7 +84,10 @@
 
                                 <div class="titles">
                                     <span>Assigned to</span>
-                                    <input type="text" name="contactsDropdown" placeholder="Select contacts to assign">
+                                    <input onclick="toggleDropdown('contacts')" type="text" name="contactsDropdown"
+                                        placeholder="Select contacts to assign">
+                                    <div class="contacts" id="contacts"></div>
+                                    <div class="initialsContacts" id="initialsContacts"></div>
                                 </div>
                             </div>
 
@@ -114,21 +121,27 @@
                             </div>
                         </div>
 
-                        <div class="bottomSection" >
+                        <div class="bottomSection">
                             <div class="information">
                                 <p>*</p>
                                 <span>This field is required</span>
                             </div>
                             <div class="buttonArea">
                                 <button class="clear" type="button">Clear
-                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12.2496 11.9998L17.4926 17.2428M7.00659 17.2428L12.2496 11.9998L7.00659 17.2428ZM17.4926 6.75684L12.2486 11.9998L17.4926 6.75684ZM12.2486 11.9998L7.00659 6.75684L12.2486 11.9998Z" stroke="#2A3647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.2496 11.9998L17.4926 17.2428M7.00659 17.2428L12.2496 11.9998L7.00659 17.2428ZM17.4926 6.75684L12.2486 11.9998L17.4926 6.75684ZM12.2486 11.9998L7.00659 6.75684L12.2486 11.9998Z"
+                                            stroke="#2A3647" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
                                 </button>
                                 <button class="submit">Create Task
-                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1 8.96582L5 12.9658L13 1.46582" stroke="#2A3647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 8.96582L5 12.9658L13 1.46582" stroke="#2A3647" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
                                 </button>
                             </div>
                         </div>

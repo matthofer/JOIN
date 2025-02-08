@@ -25,6 +25,7 @@
   .titles {
       display: flex;
       gap: 8px;
+      position: relative;
   }
 
   .titles span {
@@ -124,12 +125,29 @@
       background-image: url(../assets/icons/arrow_drop_down-down.svg);
       background-repeat: no-repeat;
       background-position: 95%;
+      z-index: 2;
   }
 
   input[name="contactsDropdown"]::placeholder {
       color: black;
   }
 
+  .contacts {
+      background-color: white;
+      height: 200px;
+      width: 100%;
+      position: absolute;
+      top: 73px;
+      left: 0;
+      overflow-y: scroll;
+      visibility: hidden;
+      opacity: 0;
+      transition: all .3s ease-in;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, .4);
+      padding: 12px 0;
+  }
 
   input[name="date"] {
       background-image: url(../assets/icons/event.svg);
@@ -178,14 +196,15 @@
 
   }
 
-  .bottomSection{
-    padding-top: 100px;
+  .bottomSection {
+      padding-top: 100px;
   }
 
   .buttonArea {
       float: right;
       display: flex;
       gap: 16px;
+      z-index: 9;
   }
 
   .clear {
@@ -204,7 +223,7 @@
   .clear:hover {
       border: 1px solid #29ABE2;
       color: #29ABE2;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
   }
 
   .clear:hover path {
@@ -212,27 +231,128 @@
   }
 
   .submit {
-    background-color: #2A3647;
-    border-radius: 10px;
-    border: 1px solid #2A3647;
-    padding: 16px;
-    cursor: pointer;
-    font-size: 21px;
-    font-weight: 700;
-    color: white;
-    display: flex;
+      background-color: #2A3647;
+      border-radius: 10px;
+      border: 1px solid #2A3647;
+      padding: 16px;
+      cursor: pointer;
+      font-size: 21px;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px
+  }
+
+  .submit path {
+      stroke: white;
+  }
+
+  .submit:hover {
+      border: none;
+      background-color: #29ABE2;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, .4);
+  }
+
+  .contacts {
+      --sb-track-color: #ffffff;
+      --sb-thumb-color: #a8a8a8;
+      --sb-size: 20px;
+  }
+
+  .contacts::-webkit-scrollbar {
+      width: var(--sb-size)
+  }
+
+  .contacts::-webkit-scrollbar-track {
+      background: var(--sb-track-color);
+      border-radius: 20px;
+  }
+
+  .contacts::-webkit-scrollbar-thumb {
+      background: var(--sb-thumb-color);
+      border-radius: 20px;
+      border: 8px solid #ffffff;
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+      .contacts {
+          scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+      }
+  }
+
+  .dropdown {
+      visibility: visible;
+      pointer-events: unset;
+      opacity: 1;
+      z-index: 1;
+  }
+
+  .dropDownContact{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    padding: 6px 21px;
     align-items: center;
-    justify-content: center;
-    gap: 8px
+    border-radius: 10px;
+    margin: 2px 0;
   }
 
-  .submit path{
-    stroke: white;
+  .dropdownContactBlueBG{
+    background-color: #2A3647;
+    color: white;
   }
 
-  .submit:hover{
-    border: none;
-    background-color: #29ABE2;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+  .dropDownContact:hover{
+    background-color: #a8a8a8;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+  }
 
+  .dropDownLeft{
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+  }
+
+
+  .initials{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    padding: 8px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 38px;
+    border: 1px solid white;
+  }
+  
+  .contactName{
+   display: flex;
+   align-items: center;
+   text-wrap: nowrap;
+   text-align: center;
+  }
+
+  input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 2px solid #2A3647 ;
+    accent-color: #2A3647;
+    cursor: pointer;
+  }
+
+  .initialsContacts{
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px;
+  }
+
+  .fontColorwhite{
+    color: white;
   }
