@@ -133,7 +133,7 @@ function openMobileEditButton() {
   document.getElementById("mobileEditButton").classList.toggle("respBtnclosed");
 }
 
-function openOverlay() {
+function openAddContactOverlay() {
   document.getElementById("overlay").innerHTML = "";
   document.getElementById("overlay").innerHTML = getAddContactDesktopContent();
   document.getElementById("overlay").classList.remove("overlayClosed");
