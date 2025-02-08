@@ -23,7 +23,7 @@ async function loadContactsData(path = "/contacts") {
       });
     }
   } catch (error) {
-    console.log("Fehler beim Laden");
+    showMessage("Error during loading of data");
   }
 }
 
@@ -149,7 +149,7 @@ async function createNewContact() {
     await loadContactsData();
     renderContacts();
     closeOverlay();
-    showSuccessMessage("Contact successfully created");
+    showMessage("Contact successfully created");
   }
 }
 
@@ -215,11 +215,11 @@ async function saveContact(contactName, contactMail, contactPhone) {
   try {
     await postData("contacts/", newUserObj);
   } catch (error) {
-    console.log("Fehler beim speichern");
+    showMessage("Error while saving the data");
   }
 }
 
-function showSuccessMessage(message) {
+function showMessage(message) {
   document.getElementById("messageText").innerHTML = message;
   document.getElementById("message").classList.remove("messageClosed");
   const myTimeout = setTimeout(closeSuccessMessage, 2000);
@@ -235,7 +235,7 @@ async function deleteContact(i) {
   contactInfoRef.innerHTML = "";
   await loadContactsData();
   renderContacts();
-  showSuccessMessage("Contact successfully deleted");
+  showMessage("Contact successfully deleted");
 }
 
 function openEditContactOverlay(i) {
@@ -268,7 +268,7 @@ async function editContact(i) {
     renderContacts();
     renderContactInfo(i);
     closeOverlay();
-    showSuccessMessage("Contact successfully edited");
+    showMessage("Contact successfully edited");
   }
 }
 
@@ -291,5 +291,5 @@ async function deleteContactInEditMode(i) {
   await loadContactsData();
   renderContacts();
   closeOverlay();
-  showSuccessMessage("Contact successfully deleted");
+  showMessage("Contact successfully deleted");
 }
