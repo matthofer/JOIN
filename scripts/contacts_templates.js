@@ -45,7 +45,7 @@ function getContactInfoTemplateDesktop(i, initials) {
                   <div class="nameAndButtons">
                     <h2>${contacts[i].name}</h2>
                     <div class="editDeleteBtnContainer">
-                      <div class="editDeleteBtn">
+                      <div onclick="openEditContactOverlay(${i})" class="editDeleteBtn">
                         <img
                           class="svg"
                           src="./assets/icons/edit_contact.svg"
@@ -150,6 +150,53 @@ function getAddContactDesktopContent() {
                   </div>
                   <div onclick="createNewContact()" class="overLayButton create">
                     <p>Create contact</p>
+                    <img src="./assets/icons/check.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="validationErrorMessage"></div>
+          </div>
+        </div>`;
+}
+
+function getEditContactDesktopContent(i, initials) {
+  return `<div class="overlayContent">
+          <div class="overlayLeftHalf">
+            <div class="overlaytext">
+              <img src="./assets/icons/logo.svg" />
+              <h2>Edit contact</h2>
+              <div class="respDivider"></div>
+            </div>
+          </div>
+          <div class="overlayRightHalf">
+            <div class="overlayHead">
+              <img onclick="closeOverlay()" src="./assets/icons/close.svg" />
+            </div>
+            <div class="inputWrapper">
+              <div class="personIcon">
+                <div id="editInitial${i}" class="intialBig">${initials}</div>
+              </div>
+              <div class="inputAndButtons">
+                <div class="inputContainer">
+                  <input id="contactName" type="text" placeholder="Name" />
+                  <img src="./assets/icons/person.svg" class="icon">
+                </div>
+                <div class="inputContainer">
+                  <input id="contactMail" type="text" placeholder="Email" />
+                  <img src="./assets/icons/mail.svg" class="icon">
+                </div>
+                <div class="inputContainer">
+                  <input id="contactPhone" type="text" placeholder="Phone" />
+                  <img src="./assets/icons/call.svg" class="icon">
+                </div>
+                <div class="overLayButtonWrapper">
+                  <div onclick="deleteContactInEditMode(${i})" class="overLayButton cancel">
+                    <p>Delete</p>
+                    <img src="./assets/icons/close.svg" alt="" />
+                  </div>
+                  <div onclick="editContact(${i})" class="overLayButton create">
+                    <p>Save</p>
                     <img src="./assets/icons/check.svg" />
                   </div>
                 </div>

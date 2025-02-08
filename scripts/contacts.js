@@ -51,17 +51,12 @@ function renderContacts() {
     let contactGroupRef = document.getElementById(firstCharContact);
     let intials = getIntialsOfContact(contacts[i].name);
     contactGroupRef.innerHTML += getSingleContactTemplate(i, intials);
-    setBackgroundColorOfIntial(i);
+    setBackgroundColorOfIntial(i, "initial");
   }
 }
 
-function setBackgroundColorOfIntial(i) {
-  let initialRef = document.getElementById("initial" + i);
-  initialRef.style.backgroundColor = contacts[i].color;
-}
-
-function setBackgroundColorOfBigIntial(i) {
-  let initialRef = document.getElementById("bigInitial" + i);
+function setBackgroundColorOfIntial(i, initialID) {
+  let initialRef = document.getElementById(initialID + i);
   initialRef.style.backgroundColor = contacts[i].color;
 }
 
@@ -100,7 +95,7 @@ function renderContactInfo(i) {
   contactInfoRef.innerHTML = "";
   let initials = getIntialsOfContact(contacts[i].name);
   contactInfoRef.innerHTML = getContactInfoTemplateDesktop(i, initials);
-  setBackgroundColorOfBigIntial(i);
+  setBackgroundColorOfIntial(i, "bigInitial");
 }
 
 function openDetailsMobile(i, contactID) {
@@ -120,7 +115,7 @@ function renderContactInfoMobile(i) {
   contactInfoRef.innerHTML = "";
   let initials = getIntialsOfContact(contacts[i].name);
   contactInfoRef.innerHTML = getContactInfoTemplateMobile(i, initials);
-  setBackgroundColorOfBigIntial(i);
+  setBackgroundColorOfIntial(i, "bigInitial");
 }
 
 function closeMobileInfo() {
@@ -240,5 +235,60 @@ async function deleteContact(i) {
   contactInfoRef.innerHTML = "";
   await loadContactsData();
   renderContacts();
+  showSuccessMessage("Contact successfully deleted");
+}
+
+function openEditContactOverlay(i) {
+  document.getElementById("overlay").innerHTML = "";
+  let intials = getIntialsOfContact(contacts[i].name);
+  document.getElementById("overlay").innerHTML = getEditContactDesktopContent(
+    i,
+    intials
+  );
+  setBackgroundColorOfIntial(i, "editInitial");
+  document.getElementById("overlay").classList.remove("overlayClosed");
+  fillInputfields(i);
+}
+
+async function fillInputfields(i) {
+  document.getElementById("contactName").value = contacts[i].name;
+  document.getElementById("contactMail").value = contacts[i].email;
+  document.getElementById("contactPhone").value = contacts[i].phone;
+}
+
+async function editContact(i) {
+  let editedName = document.getElementById("contactName").value;
+  let editedMail = document.getElementById("contactMail").value;
+  let editedPhone = document.getElementById("contactPhone").value;
+  let validationResult = validateInputs(editedName, editedMail, editedPhone);
+  if (validationResult) {
+    await updateContact(i, editedName, editedMail, editedPhone);
+    await loadContactsData();
+    renderContacts();
+    renderContactInfo(i);
+    closeOverlay();
+    showSuccessMessage("Contact successfully edited");
+  }
+}
+
+async function updateContact(i, editedName, editedMail, editedPhone) {
+  await putData(
+    (path = `contacts/${contacts[i].firebaseid}`),
+    (data = {
+      name: editedName,
+      email: editedMail,
+      phone: editedPhone,
+      color: contacts[i].color,
+    })
+  );
+}
+
+async function deleteContactInEditMode(i) {
+  let contactInfoRef = document.getElementById("contactInfo");
+  await deleteData(`/contacts/${contacts[i].firebaseid}`);
+  contactInfoRef.innerHTML = "";
+  await loadContactsData();
+  renderContacts();
+  closeOverlay();
   showSuccessMessage("Contact successfully deleted");
 }
