@@ -52,7 +52,7 @@ function getContactInfoTemplateDesktop(i, initials) {
                         />
                         <p>Edit</p>
                       </div>
-                      <div class="editDeleteBtn">
+                      <div onclick="deleteContact(${i})" class="editDeleteBtn">
                         <img
                           class="svg"
                           src="./assets/icons/delete_contact.svg"

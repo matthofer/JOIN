@@ -233,3 +233,12 @@ function showSuccessMessage(message) {
 function closeSuccessMessage() {
   document.getElementById("message").classList.add("messageClosed");
 }
+
+async function deleteContact(i) {
+  let contactInfoRef = document.getElementById("contactInfo");
+  await deleteData(`/contacts/${contacts[i].firebaseid}`);
+  contactInfoRef.innerHTML = "";
+  await loadContactsData();
+  renderContacts();
+  showSuccessMessage("Contact successfully deleted");
+}

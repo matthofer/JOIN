@@ -23,7 +23,7 @@ async function postData(path, data = {}) {
  */
 
 async function putData(path, data = {}) {
-  await fetch(URL + path + ".json", {
+  await fetch(FB_URL + path + ".json", {
     method: "PUT",
     header: {
       "Content-Type": "application/json",
@@ -38,7 +38,7 @@ async function putData(path, data = {}) {
  * @param {string} path - This the path to a specific object in firebase for example `/users/${users[i].firebaseid}`
  */
 async function deleteData(path) {
-  let response = await fetch(URL + path + ".json", {
+  let response = await fetch(FB_URL + path + ".json", {
     method: "DELETE",
   });
   return (responseToJson = await response.json());
