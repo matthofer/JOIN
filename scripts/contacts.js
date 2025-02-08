@@ -154,7 +154,7 @@ async function createNewContact() {
     await loadContactsData();
     renderContacts();
     closeOverlay();
-    showSuccessMessage();
+    showSuccessMessage("Contact successfully created");
   }
 }
 
@@ -224,11 +224,12 @@ async function saveContact(contactName, contactMail, contactPhone) {
   }
 }
 
-function showSuccessMessage() {
-  document.getElementById("successMessage").classList.remove("messageClosed");
+function showSuccessMessage(message) {
+  document.getElementById("messageText").innerHTML = message;
+  document.getElementById("message").classList.remove("messageClosed");
   const myTimeout = setTimeout(closeSuccessMessage, 2000);
 }
 
 function closeSuccessMessage() {
-  document.getElementById("successMessage").classList.add("messageClosed");
+  document.getElementById("message").classList.add("messageClosed");
 }
