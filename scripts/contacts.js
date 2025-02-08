@@ -8,6 +8,7 @@ async function init() {
 }
 
 async function loadContactsData(path = "/contacts") {
+  contacts = [];
   try {
     let contactResponse = await fetch(FB_URL + path + ".json");
     let contactResponseToJson = await contactResponse.json();
@@ -40,6 +41,7 @@ function getFirstLettersSorted(contactsArr) {
 
 function renderContacts() {
   let contactContentRef = document.getElementById("contactList");
+  contactContentRef.innerHTML = "";
   let firstLetters = getFirstLettersSorted(contacts);
   for (let i = 0; i < firstLetters.length; i++) {
     contactContentRef.innerHTML += getContactHeaderTemplate(firstLetters[i]);
@@ -141,15 +143,17 @@ function closeOverlay() {
   document.getElementById("overlay").classList.add("overlayClosed");
 }
 
-function createNewContact() {
+async function createNewContact() {
   document.getElementById("validationErrorMessage").innerHTML = "";
   let contactName = document.getElementById("contactName").value;
   let contactMail = document.getElementById("contactMail").value;
   let contactPhone = document.getElementById("contactPhone").value;
   let validationResult = validateInputs(contactName, contactMail, contactPhone);
   if (validationResult) {
-    console.log("Kontakt erstellt");
-    /* closeOverlay(); */
+    await saveContact(contactName, contactMail, contactPhone);
+    await loadContactsData();
+    renderContacts();
+    closeOverlay();
   }
 }
 
@@ -203,4 +207,18 @@ function validateEmail(email) {
 function validatePhoneNumber(phoneNumber) {
   let phoneRegex = /^\+49\d{0,12}$/;
   return phoneRegex.test(phoneNumber);
+}
+
+async function saveContact(contactName, contactMail, contactPhone) {
+  let newUserObj = {
+    color: getRandomIntialColor(),
+    email: contactMail,
+    name: contactName,
+    phone: contactPhone,
+  };
+  try {
+    await postData("contacts/", newUserObj);
+  } catch (error) {
+    console.log("Fehler beim speichern");
+  }
 }

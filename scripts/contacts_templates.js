@@ -10,7 +10,7 @@ let intialColors = [
 ];
 
 function getRandomIntialColor() {
-  let randIndex = Math.floor(Math.random() * intialColors.length - 1);
+  let randIndex = Math.floor(Math.random() * intialColors.length);
   let randomColor = intialColors[randIndex];
   return randomColor;
 }
