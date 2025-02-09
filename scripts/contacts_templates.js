@@ -86,7 +86,7 @@ function getContactInfoTemplateMobile(i, initials) {
             </div>
             <div class="respInfo">
               <div class="general">
-                <div id="bigInitial${i}" class="intialBig">${initials}</div>
+                <div id="mobileInitial${i}" class="intialBig">${initials}</div>
                 <h2>${contacts[i].name}</h2>
               </div>
               <h3>Contact Information</h3>

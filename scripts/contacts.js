@@ -115,7 +115,7 @@ function renderContactInfoMobile(i) {
   contactInfoRef.innerHTML = "";
   let initials = getIntialsOfContact(contacts[i].name);
   contactInfoRef.innerHTML = getContactInfoTemplateMobile(i, initials);
-  setBackgroundColorOfIntial(i, "bigInitial");
+  setBackgroundColorOfIntial(i, "mobileInitial");
 }
 
 function closeMobileInfo() {
