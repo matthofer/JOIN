@@ -132,7 +132,13 @@ function openMobileEditButton() {
 
 function openAddContactOverlay() {
   document.getElementById("overlay").innerHTML = "";
-  document.getElementById("overlay").innerHTML = getAddContactDesktopContent();
+  let screenWidth = window.innerWidth;
+  if (screenWidth <= 1100) {
+    document.getElementById("overlay").innerHTML = getAddContactMobileContent();
+  } else {
+    document.getElementById("overlay").innerHTML =
+      getAddContactDesktopContent();
+  }
   document.getElementById("overlay").classList.remove("overlayClosed");
 }
 
