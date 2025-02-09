@@ -206,3 +206,44 @@ function getEditContactDesktopContent(i, initials) {
           </div>
         </div>`;
 }
+
+function getAddContactMobileContent() {
+  return `<div class="overlayContent">
+          <div class="topHalf">
+          <div onclick="closeOverlay()" class="closeButton">
+              <img src="./assets/icons/close_white.svg" />
+          </div>
+            <div class="overlaytext">
+              <h2>Add contact</h2>
+              <h3>Tasks are better with a team!</h3>
+              <div class="respDivider"></div>
+            </div>
+          </div>
+          <div class="bottomHalf">
+            <div class="inputAndButtons">
+              <div class="inputContainer">
+                <input id="contactName" type="text" placeholder="Name" />
+                <img src="./assets/icons/person.svg" class="icon" />
+              </div>
+              <div class="inputContainer">
+                <input id="contactMail" type="text" placeholder="Email" />
+                <img src="./assets/icons/mail.svg" class="icon" />
+              </div>
+              <div class="inputContainer">
+                <input id="contactPhone" type="text" placeholder="Phone" />
+                <img src="./assets/icons/call.svg" class="icon" />
+              </div>
+              <div class="overLayButtonWrapper">
+                <div onclick="createNewContact()" class="overLayButton create">
+                  <p>Create contact</p>
+                  <img src="./assets/icons/check.svg" />
+                </div>
+              </div>
+              <div id="validationErrorMessage"></div>
+            </div>
+          </div>
+          <div class="personIcon">
+            <img src="./assets/icons/person_white.svg" />
+          </div>
+        </div>`;
+}
