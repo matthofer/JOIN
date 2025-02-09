@@ -118,7 +118,7 @@
     }
 
     .rightColumn {
-        padding-top: 32px;
+        padding-top: 12px;
         min-width: unset;
         max-width: unset;
         gap: 32px;
@@ -131,6 +131,10 @@
 
     .contacts {
         top: 64px;
+    }
+
+    .initialsContacts{
+        position: unset;
     }
 }
 

@@ -84,7 +84,7 @@
 
                                 <div class="titles">
                                     <span>Assigned to</span>
-                                    <input onclick="toggleDropdown('contacts')" type="text" name="contactsDropdown"
+                                    <input onclick="toggleDropdown('contacts')" onkeyup="filterContacts()" type="text" id="contactsDropdown" name="contactsDropdown"
                                         placeholder="Select contacts to assign">
                                     <div class="contacts" id="contacts"></div>
                                     <div class="initialsContacts" id="initialsContacts"></div>
