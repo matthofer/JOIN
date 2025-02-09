@@ -196,7 +196,7 @@ function checkEmail(contactMail) {
 function checkPhone(contactPhone) {
   if (!validatePhoneNumber(contactPhone)) {
     document.getElementById("validationErrorMessage").innerHTML +=
-      "<p>Telefonnummer ungültig! (Muss mit +49 beginnen und darf max. 15 Stellen lang sein)</p>";
+      "<p>Telefonnummer ungültig!<br>(Muss mit +49 beginnen und darf max. 15 Stellen lang sein)</p>";
     return false;
   } else {
     return true;

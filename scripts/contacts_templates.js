@@ -210,7 +210,7 @@ function getEditContactDesktopContent(i, initials) {
 function getAddContactMobileContent() {
   return `<div class="overlayContent">
           <div class="topHalf">
-          <div class="closeButton">
+          <div onclick="closeOverlay()" class="closeButton">
               <img src="./assets/icons/close_white.svg" />
           </div>
             <div class="overlaytext">
