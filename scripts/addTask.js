@@ -4,6 +4,7 @@ async function initAddTask() {
     await loadContactsData();
     renderDropdownContacts();
     changePrio('medium', 'mediumSVG')
+    renderCategorys();
 }
 
 function toggleDropdown(id) {
@@ -15,7 +16,17 @@ function toggleDropdown(id) {
     } else {
         inputImg.style.backgroundImage = "url('../assets/icons/arrow_drop_down-down.svg')";
     }
+}
 
+function toggleDropdownCategorys(id) {
+    let dropdown = document.getElementById(id);
+    let inputImg = document.getElementById("categorysDropdown")
+    dropdown.classList.toggle('dropdown');
+    if (dropdown.classList.contains('dropdown')) {
+        inputImg.style.backgroundImage = "url('../assets/icons/arrow_drop_down.svg')";
+    } else {
+        inputImg.style.backgroundImage = "url('../assets/icons/arrow_drop_down-down.svg')";
+    }
 }
 
 function renderDropdownContacts() {
@@ -93,3 +104,13 @@ function changePrio(id, svg) {
         img.classList.add('lowSVG')
     }
 }
+
+function renderCategorys(){
+    let html = document.getElementById('categorys');
+    html.innerHTML = "";
+    for (let categorysIndex = 0; categorysIndex < categorys.length; categorysIndex++) {
+        const category = categorys[categorysIndex];
+        html.innerHTML += categorysDropdownTemplate(category, categorysIndex);
+    }
+}
+

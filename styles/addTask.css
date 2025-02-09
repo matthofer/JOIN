@@ -1,5 +1,5 @@
   /* Scrollbar */
-    .contacts {
+  .contacts {
       --sb-track-color: #ffffff;
       --sb-thumb-color: #a8a8a8;
       --sb-size: 20px;
@@ -118,11 +118,9 @@
       margin-left: 12px;
   }
 
-  .prioSection button:hover{
-    cursor: pointer;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, .4);
-
-    
+  .prioSection button:hover {
+      cursor: pointer;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, .4);
   }
 
   .contacts {
@@ -220,12 +218,6 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, .4);
   }
 
-  .dropdown {
-      visibility: visible;
-      pointer-events: unset;
-      opacity: 1;
-      z-index: 1;
-  }
 
   .dropDownContact {
       display: flex !important;
@@ -246,7 +238,7 @@
       background-color: #a8a8a8;
       cursor: pointer;
       border-radius: 10px;
-      color: white;
+      /* color: white; */
   }
 
   .dropDownLeft {
@@ -297,36 +289,65 @@
       text-underline-offset: 3px;
   }
 
-  .urgent{
-    background-color: #ff3d00 !important;
-    color: white;
-   
+  .urgent {
+      background-color: #ff3d00 !important;
+      color: white;
+
   }
 
-  .urgentSVG path{
-    fill: white;
+  .urgentSVG path {
+      fill: white;
   }
 
-/* .defaultBtn{
-    background-color: #FFA800 !important;
-    color: white;
-} */
+  .medium {
+      background-color: #FFA800 !important;
+      color: white;
+  }
 
-.medium{
-    background-color: #FFA800 !important;
-    color: white;
+  .mediumSVG path {
+      fill: white;
+  }
+
+  .low {
+      background-color: #7AE229 !important;
+      color: white;
+  }
+
+  .lowSVG path {
+      fill: white !important;
+  }
+
+  .categoryDropdown{
+    background-color: white;
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    top: 73px;
+    left: 0;
+    overflow-y: scroll;
+    visibility: hidden;
+    opacity: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .4);
+    padding: 12px 0;
+  }
+/* wichtig ganz unten im script zu haben damit die values von den anderen klassen überschrieben werden  */
+  .dropdown {
+    visibility: visible ;
+    pointer-events: unset;
+    opacity: 1 ;
+    z-index: 1 ;
 }
 
-.mediumSVG path{
-    fill: white;
+.singleCategory{
+    padding: 6px 21px;
+    border-radius: 10px;
+    margin: 2px 0;
 }
 
-.low{
-    background-color: #7AE229 !important;
-    color: white;
-   
-  }
-
-  .lowSVG path{
-    fill: white !important;
-  }
+.singleCategory:hover{
+    background-color: #a8a8a8;
+    cursor: pointer;
+    border-radius: 10px;
+}
