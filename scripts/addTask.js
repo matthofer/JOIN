@@ -12,7 +12,6 @@ function toggleDropdown(id) {
     dropdown.classList.toggle('dropdown');
     if (dropdown.classList.contains('dropdown')) {
         inputImg.style.backgroundImage = "url('../assets/icons/arrow_drop_down.svg')";
-        inputImg.style.backgroundPosition = "95%"
     } else {
         inputImg.style.backgroundImage = "url('../assets/icons/arrow_drop_down-down.svg')";
     }
