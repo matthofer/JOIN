@@ -105,6 +105,7 @@ function openDetailsMobile(i, contactID) {
     activeContact = null;
     return;
   }
+  document.getElementById("respAddbutton").classList.add("addButtonRemoved");
   contactInfoRef.classList.remove("dNone");
   renderContactInfoMobile(i);
   activeContact = contactID;
@@ -120,6 +121,7 @@ function renderContactInfoMobile(i) {
 
 function closeMobileInfo() {
   let contactInfoRef = document.getElementById("mobileContactInfo");
+  document.getElementById("respAddbutton").classList.remove("addButtonRemoved");
   contactInfoRef.classList.add("dNone");
   activeContact = null;
 }

@@ -314,3 +314,7 @@
 .backFromDetail {
   cursor: pointer;
 }
+
+.addButtonRemoved {
+  display: none;
+}
