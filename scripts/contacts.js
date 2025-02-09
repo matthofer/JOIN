@@ -131,11 +131,19 @@ function openMobileEditButton() {
 }
 
 function openAddContactOverlay() {
+  document.getElementById("validationErrorMessage").innerHTML = "";
   document.getElementById("overlay").classList.remove("overlayClosed");
 }
 
 function closeOverlay() {
   document.getElementById("overlay").classList.add("overlayClosed");
+  cleanInputfields();
+}
+
+function cleanInputfields() {
+  document.getElementById("contactName").value = "";
+  document.getElementById("contactMail").value = "";
+  document.getElementById("contactPhone").value = "";
 }
 
 async function createNewContact() {

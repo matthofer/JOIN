@@ -484,12 +484,14 @@ main {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   transition: all 100ms ease-in-out;
+  padding-left: 64px;
+  padding-right: 64px;
 }
 
 .overlayContent {
   display: flex;
-  height: 592px;
-  width: 1212px;
+  height: clamp(300px, 592px, 592px);
+  width: clamp(300px, 1212px, 1212px);
   background-color: #ffffff;
   border-radius: 30px;
 }
@@ -535,6 +537,10 @@ main {
   justify-content: end;
   padding-right: 32px;
   padding-top: 48px;
+}
+
+.overlayHeadresp {
+  display: none;
 }
 
 .overlayHead img {
@@ -627,6 +633,38 @@ main {
 
 .inputContainer {
   position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+.inputContainer input {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  padding-left: 12px;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputContainer input:focus {
+  border-color: #007bff;
+}
+
+.inputContainer img {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  max-width: calc(100% - 16px);
+}
+
+/* .inputContainer {
+  position: relative;
   display: flex;
   align-items: center;
   width: 422px;
@@ -653,7 +691,7 @@ main {
 
 .inputContainer input:focus {
   border-color: #29abe2;
-}
+} */
 
 #validationErrorMessage p {
   color: red;
@@ -666,7 +704,7 @@ main {
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 80px;
+  bottom: 120px;
   left: calc(50% - 100px);
   height: 74px;
   width: 326px;
