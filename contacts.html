@@ -161,15 +161,30 @@
               </div>
               <div class="inputAndButtons">
                 <div class="inputContainer">
-                  <input id="contactName" type="text" placeholder="Name" />
+                  <input
+                    id="contactName"
+                    type="text"
+                    placeholder="Name"
+                    name="add"
+                  />
                   <img src="./assets/icons/person.svg" class="icon" />
                 </div>
                 <div class="inputContainer">
-                  <input id="contactMail" type="text" placeholder="Email" />
+                  <input
+                    id="contactMail"
+                    type="text"
+                    placeholder="Email"
+                    name="add"
+                  />
                   <img src="./assets/icons/mail.svg" class="icon" />
                 </div>
                 <div class="inputContainer">
-                  <input id="contactPhone" type="text" placeholder="Phone" />
+                  <input
+                    id="contactPhone"
+                    type="text"
+                    placeholder="Phone"
+                    name="add"
+                  />
                   <img src="./assets/icons/call.svg" class="icon" />
                 </div>
                 <div class="overLayButtonWrapper">
@@ -191,7 +206,78 @@
           </div>
         </div>
       </div>
-      <div id="overlayEdit" class="overlay overlayClosed"></div>
+      <div id="overlayEdit" class="overlay overlayClosed">
+        <div class="overlayContent">
+          <div class="overlayLeftHalf">
+            <div class="overlayHeadresp">
+              <img
+                onclick="closeEditOverlay()"
+                src="./assets/icons/close_white.svg"
+              />
+            </div>
+            <div class="overlaytext">
+              <h2>Edit contact</h2>
+              <div class="respDivider"></div>
+            </div>
+          </div>
+          <div class="overlayRightHalf">
+            <div class="overlayHead">
+              <img
+                onclick="closeEditOverlay()"
+                src="./assets/icons/close.svg"
+              />
+            </div>
+            <div class="inputWrapper">
+              <div class="personIcon">
+                <img src="./assets/icons/person_white.svg" />
+              </div>
+              <div class="inputAndButtons">
+                <div class="inputContainer">
+                  <input
+                    id="contactNameEdit"
+                    type="text"
+                    placeholder="Name"
+                    name="edit"
+                  />
+                  <img src="./assets/icons/person.svg" class="icon" />
+                </div>
+                <div class="inputContainer">
+                  <input
+                    id="contactMailEdit"
+                    type="text"
+                    placeholder="Email"
+                    name="edit"
+                  />
+                  <img src="./assets/icons/mail.svg" class="icon" />
+                </div>
+                <div class="inputContainer">
+                  <input
+                    id="contactPhoneEdit"
+                    type="text"
+                    placeholder="Phone"
+                    name="edit"
+                  />
+                  <img src="./assets/icons/call.svg" class="icon" />
+                </div>
+                <div class="overLayButtonWrapper">
+                  <div
+                    onclick="deleteContactInEditMode()"
+                    class="overLayButton"
+                  >
+                    <p>Delete</p>
+                    <img src="./assets/icons/close.svg" alt="" />
+                  </div>
+                  <div onclick="editContact()" class="overLayButton create">
+                    <p>Save</p>
+                    <img src="./assets/icons/check.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="validationErrorMessage"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

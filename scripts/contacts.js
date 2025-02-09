@@ -140,6 +140,10 @@ function closeOverlay() {
   cleanInputfields();
 }
 
+function closeEditOverlay() {
+  document.getElementById("overlayEdit").classList.add("overlayClosed");
+}
+
 function cleanInputfields() {
   document.getElementById("contactName").value = "";
   document.getElementById("contactMail").value = "";
@@ -247,14 +251,10 @@ async function deleteContact(i) {
 }
 
 function openEditContactOverlay(i) {
-  document.getElementById("overlay").innerHTML = "";
   let intials = getIntialsOfContact(contacts[i].name);
-  document.getElementById("overlay").innerHTML = getEditContactDesktopContent(
-    i,
-    intials
-  );
-  setBackgroundColorOfIntial(i, "editInitial");
-  document.getElementById("overlay").classList.remove("overlayClosed");
+  /* setBackgroundColorOfIntial(i, "editInitial") */ document
+    .getElementById("overlayEdit")
+    .classList.remove("overlayClosed");
   fillInputfields(i);
 }
 
