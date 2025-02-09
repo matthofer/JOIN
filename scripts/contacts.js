@@ -252,9 +252,8 @@ async function deleteContact(i) {
 
 function openEditContactOverlay(i) {
   let intials = getIntialsOfContact(contacts[i].name);
-  /* setBackgroundColorOfIntial(i, "editInitial") */ document
-    .getElementById("overlayEdit")
-    .classList.remove("overlayClosed");
+  /* setBackgroundColorOfIntial(i, "editInitial") */
+  document.getElementById("overlayEdit").classList.remove("overlayClosed");
   fillInputfields(i);
 }
 
