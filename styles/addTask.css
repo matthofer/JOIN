@@ -1,3 +1,32 @@
+  /* Scrollbar */
+    .contacts {
+      --sb-track-color: #ffffff;
+      --sb-thumb-color: #a8a8a8;
+      --sb-size: 20px;
+  }
+
+  .contacts::-webkit-scrollbar {
+      width: var(--sb-size)
+  }
+
+  .contacts::-webkit-scrollbar-track {
+      background: var(--sb-track-color);
+      border-radius: 20px;
+  }
+
+  .contacts::-webkit-scrollbar-thumb {
+      background: var(--sb-thumb-color);
+      border-radius: 20px;
+      border: 8px solid #ffffff;
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+      .contacts {
+          scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+      }
+  }
+
+  /* Form */
   .formWrapper {
       margin-top: 64px;
       display: flex;
@@ -43,43 +72,12 @@
       font-weight: 400;
   }
 
-  input {
-      height: 48px;
-      border-radius: 10px;
-      border: 1px solid #D1D1D1;
-      padding: 12px 21px;
-  }
-
-  ::placeholder {
-      color: #D1D1D1;
-      font-size: 20px;
-      line-height: 24px;
-      font-weight: 300;
-  }
-
-  textarea {
-      height: 120px;
-      resize: none;
-      border-radius: 10px;
-      border: 1px solid #D1D1D1;
-      padding: 12px 21px;
-  }
-
-  select {
-      height: 48px;
-      border-radius: 10px;
-      border: 1px solid #D1D1D1;
-      padding: 12px 21px;
-  }
-
   .divider {
       background-color: #D1D1D1;
       width: 1px;
       height: 424px;
       margin: 0 48px;
   }
-
-
 
   .rightColumn {
       min-width: 400px;
@@ -116,20 +114,15 @@
       justify-content: center;
   }
 
-  .prioSection img {
+  .prioSection svg {
       margin-left: 12px;
   }
 
+  .prioSection button:hover{
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .4);
 
-  input[name="contactsDropdown"] {
-      background-image: url(../assets/icons/arrow_drop_down-down.svg);
-      background-repeat: no-repeat;
-      background-position: 95%;
-      z-index: 2;
-  }
-
-  input[name="contactsDropdown"]::placeholder {
-      color: black;
+    
   }
 
   .contacts {
@@ -146,33 +139,6 @@
       border-bottom-left-radius: 10px;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, .4);
       padding: 12px 0;
-  }
-
-  input[name="date"] {
-      background-image: url(../assets/icons/event.svg);
-      background-repeat: no-repeat;
-      background-position: 95%;
-  }
-
-  input[name="date"]::-webkit-calendar-picker-indicator {
-      opacity: 0;
-  }
-
-  input[name="category"] {
-      background-image: url(../assets/icons/arrow_drop_down-down.svg);
-      background-repeat: no-repeat;
-      background-position: 95%;
-  }
-
-  input[name="category"]::placeholder {
-      color: black;
-  }
-
-
-  input[name="subtask"] {
-      background-image: url(../assets/icons/subtasks.svg);
-      background-repeat: no-repeat;
-      background-position: 95%;
   }
 
   .information {
@@ -254,33 +220,6 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, .4);
   }
 
-  .contacts {
-      --sb-track-color: #ffffff;
-      --sb-thumb-color: #a8a8a8;
-      --sb-size: 20px;
-  }
-
-  .contacts::-webkit-scrollbar {
-      width: var(--sb-size)
-  }
-
-  .contacts::-webkit-scrollbar-track {
-      background: var(--sb-track-color);
-      border-radius: 20px;
-  }
-
-  .contacts::-webkit-scrollbar-thumb {
-      background: var(--sb-thumb-color);
-      border-radius: 20px;
-      border: 8px solid #ffffff;
-  }
-
-  @supports not selector(::-webkit-scrollbar) {
-      .contacts {
-          scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-      }
-  }
-
   .dropdown {
       visibility: visible;
       pointer-events: unset;
@@ -318,9 +257,6 @@
       align-items: center;
   }
 
-
-
-
   .initials {
       display: flex;
       justify-content: center;
@@ -339,8 +275,6 @@
       text-align: center;
   }
 
-
-
   .initialsContacts {
       display: flex !important;
       flex-direction: row !important;
@@ -354,31 +288,6 @@
       color: white;
   }
 
-  .dropDownContact input[name="checkbox"] {
-      opacity: 0;
-      position: absolute;
-      left: 250px;
-      width: 0;
-      height: 0;
-  }
-
-
-
-  .dropDownContact label {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-      background-image: url(../assets/icons/checkbox-unticked.svg);
-      background-repeat: no-repeat;
-      background-position: 95%;
-      display: inline-block;
-  }
-
-  .dropDownContact input[name="checkbox"]:checked+label {
-      background-image: url(../assets/icons/checkbox-ticked.svg);
-      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(120deg) brightness(107%) contrast(103%);
-  }
-
   .noContact {
       display: flex;
       justify-content: center;
@@ -386,4 +295,38 @@
       height: 100%;
       text-decoration: underline;
       text-underline-offset: 3px;
+  }
+
+  .urgent{
+    background-color: #ff3d00 !important;
+    color: white;
+   
+  }
+
+  .urgentSVG path{
+    fill: white;
+  }
+
+/* .defaultBtn{
+    background-color: #FFA800 !important;
+    color: white;
+} */
+
+.medium{
+    background-color: #FFA800 !important;
+    color: white;
+}
+
+.mediumSVG path{
+    fill: white;
+}
+
+.low{
+    background-color: #7AE229 !important;
+    color: white;
+   
+  }
+
+  .lowSVG path{
+    fill: white !important;
   }
