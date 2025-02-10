@@ -54,3 +54,24 @@ input[name="search"] {
   font-weight: 400;
   line-height: 24px;
 }
+
+.boardColumns {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+}
+
+.column {
+  width: 25%;
+  background-color: #29abe2;
+}
+
+.columnHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addTaskColButton {
+  cursor: pointer;
+}
