@@ -664,6 +664,10 @@ main {
   border-radius: 10px;
 }
 
+.save:hover {
+  background-color: #29abe2;
+}
+
 .overLayButton img {
   height: 22px;
   width: 22px;
