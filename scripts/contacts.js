@@ -252,15 +252,26 @@ async function deleteContact(i) {
 
 function openEditContactOverlay(i) {
   let intials = getIntialsOfContact(contacts[i].name);
-  /* setBackgroundColorOfIntial(i, "editInitial") */
+  renderIntialsAndButtonsInEditMode(i, intials);
   document.getElementById("overlayEdit").classList.remove("overlayClosed");
   fillInputfields(i);
 }
 
+function renderIntialsAndButtonsInEditMode(i, initials) {
+  document.getElementById("editButtons").innerHTML = "";
+  document.getElementById("personIcon").innerHTML = "";
+  document.getElementById("editButtons").innerHTML = getEditButtonsTemplate(i);
+  document.getElementById("personIcon").innerHTML = getIntialsTemplate(
+    i,
+    initials
+  );
+  setBackgroundColorOfIntial(i, "editInitial");
+}
+
 async function fillInputfields(i) {
-  document.getElementById("contactName").value = contacts[i].name;
-  document.getElementById("contactMail").value = contacts[i].email;
-  document.getElementById("contactPhone").value = contacts[i].phone;
+  document.getElementById("contactNameEdit").value = contacts[i].name;
+  document.getElementById("contactMailEdit").value = contacts[i].email;
+  document.getElementById("contactPhoneEdit").value = contacts[i].phone;
 }
 
 async function editContact(i) {

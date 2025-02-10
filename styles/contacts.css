@@ -566,6 +566,15 @@ main {
   background-color: #d1d1d1;
 }
 
+.personIconEdit {
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .inputAndButtons {
   display: flex;
   flex-direction: column;
@@ -604,6 +613,25 @@ main {
 }
 
 .cancel:hover img {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(93%) saturate(423%)
+    hue-rotate(173deg) brightness(92%) contrast(94%);
+}
+
+.delete {
+  height: 56px;
+  width: 126px;
+  border: 1px solid #2a3647;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.delete:hover {
+  border: 1px solid #29abe2;
+  color: #29abe2;
+}
+
+.delete:hover img {
   filter: brightness(0) saturate(100%) invert(58%) sepia(93%) saturate(423%)
     hue-rotate(173deg) brightness(92%) contrast(94%);
 }

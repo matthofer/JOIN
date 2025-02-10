@@ -113,16 +113,16 @@ function getContactInfoTemplateMobile(i, initials) {
 }
 
 function getEditButtonsTemplate(i) {
-  return `  <div onclick="deleteContactInEditMode(${i})" class="overLayButton">
+  return `  <div onclick="deleteContactInEditMode(${i})" class="overLayButton delete">
                 <p>Delete</p>
                 <img src="./assets/icons/close.svg" alt="" />
             </div>
-            <div onclick="editContact()" class="overLayButton create">
+            <div onclick="editContact(${i})" class="overLayButton create">
                 <p>Save</p>
                 <img src="./assets/icons/check.svg" />
             </div>`;
 }
 
-function getIntialsTemplate(i) {
-  return `<div id="mobileInitial${i}" class="intialBig">${initials}</div>`;
+function getIntialsTemplate(i, initials) {
+  return `<div id="editInitial${i}" class="intialBig">${initials}</div>`;
 }

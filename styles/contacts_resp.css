@@ -185,6 +185,19 @@
     background-color: #d1d1d1;
   }
 
+  .personIconEdit {
+    position: absolute;
+    bottom: calc(50% - -130px);
+    left: calc(50% - 60px);
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1d1d1;
+  }
+
   .overlayRightHalf {
     width: 100%;
     height: 50%;
