@@ -180,7 +180,7 @@ function validateInputs(contactName, contactMail, contactPhone, id) {
 function checkEmptyInput(contactName, contactMail, contactPhone, id) {
   if (contactName === "" || contactMail === "" || contactPhone === "") {
     document.getElementById(id).innerHTML =
-      "<p>Bitte alle drei Eingabefelder ausfüllen!</p>";
+      "<p>Please fill in all three input fields!</p>";
     return false;
   } else {
     return true;
@@ -190,7 +190,7 @@ function checkEmptyInput(contactName, contactMail, contactPhone, id) {
 function checkEmail(contactMail, id) {
   if (!validateEmail(contactMail)) {
     document.getElementById(id).innerHTML +=
-      "<p>Bitte eine gültige Emailadresse eingeben</p>";
+      "<p>Please enter a valid email address<br>e.g. max.muster@web.de</p>";
     return false;
   } else {
     return true;
@@ -200,7 +200,7 @@ function checkEmail(contactMail, id) {
 function checkPhone(contactPhone, id) {
   if (!validatePhoneNumber(contactPhone)) {
     document.getElementById(id).innerHTML +=
-      "<p>Telefonnummer ungültig!<br>(Muss mit +49 beginnen und darf max. 15 Stellen lang sein)</p>";
+      "<p>Phone number invalid!!<br>Must start with +49 and can be max. 15 characters long</p>";
     return false;
   } else {
     return true;
