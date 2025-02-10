@@ -151,11 +151,16 @@ function cleanInputfields() {
 }
 
 async function createNewContact() {
-  document.getElementById("validationErrorMessage").innerHTML = "";
+  document.getElementById("addErrorMessage").innerHTML = "";
   let contactName = document.getElementById("contactName").value;
   let contactMail = document.getElementById("contactMail").value;
   let contactPhone = document.getElementById("contactPhone").value;
-  let validationResult = validateInputs(contactName, contactMail, contactPhone);
+  let validationResult = validateInputs(
+    contactName,
+    contactMail,
+    contactPhone,
+    "addErrorMessage"
+  );
   if (validationResult) {
     await saveContact(contactName, contactMail, contactPhone);
     await loadContactsData();
@@ -165,11 +170,11 @@ async function createNewContact() {
   }
 }
 
-function validateInputs(contactName, contactMail, contactPhone) {
+function validateInputs(contactName, contactMail, contactPhone, id) {
   if (
-    checkEmptyInput(contactName, contactMail, contactPhone) &&
-    checkEmail(contactMail) &&
-    checkPhone(contactPhone)
+    checkEmptyInput(contactName, contactMail, contactPhone, id) &&
+    checkEmail(contactMail, id) &&
+    checkPhone(contactPhone, id)
   ) {
     return true;
   } else {
@@ -177,9 +182,9 @@ function validateInputs(contactName, contactMail, contactPhone) {
   }
 }
 
-function checkEmptyInput(contactName, contactMail, contactPhone) {
+function checkEmptyInput(contactName, contactMail, contactPhone, id) {
   if (contactName === "" || contactMail === "" || contactPhone === "") {
-    document.getElementById("validationErrorMessage").innerHTML =
+    document.getElementById(id).innerHTML =
       "<p>Bitte alle drei Eingabefelder ausfüllen!</p>";
     return false;
   } else {
@@ -187,9 +192,9 @@ function checkEmptyInput(contactName, contactMail, contactPhone) {
   }
 }
 
-function checkEmail(contactMail) {
+function checkEmail(contactMail, id) {
   if (!validateEmail(contactMail)) {
-    document.getElementById("validationErrorMessage").innerHTML +=
+    document.getElementById(id).innerHTML +=
       "<p>Bitte eine gültige Emailadresse eingeben</p>";
     return false;
   } else {
@@ -197,9 +202,9 @@ function checkEmail(contactMail) {
   }
 }
 
-function checkPhone(contactPhone) {
+function checkPhone(contactPhone, id) {
   if (!validatePhoneNumber(contactPhone)) {
-    document.getElementById("validationErrorMessage").innerHTML +=
+    document.getElementById(id).innerHTML +=
       "<p>Telefonnummer ungültig!<br>(Muss mit +49 beginnen und darf max. 15 Stellen lang sein)</p>";
     return false;
   } else {
@@ -275,17 +280,28 @@ async function fillInputfields(i) {
 }
 
 async function editContact(i) {
-  document.getElementById("validationErrorMessage").innerHTML = "";
-  let editedName = document.getElementById("contactName").value;
-  let editedMail = document.getElementById("contactMail").value;
-  let editedPhone = document.getElementById("contactPhone").value;
-  let validationResult = validateInputs(editedName, editedMail, editedPhone);
+  document.getElementById("editErrorMessage").innerHTML = "";
+  let editedName = document.getElementById("contactNameEdit").value;
+  let editedMail = document.getElementById("contactMailEdit").value;
+  let editedPhone = document.getElementById("contactPhoneEdit").value;
+  let validationResult = validateInputs(
+    editedName,
+    editedMail,
+    editedPhone,
+    "editErrorMessage"
+  );
   if (validationResult) {
-    await updateContact(i, editedName, editedMail, editedPhone);
+    await updateContact(
+      i,
+      editedName,
+      editedMail,
+      editedPhone,
+      "editErrorMessage"
+    );
     await loadContactsData();
     renderContacts();
     renderContactInfo(i);
-    closeOverlay();
+    closeEditOverlay();
     showMessage("Contact successfully edited");
   }
 }
