@@ -21,7 +21,7 @@ function categorysDropdownTemplate(categorys, categorysIndex) {
 
 function subtasksTemplate(subtask, subtasksIndex) {
     return `
-    <div ondbclick="editSubtask(${subtasksIndex})" onmouseover="showSubtaskMenu(${subtasksIndex})" onmouseleave="closeSubtaskMenu(${subtasksIndex})" class="singleSubtask" id="singleSubtask${subtasksIndex}">
+    <div ondblclick="editSubtask(${subtasksIndex})" onmouseover="showSubtaskMenu(${subtasksIndex})" onmouseleave="closeSubtaskMenu(${subtasksIndex})" class="singleSubtask" id="singleSubtask${subtasksIndex}">
         <div class="singleSubtaskLeft">
             <div class="dot"></div>
             <span id="editSpan${subtasksIndex}">${subtask}</span>
