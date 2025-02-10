@@ -152,17 +152,12 @@ function cleanInputfields() {
 
 async function createNewContact() {
   document.getElementById("addErrorMessage").innerHTML = "";
-  let contactName = document.getElementById("contactName").value;
-  let contactMail = document.getElementById("contactMail").value;
-  let contactPhone = document.getElementById("contactPhone").value;
-  let validationResult = validateInputs(
-    contactName,
-    contactMail,
-    contactPhone,
-    "addErrorMessage"
-  );
+  let name = fristLetterUpperCase(document.getElementById("contactName").value);
+  let mail = document.getElementById("contactMail").value;
+  let phone = document.getElementById("contactPhone").value;
+  let validationResult = validateInputs(name, mail, phone, "addErrorMessage");
   if (validationResult) {
-    await saveContact(contactName, contactMail, contactPhone);
+    await saveContact(name, mail, phone);
     await loadContactsData();
     renderContacts();
     closeOverlay();
@@ -282,23 +277,14 @@ async function fillInputfields(i) {
 
 async function editContact(i) {
   document.getElementById("editErrorMessage").innerHTML = "";
-  let editedName = document.getElementById("contactNameEdit").value;
-  let editedMail = document.getElementById("contactMailEdit").value;
-  let editedPhone = document.getElementById("contactPhoneEdit").value;
-  let validationResult = validateInputs(
-    editedName,
-    editedMail,
-    editedPhone,
-    "editErrorMessage"
+  let name = fristLetterUpperCase(
+    document.getElementById("contactNameEdit").value
   );
+  let mail = document.getElementById("contactMailEdit").value;
+  let phone = document.getElementById("contactPhoneEdit").value;
+  let validationResult = validateInputs(name, mail, phone, "editErrorMessage");
   if (validationResult) {
-    await updateContact(
-      i,
-      editedName,
-      editedMail,
-      editedPhone,
-      "editErrorMessage"
-    );
+    await updateContact(i, name, mail, phone, "editErrorMessage");
     await loadContactsData();
     renderContacts();
     renderContactInfo(i);
@@ -338,4 +324,11 @@ async function deleteContactInMobileEditMode(i, event) {
   closeMobileInfo();
   showMessage("Contact successfully deleted");
   event.stopPropagation(event);
+}
+
+function fristLetterUpperCase(word) {
+  let firstLetter = word[0];
+  let firstLetterCap = firstLetter.toUpperCase();
+  let remainingLetters = word.slice(1);
+  return (capitalizedWord = firstLetterCap + remainingLetters);
 }
