@@ -323,10 +323,3 @@ async function deleteContactInMobileEditMode(i, event) {
   showMessage("Contact successfully deleted");
   event.stopPropagation(event);
 }
-
-function fristLetterUpperCase(word) {
-  let firstLetter = word[0];
-  let firstLetterCap = firstLetter.toUpperCase();
-  let remainingLetters = word.slice(1);
-  return (capitalizedWord = firstLetterCap + remainingLetters);
-}
