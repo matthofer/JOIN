@@ -100,15 +100,11 @@ function renderContactInfo(i) {
 
 function openDetailsMobile(i, contactID) {
   let contactInfoRef = document.getElementById("mobileContactInfo");
-  if (activeContact == contactID) {
-    contactInfoRef.classList.add("dNone");
-    activeContact = null;
-    return;
-  }
   document.getElementById("respAddbutton").classList.add("addButtonRemoved");
   contactInfoRef.classList.remove("dNone");
   renderContactInfoMobile(i);
   activeContact = contactID;
+  document.getElementById("contactInfo").innerHTML = "";
 }
 
 function renderContactInfoMobile(i) {
