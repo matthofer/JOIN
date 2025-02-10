@@ -47,6 +47,7 @@ input[name="category"] {
     background-repeat: no-repeat;
     background-position: 95%;
     z-index: 2;
+    cursor: pointer;
 }
 
 input[name="category"]::placeholder {
