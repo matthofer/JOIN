@@ -1,0 +1,56 @@
+.boardContent {
+  background-color: #f6f7f8;
+  max-width: 1920px;
+}
+
+.boardHeadline {
+  font-size: 61px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  margin-top: 64px;
+}
+
+.inputAndSearch {
+  display: flex;
+  gap: 32px;
+}
+
+.addTaskButton {
+  width: 160px;
+  height: 48px;
+  background-color: #2a3647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  gap: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.addTaskButton:hover {
+  background-color: #29abe2;
+}
+
+.addTaskButton img {
+  height: 18px;
+  width: 18px;
+}
+
+input[name="search"] {
+  background-image: url(../assets/icons/search.svg);
+  background-repeat: no-repeat;
+  background-position: 95%;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+  padding: 12px 21px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
