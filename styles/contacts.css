@@ -579,6 +579,7 @@ main {
   justify-content: center;
   align-items: center;
   background-color: #d1d1d1;
+  margin-bottom: 32px;
 }
 
 .personIconEdit {
@@ -595,6 +596,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  padding-top: 24px;
 }
 
 .inputContainer input::placeholder {
