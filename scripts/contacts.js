@@ -200,7 +200,7 @@ function checkEmail(contactMail, id) {
 function checkPhone(contactPhone, id) {
   if (!validatePhoneNumber(contactPhone)) {
     document.getElementById(id).innerHTML +=
-      "<p>Phone number invalid!!<br>Must start with +49 and can be max. 15 characters long</p>";
+      "<p>Phone number invalid!<br>Must start with +49 and can be max. 15 characters long</p>";
     return false;
   } else {
     return true;
