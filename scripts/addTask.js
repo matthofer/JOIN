@@ -1,4 +1,6 @@
 let categorys = ["Technical Task", "User Story", "Customer Support", "Bug Fix"]
+let subtasks = [];
+
 
 async function initAddTask() {
     await loadContactsData();
@@ -105,7 +107,7 @@ function changePrio(id, svg) {
     }
 }
 
-function renderCategorys(){
+function renderCategorys() {
     let html = document.getElementById('categorys');
     html.innerHTML = "";
     for (let categorysIndex = 0; categorysIndex < categorys.length; categorysIndex++) {
@@ -114,9 +116,44 @@ function renderCategorys(){
     }
 }
 
-function selectCategory(categorysIndex){
-let categoryInput = document.getElementById('categorysDropdown');
-let category = document.getElementById(`category${categorysIndex}`).innerHTML;
-categoryInput.value = category;
-toggleDropdownCategorys();
+function selectCategory(categorysIndex) {
+    let categoryInput = document.getElementById('categorysDropdown');
+    let category = document.getElementById(`category${categorysIndex}`).innerHTML;
+    categoryInput.value = category;
+    toggleDropdownCategorys();
+}
+
+function changeSubtasksIcons() {
+    let input = document.getElementById('subtasks');
+    let subtasksMenu = document.getElementById('subtasksMenu');
+    if (input.value.length > 0) {
+        input.style.backgroundImage = "none"
+        subtasksMenu.classList.remove('d-none')
+    } else {
+        input.style.backgroundImage = "url(../assets/icons/subtasks.svg)"
+        subtasksMenu.classList.add('d-none')
+    }
+}
+
+function clearSubtasksInput(){
+    let input = document.getElementById('subtasks');
+    input.value = ""; 
+    changeSubtasksIcons();
+}
+
+function saveSubtasks(){
+    let input = document.getElementById('subtasks');
+    subtasks.push(input.value);
+    input.value = ""
+    renderSubtasks();
+    changeSubtasksIcons();
+}
+
+function renderSubtasks(){
+    let html = document.getElementById('renderedSubtasks');
+    html.innerHTML = "";
+    for (let subtasksIndex = 0; subtasksIndex < subtasks.length; subtasksIndex++) {
+        const subtask = subtasks[subtasksIndex];
+        html.innerHTML += subtasksTemplate(subtask, subtasksIndex);
+    }
 }

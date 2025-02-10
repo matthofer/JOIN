@@ -136,7 +136,14 @@
 
                                 <div class="titles">
                                     <span>Subtasks</span>
-                                    <input type="text" name="subtask" placeholder="Add new subtask">
+                                    <input onkeyup="changeSubtasksIcons()" type="text" id="subtasks" name="subtask" placeholder="Add new subtask">
+                                    <div class="subtasksMenu d-none" id="subtasksMenu" >
+                                        <img onclick="clearSubtasksInput()" src="./assets/icons/cancel.svg" alt="a cancel cross" srcset="">
+                                        <div class="dividerSubtasks"></div>
+                                        <img onclick="saveSubtasks()" src="./assets/icons/checkBlue.svg" alt="" srcset="">
+                                    </div>
+                                    <div class="renderedSubtasks" id="renderedSubtasks">
+                                    </div>
                                 </div>
                             </div>
                         </div>

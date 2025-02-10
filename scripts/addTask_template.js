@@ -1,5 +1,5 @@
-function contactDropdownTemplate(contact, contactIndex){
-    return`
+function contactDropdownTemplate(contact, contactIndex) {
+    return `
         <div class="dropDownContact" onclick="markCheckbox(${contactIndex})" id="contact${contactIndex}">
             <div class="dropDownLeft">
                 <div class="initials" style="background-color: ${contact.color};">${getIntialsOfContact(contact.name)}</div>
@@ -11,10 +11,19 @@ function contactDropdownTemplate(contact, contactIndex){
     `;
 }
 
-function categorysDropdownTemplate(categorys, categorysIndex){
+function categorysDropdownTemplate(categorys, categorysIndex) {
     return `
     <div onclick="selectCategory(${categorysIndex})" class="singleCategory">
         <span id="category${categorysIndex}">${categorys}</span>
+    </div>
+    `;
+}
+
+function subtasksTemplate(subtask, subtasksIndex) {
+    return `
+    <div class="singleSubtask" id="singleSubtask${subtasksIndex}">
+        <div class="dot"></div>
+        <span>${subtask}</span>
     </div>
     `;
 }
