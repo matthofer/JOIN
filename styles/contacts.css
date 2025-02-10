@@ -412,7 +412,7 @@ main {
   align-items: center;
   justify-content: center;
   border-radius: 60px;
-  border-radius: 2px solid white;
+  border: 2px solid white;
   font-size: 47px;
   color: white;
 }
@@ -528,6 +528,9 @@ main {
   font-weight: 400;
 }
 .overlayRightHalf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 60%;
 }
 
@@ -576,6 +579,7 @@ main {
 }
 
 .inputAndButtons {
+  width: 422px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -650,6 +654,16 @@ main {
   background-color: #29abe2;
 }
 
+.save {
+  height: 57px;
+  width: 99px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #2a3647;
+  border-radius: 10px;
+}
+
 .overLayButton img {
   height: 22px;
   width: 22px;
@@ -666,9 +680,9 @@ main {
 }
 
 .inputContainer input {
-  width: 100%;
+  width: 422px;
   height: 50px;
-  font-size: 16px;
+  font-size: 20px;
   border: 1px solid #ccc;
   padding-left: 12px;
   border-radius: 8px;
