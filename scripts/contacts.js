@@ -325,6 +325,17 @@ async function deleteContactInEditMode(i) {
   contactInfoRef.innerHTML = "";
   await loadContactsData();
   renderContacts();
-  closeOverlay();
+  closeEditOverlay();
   showMessage("Contact successfully deleted");
+}
+
+async function deleteContactInMobileEditMode(i, event) {
+  let contactInfoRef = document.getElementById("mobileContactInfo");
+  await deleteData(`/contacts/${contacts[i].firebaseid}`);
+  contactInfoRef.innerHTML = "";
+  await loadContactsData();
+  renderContacts();
+  closeMobileInfo();
+  showMessage("Contact successfully deleted");
+  event.stopPropagation(event);
 }

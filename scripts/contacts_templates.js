@@ -98,11 +98,11 @@ function getContactInfoTemplateMobile(i, initials) {
               </div>
             </div>
             <div id="mobileEditButton" class="respContactBtnContainer respBtnclosed">
-              <div class="editDeleteBtn">
+              <div onclick="openEditContactOverlay(${i})" class="editDeleteBtn">
                 <img class="svg" src="./assets/icons/edit_contact.svg" />
                 <p>Edit</p>
               </div>
-              <div class="editDeleteBtn">
+              <div onclick="deleteContactInMobileEditMode(${i}, event)" class="editDeleteBtn">
                 <img class="svg" src="./assets/icons/delete_contact.svg" />
                 <p>Delete</p>
               </div>
