@@ -157,3 +157,24 @@ function renderSubtasks(){
         html.innerHTML += subtasksTemplate(subtask, subtasksIndex);
     }
 }
+
+
+function showSubtaskMenu(subtasksIndex){
+    let menu = document.getElementById(`singleSubtaskMenu${subtasksIndex}`);
+    menu.classList.remove('d-none');
+}
+
+function closeSubtaskMenu(subtasksIndex){
+    let menu = document.getElementById(`singleSubtaskMenu${subtasksIndex}`);
+    menu.classList.add('d-none');
+}
+
+function deleteSubtask(subtasksIndex){
+subtasks.splice(subtasksIndex, 1)
+renderSubtasks();
+}
+
+function editSubtask(subtasksIndex){
+    let subTask = document.getElementById(`editSpan${subtasksIndex}`)
+    subTask.setAttribute('contenteditable', 'true')
+}

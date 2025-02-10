@@ -426,7 +426,7 @@
     gap: 12px;
     padding: 4px 0;
     padding-left: 24px;
-    
+    justify-content: space-between;
 }
 
 .singleSubtask span{
@@ -447,5 +447,32 @@
     border-radius: 10px;
 }
 
+
+.singleSubtaskMenu{
+    flex-direction: row !important;
+    padding-right: 10px;
+}
+
+.singleSubtaskMenu img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.singleSubtaskLeft{
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+    padding-left: 24px;
+    justify-content: space-between;
+}
+
+.subtaskMenuDivider{
+    width: 1px;
+    height: 24px;
+    background-color: black;
+    margin: 0 2px;
+}
 
 

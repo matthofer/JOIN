@@ -21,9 +21,16 @@ function categorysDropdownTemplate(categorys, categorysIndex) {
 
 function subtasksTemplate(subtask, subtasksIndex) {
     return `
-    <div class="singleSubtask" id="singleSubtask${subtasksIndex}">
-        <div class="dot"></div>
-        <span>${subtask}</span>
+    <div ondblclick="editSubtask(${subtasksIndex})" onmouseover="showSubtaskMenu(${subtasksIndex})" onmouseleave="closeSubtaskMenu(${subtasksIndex})" class="singleSubtask" id="singleSubtask${subtasksIndex}">
+        <div class="singleSubtaskLeft">
+            <div class="dot"></div>
+            <span id="editSpan${subtasksIndex}">${subtask}</span>
+        </div>
+        <div  class="singleSubtaskMenu d-none" id="singleSubtaskMenu${subtasksIndex}">
+            <img src="./assets/icons/edit_contact.svg">
+            <div class="subtaskMenuDivider"></div>
+            <img onclick="deleteSubtask(${subtasksIndex})" src="./assets/icons/trash.svg">
+        </div>
     </div>
     `;
 }
