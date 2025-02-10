@@ -30,7 +30,7 @@ async function loadContactsData(path = "/contacts") {
 function getFirstLettersSorted(contactsArr) {
   let firstLettersOfContacts = [];
   for (let i = 0; i < contactsArr.length; i++) {
-    let firstLetter = contactsArr[i].name[0];
+    let firstLetter = contactsArr[i].name[0].toUpperCase();
     if (!firstLettersOfContacts.includes(firstLetter)) {
       firstLettersOfContacts.push(firstLetter);
     }
@@ -152,7 +152,7 @@ function cleanInputfields() {
 
 async function createNewContact() {
   document.getElementById("addErrorMessage").innerHTML = "";
-  let name = fristLetterUpperCase(document.getElementById("contactName").value);
+  let name = document.getElementById("contactName").value;
   let mail = document.getElementById("contactMail").value;
   let phone = document.getElementById("contactPhone").value;
   let validationResult = validateInputs(name, mail, phone, "addErrorMessage");
@@ -277,9 +277,7 @@ async function fillInputfields(i) {
 
 async function editContact(i) {
   document.getElementById("editErrorMessage").innerHTML = "";
-  let name = fristLetterUpperCase(
-    document.getElementById("contactNameEdit").value
-  );
+  let name = document.getElementById("contactNameEdit").value;
   let mail = document.getElementById("contactMailEdit").value;
   let phone = document.getElementById("contactPhoneEdit").value;
   let validationResult = validateInputs(name, mail, phone, "editErrorMessage");
