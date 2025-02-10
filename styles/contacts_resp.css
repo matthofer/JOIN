@@ -113,8 +113,8 @@
 
   .overlayContent {
     flex-direction: column;
-    height: clamp(400px, 760px, 760px);
-    width: clamp(300px, 396px, 396px);
+    height: clamp(250px, 75%, 760px);
+    width: clamp(300px, 90%, 396px);
   }
 
   .overlayLeftHalf {
@@ -122,7 +122,7 @@
     justify-content: flex-start;
     flex-direction: column;
     color: #ffffff;
-    height: 50%;
+    height: 40%;
     width: 100%;
     background: #2a3647;
     border-radius: 30px 30px 0 0;
@@ -174,7 +174,7 @@
 
   .personIcon {
     position: absolute;
-    bottom: calc(50% - -130px);
+    bottom: calc(50% - -150px);
     left: calc(50% - 60px);
     height: 120px;
     width: 120px;
@@ -187,7 +187,7 @@
 
   .personIconEdit {
     position: absolute;
-    bottom: calc(50% - -130px);
+    bottom: calc(50% - -140px);
     left: calc(50% - 60px);
     height: 120px;
     width: 120px;
@@ -199,7 +199,7 @@
 
   .overlayRightHalf {
     width: 100%;
-    height: 50%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -209,7 +209,9 @@
     position: relative;
     width: 100%;
     margin-top: 0px;
-    padding: 0 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
   }
 
   .inputContainer input {
@@ -361,7 +363,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .respNavbarContent {
     padding-left: 8px;
     padding-right: 8px;
@@ -383,6 +385,57 @@
   .email {
     font-size: 14px;
   }
+
+  .overlayLeftHalf h2 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .personIcon {
+    height: 100px;
+    width: 100px;
+    left: calc(50% - 50px);
+  }
+
+  .personIconEdit {
+    height: 100px;
+    width: 100px;
+    left: calc(50% - 50px);
+  }
+
+  .intialBig {
+    height: 90px;
+    width: 90px;
+    font-size: 28px;
+  }
+
+  .intialMobile {
+    height: 80px;
+    width: 80px;
+    font-size: 24px;
+  }
+
+  .general h2 {
+    font-size: 24px;
+  }
+
+  #addErrorMessage {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  #addErrorMessage p {
+    font-size: 14px;
+  }
+
+  #editErrorMessage {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  #editErrorMessage p {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -401,6 +454,16 @@
 
   .respNavButtonRight a {
     font-size: 14px;
+  }
+
+  .intialMobile {
+    height: 70px;
+    width: 70px;
+    font-size: 20px;
+  }
+
+  .general h2 {
+    font-size: 20px;
   }
 }
 
