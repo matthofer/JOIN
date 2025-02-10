@@ -131,7 +131,7 @@ function openMobileEditButton() {
 }
 
 function openAddContactOverlay() {
-  document.getElementById("validationErrorMessage").innerHTML = "";
+  document.getElementById("addErrorMessage").innerHTML = "";
   document.getElementById("overlay").classList.remove("overlayClosed");
 }
 
@@ -256,6 +256,7 @@ async function deleteContact(i) {
 }
 
 function openEditContactOverlay(i) {
+  document.getElementById("editErrorMessage").innerHTML = "";
   let intials = getIntialsOfContact(contacts[i].name);
   renderIntialsAndButtonsInEditMode(i, intials);
   document.getElementById("overlayEdit").classList.remove("overlayClosed");
