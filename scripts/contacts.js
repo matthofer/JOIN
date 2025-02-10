@@ -81,7 +81,7 @@ function openDetails(i, contactID) {
 function openDetailsDesktop(i, contactID) {
   let contactInfoRef = document.getElementById("contactInfo");
   if (activeContact == contactID) {
-    contactInfoRef.classList.add("detailClosed");
+    renderContactInfo(i);
     activeContact = null;
     return;
   }
@@ -141,7 +141,11 @@ function closeOverlay() {
 }
 
 function closeEditOverlay() {
+  let screenWidth = window.innerWidth;
   document.getElementById("overlayEdit").classList.add("overlayClosed");
+  if (screenWidth <= 1100) {
+    document.getElementById("mobileEditButton").classList.add("respBtnclosed");
+  }
 }
 
 function cleanInputfields() {
@@ -285,7 +289,7 @@ async function editContact(i) {
     await updateContact(i, name, mail, phone, "editErrorMessage");
     await loadContactsData();
     renderContacts();
-    renderContactInfo(i);
+    renderContactInfos(i);
     closeEditOverlay();
     showMessage("Contact successfully edited");
   }
@@ -322,4 +326,13 @@ async function deleteContactInMobileEditMode(i, event) {
   closeMobileInfo();
   showMessage("Contact successfully deleted");
   event.stopPropagation(event);
+}
+
+function renderContactInfos(i) {
+  let screenWidth = window.innerWidth;
+  if (screenWidth <= 1100) {
+    renderContactInfoMobile(i);
+  } else {
+    renderContactInfo(i);
+  }
 }
