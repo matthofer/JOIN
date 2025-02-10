@@ -372,6 +372,12 @@
   }
 }
 
+@media (max-width: 600px) {
+  .inputContainer input {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 500px) {
   .respNavbarContent {
     padding-left: 8px;
