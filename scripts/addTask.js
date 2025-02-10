@@ -18,8 +18,8 @@ function toggleDropdown(id) {
     }
 }
 
-function toggleDropdownCategorys(id) {
-    let dropdown = document.getElementById(id);
+function toggleDropdownCategorys() {
+    let dropdown = document.getElementById('categorys');
     let inputImg = document.getElementById("categorysDropdown")
     dropdown.classList.toggle('dropdown');
     if (dropdown.classList.contains('dropdown')) {
@@ -114,3 +114,9 @@ function renderCategorys(){
     }
 }
 
+function selectCategory(categorysIndex){
+let categoryInput = document.getElementById('categorysDropdown');
+let category = document.getElementById(`category${categorysIndex}`).innerHTML;
+categoryInput.value = category;
+toggleDropdownCategorys();
+}

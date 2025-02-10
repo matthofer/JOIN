@@ -11,10 +11,10 @@ function contactDropdownTemplate(contact, contactIndex){
     `;
 }
 
-function categorysDropdownTemplate(categorys, index){
+function categorysDropdownTemplate(categorys, categorysIndex){
     return `
-    <div onclick="" class="singleCategory">
-        <span id="${index}">${categorys}</span>
+    <div onclick="selectCategory(${categorysIndex})" class="singleCategory">
+        <span id="category${categorysIndex}">${categorys}</span>
     </div>
     `;
 }
