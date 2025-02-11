@@ -559,3 +559,84 @@
 .addButtonRemoved {
   display: none;
 }
+
+@media (max-height: 670px) {
+  .inputContainer input {
+    height: 24px;
+  }
+
+  .create {
+    height: 40px;
+    width: 214px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #2a3647;
+    border-radius: 10px;
+  }
+
+  .personIcon {
+    position: absolute;
+    bottom: calc(50% - -100px);
+    left: calc(50% - 30px);
+    height: 70px;
+    width: 70px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1d1d1;
+    margin-bottom: 0;
+  }
+
+  .personIcon img {
+    height: 24px;
+    width: 24px;
+  }
+
+  .overLayButtonWrapper {
+    margin-top: 0;
+  }
+
+  .inputAndButtons {
+    gap: 12px;
+    padding-top: 0;
+  }
+
+  #addErrorMessage {
+    margin-top: 0;
+  }
+
+  .inputContainer .icon {
+    height: 14px;
+  }
+
+  .save {
+    height: 42px;
+    width: 99px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #2a3647;
+    border-radius: 10px;
+  }
+
+  .delete {
+    height: 42px;
+    width: 99px;
+    border: 1px solid #2a3647;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .intialBig {
+    height: 70px;
+    width: 70px;
+    font-size: 24px;
+  }
+
+  .personIconEdit {
+    bottom: calc(50% - -75px);
+  }
+}
