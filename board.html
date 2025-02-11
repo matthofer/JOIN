@@ -108,16 +108,20 @@
             <div class="boardColumns">
               <div class="column">
                 <div class="columnHead">
-                  <h4 class="columnname">To do</h4>
+                  <p class="columnName">To do</p>
                   <div class="addTaskColButton">
                     <img src="./assets/icons/plus_button.svg" alt="" />
                   </div>
                 </div>
-                <div id="todo" class="columnContent"></div>
+                <div id="todo" class="columnContent">
+                  <div class="noTask">
+                    <p>No Task in To do</p>
+                  </div>
+                </div>
               </div>
               <div class="column">
                 <div class="columnHead">
-                  <h4 class="columnname">In progress</h4>
+                  <p class="columnName">In progress</p>
                   <div class="addTaskColButton">
                     <img
                       class="addTaskColButton"
@@ -126,11 +130,45 @@
                     />
                   </div>
                 </div>
-                <div id="inProgress" class="columnContent"></div>
+                <div id="inProgress" class="columnContent">
+                  <div class="task">
+                    <div id="category" class="category">User Story</div>
+                    <div class="taskTitleAndDscr">
+                      <p id="taskTitle" class="taskTitle">
+                        Kochwelt Page & Recipe Recommender
+                      </p>
+                      <p id="taskDscr" class="taskDscr">
+                        Build start page with recipe recommendation...
+                      </p>
+                    </div>
+                    <div class="subtaskStatus">
+                      <div class="progressBar">
+                        <div id="statusBar" class="statusBar"></div>
+                      </div>
+                      <span class="subTaskText">
+                        <span class="statusTextSubtasks"
+                          ><p id="subTaskFrom">1</p>
+                          /
+                          <p id="subTaskTo">2</p>
+                        </span>
+                        <p>Substasks</p>
+                      </span>
+                    </div>
+                    <div class="intialsAndPrio">
+                      <div class="initials"></div>
+                      <img
+                        id="prio"
+                        class="prio"
+                        src="./assets/icons/prio_medium.svg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="column">
                 <div class="columnHead">
-                  <h4 class="columnname">Await feedback</h4>
+                  <p class="columnName">Await feedback</p>
                   <div class="addTaskColButton">
                     <img src="./assets/icons/plus_button.svg" alt="" />
                   </div>
@@ -139,10 +177,7 @@
               </div>
               <div class="column">
                 <div class="columnHead">
-                  <h4 class="columnname">Done</h4>
-                  <div class="addTaskColButton">
-                    <img src="./assets/icons/plus_button.svg" alt="" />
-                  </div>
+                  <p class="columnName">Done</p>
                 </div>
                 <div id="done" class="columnContent"></div>
               </div>

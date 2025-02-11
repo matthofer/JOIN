@@ -12,7 +12,8 @@
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  margin-top: 64px;
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .inputAndSearch {
@@ -63,7 +64,6 @@ input[name="search"] {
 
 .column {
   width: 25%;
-  background-color: #29abe2;
 }
 
 .columnHead {
@@ -72,6 +72,96 @@ input[name="search"] {
   align-items: center;
 }
 
+.columnName {
+  font-size: 20px;
+  font-weight: 700;
+  color: #42526e;
+}
+
 .addTaskColButton {
   cursor: pointer;
+}
+
+.addTaskColButton:hover {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(93%) saturate(423%)
+    hue-rotate(173deg) brightness(92%) contrast(94%);
+}
+
+.addTaskColButton {
+  cursor: pointer;
+}
+
+.noTask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: #e7e7e7;
+  border-radius: 10px;
+  border: 1px dashed #a8a8a8;
+  margin-top: 16px;
+}
+
+.noTask p {
+  color: #a8a8a8;
+}
+
+.task {
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.taskTitleAndDscr {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.taskTitle {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.taskDscr {
+  font-size: 16px;
+  font-weight: 400;
+  color: #a8a8a8;
+}
+
+.subtaskStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progressBar {
+  width: 80%;
+  height: 12px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+.statusBar {
+  width: 60%;
+  height: 12px;
+  background-color: #29abe2;
+  border-radius: 10px;
+}
+
+.subTaskText {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.subTaskText p {
+  font-size: 12px;
+}
+
+.statusTextSubtasks {
+  display: flex;
+  align-items: center;
 }
