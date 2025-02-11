@@ -37,7 +37,6 @@ function handleSuccessfulLogin(user) {
 }
 
 function handleLoginError(errorElement) {
-  errorElement.innerHTML = "";
   errorElement.innerHTML = "<p>Please fill in all input fields!</p>";
   setTimeout(() => {
     errorElement.innerHTML = "";

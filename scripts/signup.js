@@ -57,7 +57,7 @@ async function handleSignup() {
   );
   if (validationResult) {
     await createUser(name, email, password);
-    alert("Signup successful! Redirecting to login...");
+    // Insert Toast-Message here + timeout ----------------------------------------------
     window.location.href = "login.html";
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
@@ -99,7 +99,7 @@ function checkEmptyInput(name, email, password, confirmPassword, id) {
 function checkEmail(email, id) {
   let errorElement = document.getElementById(id);
   if (!validateEmail(email)) {
-    errorElement.innerHTML +=
+    errorElement.innerHTML =
       "<p>Please enter a valid email address<br>e.g. max.muster@web.de</p>";
     setTimeout(() => {
       errorElement.innerHTML = "";
@@ -118,7 +118,7 @@ function validateEmail(email) {
 function checkPassword(password, id) {
   let errorElement = document.getElementById(id);
   if (password.length < 8) {
-    errorElement.innerHTML +=
+    errorElement.innerHTML =
       "<p>Password must be at least 8 characters long!</p>";
     setTimeout(() => {
       errorElement.innerHTML = "";
@@ -132,7 +132,7 @@ function checkPassword(password, id) {
 function checkConfirmPassword(password, confirmPassword, id) {
   let errorElement = document.getElementById(id);
   if (password !== confirmPassword) {
-    errorElement.innerHTML += "<p>Passwords do not match!</p>";
+    errorElement.innerHTML = "<p>Passwords do not match!</p>";
     setTimeout(() => {
       errorElement.innerHTML = "";
     }, 4000);
