@@ -1,3 +1,15 @@
+body {
+  overflow: hidden;
+}
+
+.overallContent {
+  display: flex;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+}
+
 .boardContent {
   background-color: #f6f7f8;
   max-width: 1920px;
@@ -60,6 +72,7 @@ input[name="search"] {
   display: flex;
   width: 100%;
   gap: 24px;
+  max-height: 70dvh;
 }
 
 .column {
@@ -89,6 +102,18 @@ input[name="search"] {
 
 .addTaskColButton {
   cursor: pointer;
+}
+
+.columnContent {
+  overflow-y: scroll;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding-bottom: 32px;
+}
+
+.columnContent::-webkit-scrollbar {
+  display: none;
 }
 
 .noTask {
