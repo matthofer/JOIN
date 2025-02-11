@@ -137,11 +137,7 @@ function closeOverlay() {
 }
 
 function closeEditOverlay() {
-  let screenWidth = window.innerWidth;
   document.getElementById("overlayEdit").classList.add("overlayClosed");
-  /* if (screenWidth <= 1100) {
-    document.getElementById("mobileEditButton").classList.add("respBtnclosed");
-  } */
 }
 
 function cleanInputfields() {
