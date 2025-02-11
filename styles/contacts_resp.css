@@ -114,7 +114,7 @@
   .overlayContent {
     flex-direction: column;
     height: clamp(250px, 75%, 760px);
-    width: clamp(300px, 90%, 396px);
+    width: clamp(380px, 90%, 396px);
   }
 
   .overlayLeftHalf {
@@ -478,6 +478,12 @@
   }
 }
 
+@media (max-width: 400px) {
+  .overlayContent {
+    width: clamp(340px, 90%, 396px);
+  }
+}
+
 @media (max-width: 360px) {
   .navSvg {
     width: 25px;
@@ -509,6 +515,10 @@
   .message {
     width: 300px;
     left: calc(50% - 150px);
+  }
+
+  .overlayContent {
+    width: clamp(310px, 90%, 396px);
   }
 }
 
@@ -562,7 +572,7 @@
 
 @media (max-height: 670px) {
   .inputContainer input {
-    height: 24px;
+    height: 30px;
   }
 
   .create {
@@ -573,14 +583,15 @@
     color: #ffffff;
     background-color: #2a3647;
     border-radius: 10px;
+    margin-top: 8px;
   }
 
   .personIcon {
     position: absolute;
-    bottom: calc(50% - -100px);
-    left: calc(50% - 30px);
-    height: 70px;
-    width: 70px;
+    bottom: calc(50% - -105px);
+    left: calc(50% - 40px);
+    height: 90px;
+    width: 90px;
     border-radius: 60px;
     display: flex;
     justify-content: center;
@@ -595,7 +606,7 @@
   }
 
   .overLayButtonWrapper {
-    margin-top: 0;
+    margin-top: 8px;
   }
 
   .inputAndButtons {
@@ -631,16 +642,26 @@
   }
 
   .intialBig {
-    height: 70px;
-    width: 70px;
+    height: 90px;
+    width: 90px;
     font-size: 24px;
   }
 
   .personIconEdit {
-    bottom: calc(50% - -75px);
+    bottom: calc(50% - -85px);
   }
 
   .inputContainer input {
     font-size: 15px;
+  }
+
+  .overlay {
+    height: calc(100dvh - 70px);
+  }
+
+  .overlayContent {
+    flex-direction: column;
+    height: clamp(550px, 75%, 760px);
+    width: clamp(350px, 90%, 396px);
   }
 }
