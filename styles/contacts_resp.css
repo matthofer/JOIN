@@ -639,4 +639,8 @@
   .personIconEdit {
     bottom: calc(50% - -75px);
   }
+
+  .inputContainer input {
+    font-size: 15px;
+  }
 }
