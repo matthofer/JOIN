@@ -43,21 +43,166 @@ async function createUser(name, email, password) {
   }
 }
 
-async function handleSignup(event) {
-  event.preventDefault();
-
+async function handleSignup() {
   let name = document.getElementById("name").value;
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
-
-  let success = await createUser(name, email, password);
-
-  if (success) {
+  let confirmPassword = document.getElementById("confirmPassword").value;
+  let validationResult = validateInputs(
+    name,
+    email,
+    password,
+    confirmPassword,
+    "addErrorMessage"
+  );
+  if (validationResult) {
+    await createUser(name, email, password);
     alert("Signup successful! Redirecting to login...");
     window.location.href = "login.html";
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
-  } else {
-    alert("Signup failed. Please try again.");
   }
+}
+
+function validateInputs(name, email, password, confirmPassword, id) {
+  if (
+    checkEmptyInput(name, email, password, confirmPassword, id) &&
+    checkEmail(email, id) &&
+    checkPassword(password, id) &&
+    checkConfirmPassword(password, confirmPassword, id) &&
+    checkPrivacyPolicyTick()
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkEmptyInput(name, email, password, confirmPassword, id) {
+  let errorElement = document.getElementById(id);
+  if (
+    name === "" ||
+    email === "" ||
+    password === "" ||
+    confirmPassword === ""
+  ) {
+    errorElement.innerHTML = "<p>Please fill in all input fields!</p>";
+    setTimeout(() => {
+      errorElement.innerHTML = "";
+    }, 4000);
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function checkEmail(email, id) {
+  let errorElement = document.getElementById(id);
+  if (!validateEmail(email)) {
+    errorElement.innerHTML +=
+      "<p>Please enter a valid email address<br>e.g. max.muster@web.de</p>";
+    setTimeout(() => {
+      errorElement.innerHTML = "";
+    }, 4000);
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function validateEmail(email) {
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{1,3}$/;
+  return emailRegex.test(email);
+}
+
+function checkPassword(password, id) {
+  let errorElement = document.getElementById(id);
+  if (password.length < 8) {
+    errorElement.innerHTML +=
+      "<p>Password must be at least 8 characters long!</p>";
+    setTimeout(() => {
+      errorElement.innerHTML = "";
+    }, 4000);
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function checkConfirmPassword(password, confirmPassword, id) {
+  let errorElement = document.getElementById(id);
+  if (password !== confirmPassword) {
+    errorElement.innerHTML += "<p>Passwords do not match!</p>";
+    setTimeout(() => {
+      errorElement.innerHTML = "";
+    }, 4000);
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function checkPrivacyPolicyTick() {
+  let checkbox = document.getElementById("customCheckbox");
+  let errorElement = document.getElementById("addErrorMessage");
+  if (!checkbox.checked) {
+    errorElement.innerHTML = "<p>Please accept the privacy policy!</p>";
+    setTimeout(() => {
+      errorElement.innerHTML = "";
+    }, 4000);
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function checkPasswordInput() {
+  let password = document.getElementById("password").value;
+  let crossedEyeIcon = document.getElementById("crossedEyeIcon");
+  let lockIcon = document.getElementById("lockIcon");
+
+  if (password.length >= 1) {
+    lockIcon.classList.add("d-none");
+    crossedEyeIcon.classList.remove("d-none");
+  } else {
+    lockIcon.classList.remove("d-none");
+    crossedEyeIcon.classList.add("d-none");
+  }
+}
+
+function checkConfirmPasswordInput() {
+  let confirmPassword = document.getElementById("confirmPassword").value;
+  let confirmCrossedEyeIcon = document.getElementById("confirmCrossedEyeIcon");
+  let confirmLockIcon = document.getElementById("confirmLockIcon");
+
+  if (confirmPassword.length >= 1) {
+    confirmLockIcon.classList.add("d-none");
+    confirmCrossedEyeIcon.classList.remove("d-none");
+  } else {
+    confirmLockIcon.classList.remove("d-none");
+    confirmCrossedEyeIcon.classList.add("d-none");
+  }
+}
+
+function showPassword() {
+  let passwordInput = document.getElementById("password");
+  passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+}
+
+function showPassword() {
+  let passwordInput = document.getElementById("password");
+  let eyeIcon = document.getElementById("eyeIcon");
+  let crossedEyeIcon = document.getElementById("crossedEyeIcon");
+  passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+  eyeIcon.classList.toggle("d-none");
+  crossedEyeIcon.classList.toggle("d-none");
+}
+
+function showConfirmPassword() {
+  let passwordInput = document.getElementById("confirmPassword");
+  let confirmEyeIcon = document.getElementById("confirmEyeIcon");
+  let confirmCrossedEyeIcon = document.getElementById("confirmCrossedEyeIcon");
+  passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+  confirmEyeIcon.classList.toggle("d-none");
+  confirmCrossedEyeIcon.classList.toggle("d-none");
 }

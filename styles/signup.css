@@ -84,17 +84,20 @@ h1 {
 }
 
 .formGroup {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 24px;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  padding-bottom: 6px;
 }
 
 .formGroup input {
+  height: 40px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 12px 16px;
-  width: 350px;
+  padding-left: 12px;
+  width: 384px;
+  transition: border-color 0.3s;
+  outline: none;
 }
 
 .formGroup input::placeholder {
@@ -103,35 +106,17 @@ h1 {
 }
 
 .formGroup input:focus {
-  outline: none;
+  border-color: #29abe2;
 }
 
-#name {
-  background-image: url(../assets/icons/person.svg);
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  background-size: 18px;
-}
-
-#email {
-  background-image: url(../assets/icons/mail.svg);
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  background-size: 18px;
-}
-
-#password {
-  background-image: url(../assets/icons/lock.svg);
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  background-size: 15px;
-}
-
-#confirmPassword {
-  background-image: url(../assets/icons/lock.svg);
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  background-size: 15px;
+.formGroup img {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-60%);
+  width: 16px;
+  height: 20px;
+  max-width: calc(100% - 16px);
 }
 
 .privacyCheckbox {
@@ -140,13 +125,13 @@ h1 {
   align-items: center;
   gap: 6px;
   font-size: 14px;
+  margin-top: 8px;
 }
 
 .privacyCheckbox a {
   text-decoration: none;
   color: #29abe2;
-  transition: transform 125ms ease-in-out;
-  transition: underline 125ms ease-in-out;
+  transition: all 125ms ease-in-out;
 }
 
 .privacyCheckbox a:hover {
@@ -189,7 +174,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .loginButton {
@@ -202,12 +187,24 @@ h1 {
   font-size: 16px;
   font-weight: 700;
   transition: background-color 125ms ease-in-out;
-  margin-bottom: 26px;
+  margin-bottom: 12px;
 }
 
 .loginButton:hover {
   background-color: #29abe2;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+#addErrorMessage {
+  height: 16px;
+  margin-bottom: 0px;
+}
+
+#addErrorMessage p {
+  color: red;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 footer {
@@ -250,4 +247,16 @@ footer {
   color: #29abe2;
   font-weight: 510;
   margin-right: 13px;
+}
+
+.cursorPointer:hover {
+  cursor: pointer;
+}
+
+.d-none {
+  display: none;
+}
+
+.pointerEvent {
+  pointer-events: none;
 }

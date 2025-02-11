@@ -11,7 +11,6 @@
       type="image/x-icon"
       href="./assets/icons/fav_join_logo.png"
     />
-    <script src="./script.js"></script>
   </head>
   <body>
     <header>
@@ -33,56 +32,100 @@
             <h1>Sign up</h1>
           </div>
           <div class="separator"></div>
-          <form onsubmit="handleSignup(event)">
-            <div class="formGroup">
-              <input placeholder="Name" type="name" id="name" required />
-            </div>
-            <div class="formGroup">
-              <input placeholder="Email" type="email" id="email" required />
-            </div>
-            <div class="formGroup">
+          <div class="formGroup">
+            <input placeholder="Name" type="text" id="name" />
+            <img class="pointerEvent" src="./assets/icons/person.svg" alt="" />
+          </div>
+          <div class="formGroup">
+            <input placeholder="Email" type="text" id="email" />
+            <img class="pointerEvent" src="./assets/icons/mail.svg" alt="" />
+          </div>
+          <div class="formGroup">
+            <img
+              id="eyeIcon"
+              class="cursorPointer d-none"
+              onclick="showPassword()"
+              src="./assets/icons/visibility_on.svg"
+              alt=""
+            />
+            <img
+              id="crossedEyeIcon"
+              class="cursorPointer d-none"
+              onclick="showPassword()"
+              src="./assets/icons/visibility_off.svg"
+              alt=""
+            />
+            <img
+              id="lockIcon"
+              class="pointerEvent"
+              src="./assets/icons/lock.svg"
+              alt=""
+            />
+            <input
+              oninput="checkPasswordInput()"
+              placeholder="Password"
+              type="password"
+              id="password"
+              maxlength="20"
+            />
+          </div>
+          <div class="formGroup">
+            <img
+              id="confirmEyeIcon"
+              class="cursorPointer d-none"
+              onclick="showConfirmPassword()"
+              src="./assets/icons/visibility_on.svg"
+              alt=""
+            />
+            <img
+              id="confirmCrossedEyeIcon"
+              class="cursorPointer d-none"
+              onclick="showConfirmPassword()"
+              src="./assets/icons/visibility_off.svg"
+              alt=""
+            />
+            <img
+              id="confirmLockIcon"
+              class="pointerEvent"
+              src="./assets/icons/lock.svg"
+              alt=""
+            />
+            <input
+              oninput="checkConfirmPasswordInput()"
+              placeholder="Confirm Password"
+              type="password"
+              id="confirmPassword"
+              maxlength="20"
+            />
+          </div>
+          <div class="privacyCheckbox">
+            <label for="customCheckbox" class="customCheckbox">
               <input
-                placeholder="Password"
-                type="password"
-                id="password"
-                required
+                type="checkbox"
+                id="customCheckbox"
+                style="opacity: 0; position: absolute"
               />
-            </div>
-            <div class="formGroup">
-              <input
-                placeholder="Confirm Password"
-                type="password"
-                id="confirmPassword"
-                required
+              <img
+                src="./assets/icons/checkbox-unticked.svg"
+                alt="Unchecked"
+                class="checkboxIcon unchecked"
               />
-            </div>
-            <div class="privacyCheckbox">
-              <label for="customCheckbox" class="customCheckbox">
-                <input
-                  type="checkbox"
-                  id="customCheckbox"
-                  required
-                  style="opacity: 0; position: absolute"
-                />
-                <img
-                  src="./assets/icons/checkbox-unticked.svg"
-                  alt="Unchecked"
-                  class="checkboxIcon unchecked"
-                />
-                <img
-                  src="./assets/icons/checkbox-ticked.svg"
-                  alt="Checked"
-                  class="checkboxIcon checked"
-                  style="display: none"
-                />
-              </label>
-              <span>I accept the</span>
-              <a href="./privacy_policy.html">Privacy Policy</a>
-            </div>
-            <div class="loginButtonsContainer">
-              <button class="loginButton" type="submit">Sign up</button>
-            </div>
-          </form>
+              <img
+                src="./assets/icons/checkbox-ticked.svg"
+                alt="Checked"
+                class="checkboxIcon checked"
+                style="display: none"
+              />
+            </label>
+            <span>I accept the</span>
+            <a href="./privacy_policy.html">Privacy Policy</a>
+          </div>
+          <div class="loginButtonsContainer">
+            <button onclick="handleSignup()" class="loginButton" type="button">
+              Sign up
+            </button>
+          </div>
+          <div id="addErrorMessage"></div>
         </div>
       </div>
     </main>
@@ -94,6 +137,7 @@
         <a href="./legal_notice.html">Legal notice</a>
       </div>
     </footer>
+    <script src="./script.js"></script>
     <script src="./scripts/signup.js"></script>
   </body>
 </html>

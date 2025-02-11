@@ -32,28 +32,48 @@
         <div class="loginForm">
           <h1>Log in</h1>
           <div class="separator"></div>
-          <form onsubmit="loginUser(event)">
-            <div class="formGroup">
-              <input placeholder="Email" type="email" id="email" required />
-            </div>
-            <div class="formGroup">
-              <input
-                placeholder="Password"
-                type="password"
-                id="password"
-                required
-              />
-            </div>
-            <div class="loginButtonsContainer">
-              <button class="loginButton" type="submit">Log in</button>
-              <button
-                onclick="openPage('summary.html')"
-                class="guestLoginButton"
-              >
-                Guest Log in
-              </button>
-            </div>
-          </form>
+          <div class="formGroup">
+            <input placeholder="Email" type="text" id="email" />
+            <img class="pointerEvent" src="./assets/icons/mail.svg" alt="" />
+          </div>
+          <div class="formGroup">
+            <img
+              id="eyeIcon"
+              class="cursorPointer d-none"
+              onclick="showPassword()"
+              src="./assets/icons/visibility_on.svg"
+              alt=""
+            />
+            <img
+              id="crossedEyeIcon"
+              class="cursorPointer d-none"
+              onclick="showPassword()"
+              src="./assets/icons/visibility_off.svg"
+              alt=""
+            />
+            <img
+              class="pointerEvent"
+              id="lockIcon"
+              src="./assets/icons/lock.svg"
+              alt=""
+            />
+            <input
+              oninput="checkPasswordInput()"
+              placeholder="Password"
+              type="password"
+              id="password"
+              maxlength="20"
+            />
+          </div>
+          <div class="loginButtonsContainer">
+            <button onclick="loginUser()" class="loginButton" type="button">
+              Log in
+            </button>
+            <button onclick="openPage('summary.html')" class="guestLoginButton">
+              Guest Log in
+            </button>
+          </div>
+          <div id="addErrorMessage"></div>
         </div>
       </div>
     </main>
