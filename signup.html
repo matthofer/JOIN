@@ -11,7 +11,7 @@
       type="image/x-icon"
       href="./assets/icons/fav_join_logo.png"
     />
-    <script src="./scripts/navigation.js"></script>
+    <script src="./script.js"></script>
   </head>
   <body>
     <header>
@@ -33,7 +33,7 @@
             <h1>Sign up</h1>
           </div>
           <div class="separator"></div>
-          <form action="./summary.html" method="get">
+          <form onsubmit="handleSignup(event)">
             <div class="formGroup">
               <input placeholder="Name" type="name" id="name" required />
             </div>
