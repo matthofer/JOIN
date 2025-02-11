@@ -3,6 +3,7 @@
   box-sizing: border-box;
   padding: 0;
   font-family: "Inter", serif;
+  scroll-behavior: smooth;
 }
 
 .sidebar {
@@ -190,9 +191,18 @@ main {
   gap: 16px;
 }
 
+.noTask {
+  width: 100%;
+  text-align: center;
+}
+
 /*Responsiv */
 
 @media (max-width: 1200px) {
+  .topBar {
+    margin-top: 100px;
+  }
+
   ::-webkit-scrollbar {
     width: 4px;
     display: none;
@@ -235,10 +245,6 @@ main {
   .stdPadding {
     padding-left: 16px;
     padding-right: 16px;
-  }
-
-  .testContainer {
-    flex-direction: column;
   }
 
   .respNavbar {
@@ -293,6 +299,84 @@ main {
 
   .respNavButton:focus .navSvg {
     filter: brightness(0) invert(1);
+  }
+}
+
+@media (max-width: 850px) {
+  .overallContent {
+    min-height: 100dvh;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    position: relative;
+  }
+
+  .boardContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .topBar {
+    flex-direction: column;
+    width: 100%;
+    height: 120px;
+  }
+
+  .respAddTask {
+    display: flex;
+  }
+
+  .addTaskButton {
+    display: none;
+  }
+
+  .searchInput {
+    display: none;
+  }
+
+  .searchInputResp {
+    display: flex;
+    width: 100%;
+  }
+
+  input[name="searchResp"] {
+    width: 100%;
+  }
+
+  .boardColumns {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap: 48px;
+  }
+
+  .column {
+    min-width: 100dvh;
+  }
+
+  .columnContent {
+    flex-direction: row;
+    gap: 16px;
+    min-width: 100dvh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 12px;
+  }
+
+  #done {
+    padding-bottom: 82px;
+  }
+
+  .task {
+    width: 30%;
+  }
+
+  .noTask {
+    height: 48px;
+  }
+
+  .columnContent::-webkit-scrollbar {
+    display: block;
   }
 }
 

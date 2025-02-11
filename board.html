@@ -94,15 +94,23 @@
         <main>
           <div class="boardContent stdPadding">
             <div class="topBar">
-              <h1 class="boardHeadline">Board</h1>
-              <div class="inputAndSearch">
-                <div class="searchInput">
-                  <input type="text" placeholder="Find Task" name="search" />
+              <div class="topBarWrapper">
+                <h1 class="boardHeadline">Board</h1>
+                <div class="inputAndSearch">
+                  <div class="searchInput">
+                    <input type="text" placeholder="Find Task" name="search" />
+                  </div>
+                  <div class="addTaskButton">
+                    <h3>Add task</h3>
+                    <img src="./assets/icons/add_white.svg" />
+                  </div>
+                  <div class="respAddTask">
+                    <img src="./assets/icons/add_white.svg" />
+                  </div>
                 </div>
-                <div class="addTaskButton">
-                  <h3>Add task</h3>
-                  <img src="./assets/icons/add_white.svg" />
-                </div>
+              </div>
+              <div class="searchInputResp">
+                <input type="text" placeholder="Find Task" name="searchResp" />
               </div>
             </div>
             <div class="boardColumns">
@@ -131,6 +139,80 @@
                   </div>
                 </div>
                 <div id="inProgress" class="columnContent">
+                  <div class="task">
+                    <div id="category" class="category">User Story</div>
+                    <div class="taskTitleAndDscr">
+                      <p id="taskTitle" class="taskTitle">
+                        Kochwelt Page & Recipe Recommender
+                      </p>
+                      <p id="taskDscr" class="taskDscr">
+                        Build start page with recipe recommendation...
+                      </p>
+                    </div>
+                    <div class="subtaskStatus">
+                      <div class="progressBar">
+                        <div id="statusBar" class="statusBar"></div>
+                      </div>
+                      <span class="subTaskText">
+                        <span class="statusTextSubtasks"
+                          ><p id="subTaskFrom">1</p>
+                          /
+                          <p id="subTaskTo">2</p>
+                        </span>
+                        <p>Substasks</p>
+                      </span>
+                    </div>
+                    <div class="intialsAndPrio">
+                      <div id="intials" class="initialWrapper">
+                        <div class="intial i1">AM</div>
+                        <div class="intial i2">EM</div>
+                        <div class="intial i3">MB</div>
+                      </div>
+                      <img
+                        id="prio"
+                        class="prio"
+                        src="./assets/icons/prio_medium.svg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="task">
+                    <div id="category" class="category">User Story</div>
+                    <div class="taskTitleAndDscr">
+                      <p id="taskTitle" class="taskTitle">
+                        Kochwelt Page & Recipe Recommender
+                      </p>
+                      <p id="taskDscr" class="taskDscr">
+                        Build start page with recipe recommendation...
+                      </p>
+                    </div>
+                    <div class="subtaskStatus">
+                      <div class="progressBar">
+                        <div id="statusBar" class="statusBar"></div>
+                      </div>
+                      <span class="subTaskText">
+                        <span class="statusTextSubtasks"
+                          ><p id="subTaskFrom">1</p>
+                          /
+                          <p id="subTaskTo">2</p>
+                        </span>
+                        <p>Substasks</p>
+                      </span>
+                    </div>
+                    <div class="intialsAndPrio">
+                      <div id="intials" class="initialWrapper">
+                        <div class="intial i1">AM</div>
+                        <div class="intial i2">EM</div>
+                        <div class="intial i3">MB</div>
+                      </div>
+                      <img
+                        id="prio"
+                        class="prio"
+                        src="./assets/icons/prio_medium.svg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
                   <div class="task">
                     <div id="category" class="category">User Story</div>
                     <div class="taskTitleAndDscr">

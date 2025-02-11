@@ -2,6 +2,14 @@ body {
   overflow: hidden;
 }
 
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "Inter", serif;
+  scroll-behavior: smooth;
+}
+
 .overallContent {
   display: flex;
   min-height: 100dvh;
@@ -28,9 +36,16 @@ body {
   margin-bottom: 32px;
 }
 
+.topBarWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .inputAndSearch {
   display: flex;
   gap: 32px;
+  align-items: center;
 }
 
 .addTaskButton {
@@ -66,6 +81,23 @@ input[name="search"] {
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
+}
+
+input[name="searchResp"] {
+  background-image: url(../assets/icons/search.svg);
+  background-repeat: no-repeat;
+  background-position: 95%;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+  padding: 12px 21px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.searchInputResp {
+  display: none;
 }
 
 .boardColumns {
@@ -109,7 +141,7 @@ input[name="search"] {
   display: flex;
   height: 100%;
   flex-direction: column;
-  padding-bottom: 32px;
+  padding-bottom: 64px;
 }
 
 .columnContent::-webkit-scrollbar {
@@ -244,4 +276,19 @@ input[name="search"] {
   position: absolute;
   left: 48px;
   bottom: calc(50% - 15px);
+}
+
+.respAddTask {
+  height: 40px;
+  width: 40px;
+  background-color: #2a3647;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.respAddTask:hover {
+  background-color: #29abe2;
 }
