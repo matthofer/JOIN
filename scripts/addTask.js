@@ -7,6 +7,7 @@ async function initAddTask() {
     renderDropdownContacts();
     changePrio('medium', 'mediumSVG')
     renderCategorys();
+    submitSubtaskWithEnter();
 }
 
 function toggleDropdown(id) {
@@ -135,13 +136,13 @@ function changeSubtasksIcons() {
     }
 }
 
-function clearSubtasksInput(){
+function clearSubtasksInput() {
     let input = document.getElementById('subtasks');
-    input.value = ""; 
+    input.value = "";
     changeSubtasksIcons();
 }
 
-function saveSubtasks(){
+function saveSubtasks() {
     let input = document.getElementById('subtasks');
     subtasks.push(input.value);
     input.value = ""
@@ -149,7 +150,7 @@ function saveSubtasks(){
     changeSubtasksIcons();
 }
 
-function renderSubtasks(){
+function renderSubtasks() {
     let html = document.getElementById('renderedSubtasks');
     html.innerHTML = "";
     for (let subtasksIndex = 0; subtasksIndex < subtasks.length; subtasksIndex++) {
@@ -159,22 +160,55 @@ function renderSubtasks(){
 }
 
 
-function showSubtaskMenu(subtasksIndex){
+function showSubtaskMenu(subtasksIndex) {
     let menu = document.getElementById(`singleSubtaskMenu${subtasksIndex}`);
     menu.classList.remove('d-none');
 }
 
-function closeSubtaskMenu(subtasksIndex){
+function closeSubtaskMenu(subtasksIndex) {
     let menu = document.getElementById(`singleSubtaskMenu${subtasksIndex}`);
     menu.classList.add('d-none');
 }
 
-function deleteSubtask(subtasksIndex){
-subtasks.splice(subtasksIndex, 1)
-renderSubtasks();
+function deleteSubtask(subtasksIndex) {
+    subtasks.splice(subtasksIndex, 1)
+    renderSubtasks();
 }
 
-function editSubtask(subtasksIndex){
+function editSubtaskDBLClick(subtasksIndex) {
     let subTask = document.getElementById(`editSpan${subtasksIndex}`)
     subTask.setAttribute('contenteditable', 'true')
 }
+
+function editSubtask(subtasksIndex) {
+    let subTask = document.getElementById(`singleSubtask${subtasksIndex}`)
+    let span = document.getElementById(`editSpan${subtasksIndex}`)
+    let editMenu = document.getElementById(`editMenu${subtasksIndex}`);
+    let hoverMenu = document.getElementById(`singleSubtaskMenu${subtasksIndex}`)
+    subTask.classList.toggle('border');
+    span.classList.toggle('white');
+    editMenu.classList.toggle('d-none');
+    hoverMenu.classList.add('visibilty');
+    editSubtaskDBLClick(subtasksIndex);
+}
+
+function saveEditedSubtask(subtasksIndex) {
+    let hoverMenu = document.getElementById(`singleSubtaskMenu${subtasksIndex}`)
+    let spanInput = document.getElementById(`editSpan${subtasksIndex}`).innerHTML;
+    hoverMenu.classList.remove('visibilty');
+    subtasks[subtasksIndex] = spanInput;
+    renderSubtasks();
+}
+
+function submitSubtaskWithEnter() {
+    let input = document.getElementById('subtasks');
+    if (input) {
+        input.addEventListener("keydown", function(event){
+            if (event.key === "Enter") {
+                event.preventDefault()
+                saveSubtasks()
+            }
+        });
+    }
+}
+ 

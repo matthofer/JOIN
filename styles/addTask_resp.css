@@ -200,4 +200,12 @@
 
     }
 
+    .subtasksMenu{
+        top: 41px;
+    }
+
+
+    .renderedSubtasks{
+        height: 150px;
+    }
 }
