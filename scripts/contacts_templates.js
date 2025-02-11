@@ -102,7 +102,7 @@ function getContactInfoTemplateMobile(i, initials) {
                 <img class="svg" src="./assets/icons/edit_contact.svg" />
                 <p>Edit</p>
               </div>
-              <div onclick="deleteContactInMobileEditMode(${i}, event)" class="editDeleteBtn">
+              <div onclick="deleteContactInMobileInfo(${i}, event)" class="editDeleteBtn">
                 <img class="svg" src="./assets/icons/delete_contact.svg" />
                 <p>Delete</p>
               </div>
@@ -113,7 +113,7 @@ function getContactInfoTemplateMobile(i, initials) {
 }
 
 function getEditButtonsTemplate(i) {
-  return `  <div onclick="deleteContactInEditMode(${i})" class="overLayButton delete">
+  return `  <div onclick="deleteContactInMobileEditMode(${i}, event)" class="overLayButton delete">
                 <p>Delete</p>
             </div>
             <div onclick="editContact(${i})" class="overLayButton save">

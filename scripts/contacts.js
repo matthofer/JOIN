@@ -139,9 +139,9 @@ function closeOverlay() {
 function closeEditOverlay() {
   let screenWidth = window.innerWidth;
   document.getElementById("overlayEdit").classList.add("overlayClosed");
-  if (screenWidth <= 1100) {
+  /* if (screenWidth <= 1100) {
     document.getElementById("mobileEditButton").classList.add("respBtnclosed");
-  }
+  } */
 }
 
 function cleanInputfields() {
@@ -313,6 +313,17 @@ async function deleteContactInEditMode(i) {
   showMessage("Contact successfully deleted");
 }
 
+async function deleteContactInMobileInfo(i, event) {
+  let contactInfoRef = document.getElementById("mobileContactInfo");
+  await deleteData(`/contacts/${contacts[i].firebaseid}`);
+  contactInfoRef.innerHTML = "";
+  await loadContactsData();
+  renderContacts();
+  closeMobileInfo();
+  showMessage("Contact successfully deleted");
+  event.stopPropagation(event);
+}
+
 async function deleteContactInMobileEditMode(i, event) {
   let contactInfoRef = document.getElementById("mobileContactInfo");
   await deleteData(`/contacts/${contacts[i].firebaseid}`);
@@ -320,6 +331,7 @@ async function deleteContactInMobileEditMode(i, event) {
   await loadContactsData();
   renderContacts();
   closeMobileInfo();
+  closeEditOverlay();
   showMessage("Contact successfully deleted");
   event.stopPropagation(event);
 }
