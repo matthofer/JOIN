@@ -1,10 +1,9 @@
 let FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
 
 async function loginUser() {
-  let email = getInputValue("email");
-  let password = getInputValue("password");
+  const { email, password } = getLoginCredentials();
 
-  if (email === "" && password === "") {
+  if (checkCredentialsEmpty(email, password)) {
     handleEmptyLogin(document.getElementById("addErrorMessage"));
     return;
   }
@@ -12,10 +11,29 @@ async function loginUser() {
   if (!validateLogin(email, password)) return;
 
   try {
-    let users = await fetchUsers();
-    let loggedInUser = findUser(users, email, password);
-    loggedInUser ? handleSuccessfulLogin(loggedInUser) : showLoginError();
+    const users = await fetchUsers();
+    const loggedInUser = findUser(users, email, password);
+    handleLoginResult(loggedInUser);
   } catch (error) {}
+}
+
+function getLoginCredentials() {
+  return {
+    email: getInputValue("email"),
+    password: getInputValue("password"),
+  };
+}
+
+function checkCredentialsEmpty(email, password) {
+  return email === "" && password === "";
+}
+
+function handleLoginResult(loggedInUser) {
+  if (loggedInUser) {
+    handleSuccessfulLogin(loggedInUser);
+  } else {
+    showLoginError();
+  }
 }
 
 function getInputValue(id) {
