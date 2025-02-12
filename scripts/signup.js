@@ -15,53 +15,81 @@ checkbox.addEventListener("change", () => {
 let FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
 
 async function createUser(name, email, password) {
-  try {
-    let user = {
-      name: name,
-      email: email,
-      password: password,
-    };
+  const user = createUserObject(name, email, password);
+  const response = await sendUserData(user);
 
-    let response = await fetch(FB_URL + "/users.json", {
+  if (response.ok) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function createUserObject(name, email, password) {
+  return {
+    name: name,
+    email: email,
+    password: password,
+  };
+}
+
+async function sendUserData(user) {
+  try {
+    return await fetch(FB_URL + "/users.json", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
     });
-
-    if (response.ok) {
-      console.log("User created successfully!");
-      return true;
-    } else {
-      console.error("Failed to create user.");
-      return false;
-    }
   } catch (error) {
-    console.error("Error creating user:", error);
-    return false;
+    return { ok: false };
   }
 }
 
-async function handleSignup() {
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
-  let confirmPassword = document.getElementById("confirmPassword").value;
-  let validationResult = validateInputs(
+function getFormValues() {
+  return {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value,
+    confirmPassword: document.getElementById("confirmPassword").value,
+  };
+}
+
+function validateFormInputs(name, email, password, confirmPassword) {
+  return validateInputs(
     name,
     email,
     password,
     confirmPassword,
     "addErrorMessage"
   );
-  if (validationResult) {
-    await createUser(name, email, password);
-    // Insert Toast-Message here + timeout ----------------------------------------------
-    window.location.href = "login.html";
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
+}
+
+async function handleSignup() {
+  const { name, email, password, confirmPassword } = getFormValues();
+  
+  if (await takenMail() === true) {
+    return;
   }
+
+  if (validateFormInputs(name, email, password, confirmPassword)) {
+    await createUser(name, email, password);
+    showToastMessage("You Signed Up successfully");
+    setTimeout(() => {
+      redirectToLoginPage();
+      clearFormFields();
+    }, 3000);
+  }
+}
+
+function redirectToLoginPage() {
+  window.location.href = "login.html";
+}
+
+function clearFormFields() {
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
 }
 
 function validateInputs(name, email, password, confirmPassword, id) {
@@ -80,13 +108,9 @@ function validateInputs(name, email, password, confirmPassword, id) {
 
 function checkEmptyInput(name, email, password, confirmPassword, id) {
   let errorElement = document.getElementById(id);
-  if (
-    name === "" ||
-    email === "" ||
-    password === "" ||
-    confirmPassword === ""
-  ) {
+  if (name === "" || email === "" || password === "" || confirmPassword === "") {
     errorElement.innerHTML = "<p>Please fill in all input fields!</p>";
+    showRedBorder();
     setTimeout(() => {
       errorElement.innerHTML = "";
     }, 4000);
@@ -101,6 +125,7 @@ function checkEmail(email, id) {
   if (!validateEmail(email)) {
     errorElement.innerHTML =
       "<p>Please enter a valid email address<br>e.g. max.muster@web.de</p>";
+    showRedBorderMail();
     setTimeout(() => {
       errorElement.innerHTML = "";
     }, 4000);
@@ -120,6 +145,7 @@ function checkPassword(password, id) {
   if (password.length < 8) {
     errorElement.innerHTML =
       "<p>Password must be at least 8 characters long!</p>";
+    showRedBorderPassword();
     setTimeout(() => {
       errorElement.innerHTML = "";
     }, 4000);
@@ -133,6 +159,8 @@ function checkConfirmPassword(password, confirmPassword, id) {
   let errorElement = document.getElementById(id);
   if (password !== confirmPassword) {
     errorElement.innerHTML = "<p>Passwords do not match!</p>";
+    showRedBorderPassword();
+    showRedBorderConfirmPw();
     setTimeout(() => {
       errorElement.innerHTML = "";
     }, 4000);
@@ -205,4 +233,92 @@ function showConfirmPassword() {
   passwordInput.type = passwordInput.type === "password" ? "text" : "password";
   confirmEyeIcon.classList.toggle("d-none");
   confirmCrossedEyeIcon.classList.toggle("d-none");
+}
+
+function showRedBorder() {
+  showRedBorderName();
+  showRedBorderMail();
+  showRedBorderPassword();
+  showRedBorderConfirmPw();
+}
+
+function showRedBorderName() {
+  let inputName = document.getElementById("name");
+  inputName.classList.add("redBorder");
+  setTimeout(() => {
+    inputName.classList.remove("redBorder");
+  }, 4000);
+}
+
+function showRedBorderMail() {
+  let inputMail = document.getElementById("email");
+  inputMail.classList.add("redBorder");
+  setTimeout(() => {
+    inputMail.classList.remove("redBorder");
+  }, 4000);
+}
+
+function showRedBorderPassword() {
+  let inputPassword = document.getElementById("password");
+  inputPassword.classList.add("redBorder");
+  setTimeout(() => {
+    inputPassword.classList.remove("redBorder");
+  }, 4000);
+}
+
+function showRedBorderConfirmPw() {
+  let inputConfirmPassword = document.getElementById("confirmPassword");
+  inputConfirmPassword.classList.add("redBorder");
+  setTimeout(() => {
+    inputConfirmPassword.classList.remove("redBorder");
+  }, 4000);
+}
+
+function showToastMessage(message) {
+  document.getElementById("messageText").innerHTML = message;
+  document.getElementById("message").classList.remove("messageClosed");
+  document.getElementById("overlay").classList.remove("d-none");
+  setTimeout(() => {
+    document.getElementById("message").classList.add("messageClosed");
+    document.getElementById("overlay").classList.add("d-none");
+  }, 3000);
+}
+
+function closeSuccessMessage() {
+  document.getElementById("message").classList.add("messageClosed");
+}
+
+async function takenMail() {
+  let email = document.getElementById("email").value;
+
+  try {
+    let users = await fetchUsers();
+    let loggedInUser = findUser(users, email);
+    if (loggedInUser) {
+      showTakenMailMessage(loggedInUser);
+      return true;
+    }
+  } catch (error) {}
+  return false;
+}
+
+async function fetchUsers() {
+  let response = await fetch(FB_URL + "/users.json");
+  return response.json();
+}
+
+function findUser(users, email) {
+  return Object.values(users).find(
+    (user) => user.email === email
+  );
+}
+
+function showTakenMailMessage() {
+  let errorElement = document.getElementById("addErrorMessage");
+  errorElement.innerHTML =
+    "<p>Email address already taken! Please use a different one.</p>";
+  showRedBorderMail();
+  setTimeout(() => {
+    errorElement.innerHTML = "";
+  }, 4000);
 }

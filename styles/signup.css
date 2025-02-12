@@ -260,3 +260,39 @@ footer {
 .pointerEvent {
   pointer-events: none;
 }
+
+.redBorder {
+  border: 1px solid red !important;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9998;
+}
+
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 440px;
+  left: calc(50% - 165px);
+  height: 74px;
+  width: 326px;
+  background-color: #2a3647;
+  color: #ffffff;
+  border-radius: 20px;
+  z-index: 9999;
+  overflow-x: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.messageClosed {
+  transform: translateY(1000%);
+}

@@ -4,15 +4,18 @@ async function loginUser() {
   let email = getInputValue("email");
   let password = getInputValue("password");
 
+  if (email === "" && password === "") {
+    handleEmptyLogin(document.getElementById("addErrorMessage"));
+    return;
+  }
+
   if (!validateLogin(email, password)) return;
 
   try {
     let users = await fetchUsers();
     let loggedInUser = findUser(users, email, password);
     loggedInUser ? handleSuccessfulLogin(loggedInUser) : showLoginError();
-  } catch (error) {
-    handleLoginError(error);
-  }
+  } catch (error) {}
 }
 
 function getInputValue(id) {
@@ -36,8 +39,10 @@ function handleSuccessfulLogin(user) {
   document.getElementById("email").value = "";
 }
 
-function handleLoginError(errorElement) {
+function handleEmptyLogin(errorElement) {
   errorElement.innerHTML = "<p>Please fill in all input fields!</p>";
+  showRedBorderPassword();
+  showRedBorderMail();
   setTimeout(() => {
     errorElement.innerHTML = "";
   }, 4000);
@@ -79,8 +84,12 @@ function checkPassword(password, id) {
 function validateField(condition, id, message) {
   let errorElement = document.getElementById(id);
   if (condition) return true;
-  errorElement.innerHTML = "";
   errorElement.innerHTML = `<p>${message}</p>`;
+  if (message == "Password must be at least 8 characters long!") {
+    showRedBorderPassword();
+  } else {
+    showRedBorderMail();
+  }
   setTimeout(() => (errorElement.innerHTML = ""), 4000);
   return false;
 }
@@ -88,6 +97,8 @@ function validateField(condition, id, message) {
 function showLoginError() {
   let errorElement = document.getElementById("addErrorMessage");
   errorElement.innerHTML = "<p>Invalid credentials. Please try again.</p>";
+  showRedBorderPassword();
+  showRedBorderMail();
   setTimeout(() => (errorElement.innerHTML = ""), 4000);
 }
 
@@ -112,4 +123,20 @@ function showPassword() {
   passwordInput.type = passwordInput.type === "password" ? "text" : "password";
   eyeIcon.classList.toggle("d-none");
   crossedEyeIcon.classList.toggle("d-none");
+}
+
+function showRedBorderPassword() {
+  let inputFieldPassword = document.getElementById("password");
+  inputFieldPassword.classList.add("redBorder");
+  setTimeout(() => {
+    inputFieldPassword.classList.remove("redBorder");
+  }, 4000);
+}
+
+function showRedBorderMail() {
+  let inputFieldMail = document.getElementById("email");
+  inputFieldMail.classList.add("redBorder");
+  setTimeout(() => {
+    inputFieldMail.classList.remove("redBorder");
+  }, 4000);
 }

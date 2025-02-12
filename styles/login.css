@@ -238,3 +238,7 @@ footer {
 .pointerEvent {
   pointer-events: none;
 }
+
+.redBorder {
+  border: 1px solid red !important;
+}
