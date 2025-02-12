@@ -1,5 +1,6 @@
 let categorys = ["Technical Task", "User Story", "Customer Support", "Bug Fix"]
 let subtasks = [];
+let selectedContacts =[];
 
 
 async function initAddTask() {
@@ -41,16 +42,30 @@ function renderDropdownContacts() {
     }
 }
 
-function markCheckbox(contactIndex) {
+function markCheckbox(singleContact, contactIndex) {
     let checkbox = document.getElementById(`checkbox${contactIndex}`);
     let contact = document.getElementById(`contact${contactIndex}`)
-    checkbox.checked = !checkbox.checked
+    let contactData = singleContact;
+    let contactID = getContactID(singleContact);
+    let findContactIndex = selectedContacts.findIndex(cont => getContactID(cont) === contactID)
+    checkbox.checked = !checkbox.checked;
     if (checkbox.checked) {
         contact.classList.add('dropdownContactBlueBG');
+        selectedContacts.push(contactData)
+        console.log(contactID);
     } else {
         contact.classList.remove('dropdownContactBlueBG');
+        if (findContactIndex !== -1) {
+            selectedContacts.splice(findContactIndex, 1);
+        }
     }
     getSelectedContacts();
+   
+}
+
+
+function getContactID(singleContact){
+    return singleContact.firebaseid
 }
 
 function getSelectedContacts() {
