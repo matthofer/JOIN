@@ -328,3 +328,17 @@ input[name="searchResp"] {
   padding: 32px;
   border-radius: 30px;
 }
+
+.addTaskOverlayContainerHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addTaskOverlayContainerHead img {
+  cursor: pointer;
+}
+
+.addTaskOverlayContainerHead h1 {
+  padding-top: 0;
+}

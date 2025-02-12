@@ -32,7 +32,11 @@ let tasks = [
 ];
 
 function openAddTaskOverlay() {
-  document.getElementById("overlayAddTask").classList.toggle("overlayClosed");
+  document.getElementById("overlayAddTask").classList.remove("overlayClosed");
+}
+
+function closeAddTaskOverlay() {
+  document.getElementById("overlayAddTask").classList.add("overlayClosed");
 }
 
 async function initBoard() {

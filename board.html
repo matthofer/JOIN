@@ -392,7 +392,13 @@
             </div>
             <div id="overlayAddTask" class="overlay overlayClosed">
               <div class="addTaskOverlayContainer">
-                <h1 class="mainHeadline">Add Task</h1>
+                <div class="addTaskOverlayContainerHead">
+                  <h1 class="mainHeadline">Add Task</h1>
+                  <img
+                    onclick="closeAddTaskOverlay()"
+                    src="./assets/icons/close.svg"
+                  />
+                </div>
 
                 <form onsubmit="; return false">
                   <div class="formWrapper">
