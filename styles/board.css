@@ -141,7 +141,7 @@ input[name="searchResp"] {
   display: flex;
   height: 100%;
   flex-direction: column;
-  padding-bottom: 64px;
+  padding-bottom: 32px;
 }
 
 .columnContent::-webkit-scrollbar {
@@ -158,10 +158,6 @@ input[name="searchResp"] {
   border-radius: 20px;
   border: 1px solid #ffffff00;
 }
-
-/* .columnContent::-webkit-scrollbar {
-  display: none;
-} */
 
 .noTask {
   display: flex;
