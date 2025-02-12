@@ -30,3 +30,7 @@ let tasks = [
     prio: "low",
   },
 ];
+
+function openAddTaskOverlay() {
+  document.getElementById("overlayAddTask").classList.toggle("overlayClosed");
+}

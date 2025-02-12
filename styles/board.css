@@ -303,3 +303,27 @@ input[name="searchResp"] {
 .respAddTask:hover {
   background-color: #29abe2;
 }
+
+.overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  height: 100dvh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 100ms ease-in-out;
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
+.overlayClosed {
+  transform: translateX(1000%);
+}
+
+.addTaskOverlayContainer {
+  background-color: #ffffff;
+  padding: 32px;
+}
