@@ -326,4 +326,5 @@ input[name="searchResp"] {
 .addTaskOverlayContainer {
   background-color: #ffffff;
   padding: 32px;
+  border-radius: 30px;
 }

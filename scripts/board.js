@@ -34,3 +34,7 @@ let tasks = [
 function openAddTaskOverlay() {
   document.getElementById("overlayAddTask").classList.toggle("overlayClosed");
 }
+
+async function initBoard() {
+  await initAddTask();
+}
