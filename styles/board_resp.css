@@ -180,17 +180,6 @@ main {
   z-index: 10;
 }
 
-.test {
-  background-color: yellow;
-  padding: 32px;
-}
-
-.testContainer {
-  flex-wrap: wrap;
-  display: flex;
-  gap: 16px;
-}
-
 .noTask {
   width: 100%;
   text-align: center;
@@ -303,102 +292,106 @@ main {
 
 @media (max-width: 950px) {
   .overallContent {
-    overflow-x: hidden;
-    overflow-y: scroll;
     background-color: #f6f7f8;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
   }
-
   .boardContent {
-    display: flex;
-    flex-direction: column;
-    /* width: clamp(300px, 100%, 950px); */
+    background-color: #f6f7f8;
+    max-width: clamp(300px, 100%, 950px);
   }
 
-  .stdPadding {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  .searchInputResp {
-    width: 100%;
-    justify-content: flex-start;
-    display: flex;
-  }
-
-  .topBar {
-    justify-content: flex-start;
-    flex-direction: column;
-  }
-
-  .respAddTask {
-    display: flex;
-  }
-
-  .addTaskButton {
-    display: none;
+  .overallContent {
+    overflow-x: auto;
+    overflow-y: auto;
   }
 
   .searchInput {
     display: none;
   }
 
-  input[name="searchResp"] {
+  .addTaskButton {
+    display: none;
+  }
+
+  .respAddTask {
+    display: flex;
+  }
+
+  .searchInputResp {
+    display: flex;
+    width: 100%;
+  }
+
+  .searchInputResp input {
+    width: 100%;
+  }
+
+  .topBar {
+    flex-direction: column;
+    margin-bottom: 64px;
+    align-items: flex-start;
+  }
+
+  .column {
     width: 100%;
   }
 
   .boardColumns {
+    display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: 48px;
-    margin-top: 32px;
+    justify-content: start;
+    max-height: 70dvh;
+    gap: 24px;
   }
 
   .columnContent {
-    flex-direction: row;
-    gap: 16px;
-    overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 12px;
+    overflow-x: scroll;
+    display: flex;
+    height: 100%;
+    min-width: 252px;
+    gap: 16px;
+    flex-direction: row;
+    padding-bottom: 8px;
   }
 
   #done {
-    padding-bottom: 120px;
+    padding-bottom: 84px;
   }
 
-  /* .task {
-    box-sizing: border-box !important;
-    min-width: 35% !important;
-    max-width: 35% !important;
-  } */
-
-  .noTask {
-    height: 48px;
+  .task {
+    width: 252px;
   }
 
-  ::-webkit-scrollbar {
-    width: 8px;
+  .columnContent::-webkit-scrollbar {
     height: 8px;
   }
 
   .columnContent::-webkit-scrollbar-track {
-    background: #cdcdcd;
-    border-radius: 20px;
+    background: #ffffff00;
+    border-radius: 10px;
   }
 
   .columnContent::-webkit-scrollbar-thumb {
     background: #29abe2;
-    border-radius: 20px;
-    border: 1px solid #29abe2;
+    border-radius: 10px;
   }
-}
 
-@media (max-width: 900px) {
-}
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
 
-@media (max-width: 450px) {
-  .respNavbarContent {
-    padding-left: 8px;
-    padding-right: 8px;
+  ::-webkit-scrollbar-track {
+    background: #f6f7f8;
+    border-radius: 20px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #29abe2;
+    border-radius: 20px;
+    border: 1px solid #ffffff00;
   }
 }
 
