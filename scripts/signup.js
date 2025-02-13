@@ -1,18 +1,19 @@
 const checkbox = document.getElementById("customCheckbox");
 const uncheckedIcon = document.querySelector(".unchecked");
 const checkedIcon = document.querySelector(".checked");
+const FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
+let isPasswordVisible = false;
+let isConfirmPasswordVisible = false;
 
 checkbox.addEventListener("change", () => {
   if (checkbox.checked) {
-    uncheckedIcon.style.display = "none";
-    checkedIcon.style.display = "inline-block";
+    uncheckedIcon.classList.add("d-none");
+    checkedIcon.classList.remove("d-none");
   } else {
-    checkedIcon.style.display = "none";
-    uncheckedIcon.style.display = "inline-block";
+    checkedIcon.classList.add("d-none")
+    uncheckedIcon.classList.remove("d-none");
   }
 });
-
-let FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
 
 async function createUser(name, email, password) {
   const user = createUserObject(name, email, password);
@@ -184,44 +185,39 @@ function checkPrivacyPolicyTick() {
   }
 }
 
-function checkPasswordInput() {
-  let password = document.getElementById("password").value;
-  let crossedEyeIcon = document.getElementById("crossedEyeIcon");
-  let lockIcon = document.getElementById("lockIcon");
+function toggleIcons(inputId, lockIconId, eyeIconId, crossedEyeIconId, isVisible) {
+  let input = document.getElementById(inputId).value;
+  let lockIcon = document.getElementById(lockIconId);
+  let eyeIcon = document.getElementById(eyeIconId);
+  let crossedEyeIcon = document.getElementById(crossedEyeIconId);
 
-  if (password.length >= 1) {
+  if (input.length >= 1) {
     lockIcon.classList.add("d-none");
-    crossedEyeIcon.classList.remove("d-none");
+    if (!isVisible) crossedEyeIcon.classList.remove("d-none");
   } else {
     lockIcon.classList.remove("d-none");
     crossedEyeIcon.classList.add("d-none");
+    eyeIcon.classList.add("d-none");
   }
+}
+
+function checkPasswordInput() {
+  toggleIcons("password", "lockIcon", "eyeIcon", "crossedEyeIcon", isPasswordVisible);
 }
 
 function checkConfirmPasswordInput() {
-  let confirmPassword = document.getElementById("confirmPassword").value;
-  let confirmCrossedEyeIcon = document.getElementById("confirmCrossedEyeIcon");
-  let confirmLockIcon = document.getElementById("confirmLockIcon");
-
-  if (confirmPassword.length >= 1) {
-    confirmLockIcon.classList.add("d-none");
-    confirmCrossedEyeIcon.classList.remove("d-none");
-  } else {
-    confirmLockIcon.classList.remove("d-none");
-    confirmCrossedEyeIcon.classList.add("d-none");
-  }
+  toggleIcons("confirmPassword", "confirmLockIcon", "confirmEyeIcon", "confirmCrossedEyeIcon", isConfirmPasswordVisible);
 }
 
-function showPassword() {
-  let passwordInput = document.getElementById("password");
-  passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-}
 
 function showPassword() {
   let passwordInput = document.getElementById("password");
   let eyeIcon = document.getElementById("eyeIcon");
   let crossedEyeIcon = document.getElementById("crossedEyeIcon");
-  passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+
+  isPasswordVisible = !isPasswordVisible;
+  passwordInput.type = isPasswordVisible ? "text" : "password";
+
   eyeIcon.classList.toggle("d-none");
   crossedEyeIcon.classList.toggle("d-none");
 }
@@ -230,7 +226,10 @@ function showConfirmPassword() {
   let passwordInput = document.getElementById("confirmPassword");
   let confirmEyeIcon = document.getElementById("confirmEyeIcon");
   let confirmCrossedEyeIcon = document.getElementById("confirmCrossedEyeIcon");
-  passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+
+  isConfirmPasswordVisible = !isConfirmPasswordVisible;
+  passwordInput.type = isConfirmPasswordVisible ? "text" : "password";
+
   confirmEyeIcon.classList.toggle("d-none");
   confirmCrossedEyeIcon.classList.toggle("d-none");
 }

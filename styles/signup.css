@@ -119,6 +119,11 @@ h1 {
   max-width: calc(100% - 16px);
 }
 
+.originalCheckbox {
+  opacity: 0;
+  position: absolute
+}
+
 .privacyCheckbox {
   display: flex;
   justify-content: center;
@@ -164,10 +169,6 @@ h1 {
 
 .customCheckbox:hover .checkboxIcon {
   transform: scale(1.05);
-}
-
-.checked {
-  display: none;
 }
 
 .loginButtonsContainer {
@@ -270,7 +271,7 @@ footer {
   top: 0;
   left: 0;
   width: 100dvw;
-  height: 100dvw;
+  height: 100dvh;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 9998;
 }
@@ -294,5 +295,5 @@ footer {
 }
 
 .messageClosed {
-  transform: translateY(1000%);
+  transform: translateY(500%);
 }
