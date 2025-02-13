@@ -25,9 +25,11 @@ function openDropdownContacts() {
 
 function closeDropDownContacts(){
     let dropdown = document.getElementById('contacts');
+    let category = document.getElementById('categorys');
     let inputImg = document.getElementById("contactsDropdown")
     dropdown.classList.remove('dropdown');
-    if (dropdown.classList.contains('dropdown')) {
+    category.classList.remove('dropdown');
+    if (dropdown.classList.contains('dropdown') || category.classList.contains('dropdown')) {
         inputImg.style.backgroundImage = "url('../assets/icons/arrow_drop_down.svg')";
     } else {
         inputImg.style.backgroundImage = "url('../assets/icons/arrow_drop_down-down.svg')";
@@ -126,7 +128,6 @@ function checkSelectedContacts() {
     }
 }
 
-
 function filterContacts() {
     let valueInput = document.getElementById('contactsDropdown').value.toUpperCase();
     let filteredContacts = contacts.filter(contact => contact.name.toUpperCase().includes(valueInput))
@@ -138,7 +139,6 @@ function filterContacts() {
         `;
     }
 }
-
 
 function renderFilteredContact(filteredContacts) {
     let html = document.getElementById('contacts');
@@ -274,4 +274,26 @@ function submitSubtaskWithEnter() {
             }
         });
     }
+}
+
+function clearInput(id){
+    let input = document.getElementById(id);
+    input.value = "";
+}
+
+function clearForm(){
+    selectedContacts = [];
+    currentlyContacts =[];
+    subtasks = [];
+    clearInput('title')
+    clearInput('description')
+    clearInput('date')
+    clearInput('categorysDropdown')
+    changePrio('medium', 'mediumSVG')
+    renderSelectedContacts();
+    renderSubtasks();
+}
+
+function validateInput(){
+
 }

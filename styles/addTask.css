@@ -324,7 +324,6 @@
     position: absolute;
     top: 73px;
     left: 0;
-    overflow-y: scroll;
     visibility: hidden;
     opacity: 0;
     border-bottom-right-radius: 10px;

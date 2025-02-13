@@ -74,12 +74,12 @@
                             <div class="leftColumn">
                                 <div class="titles">
                                     <span>Title <p>*</p></span>
-                                    <input name="title" type="text" placeholder="Enter a title">
+                                    <input name="title" type="text" placeholder="Enter a title" id="title">
                                 </div>
 
                                 <div class="titles">
                                     <span>Description</span>
-                                    <textarea name="description" id="" placeholder="Enter a Description"></textarea>
+                                    <textarea name="description" id="description" placeholder="Enter a Description"></textarea>
                                 </div>
 
                                 <div class="titles">
@@ -97,7 +97,7 @@
                             <div class="rightColumn">
                                 <div class="titles">
                                     <span>Due date <p>*</p></span>
-                                    <input type="text" name="date" placeholder="dd/mm/yyyy" onfocus="(this.type='date')"
+                                    <input type="text" name="date" id="date" placeholder="dd/mm/yyyy" onfocus="(this.type='date')"
                                         onblur="if (!this.value) this.type='text'">
                                 </div>
 
@@ -130,7 +130,7 @@
 
                                 <div class="titles">
                                     <span>Category <p>*</p></span>
-                                    <input readonly id="categorysDropdown" onclick="toggleDropdownCategorys()" type="text" name="category" placeholder="Select task category">
+                                    <input readonly id="categorysDropdown" onclick="toggleDropdownCategorys(); event.stopPropagation()" type="text" name="category" placeholder="Select task category">
                                     <div class="categoryDropdown" id="categorys"></div>
                                 </div>
 
@@ -154,7 +154,7 @@
                                 <span>This field is required</span>
                             </div>
                             <div class="buttonArea">
-                                <button class="clear" type="button">Clear
+                                <button onclick="clearForm()" class="clear" type="button">Clear
                                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
