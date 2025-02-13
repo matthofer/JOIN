@@ -1,7 +1,7 @@
 let categorys = ["Technical Task", "User Story", "Customer Support", "Bug Fix"]
 let subtasks = [];
 let selectedContacts = [];
-let currentlyContacts =[];
+let currentlyContacts = [];
 
 async function initAddTask() {
     await loadContactsData();
@@ -23,7 +23,7 @@ function openDropdownContacts() {
     }
 }
 
-function closeDropDownContacts(){
+function closeDropDownContacts() {
     let dropdown = document.getElementById('contacts');
     let category = document.getElementById('categorys');
     let inputImg = document.getElementById("contactsDropdown")
@@ -36,11 +36,11 @@ function closeDropDownContacts(){
     }
 }
 
-function toggleDropdownContacts(){
+function toggleDropdownContacts() {
     let dropdown = document.getElementById('contacts');
     if (dropdown.classList.contains('dropdown')) {
-        closeDropDownContacts();        
-    }   else{
+        closeDropDownContacts();
+    } else {
         openDropdownContacts()
     }
 }
@@ -84,7 +84,7 @@ function markCheckbox(singleContact, contactIndex) {
     renderSelectedContacts();
 }
 
-function syncCheckbox(singleContact, contactIndex ){
+function syncCheckbox(singleContact, contactIndex) {
     let checkbox = document.getElementById(`checkbox${contactIndex}`);
     let contact = document.getElementById(`contact${contactIndex}`);
     checkbox.checked = true;
@@ -123,7 +123,7 @@ function checkSelectedContacts() {
             }
         }
         if (isSelected) {
-            syncCheckbox(singleContact, contactsIndex );
+            syncCheckbox(singleContact, contactsIndex);
         }
     }
 }
@@ -170,6 +170,15 @@ function changePrio(id, svg) {
     } else {
         button.classList.add('low')
         img.classList.add('lowSVG')
+    }
+}
+
+function returnPrio() {
+    let buttons = ["urgent", "medium", "low"];
+    for (const btn of buttons) {
+        if (document.getElementById(btn).classList.contains(btn)) {
+            return btn
+        }
     }
 }
 
@@ -276,24 +285,82 @@ function submitSubtaskWithEnter() {
     }
 }
 
-function clearInput(id){
+function clearInput(id) {
     let input = document.getElementById(id);
     input.value = "";
 }
 
-function clearForm(){
+function clearForm() {
     selectedContacts = [];
-    currentlyContacts =[];
+    currentlyContacts = [];
     subtasks = [];
-    clearInput('title')
-    clearInput('description')
-    clearInput('date')
-    clearInput('categorysDropdown')
-    changePrio('medium', 'mediumSVG')
+    clearInput('title');
+    clearInput('description');
+    clearInput('date');
+    clearInput('categorysDropdown');
+    changePrio('medium', 'mediumSVG');
     renderSelectedContacts();
+    clearSubtasksInput();
     renderSubtasks();
 }
 
-function validateInput(){
-
+function validateInputFields(id, infoId) {
+    let input = document.getElementById(id);
+    let notice = document.getElementById(infoId)
+    if (input.value.length > 0) {
+        input.classList.add('focus');
+        input.classList.remove('error')
+        notice.classList.add('d-none')
+    } else {
+        notice.classList.remove('d-none')
+        input.classList.add('error')
+        input.classList.remove('focus');
+    }
 }
+
+function getBlueBorder(id) {
+    setTimeout(() => {
+        let input = document.getElementById(id);
+        if (input.value.length > 0) {
+            input.classList.add('focus');
+        } else {
+            input.classList.remove('focus');
+        }
+    }, 85);
+}
+
+function collectData() {
+    let title = document.getElementById('title').value
+    let description = document.getElementById('description').value
+    let date = document.getElementById('date').value
+    let category = document.getElementById('categorysDropdown').value
+    let prio = returnPrio();
+    let data = {
+        "title": title,
+        "description": description,
+        "date": date,
+        "category": category,
+        "prio": prio,
+        "assignTo": selectedContacts,
+        "subtasks": subtasks
+    }
+    return data;
+}
+
+async function submitForm() {
+    let title = document.getElementById('title').value.length;
+    let date = document.getElementById('date').value.length;
+    let category = document.getElementById('categorysDropdown').value.length;
+    let data = collectData()
+    if (title > 0 && date > 0 && category > 0) {
+        console.log(data)
+        await postData("tasks/todo", data)
+        console.log("Daten erfolgreich auf Firebase gepostet");
+        
+    } else {
+        validateInputFields('title', 'titleValidation');
+        validateInputFields('date', 'dateValidation');
+        validateInputFields('categorysDropdown', 'categoryValidation');
+    }
+}
+
