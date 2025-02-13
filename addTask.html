@@ -63,7 +63,7 @@
                 </div>
             </header>
 
-            <main>
+            <main onclick="closeDropDownContacts()">
                 <div class="mainContent stdPadding">
                     <h1 class="mainHeadline">Add Task</h1>
 
@@ -84,7 +84,7 @@
 
                                 <div class="titles">
                                     <span>Assigned to</span>
-                                    <input onclick="toggleDropdown('contacts')" onkeyup="filterContacts()" type="text"
+                                    <input onclick="openDropdownContacts(), event.stopPropagation()" onkeyup="filterContacts()" type="text"
                                         id="contactsDropdown" name="contactsDropdown"
                                         placeholder="Select contacts to assign">
                                     <div class="contacts" id="contacts"></div>
