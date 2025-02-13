@@ -401,7 +401,7 @@ function collectData() {
 function getContactsForFB() {
   let contacts = {};
   for (let i = 0; i < selectedContacts.length; i++) {
-    contacts[`${selectedContacts[i].firebaseid}`] = {
+    contacts[selectedContacts[i].firebaseid] = {
       name: selectedContacts[i].name,
       email: selectedContacts[i].email,
       phone: selectedContacts[i].phone,
