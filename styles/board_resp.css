@@ -311,7 +311,7 @@ main {
   .boardContent {
     display: flex;
     flex-direction: column;
-    width: clamp(300px, 100%, 950px);
+    /* width: clamp(300px, 100%, 950px); */
   }
 
   .stdPadding {
@@ -322,6 +322,7 @@ main {
   .searchInputResp {
     width: 100%;
     justify-content: flex-start;
+    display: flex;
   }
 
   .topBar {
@@ -341,10 +342,6 @@ main {
     display: none;
   }
 
-  .searchInputResp {
-    display: flex;
-  }
-
   input[name="searchResp"] {
     width: 100%;
   }
@@ -354,12 +351,6 @@ main {
     align-items: start;
     gap: 48px;
     margin-top: 32px;
-    width: 100%;
-  }
-
-  .column {
-    width: 100%;
-    height: 22%;
   }
 
   .columnContent {
@@ -374,11 +365,11 @@ main {
     padding-bottom: 120px;
   }
 
-  .task {
+  /* .task {
     box-sizing: border-box !important;
     min-width: 35% !important;
     max-width: 35% !important;
-  }
+  } */
 
   .noTask {
     height: 48px;
