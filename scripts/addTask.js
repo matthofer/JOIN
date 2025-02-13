@@ -1,7 +1,7 @@
 let categorys = ["Technical Task", "User Story", "Customer Support", "Bug Fix"]
 let subtasks = [];
 let selectedContacts = [];
-
+let currentlyContacts =[];
 
 async function initAddTask() {
     await loadContactsData();
@@ -15,7 +15,7 @@ function openDropdownContacts() {
     checkSelectedContacts();
     let dropdown = document.getElementById('contacts');
     let inputImg = document.getElementById("contactsDropdown")
-    dropdown.classList.toggle('dropdown');
+    dropdown.classList.add('dropdown');
     if (dropdown.classList.contains('dropdown')) {
         inputImg.style.backgroundImage = "url('../assets/icons/arrow_drop_down.svg')";
     } else {
@@ -26,11 +26,20 @@ function openDropdownContacts() {
 function closeDropDownContacts(){
     let dropdown = document.getElementById('contacts');
     let inputImg = document.getElementById("contactsDropdown")
-    dropdown.classList.toggle('dropdown');
+    dropdown.classList.remove('dropdown');
     if (dropdown.classList.contains('dropdown')) {
         inputImg.style.backgroundImage = "url('../assets/icons/arrow_drop_down.svg')";
     } else {
         inputImg.style.backgroundImage = "url('../assets/icons/arrow_drop_down-down.svg')";
+    }
+}
+
+function toggleDropdownContacts(){
+    let dropdown = document.getElementById('contacts');
+    if (dropdown.classList.contains('dropdown')) {
+        closeDropDownContacts();        
+    }   else{
+        openDropdownContacts()
     }
 }
 
@@ -56,7 +65,7 @@ function renderDropdownContacts() {
 
 function markCheckbox(singleContact, contactIndex) {
     let checkbox = document.getElementById(`checkbox${contactIndex}`);
-    let contact = document.getElementById(`contact${contactIndex}`)
+    let contact = document.getElementById(`contact${contactIndex}`);
     let contactData = singleContact;
     let contactID = getContactID(singleContact);
     let findContactIndex = selectedContacts.findIndex(cont => getContactID(cont) === contactID)
@@ -64,38 +73,29 @@ function markCheckbox(singleContact, contactIndex) {
     if (checkbox.checked) {
         contact.classList.add('dropdownContactBlueBG');
         selectedContacts.push(contactData)
-        console.log(contactID);
-        renderSelectedContacts();
     } else {
         contact.classList.remove('dropdownContactBlueBG');
         if (findContactIndex !== -1) {
             selectedContacts.splice(findContactIndex, 1);
-            renderSelectedContacts();
         }
-
-    }
-    // getSelectedContacts();
-
+    };
+    renderSelectedContacts();
 }
 
+function syncCheckbox(singleContact, contactIndex ){
+    let checkbox = document.getElementById(`checkbox${contactIndex}`);
+    let contact = document.getElementById(`contact${contactIndex}`);
+    checkbox.checked = true;
+    contact.classList.add('dropdownContactBlueBG');
+    if (!selectedContacts.find(cont => getContactID(cont) === getContactID(singleContact))) {
+        selectedContacts.push(singleContact);
+    }
+    renderSelectedContacts()
+}
 
 function getContactID(singleContact) {
     return singleContact.firebaseid
 }
-
-// function getSelectedContacts() {
-//     let contactInitials = document.getElementById('initialsContacts');
-//     contactInitials.innerHTML = "";
-//     let selectedContact = document.querySelectorAll('.dropdownContactBlueBG');
-//     selectedContact.forEach(contact => {
-//         let initials = contact.querySelector('.initials');
-//         if (initials) {
-//             contactInitials.appendChild(initials.cloneNode(true));
-//             contactInitials.classList.add('fontColorwhite');
-//         }
-//     })
-// }
-
 
 function renderSelectedContacts() {
     let contactInitials = document.getElementById('initialsContacts');
@@ -106,18 +106,13 @@ function renderSelectedContacts() {
         contactInitials.innerHTML += `
         <div class="initials fontColorwhite" style="background-color: ${singleAvatar.color};">${intials}</div
         `;
-
     }
 }
 
-
-
-
 function checkSelectedContacts() {
-    for (let contactsIndex = 0; contactsIndex < contacts.length; contactsIndex++) {
-        const singleContact = contacts[contactsIndex];
+    for (let contactsIndex = 0; contactsIndex < currentlyContacts.length; contactsIndex++) {
+        const singleContact = currentlyContacts[contactsIndex];
         let isSelected = false;
-        
         for (let selectedContactsIndex = 0; selectedContactsIndex < selectedContacts.length; selectedContactsIndex++) {
             const singleAvatar = selectedContacts[selectedContactsIndex];
             if (singleContact.firebaseid === singleAvatar.firebaseid) {
@@ -126,13 +121,10 @@ function checkSelectedContacts() {
             }
         }
         if (isSelected) {
-            console.log(`Markiere ${singleContact.name} (Index: ${index})`);
-            markCheckbox(singleContact, contactsIndex);
-            
+            syncCheckbox(singleContact, contactsIndex );
         }
     }
 }
-
 
 
 function filterContacts() {
@@ -144,23 +136,23 @@ function filterContacts() {
         document.getElementById('contacts').innerHTML = `
         <p class="noContact">Keinen Kontakt gefunden !</p>
         `;
-
     }
-
-
-
 }
+
 
 function renderFilteredContact(filteredContacts) {
     let html = document.getElementById('contacts');
     html.innerHTML = "";
+    currentlyContacts = filteredContacts;
     for (let index = 0; index < filteredContacts.length; index++) {
         const element = filteredContacts[index];
         html.innerHTML += contactDropdownTemplate(element, index)
     }
+    if (!html.classList.contains('dropdown')) {
+        openDropdownContacts()
+    }
     checkSelectedContacts();
 }
-
 
 function changePrio(id, svg) {
     let buttons = ["urgent", "medium", "low"];
@@ -232,7 +224,6 @@ function renderSubtasks() {
     }
 }
 
-
 function showSubtaskMenu(subtasksIndex) {
     let menu = document.getElementById(`singleSubtaskMenu${subtasksIndex}`);
     menu.classList.remove('d-none');
@@ -284,4 +275,3 @@ function submitSubtaskWithEnter() {
         });
     }
 }
-

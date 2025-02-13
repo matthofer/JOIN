@@ -1,6 +1,6 @@
 function contactDropdownTemplate(contact, contactIndex) {
     return `
-        <div class="dropDownContact" onclick='markCheckbox(${JSON.stringify(contact)}, ${contactIndex}, event.stopPropagation())' id="contact${contactIndex}">
+        <div class="dropDownContact" onclick='event.stopPropagation(); markCheckbox(${JSON.stringify(contact)}, ${contactIndex})' id="contact${contactIndex}">
             <div class="dropDownLeft">
                 <div class="initials" style="background-color: ${contact.color};">${getIntialsOfContact(contact.name)}</div>
                 <div class="contactName">${contact.name}</div>
