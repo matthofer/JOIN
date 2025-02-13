@@ -218,10 +218,16 @@ function clearSubtasksInput() {
 
 function saveSubtasks() {
     let input = document.getElementById('subtasks');
-    subtasks.push(input.value);
-    input.value = ""
-    renderSubtasks();
-    changeSubtasksIcons();
+    if (input.value.length > 0) {
+        subtasks.push(input.value);
+        input.value = ""
+        renderSubtasks();
+        changeSubtasksIcons();
+    }else{
+        console.log("ups, etwas lief schief");
+        
+    }
+  
 }
 
 function renderSubtasks() {
@@ -335,6 +341,7 @@ function collectData() {
     let date = document.getElementById('date').value
     let category = document.getElementById('categorysDropdown').value
     let prio = returnPrio();
+    let type = "todo"
     let data = {
         "title": title,
         "description": description,
@@ -342,7 +349,8 @@ function collectData() {
         "category": category,
         "prio": prio,
         "assignTo": selectedContacts,
-        "subtasks": subtasks
+        "subtasks": subtasks,
+        "type": type
     }
     return data;
 }
@@ -354,8 +362,9 @@ async function submitForm() {
     let data = collectData()
     if (title > 0 && date > 0 && category > 0) {
         console.log(data)
-        await postData("tasks/todo", data)
+        await postData("tasks/", data)
         console.log("Daten erfolgreich auf Firebase gepostet");
+        clearForm();
         
     } else {
         validateInputFields('title', 'titleValidation');
