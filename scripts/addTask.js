@@ -259,13 +259,15 @@ function clearSubtasksInput() {
 
 function saveSubtasks() {
   let input = document.getElementById("subtasks");
+  let maessage = document.getElementById("subtaskValidation")
   if (input.value.length > 0) {
+    maessage.classList.add('d-none')
     subtasks.push(input.value);
     input.value = "";
     renderSubtasks();
     changeSubtasksIcons();
   } else {
-    console.log("ups, etwas lief schief");
+    maessage.classList.remove('d-none')
   }
 }
 
