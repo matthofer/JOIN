@@ -1,3 +1,9 @@
+let prioIcons = {
+  low: "",
+  medium: "",
+  urgent: "",
+};
+
 function getTaskTemplate(task, i) {
   return `<div draggable="true" ondragstart="id" class="taskWrapper">
                 <div class="task">
@@ -32,7 +38,7 @@ function getTaskTemplate(task, i) {
                         <img
                           id="prio"
                           class="prio"
-                          src="./assets/icons/prio_medium.svg"
+                          src="./assets/icons/prio_${task.prio}.svg"
                           alt=""
                         />
                       </div>

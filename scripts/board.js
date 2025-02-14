@@ -128,6 +128,8 @@ function getIntialsOfContact(contact) {
   return intials;
 }
 
+function renderSubTasks() {}
+
 function openAddTaskOverlay() {
   document.getElementById("overlayAddTask").classList.remove("overlayClosed");
 }
