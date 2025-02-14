@@ -361,9 +361,9 @@ function validateInputFields(id, infoId) {
   let input = document.getElementById(id);
   let notice = document.getElementById(infoId);
   if (input.value.length > 0) {
+    notice.classList.add("d-none");
     input.classList.add("focus");
     input.classList.remove("error");
-    notice.classList.add("d-none");
   } else {
     notice.classList.remove("d-none");
     input.classList.add("error");
@@ -429,9 +429,10 @@ async function submitForm() {
   let category = document.getElementById("categorysDropdown").value.length;
   let data = collectData();
   if (title > 0 && date > 0 && category > 0) {
-    console.log(data);
+    validateInputFields("title", "titleValidation");
+    validateInputFields("date", "dateValidation");
+    validateInputFields("categorysDropdown", "categoryValidation");
     await postData("tasks/", data);
-    console.log("Daten erfolgreich auf Firebase gepostet");
     clearForm();
     showToast()
   } else {
