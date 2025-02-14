@@ -366,7 +366,7 @@ main {
   }
 
   .columnContent::-webkit-scrollbar {
-    height: 8px;
+    height: 6px;
   }
 
   .columnContent::-webkit-scrollbar-track {
@@ -375,8 +375,9 @@ main {
   }
 
   .columnContent::-webkit-scrollbar-thumb {
-    background: #29abe2;
+    background: #7c7d7e;
     border-radius: 10px;
+    cursor: pointer;
   }
 
   ::-webkit-scrollbar {

@@ -1,35 +1,94 @@
-let tasks = [
-  {
-    category: "user story",
-    title: "Kochwelt Page & Recipe Recommender",
-    dscr: "Build start page with recipe recommendation...",
-    subtasks: [
-      { id: 1, dscr: "build", done: true },
-      { id: 2, dscr: "test", done: false },
-      { id: 3, dscr: "deploy", done: false },
-    ],
-    contacts: [
-      { name: "Max Meyer", firebaseID: "12345" },
-      { name: "Tom Taler", firebaseID: "678910" },
-      { name: "Susi Seger", firebaseID: "101113" },
-    ],
-    prio: "medium",
-  },
-  {
-    category: "Technical Task",
-    title: "CSS Architecture Planning",
-    dscr: "Define CSS naming conventions and structure...",
-    subtasks: [
-      { id: 1, dscr: "build", done: true },
-      { id: 2, dscr: "test", done: false },
-    ],
-    contacts: [
-      { name: "Bernd Bürger", firebaseID: "12345" },
-      { name: "Nils Fischer", firebaseID: "678910" },
-    ],
-    prio: "low",
-  },
-];
+let tasks = [];
+
+async function initBoard() {
+  await initAddTask();
+  await loadTasksData();
+  renderTasks();
+}
+
+async function loadTasksData(path = "/tasks") {
+  tasks = [];
+  id = 0;
+  try {
+    let taskResponse = await fetch(FB_URL + path + ".json");
+    let taskResponseToJson = await taskResponse.json();
+    let taskKeys = Object.keys(taskResponseToJson);
+    for (let i = 0; i < taskKeys.length; i++) {
+      tasks.push({
+        firebaseid: taskKeys[i],
+        id: id,
+        type: taskResponseToJson[taskKeys[i]].type,
+        category: taskResponseToJson[taskKeys[i]].category,
+        title: taskResponseToJson[taskKeys[i]].title,
+        dscr: taskResponseToJson[taskKeys[i]].description,
+        date: taskResponseToJson[taskKeys[i]].date,
+        prio: taskResponseToJson[taskKeys[i]].prio,
+        contacts: taskResponseToJson[taskKeys[i]].assignTo,
+        subtasks: taskResponseToJson[taskKeys[i]].subtasks,
+      });
+      id++;
+    }
+  } catch (error) {
+    showMessage("Error during loading of data");
+  }
+}
+
+function renderTasks() {
+  renderTodo();
+  renderInProgress();
+  renderAwaitFeedback();
+  renderDone();
+}
+
+function renderTodo() {
+  let todo = tasks.filter((task) => task.type == "todo");
+  document.getElementById("todo").innerHTML = "";
+  for (let taskIndex = 0; taskIndex < todo.length; taskIndex++) {
+    if (todo.length > 0) {
+      document.getElementById("todo").innerHTML += getTaskTemplate();
+    } else {
+      document.getElementById("todo").innerHTML = getNoTaskTemplate("in To do");
+    }
+  }
+}
+
+function renderInProgress() {
+  let inProgress = tasks.filter((task) => task.type == "inProgress");
+  document.getElementById("inProgress").innerHTML = "";
+  for (let taskIndex = 0; taskIndex < inProgress.length; taskIndex++) {
+    if (inProgress.length > 0) {
+      document.getElementById("inProgress").innerHTML += getTaskTemplate();
+    } else {
+      document.getElementById("inProgress").innerHTML =
+        getNoTaskTemplate("in progress");
+    }
+  }
+}
+
+function renderAwaitFeedback() {
+  let awaitFeedback = tasks.filter((task) => task.type == "awaitFeedback");
+  document.getElementById("awaitFeedback").innerHTML = "";
+  for (let taskIndex = 0; taskIndex < awaitFeedback.length; taskIndex++) {
+    if (awaitFeedback.length > 0) {
+      document.getElementById("awaitFeedback").innerHTML += getTaskTemplate();
+    } else {
+      document.getElementById("awaitFeedback").innerHTML =
+        getNoTaskTemplate("in await Feedback");
+    }
+  }
+}
+
+function renderDone() {
+  let done = tasks.filter((task) => task.type == "done");
+  document.getElementById("done").innerHTML = "";
+  for (let taskIndex = 0; taskIndex < done.length; taskIndex++) {
+    if (done.length > 0) {
+      document.getElementById("done").innerHTML += getTaskTemplate();
+    } else {
+      document.getElementById("done").innerHTML = getNoTaskTemplate("done");
+    }
+  }
+}
 
 function openAddTaskOverlay() {
   document.getElementById("overlayAddTask").classList.remove("overlayClosed");
@@ -37,8 +96,4 @@ function openAddTaskOverlay() {
 
 function closeAddTaskOverlay() {
   document.getElementById("overlayAddTask").classList.add("overlayClosed");
-}
-
-async function initBoard() {
-  await initAddTask();
 }

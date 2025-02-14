@@ -343,3 +343,22 @@ input[name="searchResp"] {
 .addTaskOverlayContainerHead h1 {
   padding-top: 0;
 }
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 120px;
+  left: calc(50% - 100px);
+  height: 74px;
+  width: 326px;
+  background-color: #2a3647;
+  color: #ffffff;
+  border-radius: 20px;
+  transition: all 75ms ease-in-out;
+}
+
+.messageClosed {
+  transform: translateY(500%);
+}
