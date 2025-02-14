@@ -128,7 +128,22 @@ function getIntialsOfContact(contact) {
   return intials;
 }
 
-function renderSubTasks() {}
+function renderSubTasks(task) {
+  if (task.subtasks != undefined) {
+    let subtasksKeys = Object.keys(task.subtasks);
+    for (let index = 0; index < subtasksKeys.length; index++) {
+      let amountTasks = subtasksKeys.length;
+    }
+  } else {
+    return;
+  }
+}
+
+/* function updateProgressBar() {
+  let percent = (currentQuestion / questions.length) * 100;
+  percent = Math.round(percent);
+  document.getElementById("progressBar").style.width = `${percent + "%"}`;
+} */
 
 function openAddTaskOverlay() {
   document.getElementById("overlayAddTask").classList.remove("overlayClosed");
