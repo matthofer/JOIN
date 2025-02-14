@@ -32,7 +32,7 @@ function getTaskTemplate(task, i) {
                         <img
                           id="prio"
                           class="prio"
-                          src="./assets/icons/prio_medium.svg"
+                          src="./assets/icons/prio_${task.prio}.svg"
                           alt=""
                         />
                       </div>
