@@ -49,6 +49,7 @@ function renderTodo() {
       let taskObj = todo[i];
       document.getElementById("todo").innerHTML += getTaskTemplate(taskObj, i);
       renderContactIntials(taskObj, i);
+      renderSubTasks(taskObj, i);
     }
   } else {
     document.getElementById("todo").innerHTML = getNoTaskTemplate("in to do");
@@ -66,6 +67,7 @@ function renderInProgress() {
         i
       );
       renderContactIntials(taskObj, i);
+      renderSubTasks(taskObj, i);
     }
   } else {
     document.getElementById("inProgress").innerHTML =
@@ -84,6 +86,7 @@ function renderAwaitFeedback() {
         i
       );
       renderContactIntials(taskObj, i);
+      renderSubTasks(taskObj, i);
     }
   } else {
     document.getElementById("awaitFeedback").innerHTML =
@@ -99,6 +102,7 @@ function renderDone() {
       let taskObj = done[i];
       document.getElementById("done").innerHTML += getTaskTemplate(taskObj, i);
       renderContactIntials(taskObj, i);
+      renderSubTasks(taskObj, i);
     }
   } else {
     document.getElementById("done").innerHTML = getNoTaskTemplate("done");
@@ -129,12 +133,19 @@ function getIntialsOfContact(contact) {
   return intials;
 }
 
-function renderSubTasks(task) {
+function renderSubTasks(task, i) {
   if (task.subtasks != undefined) {
     let subtasksKeys = Object.keys(task.subtasks);
+    let amountDone = 0;
+    let amountSubTasks = subtasksKeys.length;
     for (let index = 0; index < subtasksKeys.length; index++) {
-      let amountTasks = subtasksKeys.length;
+      if (task.subtasks[subtasksKeys[index]].done === true) {
+        amountDone++;
+      }
     }
+    document.getElementById("subtask" + task.type + i).innerHTML =
+      getSubTaskTextTemplate(amountDone, amountSubTasks);
+    updateStatusBar(amountDone, amountSubTasks, task, i);
   } else {
     return;
   }
@@ -162,11 +173,13 @@ function highlight(id) {
 function removeHighlight(id) {
   document.getElementById(id).classList.remove("dragAreaHighlight");
 }
-/* function updateProgressBar() {
-  let percent = (currentQuestion / questions.length) * 100;
+function updateStatusBar(amountDone, amountSubTasks, task, i) {
+  let percent = (amountDone / amountSubTasks) * 100;
   percent = Math.round(percent);
-  document.getElementById("progressBar").style.width = `${percent + "%"}`;
-} */
+  document.getElementById("statusBar" + task.type + i).style.width = `${
+    percent + "%"
+  }`;
+}
 
 function openAddTaskOverlay() {
   document.getElementById("overlayAddTask").classList.remove("overlayClosed");

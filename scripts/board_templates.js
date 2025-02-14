@@ -15,13 +15,15 @@ function getTaskTemplate(task, i) {
                     </div>
                     <div class="subtaskStatus">
                         <div class="progressBar">
-                    <div id="statusBar" class="statusBar"></div>
+                          <div id="statusBar${
+                            task.type
+                          }${i}" class="statusBar"></div>
                         </div>
                         <span class="subTaskText">
-                          <span class="statusTextSubtasks"
-                            ><p id="subTaskFrom">1</p>
-                            /
-                            <p id="subTaskTo">2</p>
+                          <span id="subtask${
+                            task.type
+                          }${i}" class="statusTextSubtasks">
+                            <p id="subTaskFrom">1</p>/<p id="subTaskTo">2</p>
                           </span>
                           <p>Substasks</p>
                         </span>
@@ -50,4 +52,8 @@ function getNoTaskTemplate(type) {
 
 function getIntialTemplateForBoard(intials, i, color) {
   return `<div class="intial i${i}" style="background-color: ${color}">${intials}</div>`;
+}
+
+function getSubTaskTextTemplate(doneSubTasks, amountSubTasks) {
+  return `<p id="subTaskFrom">${doneSubTasks}</p>/<p id="subTaskTo">${amountSubTasks}</p>`;
 }
