@@ -1,9 +1,3 @@
-let prioIcons = {
-  low: "",
-  medium: "",
-  urgent: "",
-};
-
 function getTaskTemplate(task, i) {
   return `<div draggable="true" ondragstart="id" class="taskWrapper">
                 <div class="task">
