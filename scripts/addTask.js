@@ -95,6 +95,18 @@ function markCheckbox(singleContact, contactIndex) {
   renderSelectedContacts();
 }
 
+function clearContacts(){
+    let contacts = document.getElementById('contacts');
+    let singleContact = contacts.querySelectorAll(".dropdownContactBlueBG");
+    singleContact.forEach(
+        contact => {contact.classList.remove('dropdownContactBlueBG');}
+    );
+    let checkboxes = contacts.querySelectorAll("input[type='checkbox']");
+    checkboxes.forEach(
+        checkbox => {checkbox.checked = false}
+    );
+}
+
 function syncCheckbox(singleContact, contactIndex) {
   let checkbox = document.getElementById(`checkbox${contactIndex}`);
   let contact = document.getElementById(`contact${contactIndex}`);
@@ -371,7 +383,7 @@ function clearForm() {
   clearInput("categorysDropdown");
   changePrio("medium", "mediumSVG");
   renderSelectedContacts();
-  checkSelectedContacts();
+  clearContacts();
   clearSubtasksInput();
   renderSubtasks();
 }
