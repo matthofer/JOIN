@@ -16,6 +16,18 @@
     background-color: #29ABE2;
 }
 
+.summaryWrapper{
+    width: 550px;
+
+}
+
+.infoSection{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
 .summaryHeadline span{
 font-size: 27px;
 font-weight: 200;
@@ -26,14 +38,14 @@ line-height: 32.4px;
     gap: 32px;
 }
 
-.tiles{
+.tilesTop{
     width: 264px;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 30px;
-    padding: 38px 19px;
+    padding: 16px 19px;
 }
 
 .sumContent{
@@ -75,4 +87,81 @@ font-size: 20px;
 font-weight: 400;
 line-height: 24px;
 text-align: left;
+}
+
+.midBar{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 16px 19px;
+    gap: 32px;
+}
+
+.urgent{
+    background-color: #FF3D00;
+}
+
+.divider{
+    width: 1px;
+    height: 100px;
+    background-color: #D1D1D1;
+}
+
+.date{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.date p{
+font-size: 21px;
+font-weight: 700;
+line-height: 25.2px;
+text-align: left;
+}
+
+.date span{
+font-size: 16px;
+font-weight: 400;
+line-height: 19.2px;
+text-align: left;
+}
+
+.bottomBar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tilesBottom{
+    width: 30%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 16px 19px;
+}
+
+.infoBottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.infoBottom p{
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 76.8px;
+}
+
+.infoBottom span{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    
 }
