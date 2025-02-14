@@ -1,0 +1,23 @@
+.summaryHeadline{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-top: 64px;
+}
+
+.summaryHeadline h1{
+    font-size: 51px;
+    font-weight: 700;
+}
+
+.blueDivider{
+    width: 3px;
+    height: 59px;
+    background-color: #29ABE2;
+}
+
+.summaryHeadline span{
+font-size: 27px;
+font-weight: 200;
+line-height: 32.4px;
+}
