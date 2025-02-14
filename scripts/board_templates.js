@@ -1,14 +1,10 @@
-function getTaskTemplate() {
+function getTaskTemplate(task) {
   return `<div draggable="true" ondragstart="id" class="taskWrapper">
                 <div class="task">
-                    <div id="category" class="category">User Story</div>
+                    <div id="category" class="category${task.category[0]}">${task.category}</div>
                     <div class="taskTitleAndDscr">
-                        <p id="taskTitle" class="taskTitle">
-                          Kochwelt Page & Recipe Recommender
-                        </p>
-                        <p id="taskDscr" class="taskDscr">
-                          Build start page with recipe recommendation...
-                        </p>
+                        <p id="taskTitle" class="taskTitle">${task.title}</p>
+                        <p id="taskDscr" class="taskDscr">${task.dscr}</p>
                     </div>
                     <div class="subtaskStatus">
                         <div class="progressBar">
