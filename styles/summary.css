@@ -21,6 +21,10 @@ font-size: 27px;
 font-weight: 200;
 line-height: 32.4px;
 }
+.topBar{
+    display: flex;
+    gap: 32px;
+}
 
 .tiles{
     width: 264px;
