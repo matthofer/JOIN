@@ -339,6 +339,8 @@ function submitSubtaskWithEnter() {
 function clearInput(id) {
   let input = document.getElementById(id);
   input.value = "";
+  input.classList.remove("error");
+  input.classList.remove("focus");
 }
 
 function clearForm() {
@@ -377,7 +379,7 @@ function getBlueBorder(id) {
     } else {
       input.classList.remove("focus");
     }
-  }, 85);
+  }, 100);
 }
 
 function collectData() {
@@ -413,6 +415,14 @@ function getContactsForFB() {
   return contacts;
 }
 
+function showToast(){
+    let toast = document.getElementById('toastMSG');
+    toast.classList.remove('animateToast')
+    setTimeout(() => {
+        window.location = './board.html'
+    }, 1000);
+}
+
 async function submitForm() {
   let title = document.getElementById("title").value.length;
   let date = document.getElementById("date").value.length;
@@ -423,6 +433,7 @@ async function submitForm() {
     await postData("tasks/", data);
     console.log("Daten erfolgreich auf Firebase gepostet");
     clearForm();
+    showToast()
   } else {
     validateInputFields("title", "titleValidation");
     validateInputFields("date", "dateValidation");
