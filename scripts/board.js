@@ -44,9 +44,10 @@ function renderTodo() {
   let todo = tasks.filter((task) => task.type == "todo");
   document.getElementById("todo").innerHTML = "";
   if (todo.length > 0) {
-    for (let taskIndex = 0; taskIndex < todo.length; taskIndex++) {
-      let type = todo[taskIndex];
-      document.getElementById("todo").innerHTML += getTaskTemplate(type);
+    for (let i = 0; i < todo.length; i++) {
+      let taskObj = todo[i];
+      document.getElementById("todo").innerHTML += getTaskTemplate(taskObj, i);
+      renderContactIntials(taskObj, i);
     }
   } else {
     document.getElementById("todo").innerHTML = getNoTaskTemplate("in to do");
@@ -57,9 +58,13 @@ function renderInProgress() {
   let inProgress = tasks.filter((task) => task.type == "inProgress");
   document.getElementById("inProgress").innerHTML = "";
   if (inProgress.length > 0) {
-    for (let taskIndex = 0; taskIndex < inProgress.length; taskIndex++) {
-      let type = inProgress[taskIndex];
-      document.getElementById("inProgress").innerHTML += getTaskTemplate(type);
+    for (let i = 0; i < inProgress.length; i++) {
+      let taskObj = inProgress[i];
+      document.getElementById("inProgress").innerHTML += getTaskTemplate(
+        taskObj,
+        i
+      );
+      renderContactIntials(taskObj, i);
     }
   } else {
     document.getElementById("inProgress").innerHTML =
@@ -71,10 +76,13 @@ function renderAwaitFeedback() {
   let awaitFeedback = tasks.filter((task) => task.type == "awaitFeedback");
   document.getElementById("awaitFeedback").innerHTML = "";
   if (awaitFeedback.length > 0) {
-    for (let taskIndex = 0; taskIndex < awaitFeedback.length; taskIndex++) {
-      let type = awaitFeedback[taskIndex];
-      document.getElementById("awaitFeedback").innerHTML +=
-        getTaskTemplate(type);
+    for (let i = 0; i < awaitFeedback.length; i++) {
+      let taskObj = awaitFeedback[i];
+      document.getElementById("awaitFeedback").innerHTML += getTaskTemplate(
+        taskObj,
+        i
+      );
+      renderContactIntials(taskObj, i);
     }
   } else {
     document.getElementById("awaitFeedback").innerHTML =
@@ -86,13 +94,38 @@ function renderDone() {
   let done = tasks.filter((task) => task.type == "done");
   document.getElementById("done").innerHTML = "";
   if (done.length > 0) {
-    for (let taskIndex = 0; taskIndex < done.length; taskIndex++) {
-      let type = done[taskIndex];
-      document.getElementById("done").innerHTML += getTaskTemplate(type);
+    for (let i = 0; i < done.length; i++) {
+      let taskObj = done[i];
+      document.getElementById("done").innerHTML += getTaskTemplate(taskObj, i);
+      renderContactIntials(taskObj, i);
     }
   } else {
     document.getElementById("done").innerHTML = getNoTaskTemplate("done");
   }
+}
+
+function renderContactIntials(task, i) {
+  if (task.contacts != undefined) {
+    let contactKeys = Object.keys(task.contacts);
+    for (let index = 0; index < contactKeys.length; index++) {
+      let name = task.contacts[contactKeys[index]].name;
+      let intials = getIntialsOfContact(name);
+      let color = task.contacts[contactKeys[index]].color;
+      document.getElementById(task.type + i).innerHTML +=
+        getIntialTemplateForBoard(intials, index, color);
+    }
+  } else {
+    return;
+  }
+}
+
+function getIntialsOfContact(contact) {
+  let intials = "";
+  let splittedContact = contact.split(" ");
+  for (let i = 0; i < splittedContact.length; i++) {
+    intials += splittedContact[i][0].toUpperCase();
+  }
+  return intials;
 }
 
 function openAddTaskOverlay() {

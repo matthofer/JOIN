@@ -1,4 +1,4 @@
-function getTaskTemplate(task) {
+function getTaskTemplate(task, i) {
   return `<div draggable="true" ondragstart="id" class="taskWrapper">
                 <div class="task">
                     <div id="category" class="category${task.category[0]}">${
@@ -25,11 +25,10 @@ function getTaskTemplate(task) {
                         </span>
                       </div>
                     <div class="intialsAndPrio">
-                        <div id="intials" class="initialWrapper">
-                          <div class="intial i1">AM</div>
-                          <div class="intial i2">EM</div>
-                          <div class="intial i3">MB</div>
-                    </div>
+                        <div id="${task.type}${i}" class="initialWrapper">
+                          
+                        </div>
+
                         <img
                           id="prio"
                           class="prio"
@@ -45,4 +44,8 @@ function getNoTaskTemplate(type) {
   return `<div class="noTask">
                 <p>No Tasks ${type}</p>
           </div>`;
+}
+
+function getIntialTemplateForBoard(intials, i, color) {
+  return `<div class="intial i${i}" style="background-color: ${color}">${intials}</div>`;
 }

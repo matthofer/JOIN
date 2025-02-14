@@ -272,21 +272,39 @@ input[name="searchResp"] {
   border: 1px solid #ffffff;
 }
 
-.i1 {
+.i0 {
   position: absolute;
   left: 0;
   bottom: calc(50% - 15px);
 }
 
-.i2 {
+.i1 {
   position: absolute;
   left: 24px;
   bottom: calc(50% - 15px);
 }
 
-.i3 {
+.i2 {
   position: absolute;
   left: 48px;
+  bottom: calc(50% - 15px);
+}
+
+.i3 {
+  position: absolute;
+  left: 72px;
+  bottom: calc(50% - 15px);
+}
+
+.i4 {
+  position: absolute;
+  left: 96px;
+  bottom: calc(50% - 15px);
+}
+
+.i5 {
+  position: absolute;
+  left: 100px;
   bottom: calc(50% - 15px);
 }
 
