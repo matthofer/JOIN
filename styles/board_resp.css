@@ -362,6 +362,7 @@ main {
   }
 
   .task {
+    height: 252px;
     width: 252px;
   }
 

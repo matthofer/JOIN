@@ -1,10 +1,15 @@
 function getTaskTemplate(task) {
   return `<div draggable="true" ondragstart="id" class="taskWrapper">
                 <div class="task">
-                    <div id="category" class="category${task.category[0]}">${task.category}</div>
+                    <div id="category" class="category${task.category[0]}">${
+    task.category
+  }</div>
                     <div class="taskTitleAndDscr">
                         <p id="taskTitle" class="taskTitle">${task.title}</p>
-                        <p id="taskDscr" class="taskDscr">${task.dscr}</p>
+                        <p id="taskDscr" class="taskDscr">${task.dscr.substr(
+                          0,
+                          40
+                        )}...</p>
                     </div>
                     <div class="subtaskStatus">
                         <div class="progressBar">
