@@ -302,6 +302,8 @@ function deleteSubtask(subtasksIndex) {
 function editSubtaskDBLClick(subtasksIndex) {
   let subTask = document.getElementById(`editSpan${subtasksIndex}`);
   subTask.setAttribute("contenteditable", "true");
+  subTask.classList.toggle('cursor-text')
+  editSubtaskWithEnter(subtasksIndex)
 }
 
 function editSubtask(subtasksIndex) {
@@ -310,10 +312,12 @@ function editSubtask(subtasksIndex) {
   let editMenu = document.getElementById(`editMenu${subtasksIndex}`);
   let hoverMenu = document.getElementById(`singleSubtaskMenu${subtasksIndex}`);
   subTask.classList.toggle("border");
+  subTask.classList.toggle('cursor-text')
   span.classList.toggle("white");
   editMenu.classList.toggle("d-none");
   hoverMenu.classList.add("visibilty");
   editSubtaskDBLClick(subtasksIndex);
+  editSubtaskWithEnter(subtasksIndex)
 }
 
 function saveEditedSubtask(subtasksIndex) {
@@ -335,6 +339,20 @@ function submitSubtaskWithEnter() {
     });
   }
 }
+
+
+function editSubtaskWithEnter(subtasksIndex) {
+    let input = document.getElementById(`editSpan${subtasksIndex}`);
+    if (input) {
+      input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          saveEditedSubtask(subtasksIndex);
+        }
+      });
+    }
+  }
+  
 
 function clearInput(id) {
   let input = document.getElementById(id);
@@ -432,7 +450,7 @@ async function submitForm() {
     validateInputFields("title", "titleValidation");
     validateInputFields("date", "dateValidation");
     validateInputFields("categorysDropdown", "categoryValidation");
-    await postData("tasks/", data);
+    // await postData("tasks/", data);
     clearForm();
     showToast()
   } else {

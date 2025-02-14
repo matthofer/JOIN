@@ -99,7 +99,7 @@ input[name="subtask"] {
 .required {
     font-size: 12px !important;
     position: absolute;
-    bottom: -24px;
+    bottom: -22px;
 }
 
 

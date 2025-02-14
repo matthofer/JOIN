@@ -500,7 +500,10 @@
   .editMenu {
       flex-direction: row !important;
       padding-right: 10px;
+  }
 
+  .cursor-text{
+    cursor: text !important;
   }
 
   .editMenu img:hover {
@@ -524,15 +527,17 @@
       width: 250px;
       position: absolute;
       top: calc(50% - 25px);
-      left: calc( 50% - 125px);
+      left: calc(50% - 125px);
       z-index: 9;
       transition: all .3s ease-in-out;
+      opacity: 1;
   }
 
-  .toastMSG path{
-    fill: white;
+  .toastMSG path {
+      fill: white;
   }
 
-  .animateToast{
-    transform: translateY(1200%);
+  .animateToast {
+      transform: translateY(1000%);
+      opacity: 0;
   }
