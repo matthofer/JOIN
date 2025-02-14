@@ -1,0 +1,148 @@
+.subtasksMenu img:hover {
+    background-color: #D1D1D1;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.dividerSubtasks {
+    width: 1px;
+    height: 24px;
+    background-color: #D1D1D1;
+    margin: 0 2px;
+}
+
+.d-none {
+    display: none !important;
+}
+
+
+
+.renderedSubtasks {
+    --sb-track-color: #f6f7f8;
+    --sb-thumb-color: #a8a8a8;
+    --sb-size: 20px;
+}
+
+.renderedSubtasks::-webkit-scrollbar {
+    width: var(--sb-size)
+}
+
+.renderedSubtasks::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 20px;
+}
+
+.renderedSubtasks::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 20px;
+    border: 8px solid #f6f7f8;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    .renderedSubtasks {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+
+.renderedSubtasks {
+    height: 90px;
+    position: absolute;
+    width: 100%;
+    top: 86px;
+    overflow-y: scroll;
+    display: block;
+}
+
+.singleSubtask {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+    padding-left: 24px;
+    justify-content: space-between;
+}
+
+.singleSubtask span {
+    font-size: 16px !important;
+    font-weight: 400;
+    min-width: 90%;
+    cursor: pointer;
+    padding-left: 4px;
+    height: 24px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+
+.singleSubtask:hover {
+    background-color: #D1D1D1;
+    border-radius: 10px;
+}
+
+
+
+
+.singleSubtaskMenu {
+    flex-direction: row !important;
+    padding-right: 10px;
+    position: absolute;
+    right: 1px;
+}
+
+.singleSubtaskMenu img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.singleSubtaskLeft {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+    justify-content: start;
+    width: 90%;
+}
+
+.subtaskMenuDivider {
+    width: 1px;
+    height: 24px;
+    background-color: black;
+    margin: 0 2px;
+}
+
+
+.white {
+    background-color: white;
+    border-radius: 5px;
+    border-bottom-color: black;
+    outline: 1px dotted black;
+}
+
+.border {
+    border: 1px solid #29ABE2;
+    box-shadow: 0px 0px 5px rgba(41, 171, 226, 0.5);
+    border-radius: 10px;
+}
+
+.editMenu {
+    flex-direction: row !important;
+    padding-right: 10px;
+}
+
+.cursor-text{
+  cursor: text !important;
+}
+
+.editMenu img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
