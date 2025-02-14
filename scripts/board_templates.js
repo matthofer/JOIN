@@ -42,6 +42,6 @@ function getTaskTemplate() {
 
 function getNoTaskTemplate(type) {
   return `<div class="noTask">
-                <p>No Task ${type}</p>
+                <p>No Tasks ${type}</p>
           </div>`;
 }

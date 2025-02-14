@@ -366,7 +366,7 @@ main {
   }
 
   .columnContent::-webkit-scrollbar {
-    height: 6px;
+    height: 8px;
   }
 
   .columnContent::-webkit-scrollbar-track {
