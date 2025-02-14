@@ -166,7 +166,7 @@ function filterContacts() {
     renderFilteredContact(filteredContacts);
   } else {
     document.getElementById("contacts").innerHTML = `
-        <p class="noContact">Keinen Kontakt gefunden !</p>
+        <p class="noContact">No contacts founded !</p>
         `;
   }
 }
@@ -371,6 +371,7 @@ function clearForm() {
   clearInput("categorysDropdown");
   changePrio("medium", "mediumSVG");
   renderSelectedContacts();
+  checkSelectedContacts();
   clearSubtasksInput();
   renderSubtasks();
 }
