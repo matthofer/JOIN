@@ -13,7 +13,7 @@
     <script src="./scripts/addTask.js"></script>
     <script src="./scripts/addTask_template.js"></script>
     <script src="./scripts/firebase.js"></script>
-
+    <script src="./script.js"></script>
     <title>Add Task</title>
     <link rel="icon" type="image/x-icon" href="./assets/icons/fav_join_logo.png" />
 </head>
@@ -24,23 +24,51 @@
             <div class="sidebarTop">
                 <img class="sidebarLogo" src="./assets/icons/logo.svg" alt="Logo" />
                 <div class="navContent">
-                    <div class="navButton" tabindex="0">
-                        <img class="navSvg" src="./assets/icons/summary_grey.svg" alt="" />
-                        <a href="./summary.html">Summary</a>
+                    <div
+                      onclick="openPage('summary.html')"
+                      class="navButton"
+                      tabindex="0"
+                    >
+                      <img
+                        class="navSvg"
+                        src="./assets/icons/summary_grey.svg"
+                        alt=""
+                      />
+                      <a href="#">Summary</a>
                     </div>
-                    <div class="navButton" tabindex="0">
-                        <img class="navSvg" src="./assets/icons/add-task-grey.svg" alt="" />
-                        <a href="./addTask.html">Add Task</a>
+                    <div
+                      onclick="openPage('addTask.html')"
+                      class="navButton"
+                      tabindex="0"
+                    >
+                      <img
+                        class="navSvg"
+                        src="./assets/icons/add-task-grey.svg"
+                        alt=""
+                      />
+                      <a href="#">Add Task</a>
                     </div>
-                    <div class="navButton" tabindex="0">
-                        <img class="navSvg" src="./assets/icons/board-grey.svg" alt="" />
-                        <a href="./board.html">Board</a>
+                    <div
+                      onclick="openPage('board.html')"
+                      class="navButton"
+                      tabindex="0"
+                    >
+                      <img class="navSvg" src="./assets/icons/board-grey.svg" alt="" />
+                      <a href="#">Board</a>
                     </div>
-                    <div class="navButton" tabindex="0">
-                        <img class="navSvg" src="./assets/icons/contacts-grey.svg" alt="" />
-                        <a href="./contacts.html">Contacts</a>
+                    <div
+                      onclick="openPage('contacts.html')"
+                      class="navButton"
+                      tabindex="0"
+                    >
+                      <img
+                        class="navSvg"
+                        src="./assets/icons/contacts-grey.svg"
+                        alt=""
+                      />
+                      <a href="#">Contacts</a>
                     </div>
-                </div>
+                  </div>
             </div>
             <div class="sidebarBottom">
                 <div class="navButton" tabindex="0">
@@ -222,24 +250,40 @@
 
         <div class="respNavbar">
             <div class="respNavbarContent">
-                <div class="respNavButton" tabindex="0">
-                    <img class="navSvg" src="./assets/icons/summary_grey.svg" alt="" />
-                    <a href="./summary.html">Summary</a>
-                </div>
-                <div class="respNavButton" tabindex="0">
-                    <img class="navSvg" src="./assets/icons/board-grey.svg" alt="" />
-                    <a href="./board.html">Board</a>
-                </div>
-                <div class="respNavButton" tabindex="0">
-                    <img class="navSvg" src="./assets/icons/add-task-grey.svg" alt="" />
-                    <a href="./addTask.html">Add Tasks</a>
-                </div>
-                <div class="respNavButton" tabindex="0">
-                    <img class="navSvg" src="./assets/icons/contacts-grey.svg" alt="" />
-                    <a href="./contacts.html">contacts</a>
-                </div>
+              <div
+                onclick="openPage('summary.html')"
+                class="respNavButton"
+                tabindex="0"
+              >
+                <img class="navSvg" src="./assets/icons/summary_grey.svg" alt="" />
+                <a href="#">Summary</a>
+              </div>
+              <div
+                onclick="openPage('board.html')"
+                class="respNavButton"
+                tabindex="0"
+              >
+                <img class="navSvg" src="./assets/icons/board-grey.svg" alt="" />
+                <a href="#">Board</a>
+              </div>
+              <div
+                onclick="openPage('addtask.html')"
+                class="respNavButton"
+                tabindex="0"
+              >
+                <img class="navSvg" src="./assets/icons/add-task-grey.svg" alt="" />
+                <a href="#">Add Tasks</a>
+              </div>
+              <div
+                onclick="openPage('contacts.html')"
+                class="respNavButton"
+                tabindex="0"
+              >
+                <img class="navSvg" src="./assets/icons/contacts-grey.svg" alt="" />
+                <a href="./contacts.html">contacts</a>
+              </div>
             </div>
-        </div>
+          </div>
     </div>
 </body>
 
