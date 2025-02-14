@@ -152,6 +152,7 @@ function moveTo(category) {
   tasks[currentDraggedElement].type = category;
   renderTasks();
   document.getElementById(category).classList.remove("dragAreaHighlight");
+  putData(`tasks/${tasks[currentDraggedElement].firebaseid}/type`, category);
 }
 
 function highlight(id) {

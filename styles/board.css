@@ -180,7 +180,6 @@ input[name="searchResp"] {
 
 .task {
   width: 100%;
-  /* margin-top: 16px; */
   display: flex;
   flex-direction: column;
   gap: 24px;
