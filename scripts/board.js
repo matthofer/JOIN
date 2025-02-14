@@ -45,7 +45,7 @@ function renderTodo() {
   document.getElementById("todo").innerHTML = "";
   if (todo.length > 0) {
     for (let taskIndex = 0; taskIndex < todo.length; taskIndex++) {
-      let type = todo[taskIndex]
+      let type = todo[taskIndex];
       document.getElementById("todo").innerHTML += getTaskTemplate(type);
     }
   } else {
@@ -58,9 +58,8 @@ function renderInProgress() {
   document.getElementById("inProgress").innerHTML = "";
   if (inProgress.length > 0) {
     for (let taskIndex = 0; taskIndex < inProgress.length; taskIndex++) {
-      let type = inProgress[taskIndex]
-      document.getElementById("inProgress").innerHTML +=
-        getTaskTemplate(type);
+      let type = inProgress[taskIndex];
+      document.getElementById("inProgress").innerHTML += getTaskTemplate(type);
     }
   } else {
     document.getElementById("inProgress").innerHTML =
@@ -73,7 +72,7 @@ function renderAwaitFeedback() {
   document.getElementById("awaitFeedback").innerHTML = "";
   if (awaitFeedback.length > 0) {
     for (let taskIndex = 0; taskIndex < awaitFeedback.length; taskIndex++) {
-      let type = awaitFeedback[taskIndex]
+      let type = awaitFeedback[taskIndex];
       document.getElementById("awaitFeedback").innerHTML +=
         getTaskTemplate(type);
     }
@@ -88,7 +87,7 @@ function renderDone() {
   document.getElementById("done").innerHTML = "";
   if (done.length > 0) {
     for (let taskIndex = 0; taskIndex < done.length; taskIndex++) {
-      let type = done[taskIndex]
+      let type = done[taskIndex];
       document.getElementById("done").innerHTML += getTaskTemplate(type);
     }
   } else {
