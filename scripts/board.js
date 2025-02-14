@@ -43,50 +43,52 @@ function renderTasks() {
 function renderTodo() {
   let todo = tasks.filter((task) => task.type == "todo");
   document.getElementById("todo").innerHTML = "";
-  for (let taskIndex = 0; taskIndex < todo.length; taskIndex++) {
-    if (todo.length > 0) {
-      document.getElementById("todo").innerHTML += getTaskTemplate();
-    } else {
-      document.getElementById("todo").innerHTML = getNoTaskTemplate("in To do");
+  if (todo.length > 0) {
+    for (let taskIndex = 0; taskIndex < todo.length; taskIndex++) {
+      document.getElementById("todo").innerHTML += getTaskTemplate(taskIndex);
     }
+  } else {
+    document.getElementById("todo").innerHTML = getNoTaskTemplate("in to do");
   }
 }
 
 function renderInProgress() {
   let inProgress = tasks.filter((task) => task.type == "inProgress");
   document.getElementById("inProgress").innerHTML = "";
-  for (let taskIndex = 0; taskIndex < inProgress.length; taskIndex++) {
-    if (inProgress.length > 0) {
-      document.getElementById("inProgress").innerHTML += getTaskTemplate();
-    } else {
-      document.getElementById("inProgress").innerHTML =
-        getNoTaskTemplate("in progress");
+  if (inProgress.length > 0) {
+    for (let taskIndex = 0; taskIndex < inProgress.length; taskIndex++) {
+      document.getElementById("inProgress").innerHTML +=
+        getTaskTemplate(taskIndex);
     }
+  } else {
+    document.getElementById("inProgress").innerHTML =
+      getNoTaskTemplate("in progress");
   }
 }
 
 function renderAwaitFeedback() {
   let awaitFeedback = tasks.filter((task) => task.type == "awaitFeedback");
   document.getElementById("awaitFeedback").innerHTML = "";
-  for (let taskIndex = 0; taskIndex < awaitFeedback.length; taskIndex++) {
-    if (awaitFeedback.length > 0) {
-      document.getElementById("awaitFeedback").innerHTML += getTaskTemplate();
-    } else {
-      document.getElementById("awaitFeedback").innerHTML =
-        getNoTaskTemplate("in await Feedback");
+  if (awaitFeedback.length > 0) {
+    for (let taskIndex = 0; taskIndex < awaitFeedback.length; taskIndex++) {
+      document.getElementById("awaitFeedback").innerHTML +=
+        getTaskTemplate(taskIndex);
     }
+  } else {
+    document.getElementById("awaitFeedback").innerHTML =
+      getNoTaskTemplate("in await Feedback");
   }
 }
 
 function renderDone() {
   let done = tasks.filter((task) => task.type == "done");
   document.getElementById("done").innerHTML = "";
-  for (let taskIndex = 0; taskIndex < done.length; taskIndex++) {
-    if (done.length > 0) {
-      document.getElementById("done").innerHTML += getTaskTemplate();
-    } else {
-      document.getElementById("done").innerHTML = getNoTaskTemplate("done");
+  if (done.length > 0) {
+    for (let taskIndex = 0; taskIndex < done.length; taskIndex++) {
+      document.getElementById("done").innerHTML += getTaskTemplate(taskIndex);
     }
+  } else {
+    document.getElementById("done").innerHTML = getNoTaskTemplate("done");
   }
 }
 
