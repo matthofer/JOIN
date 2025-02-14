@@ -149,7 +149,7 @@ function collectData() {
         category: category,
         prio: prio,
         assignTo: getContactsForFB(),
-        subtasks: subtasks,
+        subtasks: getSubtasksForFB(),
         type: type,
     };
     return data;
@@ -166,6 +166,18 @@ function getContactsForFB() {
         };
     }
     return contacts;
+}
+
+function getSubtasksForFB() {
+    let subtasksOBJ = {};
+    for (let i = 0; i < subtasks.length; i++) {
+        let singleSubtask = subtasks[i]
+        subtasksOBJ[i] = {
+            title: singleSubtask,
+            done: false
+        }
+    }
+    return subtasksOBJ
 }
 
 function showToast() {
