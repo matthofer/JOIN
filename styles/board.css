@@ -116,6 +116,7 @@ input[name="searchResp"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 16px;
 }
 
 .columnName {
@@ -143,6 +144,8 @@ input[name="searchResp"] {
   height: 100%;
   flex-direction: column;
   padding-bottom: 32px;
+  border-radius: 24px;
+  gap: 8px;
 }
 
 .columnContent::-webkit-scrollbar {
@@ -177,7 +180,7 @@ input[name="searchResp"] {
 
 .task {
   width: 100%;
-  margin-top: 16px;
+  /* margin-top: 16px; */
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -411,4 +414,8 @@ input[name="searchResp"] {
   background-color: #ff6b6b;
   color: #ffffff;
   border-radius: 8px;
+}
+
+.dragAreaHighlight {
+  background-color: rgb(240, 238, 238);
 }

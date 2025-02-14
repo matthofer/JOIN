@@ -17,6 +17,7 @@
     <script src="./scripts/contacts.js"></script>
     <script src="./scripts/board.js"></script>
     <script src="./scripts/board_templates.js"></script>
+    <script src="./scripts/firebase.js"></script>
     <script src="./script.js"></script>
     <title>Board</title>
     <link
@@ -131,7 +132,7 @@
                     <img src="./assets/icons/plus_button.svg" alt="" />
                   </div>
                 </div>
-                <div id="todo" class="columnContent">
+                <div ondrop="moveTo('todo')" ondragover="allowDrop(event);highlight('todo')" ondragleave="removeHighlight('todo')" id="todo" class="columnContent">
                   <div class="noTask">
                     <p>No Task in To do</p>
                   </div>
@@ -148,7 +149,7 @@
                     />
                   </div>
                 </div>
-                <div id="inProgress" class="columnContent"></div>
+                <div ondrop="moveTo('inProgress')" ondragover="allowDrop(event);highlight('inProgress')" ondragleave="removeHighlight('inProgress')" id="inProgress" class="columnContent"></div>
               </div>
               <div class="column">
                 <div class="columnHead">
@@ -157,7 +158,7 @@
                     <img src="./assets/icons/plus_button.svg" alt="" />
                   </div>
                 </div>
-                <div id="awaitFeedback" class="columnContent">
+                <div ondrop="moveTo('awaitFeedback')" ondragover="allowDrop(event);highlight('awaitFeedback')" ondragleave="removeHighlight('awaitFeedback')" id="awaitFeedback" class="columnContent">
                   <div class="noTask">
                     <p>No Task in Await feedback</p>
                   </div>
@@ -167,7 +168,7 @@
                 <div class="columnHead">
                   <p class="columnName">Done</p>
                 </div>
-                <div id="done" class="columnContent"></div>
+                <div ondrop="moveTo('done')" ondragover="allowDrop(event);highlight('done')" ondragleave="removeHighlight('done')" id="done" class="columnContent"></div>
                 </div>
               </div>
             </div>

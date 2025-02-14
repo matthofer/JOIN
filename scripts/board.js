@@ -1,4 +1,5 @@
 let tasks = [];
+let currentDraggedElement;
 
 async function initBoard() {
   await initAddTask();
@@ -139,6 +140,27 @@ function renderSubTasks(task) {
   }
 }
 
+function startDragging(id) {
+  currentDraggedElement = id;
+}
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function moveTo(category) {
+  tasks[currentDraggedElement].type = category;
+  renderTasks();
+  document.getElementById(category).classList.remove("dragAreaHighlight");
+}
+
+function highlight(id) {
+  document.getElementById(id).classList.add("dragAreaHighlight");
+}
+
+function removeHighlight(id) {
+  document.getElementById(id).classList.remove("dragAreaHighlight");
+}
 /* function updateProgressBar() {
   let percent = (currentQuestion / questions.length) * 100;
   percent = Math.round(percent);
