@@ -1,45 +1,51 @@
-.summaryHeadline{
+.summaryHeadline {
     display: flex;
     align-items: center;
     gap: 30px;
     padding-top: 64px;
 }
 
-.summaryHeadline h1{
-    font-size: 51px;
+.summaryHeadline h1 {
+    font-size: 61px;
     font-weight: 700;
 }
 
-.blueDivider{
+.blueDivider {
     width: 3px;
     height: 59px;
     background-color: #29ABE2;
 }
 
-.summaryWrapper{
-    width: 550px;
-
+.summaryWrapper {
+    display: flex;
+    height: calc(100dvh - 235px);
 }
 
-.infoSection{
+.infoSection {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 16px;
+    height: clamp(300px, 100%, 550px);
+    width: clamp(300px, 100%, 550px);
+    margin: auto 0;
 }
 
-
-.summaryHeadline span{
-font-size: 27px;
-font-weight: 200;
-line-height: 32.4px;
+.summaryHeadline span {
+    font-size: 27px;
+    font-weight: 200;
+    line-height: 32.4px;
 }
-.topBar{
+
+.topBar {
     display: flex;
     gap: 32px;
+    height: 30%;
+    width: 100%;
 }
 
-.tilesTop{
-    width: 264px;
+.tilesTop {
+    width: 50%;
     background-color: white;
     display: flex;
     align-items: center;
@@ -48,14 +54,56 @@ line-height: 32.4px;
     padding: 16px 19px;
 }
 
-.sumContent{
+.tilesTop:hover {
+    background-color: #2A3647;
+    color: white;
+    cursor: pointer;
+    transform: scaleY(1.08) scaleX(1.08);
+    transform-origin: left center;
+}
+
+.tilesTop:hover .background {
+    background-color: white;
+}
+
+.tilesTop:hover .background path {
+    fill: #2A3647;
+}
+
+.tilesTopRight {
+    width: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 16px 19px;
+}
+
+.tilesTopRight:hover {
+    background-color: #2A3647;
+    color: white;
+    cursor: pointer;
+    transform: scaleY(1.08) scaleX(1.08);
+    transform-origin: right center;
+}
+
+.tilesTopRight:hover .background {
+    background-color: white;
+}
+
+.tilesTopRight:hover .background path {
+    fill: #2A3647;
+}
+
+.sumContent {
     display: flex;
     gap: 8px;
     align-items: center;
 }
 
-.background{
-    background-color:#2A3647 ; 
+.background {
+    background-color: #2A3647;
     width: 69px;
     height: 69px;
     border-radius: 50%;
@@ -64,78 +112,93 @@ line-height: 32.4px;
     align-items: center;
 }
 
-.background path{
+.background path {
     fill: white;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
 }
 
-.amount{
+.background svg {
+    width: 32px;
+    height: 32px;
+}
+
+.amount {
     display: flex;
     flex-direction: column;
 }
 
-.amount p{
+.amount p {
     font-size: 64px;
     font-weight: 600;
     line-height: 76.8px;
     text-align: center;
 }
 
-.amount span{
-font-size: 20px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
+.amount span {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
 }
 
-.midBar{
+.midBar {
     width: 100%;
+    height: 30%;
     background-color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     border-radius: 30px;
     padding: 16px 19px;
     gap: 32px;
 }
 
-.urgent{
+.midBar:hover {
+    background-color: #2A3647;
+    color: white;
+    cursor: pointer;
+    transform: scaleY(1.08);
+}
+
+.urgent {
     background-color: #FF3D00;
 }
 
-.divider{
+.divider {
     width: 1px;
     height: 100px;
     background-color: #D1D1D1;
 }
 
-.date{
+.date {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.date p{
-font-size: 21px;
-font-weight: 700;
-line-height: 25.2px;
-text-align: left;
+.date p {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 25.2px;
+    text-align: left;
 }
 
-.date span{
-font-size: 16px;
-font-weight: 400;
-line-height: 19.2px;
-text-align: left;
+.date span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
 }
 
-.bottomBar{
+.bottomBar {
     display: flex;
     justify-content: space-between;
+    height: 30%;
+    width: 100%;
 }
 
-.tilesBottom{
+.tilesBottomLeft {
     width: 30%;
     background-color: white;
     display: flex;
@@ -145,23 +208,91 @@ text-align: left;
     padding: 16px 19px;
 }
 
-.infoBottom{
+.tilesBottomLeft:hover {
+    background-color: #2A3647;
+    color: white;
+    cursor: pointer;
+    transform: scaleY(1.08) scaleX(1.08);
+    transform-origin: left center;
+}
+
+.tilesBottomMid {
+    width: 30%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 16px 19px;
+}
+
+.tilesBottomMid:hover {
+    background-color: #2A3647;
+    color: white;
+    cursor: pointer;
+    transform: scaleY(1.08) scaleX(1.08);
+    /* transform-origin: left center; */
+}
+
+.tilesBottomRight {
+    width: 30%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 16px 19px;
+}
+
+.tilesBottomRight:hover {
+    background-color: #2A3647;
+    color: white;
+    cursor: pointer;
+    transform: scaleY(1.08) scaleX(1.08);
+    transform-origin: right center;
+}
+
+.infoBottom {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 8px;
+    text-align: center;
 }
 
-.infoBottom p{
+.infoBottom p {
     font-size: 64px;
     font-weight: 600;
     line-height: 76.8px;
 }
 
-.infoBottom span{
+.infoBottom span {
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
-    
+}
+
+.greetingSection {
+    min-width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 100px;
+}
+
+.greetingSection p {
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 56.4px;
+    letter-spacing: 0%;
+    color: #2A3647;
+}
+
+.greetingSection span{
+font-weight: 700;
+font-size: 64px;
+line-height: 76.8px;
+letter-spacing: 0%;
+color: #29ABE2;
 }
