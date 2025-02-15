@@ -3,6 +3,7 @@
     align-items: center;
     gap: 30px;
     padding-top: 64px;
+    position: absolute;
 }
 
 .summaryHeadline h1 {
@@ -18,7 +19,8 @@
 
 .summaryWrapper {
     display: flex;
-    height: calc(100dvh - 235px);
+    height: calc(100dvh - 96px);
+    position: relative;
 }
 
 .infoSection {
@@ -273,26 +275,39 @@
     line-height: 24px;
 }
 
+.description{
+    font-size: 16px !important;
+    font-weight: 300 !important;
+}
+
 .greetingSection {
-    min-width: 50%;
+    /* min-width: 50%; */
     display: flex;
     justify-content: start;
     align-items: center;
-    padding-left: 100px;
+    padding-left: 64px;
 }
 
 .greetingSection p {
     font-weight: 500;
-    font-size: 47px;
+    /* font-size: 2vw; */
+    /* font-size: 47px; */
+    font-size: clamp(34px, 2.65vw, 47px);
     line-height: 56.4px;
-    letter-spacing: 0%;
     color: #2A3647;
+    text-wrap: nowrap;
 }
 
 .greetingSection span{
 font-weight: 700;
-font-size: 64px;
+/* font-size: 64px; */
+font-size: clamp(48px, 3.55vw, 64px);
+
 line-height: 76.8px;
-letter-spacing: 0%;
 color: #29ABE2;
+text-wrap: nowrap;
+}
+
+.blueDividerHorizontal{
+    display: none;
 }
