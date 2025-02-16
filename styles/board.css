@@ -531,6 +531,10 @@ input[name="detailSubtask"] {
   cursor: pointer;
 }
 
+.taskDetailButton p {
+  font-size: 16px;
+}
+
 .taskDetailButtonsDivider {
   height: 24px;
   width: 1px;
@@ -544,4 +548,34 @@ input[name="detailSubtask"] {
 
 .taskDetailButton:hover {
   color: #29abe2;
+}
+
+.detailContactsList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.detailContactsList::-webkit-scrollbar-track {
+  background: #ffffff00;
+  border-radius: 10px;
+}
+
+.detailContactsList::-webkit-scrollbar-thumb {
+  background: #29abe2;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.subtasksList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.subtasksList::-webkit-scrollbar-track {
+  background: #ffffff00;
+  border-radius: 10px;
+}
+
+.subtasksList::-webkit-scrollbar-thumb {
+  background: #29abe2;
+  border-radius: 10px;
+  cursor: pointer;
 }
