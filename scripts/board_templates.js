@@ -1,5 +1,7 @@
 function getTaskTemplate(task, i) {
-  return `<div onclick="openTaskDetails(${i})" draggable="true" ondragstart="startDragging(${
+  return `<div onclick="openTaskDetails(${
+    task.id
+  })" draggable="true" ondragstart="startDragging(${
     task.id
   })" class="taskWrapper">
                 <div class="task">

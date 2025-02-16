@@ -181,13 +181,18 @@ function updateStatusBar(amountDone, amountSubTasks, task, i) {
   }`;
 }
 
-function openTaskDetails(i) {
-  console.log(i);
-}
 function openAddTaskOverlay() {
   document.getElementById("overlayAddTask").classList.remove("overlayClosed");
 }
 
 function closeAddTaskOverlay() {
   document.getElementById("overlayAddTask").classList.add("overlayClosed");
+}
+
+function openTaskDetails(i) {
+  document.getElementById("overlayEditTask").classList.remove("overlayClosed");
+}
+
+function closeAddTaskOverlay() {
+  document.getElementById("overlayEditTask").classList.add("overlayClosed");
 }

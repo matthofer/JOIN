@@ -418,3 +418,130 @@ input[name="searchResp"] {
 .dragAreaHighlight {
   background-color: rgb(240, 238, 238);
 }
+
+.taskEditContainer {
+  display: flex;
+  flex-direction: column;
+  height: clamp(300px, 100%, 800px);
+  width: clamp(300px, 100%, 425px);
+  border-radius: 30px;
+  background-color: #ffffff;
+  padding: 24px;
+  gap: 24px;
+}
+
+.taskDetailHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.taskDetailHeader img {
+  cursor: pointer;
+}
+
+.taskEditContainer h2 {
+  font-size: 52px;
+}
+
+.taskEditContainer p {
+  font-size: 20px;
+}
+
+.taskDetails {
+  font-size: 20px;
+}
+
+.taskDetails {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  gap: 24px;
+}
+.detail {
+  display: flex;
+  gap: 25px;
+}
+.detailType {
+  width: 100px;
+}
+
+.detailPrio {
+  display: flex;
+  gap: 10px;
+}
+
+.detailContacts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.detailContactsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 120px;
+  overflow-y: auto;
+}
+
+.detialContactListItem {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.detailSubtasks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subtasksList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 50px;
+  overflow-y: auto;
+}
+
+.subtasksListItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px !important;
+}
+
+.subtasksListItem p {
+  font-size: 16px;
+}
+
+input[name="detailSubtask"] {
+  height: 16px;
+}
+
+.taskDetailButtons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.taskDetailButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.taskDetailButtonsDivider {
+  height: 24px;
+  width: 1px;
+  background-color: #d1d1d1;
+}
+
+.taskDetailButton:hover img {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(93%) saturate(423%)
+    hue-rotate(173deg) brightness(92%) contrast(94%);
+}
+
+.taskDetailButton:hover {
+  color: #29abe2;
+}
