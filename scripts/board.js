@@ -181,6 +181,9 @@ function updateStatusBar(amountDone, amountSubTasks, task, i) {
   }`;
 }
 
+function openTaskDetails(i) {
+  console.log(i);
+}
 function openAddTaskOverlay() {
   document.getElementById("overlayAddTask").classList.remove("overlayClosed");
 }
