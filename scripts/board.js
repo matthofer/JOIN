@@ -1,4 +1,5 @@
 let tasks = [];
+let searchedTasks = [];
 let currentDraggedElement;
 
 async function initBoard() {
@@ -254,4 +255,16 @@ async function deleteTask(i) {
   renderTasks();
   closeEditTaskOverlay();
   showMessage("Task successfully deleted");
+}
+
+function searchTask() {
+  searchInputRef = document.getElementById("search");
+  searchInput = searchInputRef.value;
+}
+
+function getSearchedTasks(searchInput) {
+  filteredTasks = tasks.filter((task) =>
+    task.title.toLowerCase().startsWith(searchInput.toLowerCase())
+  );
+  return filteredTasks;
 }
