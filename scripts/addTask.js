@@ -135,13 +135,13 @@ function getBlueBorder(id) {
 
 //SubmitForm
 
-function collectData() {
+function collectData(specificType) {
   let title = document.getElementById("title").value;
   let description = document.getElementById("description").value;
   let date = document.getElementById("date").value;
   let category = document.getElementById("categorysDropdown").value;
   let prio = returnPrio();
-  let type = "todo";
+  let type = specificType;
   let data = {
     title: title,
     description: description,
