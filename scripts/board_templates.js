@@ -52,8 +52,14 @@ function getNoTaskTemplate(type) {
           </div>`;
 }
 
-function getIntialTemplateForBoard(intials, i, color) {
-  return `<div class="intial i${i}" style="background-color: ${color}">${intials}</div>`;
+function getIntialTemplateForBoard(intials, color, leftPos) {
+  return `<div class="intial iPos" style="background-color: ${color}; left: ${leftPos}px">${intials}</div>`;
+}
+
+function getRemainingIntialsTemplate(counter, lenContacts, leftPos) {
+  return `<div class="intial iPos" style="left: ${leftPos}px">+${
+    lenContacts - counter
+  }</div>`;
 }
 
 function getSubTaskTextTemplate(doneSubTasks, amountSubTasks) {

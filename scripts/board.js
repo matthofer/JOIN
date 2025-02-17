@@ -112,12 +112,23 @@ function renderDone() {
 function renderContactIntials(task, i) {
   if (task.contacts != undefined) {
     let contactKeys = Object.keys(task.contacts);
+    let leftPos = 0;
+    let counter = 0;
     for (let index = 0; index < contactKeys.length; index++) {
-      let name = task.contacts[contactKeys[index]].name;
-      let intials = getIntialsOfContact(name);
-      let color = task.contacts[contactKeys[index]].color;
+      if (index <= 4) {
+        let name = task.contacts[contactKeys[index]].name;
+        let intials = getIntialsOfContact(name);
+        let color = task.contacts[contactKeys[index]].color;
+        document.getElementById(task.type + i).innerHTML +=
+          getIntialTemplateForBoard(intials, color, leftPos);
+        leftPos += 24;
+        counter++;
+      }
+    }
+    if (counter < contactKeys.length) {
       document.getElementById(task.type + i).innerHTML +=
-        getIntialTemplateForBoard(intials, index, color);
+        getRemainingIntialsTemplate(counter, contactKeys.length, leftPos);
+      leftPos += 24;
     }
   } else {
     return;
@@ -193,6 +204,6 @@ function openTaskDetails(i) {
   document.getElementById("overlayEditTask").classList.remove("overlayClosed");
 }
 
-function closeAddTaskOverlay() {
+function closeEditTaskOverlay() {
   document.getElementById("overlayEditTask").classList.add("overlayClosed");
 }
