@@ -111,11 +111,11 @@
                   <div class="searchInput">
                     <input type="text" placeholder="Find Task" name="search" />
                   </div>
-                  <div onclick="openAddTaskOverlay()" class="addTaskButton">
+                  <div onclick="openAddTaskOverlay('todo')" class="addTaskButton">
                     <h3>Add task</h3>
                     <img src="./assets/icons/add_white.svg" />
                   </div>
-                  <div onclick="openAddTaskOverlay()" class="respAddTask">
+                  <div onclick="openAddTaskOverlay('todo')" class="respAddTask">
                     <img src="./assets/icons/add_white.svg" />
                   </div>
                 </div>
@@ -128,20 +128,16 @@
               <div class="column">
                 <div class="columnHead">
                   <p class="columnName">To do</p>
-                  <div class="addTaskColButton">
+                  <div onclick="openAddTaskOverlay('todo')" class="addTaskColButton">
                     <img src="./assets/icons/plus_button.svg" alt="" />
                   </div>
                 </div>
-                <div ondrop="moveTo('todo')" ondragover="allowDrop(event);highlight('todo')" ondragleave="removeHighlight('todo')" id="todo" class="columnContent">
-                  <div class="noTask">
-                    <p>No Task in To do</p>
-                  </div>
-                </div>
+                <div ondrop="moveTo('todo')" ondragover="allowDrop(event);highlight('todo')" ondragleave="removeHighlight('todo')" id="todo" class="columnContent"></div>
               </div>
               <div class="column">
                 <div class="columnHead">
                   <p class="columnName">In progress</p>
-                  <div class="addTaskColButton">
+                  <div onclick="openAddTaskOverlay('inProgress')" class="addTaskColButton">
                     <img
                       class="addTaskColButton"
                       src="./assets/icons/plus_button.svg"
@@ -154,7 +150,7 @@
               <div class="column">
                 <div class="columnHead">
                   <p class="columnName">Await feedback</p>
-                  <div class="addTaskColButton">
+                  <div onclick="openAddTaskOverlay('awaitFeedback')" class="addTaskColButton">
                     <img src="./assets/icons/plus_button.svg" alt="" />
                   </div>
                 </div>
@@ -181,7 +177,7 @@
                     src="./assets/icons/close.svg"
                   />
                 </div>
-                <form onsubmit="submitForm(); return false">
+                <form id="addTaskForm">
                   <div class="formWrapper">
                       <div class="leftColumn">
                           <div class="titles">

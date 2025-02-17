@@ -192,7 +192,9 @@ function updateStatusBar(amountDone, amountSubTasks, task, i) {
   }`;
 }
 
-function openAddTaskOverlay() {
+function openAddTaskOverlay(type) {
+  let form = document.getElementById("addTaskForm");
+  form.setAttribute("onsubmit", `submitForm('${type}'); return false;`);
   document.getElementById("overlayAddTask").classList.remove("overlayClosed");
 }
 
