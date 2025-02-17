@@ -90,7 +90,7 @@ function getTaskDetailTemplate(i) {
                 </div>
                 <div class="detailContacts">
                   <p>Assigned to:</p>
-                  <div class="detailContactsList">
+                  <div id="detailContactsList"  class="detailContactsList">
                     <div class="detialContactListItem">
                       <div class="intial">MM</div>
                       <p>Max Muster</p>
@@ -137,6 +137,13 @@ function getTaskDetailTemplate(i) {
                     <p>Edit</p>
                   </div>
                 </div>`;
+}
+
+function getDetialContactListItemTemplate(name, intials, color) {
+  return `<div class="detialContactListItem">
+            <div class="intial" style="background-color: ${color}">${intials}</div>
+            <p>${name}</p>
+          </div>`;
 }
 
 function formatDate(date) {

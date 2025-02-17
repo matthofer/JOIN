@@ -204,9 +204,26 @@ function openTaskDetails(i) {
   document.getElementById("taskEditContainer").innerHTML = "";
   document.getElementById("taskEditContainer").innerHTML =
     getTaskDetailTemplate(i);
+  renderContactsInTaskDetail(i);
   document.getElementById("overlayEditTask").classList.remove("overlayClosed");
 }
 
 function closeEditTaskOverlay() {
   document.getElementById("overlayEditTask").classList.add("overlayClosed");
+}
+
+function renderContactsInTaskDetail(i) {
+  document.getElementById("detailContactsList").innerHTML = "";
+  if (tasks[i].contacts != undefined) {
+    let contactKeys = Object.keys(tasks[i].contacts);
+    for (let index = 0; index < contactKeys.length; index++) {
+      let name = tasks[i].contacts[contactKeys[index]].name;
+      let intials = getIntialsOfContact(name);
+      let color = tasks[i].contacts[contactKeys[index]].color;
+      document.getElementById("detailContactsList").innerHTML +=
+        getDetialContactListItemTemplate(name, intials, color);
+    }
+  } else {
+    return;
+  }
 }
