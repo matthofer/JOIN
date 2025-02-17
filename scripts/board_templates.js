@@ -90,41 +90,11 @@ function getTaskDetailTemplate(i) {
                 </div>
                 <div class="detailContacts">
                   <p>Assigned to:</p>
-                  <div id="detailContactsList"  class="detailContactsList">
-                    <div class="detialContactListItem">
-                      <div class="intial">MM</div>
-                      <p>Max Muster</p>
-                    </div>
-                    <div class="detialContactListItem">
-                      <div class="intial">MM</div>
-                      <p>Max Muster</p>
-                    </div>
-                    <div class="detialContactListItem">
-                      <div class="intial">MM</div>
-                      <p>Max Muster</p>
-                    </div>
-                    <div class="detialContactListItem">
-                      <div class="intial">MM</div>
-                      <p>Max Muster</p>
-                    </div>
-                    <div class="detialContactListItem">
-                      <div class="intial">MM</div>
-                      <p>Max Muster</p>
-                    </div>
-                  </div>
+                  <div id="detailContactsList"  class="detailContactsList"></div>
                 </div>
                 <div class="detailSubtasks">
                   <p>Subtasks</p>
-                  <div class="subtasksList">
-                    <div class="subtasksListItem">
-                      <input type="checkbox" name="detailSubtask">
-                      <p>Implement recipe recommendation</p>
-                    </div>
-                    <div class="subtasksListItem">
-                      <input class="detailInput" type="checkbox" name="detailSubtask">
-                      <p>Start page layout</p>
-                    </div>
-                  </div>
+                  <div id="subtasksList" class="subtasksList"></div>
                 </div>
                 <div class="taskDetailButtons">
                   <div onclick="deleteTask(${i})" class="taskDetailButton">
@@ -144,6 +114,20 @@ function getDetialContactListItemTemplate(name, intials, color) {
             <div class="intial" style="background-color: ${color}">${intials}</div>
             <p>${name}</p>
           </div>`;
+}
+
+function getDetialSubtaskListItemTemplate(status, title) {
+  if (status === true) {
+    return ` <div class="subtasksListItem">
+              <img src="./assets/icons/subtask_checked.svg">
+              <p>${title}</p>
+            </div>`;
+  } else {
+    return ` <div class="subtasksListItem">
+              <img src="./assets/icons/subtask_unchecked.svg">
+              <p>${title}</p>
+            </div>`;
+  }
 }
 
 function formatDate(date) {

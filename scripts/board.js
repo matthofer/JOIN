@@ -205,6 +205,7 @@ function openTaskDetails(i) {
   document.getElementById("taskEditContainer").innerHTML =
     getTaskDetailTemplate(i);
   renderContactsInTaskDetail(i);
+  renderSubTasksInDetail(i);
   document.getElementById("overlayEditTask").classList.remove("overlayClosed");
 }
 
@@ -222,6 +223,21 @@ function renderContactsInTaskDetail(i) {
       let color = tasks[i].contacts[contactKeys[index]].color;
       document.getElementById("detailContactsList").innerHTML +=
         getDetialContactListItemTemplate(name, intials, color);
+    }
+  } else {
+    return;
+  }
+}
+
+function renderSubTasksInDetail(i) {
+  document.getElementById("subtasksList").innerHTML = "";
+  if (tasks[i].subtasks != undefined) {
+    let subtasksKeys = Object.keys(tasks[i].subtasks);
+    for (let index = 0; index < subtasksKeys.length; index++) {
+      let status = tasks[i].subtasks[subtasksKeys[index]].done;
+      let title = tasks[i].subtasks[subtasksKeys[index]].title;
+      document.getElementById("subtasksList").innerHTML +=
+        getDetialSubtaskListItemTemplate(status, title);
     }
   } else {
     return;
