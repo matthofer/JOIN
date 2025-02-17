@@ -205,6 +205,10 @@ h1 {
   font-weight: 600;
 }
 
+.footerSignUp {
+  display: none;
+}
+
 footer {
   display: flex;
   justify-content: center;
