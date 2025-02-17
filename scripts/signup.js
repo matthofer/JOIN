@@ -76,7 +76,7 @@ async function handleSignup() {
 
   if (validateFormInputs(name, email, password, confirmPassword)) {
     await createUser(name, email, password);
-    showToastMessage("You Signed Up successfully");
+    showToastMessage("You Signed Up successfully. <br> Redirecting to Log In...");
     setTimeout(() => {
       redirectToLoginPage();
       clearFormFields();
@@ -275,16 +275,16 @@ function showRedBorderConfirmPw() {
 
 function showToastMessage(message) {
   document.getElementById("messageText").innerHTML = message;
-  document.getElementById("message").classList.remove("messageClosed");
   document.getElementById("overlay").classList.remove("d-none");
+  document.getElementById("message").classList.remove("messageClosed");
+  document.getElementById("message").classList.add("messageVisible");
   setTimeout(() => {
+    document.getElementById("message").classList.remove("messageVisible");
     document.getElementById("message").classList.add("messageClosed");
-    document.getElementById("overlay").classList.add("d-none");
-  }, 3000);
-}
-
-function closeSuccessMessage() {
-  document.getElementById("message").classList.add("messageClosed");
+    setTimeout(() => {
+      document.getElementById("overlay").classList.add("d-none");
+    }, 2000);
+  }, 4000);
 }
 
 async function takenMail() {

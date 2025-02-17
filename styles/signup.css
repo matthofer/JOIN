@@ -255,7 +255,7 @@ footer {
 }
 
 .d-none {
-  display: none;
+  display: none !important;
 }
 
 .pointerEvent {
@@ -274,6 +274,10 @@ footer {
   height: 100dvh;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 9998;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
 }
 
 
@@ -290,10 +294,42 @@ footer {
   color: #ffffff;
   border-radius: 20px;
   z-index: 9999;
-  overflow-x: hidden;
-  transition: all 0.2s ease-in-out;
+  transform: translateY(500%);
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+#messageText {
+  text-align: center;
+}
+
+.messageVisible {
+  animation-name: slideIn;
 }
 
 .messageClosed {
-  transform: translateY(500%);
+  animation-name: slideOut;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
 }
