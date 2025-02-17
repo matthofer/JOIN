@@ -65,3 +65,91 @@ function getRemainingIntialsTemplate(counter, lenContacts, leftPos) {
 function getSubTaskTextTemplate(doneSubTasks, amountSubTasks) {
   return `<p id="subTaskFrom">${doneSubTasks}</p>/<p id="subTaskTo">${amountSubTasks}</p>`;
 }
+
+function getTaskDetailTemplate(i) {
+  return `<div class="taskDetailHeader">
+                  <div id="category" class="category${tasks[i].category[0]}">${
+    tasks[i].category
+  }</div>
+                  <img onclick="closeEditTaskOverlay()" src="./assets/icons/close.svg">
+                </div>
+                <h2>${tasks[i].title}</h2>
+                <p>${tasks[i].dscr}</p>
+                <div class="taskDetails">
+                  <div class="detail">
+                    <p class="detailType">Due date:</p>
+                    <p>${formatDate(tasks[i].date)}</p>
+                  </div>
+                  <div class="detail">
+                    <p class="detailType">Prio:</p>
+                    <div class="detailPrio">
+                      <p>${fristLetterUpperCase(tasks[i].prio)}</p>
+                      <img src="./assets/icons/prio_${tasks[i].prio}.svg">
+                    </div>
+                  </div>
+                </div>
+                <div class="detailContacts">
+                  <p>Assigned to:</p>
+                  <div class="detailContactsList">
+                    <div class="detialContactListItem">
+                      <div class="intial">MM</div>
+                      <p>Max Muster</p>
+                    </div>
+                    <div class="detialContactListItem">
+                      <div class="intial">MM</div>
+                      <p>Max Muster</p>
+                    </div>
+                    <div class="detialContactListItem">
+                      <div class="intial">MM</div>
+                      <p>Max Muster</p>
+                    </div>
+                    <div class="detialContactListItem">
+                      <div class="intial">MM</div>
+                      <p>Max Muster</p>
+                    </div>
+                    <div class="detialContactListItem">
+                      <div class="intial">MM</div>
+                      <p>Max Muster</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="detailSubtasks">
+                  <p>Subtasks</p>
+                  <div class="subtasksList">
+                    <div class="subtasksListItem">
+                      <input type="checkbox" name="detailSubtask">
+                      <p>Implement recipe recommendation</p>
+                    </div>
+                    <div class="subtasksListItem">
+                      <input class="detailInput" type="checkbox" name="detailSubtask">
+                      <p>Start page layout</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="taskDetailButtons">
+                  <div onclick="deleteTask(${i})" class="taskDetailButton">
+                    <img src="./assets/icons/delete_contact.svg">
+                    <p>Delete</p>
+                  </div>
+                  <div class="taskDetailButtonsDivider"></div>
+                  <div class="taskDetailButton">
+                    <img src="./assets/icons/edit_contact.svg">
+                    <p>Edit</p>
+                  </div>
+                </div>`;
+}
+
+function formatDate(date) {
+  let year = date.substr(0, 4);
+  let month = date[5] + date[6];
+  let day = date[8] + date[9];
+  let formattedDate = `${day}/${month}/${year}`;
+  return formattedDate;
+}
+
+function fristLetterUpperCase(word) {
+  let firstLetter = word[0];
+  let firstLetterCap = firstLetter.toUpperCase();
+  let remainingLetters = word.slice(1);
+  return (capitalizedWord = firstLetterCap + remainingLetters);
+}

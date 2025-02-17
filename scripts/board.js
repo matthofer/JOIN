@@ -201,6 +201,9 @@ function closeAddTaskOverlay() {
 }
 
 function openTaskDetails(i) {
+  document.getElementById("taskEditContainer").innerHTML = "";
+  document.getElementById("taskEditContainer").innerHTML =
+    getTaskDetailTemplate(i);
   document.getElementById("overlayEditTask").classList.remove("overlayClosed");
 }
 
