@@ -24,7 +24,7 @@ async function getAmountofAllTasks() {
     }
 }
 
-async function getAmountofTask(id , type) {
+async function getAmountofTask(id, type) {
     let html = document.getElementById(id);
     let count = 0;
 
@@ -34,7 +34,7 @@ async function getAmountofTask(id , type) {
         let allTasks = Object.values(taskResponseAsJson);
         for (let i = 0; i < allTasks.length; i++) {
             const task = allTasks[i];
-            if (task.type === type ) {
+            if (task.type === type) {
                 count++;
             }
         }
@@ -47,23 +47,42 @@ async function getAmountofTask(id , type) {
 
 async function getAmountofUrgent() {
     let html = document.getElementById('urgent');
+    let date = document.getElementById('deadline');
+    let earliestUrgentDate = null;
     let count = 0;
-
     try {
         let taskResponse = await fetch(FB_URL + "/tasks" + ".json");
         let taskResponseAsJson = await taskResponse.json();
         let allTasks = Object.values(taskResponseAsJson);
         for (let i = 0; i < allTasks.length; i++) {
             const task = allTasks[i];
-            if (task.prio === "urgent" ) {
+            if (task.prio === "urgent") {
                 count++;
-                console.log(task.date);
-                
+                let currentTaskDate = new Date(task.date);
+                let today = new Date();
+                if (currentTaskDate >= today) {
+                    if (!earliestUrgentDate || new Date(task.date) < new Date(earliestUrgentDate)) {
+                        earliestUrgentDate = task.date;
+                    }
+                }
             }
         }
         html.innerHTML = count;
-
+        if (earliestUrgentDate) {
+            date.innerHTML = formatDate(earliestUrgentDate);
+        }
     } catch (error) {
         console.error("Ups, u need to exercise for this stuff bra!", error);
     }
+}
+
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    // z.B. "March 4, 2025"
+    return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
