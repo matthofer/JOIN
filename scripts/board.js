@@ -6,6 +6,7 @@ async function initBoard() {
   await initAddTask();
   await loadTasksData();
   renderTasks();
+  initLoad();
 }
 
 async function loadTasksData(path = "/tasks") {
@@ -258,8 +259,10 @@ async function deleteTask(i) {
 }
 
 function searchTask() {
-  searchInputRef = document.getElementById("search");
-  searchInput = searchInputRef.value;
+  let searchInputRef = document.getElementById("search");
+  let searchInput = searchInputRef.value;
+  let searchResultArr = getSearchedTasks(searchInput);
+  console.log(searchResultArr);
 }
 
 function getSearchedTasks(searchInput) {

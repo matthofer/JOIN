@@ -97,7 +97,7 @@
               <a href="./help.html"
                 ><img src="./assets/icons/help.svg" alt="" srcset=""
               /></a>
-              <div class="userIcon">SM</div>
+              <div class="userIcon" id="userInitials"></div>
             </div>
           </div>
         </header>
@@ -109,7 +109,7 @@
                 <h1 class="boardHeadline">Board</h1>
                 <div class="inputAndSearch">
                   <div class="searchInput">
-                    <input type="text" placeholder="Find Task" name="search" />
+                    <input id="search" oninput="searchTask()" type="text" placeholder="Find Task" name="search" />
                   </div>
                   <div onclick="openAddTaskOverlay('todo')" class="addTaskButton">
                     <h3>Add task</h3>
@@ -121,7 +121,7 @@
                 </div>
               </div>
               <div class="searchInputResp">
-                <input type="text" placeholder="Find Task" name="searchResp" />
+                <input id="searchResp" type="text" placeholder="Find Task" name="searchResp" />
               </div>
             </div>
             <div class="boardColumns">
@@ -150,7 +150,7 @@
               <div class="column">
                 <div class="columnHead">
                   <p class="columnName">Await feedback</p>
-                  <div onclick="openAddTaskOverlay('inProgress')" class="addTaskColButton">
+                  <div onclick="openAddTaskOverlay('awaitFeedback')" class="addTaskColButton">
                     <img src="./assets/icons/plus_button.svg" alt="" />
                   </div>
                 </div>
