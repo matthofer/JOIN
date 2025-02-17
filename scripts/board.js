@@ -245,3 +245,11 @@ function renderSubTasksInDetail(i) {
     return;
   }
 }
+
+async function deleteTask(i) {
+  await deleteData(`/tasks/${tasks[i].firebaseid}`);
+  await loadTasksData();
+  renderTasks();
+  closeEditTaskOverlay();
+  showMessage("Task successfully deleted");
+}

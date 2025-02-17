@@ -230,7 +230,7 @@ async function saveContact(contactName, contactMail, contactPhone) {
 function showMessage(message) {
   document.getElementById("messageText").innerHTML = message;
   document.getElementById("message").classList.remove("messageClosed");
-  const myTimeout = setTimeout(closeSuccessMessage, 2000);
+  const myTimeout = setTimeout(closeSuccessMessage, 1200);
 }
 
 function closeSuccessMessage() {
