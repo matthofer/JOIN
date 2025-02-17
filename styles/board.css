@@ -550,3 +550,7 @@ input[name="detailSubtask"] {
   border-radius: 10px;
   cursor: pointer;
 }
+
+.text {
+  color: #42526e;
+}

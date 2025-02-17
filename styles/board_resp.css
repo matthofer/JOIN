@@ -186,6 +186,15 @@ main {
 }
 
 /*Responsiv */
+@media (max-width: 1260px) {
+  .taskEditContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: clamp(300px, 100%, 600px);
+    width: clamp(300px, 100%, 425px);
+  }
+}
 
 @media (max-width: 1200px) {
   .topBar {

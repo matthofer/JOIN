@@ -77,11 +77,11 @@ function getTaskDetailTemplate(i) {
                 <p>${tasks[i].dscr}</p>
                 <div class="taskDetails">
                   <div class="detail">
-                    <p class="detailType">Due date:</p>
+                    <p class="detailType text">Due date:</p>
                     <p>${formatDate(tasks[i].date)}</p>
                   </div>
                   <div class="detail">
-                    <p class="detailType">Prio:</p>
+                    <p class="detailType text">Priority:</p>
                     <div class="detailPrio">
                       <p>${fristLetterUpperCase(tasks[i].prio)}</p>
                       <img src="./assets/icons/prio_${tasks[i].prio}.svg">
@@ -89,11 +89,11 @@ function getTaskDetailTemplate(i) {
                   </div>
                 </div>
                 <div class="detailContacts">
-                  <p>Assigned to:</p>
+                  <p class="text">Assigned to:</p>
                   <div id="detailContactsList"  class="detailContactsList"></div>
                 </div>
                 <div class="detailSubtasks">
-                  <p>Subtasks</p>
+                  <p class="text">Subtasks</p>
                   <div id="subtasksList" class="subtasksList"></div>
                 </div>
                 <div class="taskDetailButtons">
