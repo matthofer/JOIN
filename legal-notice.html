@@ -13,9 +13,10 @@
       type="image/x-icon"
       href="./assets/icons/fav_join_logo.png"
     />
+    <script src="./script.js"></script>
   </head>
 
-  <body>
+  <body onload="initLoad()">
     <div class="content">
       <div class="sidebar">
         <div class="sidebarTop">
@@ -74,7 +75,7 @@
               <a href="./help.html"
                 ><img src="./assets/icons/help.svg" alt="" srcset=""
               /></a>
-              <div class="userIcon">SM</div>
+              <div class="userIcon" id="userInitials"></div>
             </div>
           </div>
         </header>
