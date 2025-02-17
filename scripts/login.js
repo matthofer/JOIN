@@ -52,6 +52,7 @@ function findUser(users, email, password) {
 }
 
 function handleSuccessfulLogin(user) {
+  sessionStorage.setItem("userName", user.name);
   sessionStorage.setItem("userInitials", getInitials(user.name));
   window.location.href = "summary.html";
   document.getElementById("email").value = "";
