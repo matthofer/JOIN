@@ -9,6 +9,7 @@ async function initAddTask() {
   changePrio("medium", "mediumSVG");
   renderCategorys();
   submitSubtaskWithEnter();
+  initLoad();
 }
 
 function toggleDropdownCategorys() {

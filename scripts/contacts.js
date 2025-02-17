@@ -5,6 +5,7 @@ let activeContact = null;
 async function init() {
   await loadContactsData();
   renderContacts();
+  initLoad();
 }
 
 async function loadContactsData(path = "/contacts") {
