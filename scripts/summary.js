@@ -57,6 +57,8 @@ async function getAmountofUrgent() {
             const task = allTasks[i];
             if (task.prio === "urgent" ) {
                 count++;
+                console.log(task.date);
+                
             }
         }
         html.innerHTML = count;
