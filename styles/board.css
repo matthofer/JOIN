@@ -295,7 +295,7 @@ input[name="searchResp"] {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -389,6 +389,7 @@ input[name="searchResp"] {
 }
 
 .taskEditContainer {
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

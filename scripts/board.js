@@ -207,10 +207,12 @@ function openTaskDetails(i) {
   renderContactsInTaskDetail(i);
   renderSubTasksInDetail(i);
   document.getElementById("overlayEditTask").classList.remove("overlayClosed");
+  document.getElementById("overallContent").style.overflow = "hidden";
 }
 
 function closeEditTaskOverlay() {
   document.getElementById("overlayEditTask").classList.add("overlayClosed");
+  document.getElementById("overallContent").style.overflow = "auto";
 }
 
 function renderContactsInTaskDetail(i) {
