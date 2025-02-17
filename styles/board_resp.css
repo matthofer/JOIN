@@ -191,8 +191,22 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: clamp(300px, 100%, 600px);
+    height: clamp(300px, 100%, 700px);
     width: clamp(300px, 100%, 425px);
+    padding: 16px;
+  }
+
+  .taskEditContainer h2 {
+    font-size: 36px;
+  }
+
+  .taskEditContainer p {
+    font-size: 18px;
+  }
+
+  .overlay {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -423,4 +437,22 @@ main {
   .respNavButtonRight a {
     font-size: 14px;
   }
+}
+
+@media (max-height: 670px) {
+  /*  .overlay {
+    hei;
+  } */
+
+  .taskEditContainer {
+    overflow-y: auto;
+    height: clamp(300px, 100%, 470px);
+    width: clamp(300px, 100%, 425px);
+  }
+
+  /* .overlayContent {
+    flex-direction: column;
+    height: clamp(550px, 75%, 760px);
+    width: clamp(350px, 90%, 396px);
+  } */
 }
