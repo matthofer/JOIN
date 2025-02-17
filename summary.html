@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/summary.css">
     <link rel="stylesheet" href="./styles/summary_resp.css">
     <script src="./script.js"></script>
+    <script src="./scripts/summary.js"></script>
     <title>Summary</title>
     <link
       rel="icon"
@@ -15,7 +16,7 @@
       href="./assets/icons/fav_join_logo.png"
     />
   </head>
-  <body onload="initLoad()">
+  <body onload="init()">
     <div class="content">
       <div class="sidebar">
         <div class="sidebarTop">
@@ -120,7 +121,7 @@
                           </svg>                          
                       </div>
                       <div class="amount">
-                        <p>1</p>
+                        <p id="toDo"></p>
                         <span class="description">To-Do</span>
                       </div>
                     </div>
@@ -138,7 +139,7 @@
                           </svg>                          
                       </div>
                       <div class="amount">
-                        <p>1</p>
+                        <p id="done"></p>
                         <span class="description">Done</span>
                       </div>
                     </div>
@@ -153,7 +154,7 @@
                         </svg>                         
                     </div>
                     <div class="amount">
-                      <p>1</p>
+                      <p id="urgent"></p>
                       <span class="description">Urgent</span>
                     </div>
                   </div>
@@ -166,19 +167,19 @@
                 <div class="bottomBar">
                   <div onclick="openPage('board.html')" class="tilesBottomLeft">
                     <div class="infoBottom">
-                      <p>5</p>
+                      <p id="totalTasks"></p>
                       <span class="description">Tasks in <br> Board</span>
                     </div>
                   </div>
                   <div onclick="openPage('board.html')" class="tilesBottomMid">
                     <div class="infoBottom">
-                      <p>2</p>
+                      <p id="amountProgress"></p>
                       <span class="description">Tasks in <br> Progress</span>
                     </div>
                   </div>
                   <div onclick="openPage('board.html')" class="tilesBottomRight">
                     <div class="infoBottom">
-                      <p>2</p>
+                      <p id="feedback"></p>
                       <span class="description">Awaiting <br> Feedback</span>
                     </div>
                   </div>
