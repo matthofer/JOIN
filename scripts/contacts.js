@@ -6,6 +6,7 @@ async function init() {
   await loadContactsData();
   renderContacts();
   initLoad();
+  highlightNavLink("contactsLink", "contactsLinkResp");
 }
 
 async function loadContactsData(path = "/contacts") {

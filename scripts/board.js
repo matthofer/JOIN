@@ -7,6 +7,7 @@ async function initBoard() {
   await loadTasksData();
   renderTasks(tasks);
   initLoad();
+  highlightNavLink("boardLink", "boardLinkResp");
 }
 
 async function loadTasksData(path = "/tasks") {
