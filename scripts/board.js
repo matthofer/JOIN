@@ -174,7 +174,7 @@ function allowDrop(ev) {
 
 function moveTo(category) {
   tasks[currentDraggedElement].type = category;
-  renderTasks();
+  renderTasks(tasks);
   document.getElementById(category).classList.remove("dragAreaHighlight");
   putData(`tasks/${tasks[currentDraggedElement].firebaseid}/type`, category);
 }
@@ -253,7 +253,7 @@ function renderSubTasksInDetail(i) {
 async function deleteTask(i) {
   await deleteData(`/tasks/${tasks[i].firebaseid}`);
   await loadTasksData();
-  renderTasks();
+  renderTasks(tasks);
   closeEditTaskOverlay();
   showMessage("Task successfully deleted");
 }
@@ -263,7 +263,6 @@ function searchTask(id) {
   let searchInputRef = document.getElementById(id);
   let searchInput = searchInputRef.value;
   let searchResultArr = getSearchedTasks(searchInput);
-  console.log(searchResultArr);
   if (searchResultArr.length != tasks.length) {
     renderTasks(searchResultArr);
   }
@@ -275,9 +274,19 @@ function searchTask(id) {
 }
 
 function getSearchedTasks(searchInput) {
-  filteredTasks = tasks.filter((task) =>
-    task.title.toLowerCase().startsWith(searchInput.toLowerCase())
+  let filteredTitleTasks = tasks.filter((task) =>
+    task.title.toLowerCase().includes(searchInput.toLowerCase())
   );
+  let filteredDscrTasks = tasks.filter((task) =>
+    task.dscr.toLowerCase().includes(searchInput.toLowerCase())
+  );
+  let filteredTasks = filteredTitleTasks.concat(filteredDscrTasks);
+
+  filteredTasks = filteredTasks.filter(
+    (item, index, self) =>
+      index === self.findIndex((task) => task.firebaseid === item.firebaseid)
+  );
+
   return filteredTasks;
 }
 
