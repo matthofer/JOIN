@@ -109,7 +109,7 @@
                 <h1 class="boardHeadline">Board</h1>
                 <div class="inputAndSearch">
                   <div class="searchInput">
-                    <input id="search" oninput="searchTask()" type="text" placeholder="Find Task" name="search" />
+                    <input id="search" oninput="searchTask('search')" type="text" placeholder="Find Task" name="search" />
                   </div>
                   <div onclick="openAddTaskOverlay('todo')" class="addTaskButton">
                     <h3>Add task</h3>
@@ -121,7 +121,7 @@
                 </div>
               </div>
               <div class="searchInputResp">
-                <input id="searchResp" type="text" placeholder="Find Task" name="searchResp" />
+                <input id="searchResp" oninput="searchTask('searchResp')" type="text" placeholder="Find Task" name="searchResp" />
               </div>
             </div>
             <div class="boardColumns">
