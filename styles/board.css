@@ -394,7 +394,7 @@ input[name="searchResp"] {
   flex-direction: column;
   justify-content: space-between;
   height: clamp(300px, 100%, 800px);
-  width: clamp(300px, 100%, 425px);
+  width: clamp(300px, 100%, 500px);
   border-radius: 30px;
   background-color: #ffffff;
   padding: 24px;
@@ -564,4 +564,15 @@ input[name="search"]:focus {
 input[name="searchResp"]:focus {
   outline: none;
   border-color: #29abe2;
+}
+
+.editFormWrapper {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin-top: 0 !important;
+}
+
+.bottomSectionEditTask {
+  padding-top: 0 !important;
 }

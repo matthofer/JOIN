@@ -195,7 +195,10 @@ function updateStatusBar(amountDone, amountSubTasks, task, i) {
   }`;
 }
 
-function openAddTaskOverlay(type) {
+async function openAddTaskOverlay(type) {
+  document.getElementById("overlayAddTask").innerHTML = getAddTaskTemplate();
+  await initAddTask();
+  await loadTasksData();
   let form = document.getElementById("addTaskForm");
   form.setAttribute("onsubmit", `submitForm('${type}'); return false;`);
   document.getElementById("overlayAddTask").classList.remove("overlayClosed");
@@ -295,4 +298,11 @@ function clearColumnContent() {
   document.getElementById("inProgress").innerHTML = "";
   document.getElementById("awaitFeedback").innerHTML = "";
   document.getElementById("done").innerHTML = "";
+}
+
+function editTask(i) {
+  document.getElementById("taskEditContainer").innerHTML = "";
+  document.getElementById("taskEditContainer").innerHTML = editTaskTemplate(i);
+  document.getElementById("overlayAddTask").innerHTML = "";
+  changePrio(tasks[i].prio, tasks[i].prio + "SVG");
 }
