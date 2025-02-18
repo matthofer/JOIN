@@ -5,7 +5,7 @@ let currentDraggedElement;
 async function initBoard() {
   await initAddTask();
   await loadTasksData();
-  renderTasks();
+  renderTasks(tasks);
   initLoad();
 }
 
@@ -36,15 +36,15 @@ async function loadTasksData(path = "/tasks") {
   }
 }
 
-function renderTasks() {
-  renderTodo();
-  renderInProgress();
-  renderAwaitFeedback();
-  renderDone();
+function renderTasks(taskArray) {
+  renderTodo(taskArray);
+  renderInProgress(taskArray);
+  renderAwaitFeedback(taskArray);
+  renderDone(taskArray);
 }
 
-function renderTodo() {
-  let todo = tasks.filter((task) => task.type == "todo");
+function renderTodo(taskArray) {
+  let todo = taskArray.filter((task) => task.type == "todo");
   document.getElementById("todo").innerHTML = "";
   if (todo.length > 0) {
     for (let i = 0; i < todo.length; i++) {
@@ -58,8 +58,8 @@ function renderTodo() {
   }
 }
 
-function renderInProgress() {
-  let inProgress = tasks.filter((task) => task.type == "inProgress");
+function renderInProgress(taskArray) {
+  let inProgress = taskArray.filter((task) => task.type == "inProgress");
   document.getElementById("inProgress").innerHTML = "";
   if (inProgress.length > 0) {
     for (let i = 0; i < inProgress.length; i++) {
@@ -77,8 +77,8 @@ function renderInProgress() {
   }
 }
 
-function renderAwaitFeedback() {
-  let awaitFeedback = tasks.filter((task) => task.type == "awaitFeedback");
+function renderAwaitFeedback(taskArray) {
+  let awaitFeedback = taskArray.filter((task) => task.type == "awaitFeedback");
   document.getElementById("awaitFeedback").innerHTML = "";
   if (awaitFeedback.length > 0) {
     for (let i = 0; i < awaitFeedback.length; i++) {
@@ -96,8 +96,8 @@ function renderAwaitFeedback() {
   }
 }
 
-function renderDone() {
-  let done = tasks.filter((task) => task.type == "done");
+function renderDone(taskArray) {
+  let done = taskArray.filter((task) => task.type == "done");
   document.getElementById("done").innerHTML = "";
   if (done.length > 0) {
     for (let i = 0; i < done.length; i++) {
@@ -258,11 +258,20 @@ async function deleteTask(i) {
   showMessage("Task successfully deleted");
 }
 
-function searchTask() {
-  let searchInputRef = document.getElementById("search");
+function searchTask(id) {
+  clearColumnContent();
+  let searchInputRef = document.getElementById(id);
   let searchInput = searchInputRef.value;
   let searchResultArr = getSearchedTasks(searchInput);
   console.log(searchResultArr);
+  if (searchResultArr.length != tasks.length) {
+    renderTasks(searchResultArr);
+  }
+
+  if (searchResultArr.length === tasks.length) {
+    renderTasks(tasks);
+    return;
+  }
 }
 
 function getSearchedTasks(searchInput) {
@@ -270,4 +279,11 @@ function getSearchedTasks(searchInput) {
     task.title.toLowerCase().startsWith(searchInput.toLowerCase())
   );
   return filteredTasks;
+}
+
+function clearColumnContent() {
+  document.getElementById("todo").innerHTML = "";
+  document.getElementById("inProgress").innerHTML = "";
+  document.getElementById("awaitFeedback").innerHTML = "";
+  document.getElementById("done").innerHTML = "";
 }
