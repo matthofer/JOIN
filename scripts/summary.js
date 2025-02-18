@@ -9,6 +9,7 @@ async function init() {
     await getAmountofTask('amountProgress', 'inProgress');
     await getAmountofTask('feedback', 'awaitFeedback');
     await getAmountofTask('done', 'done');
+    loadStorage();
 
 }
 
@@ -83,6 +84,13 @@ function formatDate(dateString) {
         "January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
     ];
-    // z.B. "March 4, 2025"
     return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+}
+
+
+function loadStorage(){
+    let name = sessionStorage.getItem('userName');
+     let html = document.getElementById('userName');
+     html.innerHTML = name;  
+   
 }
