@@ -1,3 +1,18 @@
+function formatDate(date) {
+  let year = date.substr(0, 4);
+  let month = date[5] + date[6];
+  let day = date[8] + date[9];
+  let formattedDate = `${day}/${month}/${year}`;
+  return formattedDate;
+}
+
+function fristLetterUpperCase(word) {
+  let firstLetter = word[0];
+  let firstLetterCap = firstLetter.toUpperCase();
+  let remainingLetters = word.slice(1);
+  return (capitalizedWord = firstLetterCap + remainingLetters);
+}
+
 function getTaskTemplate(task, i) {
   return `<div onclick="openTaskDetails(${
     task.id
@@ -128,21 +143,6 @@ function getDetialSubtaskListItemTemplate(status, title) {
               <p>${title}</p>
             </div>`;
   }
-}
-
-function formatDate(date) {
-  let year = date.substr(0, 4);
-  let month = date[5] + date[6];
-  let day = date[8] + date[9];
-  let formattedDate = `${day}/${month}/${year}`;
-  return formattedDate;
-}
-
-function fristLetterUpperCase(word) {
-  let firstLetter = word[0];
-  let firstLetterCap = firstLetter.toUpperCase();
-  let remainingLetters = word.slice(1);
-  return (capitalizedWord = firstLetterCap + remainingLetters);
 }
 
 function editTaskTemplate(i) {
