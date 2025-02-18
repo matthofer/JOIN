@@ -300,9 +300,11 @@ function clearColumnContent() {
   document.getElementById("done").innerHTML = "";
 }
 
-function editTask(i) {
+async function editTask(i) {
   document.getElementById("taskEditContainer").innerHTML = "";
   document.getElementById("taskEditContainer").innerHTML = editTaskTemplate(i);
   document.getElementById("overlayAddTask").innerHTML = "";
   changePrio(tasks[i].prio, tasks[i].prio + "SVG");
+  await initAddTask();
+  await loadTasksData();
 }
