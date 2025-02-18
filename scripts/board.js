@@ -285,7 +285,6 @@ function getSearchedTasks(searchInput) {
     task.dscr.toLowerCase().includes(searchInput.toLowerCase())
   );
   let filteredTasks = filteredTitleTasks.concat(filteredDscrTasks);
-
   filteredTasks = filteredTasks.filter(
     (item, index, array) =>
       index === array.findIndex((task) => task.firebaseid === item.firebaseid)
