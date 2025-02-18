@@ -555,3 +555,13 @@ input[name="detailSubtask"] {
 .text {
   color: #42526e;
 }
+
+input[name="search"]:focus {
+  outline: none;
+  border-color: #29abe2;
+}
+
+input[name="searchResp"]:focus {
+  outline: none;
+  border-color: #29abe2;
+}
