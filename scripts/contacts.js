@@ -2,6 +2,11 @@ let FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
 let contacts = [];
 let activeContact = null;
 
+/**
+ * This function initializes the contacts page. contacts are loaded and rendered from firebase.
+ * Then the user icon is updated based on the login and the navigation link of the page is highlighted
+ *
+ */
 async function init() {
   await loadContactsData();
   renderContacts();
@@ -9,6 +14,11 @@ async function init() {
   highlightNavLink("contactsLink", "contactsLinkResp");
 }
 
+/**
+ * This function load the contacts data from firebase and push it to contacts array.
+ *
+ * @param {string} path - This the path to the object in firebase for example "contacts/"
+ */
 async function loadContactsData(path = "/contacts") {
   contacts = [];
   try {
@@ -29,6 +39,11 @@ async function loadContactsData(path = "/contacts") {
   }
 }
 
+/**
+ * This function returns the first letters of the contacts for alphabetical sorting
+ *
+ * @param {Array} contactsArr - this is the array of contacts which have been pushed in the load data function
+ */
 function getFirstLettersSorted(contactsArr) {
   let firstLettersOfContacts = [];
   for (let i = 0; i < contactsArr.length; i++) {
@@ -41,6 +56,10 @@ function getFirstLettersSorted(contactsArr) {
   return sortedLetters;
 }
 
+/**
+ * This function renders the contact in a alphabeticaly list on the screen
+ *
+ */
 function renderContacts() {
   let contactContentRef = document.getElementById("contactList");
   contactContentRef.innerHTML = "";
@@ -57,11 +76,22 @@ function renderContacts() {
   }
 }
 
+/**
+ * This function sets the background color of the intial in renderd contact list
+ *
+ *@param {number} i - index of the object in contacts array
+ *@param {string} initialID - Id of the intial in the HTML
+ */
 function setBackgroundColorOfIntial(i, initialID) {
   let initialRef = document.getElementById(initialID + i);
   initialRef.style.backgroundColor = contacts[i].color;
 }
 
+/**
+ * This function returns the intials of the contact
+ *
+ *@param {string} contact - Object of the contacts array
+ */
 function getIntialsOfContact(contact) {
   let intials = "";
   let splittedContact = contact.split(" ");
@@ -71,6 +101,12 @@ function getIntialsOfContact(contact) {
   return intials;
 }
 
+/**
+ * This function opens the details of a contacts depends on the screen width
+ *
+ *@param {number} i - index of the object in contacts array
+ *@param {string} initialID - Id of the intial in the HTML
+ */
 function openDetails(i, contactID) {
   let screenWidth = window.innerWidth;
   if (screenWidth <= 1100) {
@@ -80,6 +116,12 @@ function openDetails(i, contactID) {
   }
 }
 
+/**
+ * This function opens the desktop view of details
+ *
+ *@param {number} i - index of the object in contacts array
+ *@param {string} initialID - Id of the intial in the HTML
+ */
 function openDetailsDesktop(i, contactID) {
   let contactInfoRef = document.getElementById("contactInfo");
   if (activeContact == contactID) {
@@ -92,6 +134,11 @@ function openDetailsDesktop(i, contactID) {
   activeContact = contactID;
 }
 
+/**
+ * This function renders the contact details
+ *
+ *@param {number} i - index of the object in contacts array
+ */
 function renderContactInfo(i) {
   let contactInfoRef = document.getElementById("contactInfo");
   contactInfoRef.innerHTML = "";
@@ -100,6 +147,12 @@ function renderContactInfo(i) {
   setBackgroundColorOfIntial(i, "bigInitial");
 }
 
+/**
+ * This function opens the mobile view of details
+ *
+ *@param {number} i - index of the object in contacts array
+ *@param {string} initialID - Id of the intial in the HTML
+ */
 function openDetailsMobile(i, contactID) {
   let contactInfoRef = document.getElementById("mobileContactInfo");
   document.getElementById("respAddbutton").classList.add("addButtonRemoved");
@@ -109,6 +162,11 @@ function openDetailsMobile(i, contactID) {
   document.getElementById("contactInfo").innerHTML = "";
 }
 
+/**
+ * This function renders the contact details in mobile view
+ *
+ *@param {number} i - index of the object in contacts array
+ */
 function renderContactInfoMobile(i) {
   let contactInfoRef = document.getElementById("mobileContactInfo");
   contactInfoRef.innerHTML = "";
@@ -117,6 +175,10 @@ function renderContactInfoMobile(i) {
   setBackgroundColorOfIntial(i, "mobileInitial");
 }
 
+/**
+ * This function closing the mobile details
+ *
+ */
 function closeMobileInfo() {
   let contactInfoRef = document.getElementById("mobileContactInfo");
   document.getElementById("respAddbutton").classList.remove("addButtonRemoved");
@@ -124,36 +186,64 @@ function closeMobileInfo() {
   activeContact = null;
 }
 
+/**
+ * This function open the edit/delete menu in mobile view
+ *
+ */
 function openMobileEditButton() {
   document.getElementById("mobileEditButton").classList.toggle("respBtnclosed");
 }
 
+/**
+ * This function open the add new contact dialog
+ *
+ */
 function openAddContactOverlay() {
   document.getElementById("addErrorMessage").innerHTML = "";
   document.getElementById("overlay").classList.remove("overlayClosed");
 }
 
+/**
+ * This function close add contact dialog and removes the red boarders from input fields
+ *
+ */
 function closeOverlay() {
   document.getElementById("overlay").classList.add("overlayClosed");
   removeRedBorders();
   cleanInputfields();
 }
 
+/**
+ * This function close edit contact dialog and removes the red boarders from input fields
+ *
+ */
 function closeEditOverlay() {
   removeRedBorders();
   document.getElementById("overlayEdit").classList.add("overlayClosed");
 }
 
+/**
+ * This function clears the input fields of the add contact dialog
+ *
+ */
 function cleanInputfields() {
   document.getElementById("contactName").value = "";
   document.getElementById("contactMail").value = "";
   document.getElementById("contactPhone").value = "";
 }
 
+/**
+ * This function clears the detail view. Needed for at deletion of contact
+ *
+ */
 function clearContactInfo() {
   document.getElementById("contactInfo").innerHTML = "";
 }
 
+/**
+ * This function creates a new contact in firebase with the values from the add contact dialog
+ *
+ */
 async function createNewContact() {
   document.getElementById("addErrorMessage").innerHTML = "";
   let name = document.getElementById("contactName").value;
@@ -169,6 +259,10 @@ async function createNewContact() {
   }
 }
 
+/**
+ * This function validates the inputs for add and edit function. Check criteria: all fields field email valid and phone valid
+ *
+ */
 function validateInputs(contactName, contactMail, contactPhone, id) {
   if (
     checkEmptyInput(contactName, contactMail, contactPhone, id) &&
@@ -181,6 +275,10 @@ function validateInputs(contactName, contactMail, contactPhone, id) {
   }
 }
 
+/**
+ * This function checks if all three input fields are filled. If not a error message will be displayed
+ *
+ */
 function checkEmptyInput(contactName, contactMail, contactPhone, id) {
   if (contactName === "" || contactMail === "" || contactPhone === "") {
     showRedBorders();
@@ -194,6 +292,12 @@ function checkEmptyInput(contactName, contactMail, contactPhone, id) {
   }
 }
 
+/**
+ * This function checks if the email is correct. If not a error message will be displayed
+ *
+ * @param {string} contactMail - is the value of the mail input field
+ * @param {string} id - id of the error message HTML tag
+ */
 function checkEmail(contactMail, id) {
   if (!validateEmail(contactMail)) {
     document.getElementById(id).innerHTML +=
@@ -207,6 +311,12 @@ function checkEmail(contactMail, id) {
   }
 }
 
+/**
+ * This function checks if the phone number is correct. If not a error message will be displayed
+ *
+ * @param {string} contactPhone - is the value of the phone input field
+ * @param {string} id - id of the error message HTML tag
+ */
 function checkPhone(contactPhone, id) {
   if (!validatePhoneNumber(contactPhone)) {
     document.getElementById(id).innerHTML +=
@@ -219,11 +329,21 @@ function checkPhone(contactPhone, id) {
   }
 }
 
+/**
+ * This function checks the email against a regular expression
+ *
+ * @param {string} email - is the value of the email input field
+ */
 function validateEmail(email) {
   let emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{1,3}$/;
   return emailRegex.test(email);
 }
 
+/**
+ * This function checks the phone number against a regular expression
+ *
+ * @param {string} phone - is the value of the phone number input field
+ */
 function validatePhoneNumber(phoneNumber) {
   let phoneRegex = /^\+49\d{0,12}$/;
   return phoneRegex.test(phoneNumber);
