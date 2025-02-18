@@ -135,10 +135,12 @@ function openAddContactOverlay() {
 
 function closeOverlay() {
   document.getElementById("overlay").classList.add("overlayClosed");
+  removeRedBorders();
   cleanInputfields();
 }
 
 function closeEditOverlay() {
+  removeRedBorders();
   document.getElementById("overlayEdit").classList.add("overlayClosed");
 }
 
@@ -146,6 +148,10 @@ function cleanInputfields() {
   document.getElementById("contactName").value = "";
   document.getElementById("contactMail").value = "";
   document.getElementById("contactPhone").value = "";
+}
+
+function clearContactInfo() {
+  document.getElementById("contactInfo").innerHTML = "";
 }
 
 async function createNewContact() {
@@ -177,10 +183,13 @@ function validateInputs(contactName, contactMail, contactPhone, id) {
 
 function checkEmptyInput(contactName, contactMail, contactPhone, id) {
   if (contactName === "" || contactMail === "" || contactPhone === "") {
+    showRedBorders();
     document.getElementById(id).innerHTML =
       "<p>Please fill in all three input fields!</p>";
+
     return false;
   } else {
+    removeRedBorders();
     return true;
   }
 }
@@ -189,8 +198,11 @@ function checkEmail(contactMail, id) {
   if (!validateEmail(contactMail)) {
     document.getElementById(id).innerHTML +=
       "<p>Please enter a valid email address<br>e.g. max.muster@web.de</p>";
+    showRedBordersMail();
+
     return false;
   } else {
+    removeRedBordersMail();
     return true;
   }
 }
@@ -199,8 +211,10 @@ function checkPhone(contactPhone, id) {
   if (!validatePhoneNumber(contactPhone)) {
     document.getElementById(id).innerHTML +=
       "<p>Phone number invalid!<br>Must start with +49 and can be max. 15 characters long</p>";
+    showRedBordersPhone();
     return false;
   } else {
+    removeRedBordersPhone();
     return true;
   }
 }
@@ -227,6 +241,44 @@ async function saveContact(contactName, contactMail, contactPhone) {
   } catch (error) {
     showMessage("Error while saving the data");
   }
+}
+
+function showRedBorders() {
+  document.getElementById("contactName").style.borderColor = "#f50000";
+  document.getElementById("contactMail").style.borderColor = "#f50000";
+  document.getElementById("contactPhone").style.borderColor = "#f50000";
+  document.getElementById("contactNameEdit").style.borderColor = "#f50000";
+  document.getElementById("contactMailEdit").style.borderColor = "#f50000";
+  document.getElementById("contactPhoneEdit").style.borderColor = "#f50000";
+}
+
+function removeRedBorders() {
+  document.getElementById("contactName").style.borderColor = "#ccc";
+  document.getElementById("contactMail").style.borderColor = "#ccc";
+  document.getElementById("contactPhone").style.borderColor = "#ccc";
+  document.getElementById("contactNameEdit").style.borderColor = "#ccc";
+  document.getElementById("contactMailEdit").style.borderColor = "#ccc";
+  document.getElementById("contactPhoneEdit").style.borderColor = "#ccc";
+}
+
+function showRedBordersMail() {
+  document.getElementById("contactMail").style.borderColor = "#f50000";
+  document.getElementById("contactMailEdit").style.borderColor = "#f50000";
+}
+
+function removeRedBordersMail() {
+  document.getElementById("contactMail").style.borderColor = "#ccc";
+  document.getElementById("contactMailEdit").style.borderColor = "#ccc";
+}
+
+function showRedBordersPhone() {
+  document.getElementById("contactPhone").style.borderColor = "#f50000";
+  document.getElementById("contactPhoneEdit").style.borderColor = "#f50000";
+}
+
+function removeRedBordersPhone() {
+  document.getElementById("contactPhone").style.borderColor = "#ccc";
+  document.getElementById("contactPhoneEdit").style.borderColor = "#ccc";
 }
 
 function showMessage(message) {
@@ -328,6 +380,7 @@ async function deleteContactInMobileEditMode(i, event) {
   contactInfoRef.innerHTML = "";
   await loadContactsData();
   renderContacts();
+  clearContactInfo();
   closeMobileInfo();
   closeEditOverlay();
   showMessage("Contact successfully deleted");
