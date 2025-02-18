@@ -283,10 +283,9 @@ function getSearchedTasks(searchInput) {
   let filteredTasks = filteredTitleTasks.concat(filteredDscrTasks);
 
   filteredTasks = filteredTasks.filter(
-    (item, index, self) =>
-      index === self.findIndex((task) => task.firebaseid === item.firebaseid)
+    (item, index, array) =>
+      index === array.findIndex((task) => task.firebaseid === item.firebaseid)
   );
-
   return filteredTasks;
 }
 
