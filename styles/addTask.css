@@ -270,6 +270,8 @@
       position: absolute;
       top: 88px;
       left: 0;
+      width: 100%;
+      flex-wrap: wrap;
   }
 
   .fontColorwhite {
