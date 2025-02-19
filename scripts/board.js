@@ -217,6 +217,7 @@ function openTaskDetails(i) {
 }
 
 async function closeEditTaskOverlay() {
+  selectedContacts = [];
   await loadTasksData();
   renderTasks(tasks);
   document.getElementById("overlayEditTask").classList.add("overlayClosed");
