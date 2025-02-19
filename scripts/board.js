@@ -214,14 +214,12 @@ function openTaskDetails(i) {
   renderContactsInTaskDetail(i);
   renderSubTasksInDetail(i);
   document.getElementById("overlayEditTask").classList.remove("overlayClosed");
-  document.getElementById("overallContent").style.overflow = "hidden";
 }
 
 async function closeEditTaskOverlay() {
   await loadTasksData();
   renderTasks(tasks);
   document.getElementById("overlayEditTask").classList.add("overlayClosed");
-  document.getElementById("overallContent").style.overflow = "auto";
 }
 
 function renderContactsInTaskDetail(i) {
