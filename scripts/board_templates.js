@@ -131,15 +131,15 @@ function getDetialContactListItemTemplate(name, intials, color) {
           </div>`;
 }
 
-function getDetialSubtaskListItemTemplate(status, title) {
+function getDetialSubtaskListItemTemplate(status, title, i, statusIndex) {
   if (status === true) {
     return ` <div class="subtasksListItem">
-              <img src="./assets/icons/subtask_checked.svg">
+              <input class="subTaskCheckBoxEdit" onclick="checkSubtask(${i}, '${statusIndex}', ${status})" type="checkbox" checked>
               <p>${title}</p>
             </div>`;
   } else {
     return ` <div class="subtasksListItem">
-              <img src="./assets/icons/subtask_unchecked.svg">
+              <input class="subTaskCheckBoxEdit" onclick="checkSubtask(${i}, '${statusIndex}', ${status})" type="checkbox">
               <p>${title}</p>
             </div>`;
   }

@@ -470,7 +470,7 @@ input[name="searchResp"] {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  max-height: 50px;
+  max-height: 70px;
   overflow-y: auto;
 }
 
@@ -575,4 +575,8 @@ input[name="searchResp"]:focus {
 
 .bottomSectionEditTask {
   padding-top: 0 !important;
+}
+
+.subTaskCheckBoxEdit {
+  height: 16px !important;
 }
