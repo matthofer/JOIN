@@ -8,8 +8,9 @@ async function init() {
   await getAmountofTask("amountProgress", "inProgress");
   await getAmountofTask("feedback", "awaitFeedback");
   await getAmountofTask("done", "done");
-  loadStorage();
+  greeting();
   highlightNavLink("summaryLink", "summaryLinkResp");
+
 }
 
 async function getAmountofAllTasks() {
@@ -97,8 +98,77 @@ function formatDate(dateString) {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
-function loadStorage() {
+// function loadStorage() {
+//   let name = sessionStorage.getItem("userName");
+//   let html = document.getElementById("userName");
+//   html.innerHTML = name;
+// }
+
+
+function greeting() {
+  let guest = sessionStorage.getItem('loggedIn');
+  let html = document.getElementById('greet');
   let name = sessionStorage.getItem("userName");
-  let html = document.getElementById("userName");
-  html.innerHTML = name;
+  let time = new Date();
+  let hours = time.getHours();
+  if (hours < 12) {
+    if (guest === "true") {
+      html.innerHTML = morningGreet(name);
+    } else {
+      html.innerHTML = morningGreetGuest();
+    }
+
+  } else if (hours > 12 && hours < 18) {
+    if (guest === "true") {
+      html.innerHTML = middayGreet(name);
+    } else {
+      html.innerHTML = middayGreetGuest();
+    }
+
+  } else {
+    if (guest === "true") {
+      html.innerHTML = eveningGreet(name);
+    } else {
+      html.innerHTML = eveningGreetGuest();
+    }
+  }
+}
+
+function morningGreet(name) {
+  return `
+    <p>Good morning,</p>
+    <span>${name}</span>
+  `;
+}
+
+function morningGreetGuest() {
+  return `
+    <p>Good morning!</p>
+  `;
+}
+
+function middayGreet(name) {
+  return `
+    <p>Good afternoon,</p>
+    <span>${name}</span>
+  `;
+}
+
+function middayGreetGuest() {
+  return `
+    <p>Good afternoon!</p>
+  `;
+}
+
+function eveningGreet(name) {
+  return `
+    <p>Good evening,</p>
+    <span>${name}</span>
+  `;
+}
+
+function eveningGreetGuest() {
+  return `
+    <p>Good evening!</p>
+  `;
 }
