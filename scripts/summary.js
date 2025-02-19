@@ -10,7 +10,7 @@ async function init() {
   await getAmountofTask("done", "done");
   greeting();
   highlightNavLink("summaryLink", "summaryLinkResp");
-
+  playAnimation();
 }
 
 async function getAmountofAllTasks() {
@@ -98,12 +98,6 @@ function formatDate(dateString) {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
-// function loadStorage() {
-//   let name = sessionStorage.getItem("userName");
-//   let html = document.getElementById("userName");
-//   html.innerHTML = name;
-// }
-
 
 function greeting() {
   let guest = sessionStorage.getItem('loggedIn');
@@ -117,14 +111,12 @@ function greeting() {
     } else {
       html.innerHTML = morningGreetGuest();
     }
-
   } else if (hours > 12 && hours < 18) {
     if (guest === "true") {
       html.innerHTML = middayGreet(name);
     } else {
       html.innerHTML = middayGreetGuest();
     }
-
   } else {
     if (guest === "true") {
       html.innerHTML = eveningGreet(name);
@@ -132,6 +124,20 @@ function greeting() {
       html.innerHTML = eveningGreetGuest();
     }
   }
+}
+
+function playAnimation(){
+    let animation = sessionStorage.getItem('animationPlayed');
+    let width = window.innerWidth;
+    let html = document.getElementById('OverlayGreeting');
+    if (animation === 'false' && width < 850) {
+    setTimeout(() => {
+      html.classList.add('animation');
+    }, 1000);
+    } else{
+     
+    }
+    sessionStorage.setItem('animationPlayed', true);
 }
 
 function morningGreet(name) {
