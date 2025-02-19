@@ -158,4 +158,45 @@
 
 }
 
+
+@media (min-height: 1180px) {
+    h1 {
+        font-size: 74px;
+    }
+
+    .formGroup input {
+        width: 450px;
+        height: 50px;
+    }
+
+    .loginForm {
+        padding: 24px 70px;
+        gap: 24px;
+    }
+
+    .loginButton {
+        padding: 0;
+        height: 51px;
+        width: 100px;
+    }
+
+    .guestLoginButton {
+        padding: 0;
+        height: 51px;
+        width: 150px;
+    }
+}
+
+@media (min-width: 1020px) and  (max-height: 610px) {
+    main {
+        margin-top: 12dvh;
+    }
+}
+
+@media (min-width: 1020px) and  (max-height: 850px) {
+    main {
+        margin-top: 10dvh;
+    }
+}
+
 /* TO-DO: Asus Zenbook Fold, Surface Pro 7, iPad Pro, iPad Air */
