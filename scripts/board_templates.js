@@ -40,7 +40,7 @@ function getTaskTemplate(task, i) {
                           <span id="subtask${
                             task.type
                           }${i}" class="statusTextSubtasks">
-                            <p id="subTaskFrom">1</p>/<p id="subTaskTo">2</p>
+                            <p id="subTaskFrom">0</p>/<p id="subTaskTo">0</p>
                           </span>
                           <p>Substasks</p>
                         </span>

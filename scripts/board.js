@@ -3,7 +3,6 @@ let searchedTasks = [];
 let currentDraggedElement;
 
 async function initBoard() {
-  await initAddTask();
   await loadTasksData();
   renderTasks(tasks);
   initLoad();
