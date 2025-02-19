@@ -308,20 +308,34 @@ async function editTask(i) {
   await initAddTask();
   await loadTasksData();
   getContactObject(i);
-  checkSelectedContacts();
   renderSelectedContacts();
+  markCheckBoxInEdit(selectedContacts);
 }
 
 function getContactObject(i) {
   selectedContacts = [];
   let contactKeys = Object.keys(tasks[i].contacts);
-  for (let i = 0; i < contactKeys.length; i++) {
+  for (let index = 0; index < contactKeys.length; index++) {
     selectedContacts.push({
-      firebaseid: contactKeys[i],
-      color: tasks[i].contacts[contactKeys[i]].color,
-      email: tasks[i].contacts[contactKeys[i]].email,
-      name: tasks[i].contacts[contactKeys[i]].name,
+      firebaseid: contactKeys[index],
+      color: tasks[i].contacts[contactKeys[index]]["color"],
+      email: tasks[i].contacts[contactKeys[index]]["email"],
+      name: tasks[i].contacts[contactKeys[index]]["name"],
+      phone: tasks[i].contacts[contactKeys[index]]["phone"],
     });
+  }
+}
+
+function markCheckBoxInEdit(selectedContacts) {
+  for (let i = 0; i < selectedContacts.length; i++) {
+    let contactIndex = contacts.findIndex(
+      (contact) => contact.firebaseid === selectedContacts[i].firebaseid
+    );
+    let checkbox = document.getElementById("checkbox" + contactIndex);
+    let contact = document.getElementById("contact" + contactIndex);
+    checkbox.checked = true;
+    contact.style.backgroundColor = "#2a3647";
+    contact.style.color = "#ffffff";
   }
 }
 
