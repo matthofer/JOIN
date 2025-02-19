@@ -197,11 +197,11 @@ function updateStatusBar(amountDone, amountSubTasks, task, i) {
 
 async function openAddTaskOverlay(type) {
   document.getElementById("overlayAddTask").innerHTML = getAddTaskTemplate();
-  await initAddTask();
-  await loadTasksData();
   let form = document.getElementById("addTaskForm");
   form.setAttribute("onsubmit", `submitForm('${type}'); return false;`);
   document.getElementById("overlayAddTask").classList.remove("overlayClosed");
+  await initAddTask();
+  await loadTasksData();
 }
 
 function closeAddTaskOverlay() {
