@@ -307,6 +307,22 @@ async function editTask(i) {
   changePrio(tasks[i].prio, tasks[i].prio + "SVG");
   await initAddTask();
   await loadTasksData();
+  getContactObject(i);
+  checkSelectedContacts();
+  renderSelectedContacts();
+}
+
+function getContactObject(i) {
+  selectedContacts = [];
+  let contactKeys = Object.keys(tasks[i].contacts);
+  for (let i = 0; i < contactKeys.length; i++) {
+    selectedContacts.push({
+      firebaseid: contactKeys[i],
+      color: tasks[i].contacts[contactKeys[i]].color,
+      email: tasks[i].contacts[contactKeys[i]].email,
+      name: tasks[i].contacts[contactKeys[i]].name,
+    });
+  }
 }
 
 async function checkSubtask(i, statusIndex) {
