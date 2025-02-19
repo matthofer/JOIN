@@ -219,10 +219,10 @@ function openTaskDetails(i) {
 }
 
 async function closeEditTaskOverlay() {
-  document.getElementById("overlayEditTask").classList.add("overlayClosed");
-  document.getElementById("overallContent").style.overflow = "auto";
   await loadTasksData();
   renderTasks(tasks);
+  document.getElementById("overlayEditTask").classList.add("overlayClosed");
+  document.getElementById("overallContent").style.overflow = "auto";
 }
 
 function renderContactsInTaskDetail(i) {
