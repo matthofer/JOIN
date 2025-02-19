@@ -218,9 +218,10 @@ function openTaskDetails(i) {
   document.getElementById("overallContent").style.overflow = "hidden";
 }
 
-function closeEditTaskOverlay() {
+async function closeEditTaskOverlay() {
   document.getElementById("overlayEditTask").classList.add("overlayClosed");
   document.getElementById("overallContent").style.overflow = "auto";
+  await loadTasksData();
   renderTasks(tasks);
 }
 
@@ -240,7 +241,8 @@ function renderContactsInTaskDetail(i) {
   }
 }
 
-function renderSubTasksInDetail(i) {
+async function renderSubTasksInDetail(i) {
+  await loadTasksData();
   document.getElementById("subtasksList").innerHTML = "";
   if (tasks[i].subtasks != undefined) {
     let subtasksKeys = Object.keys(tasks[i].subtasks);
@@ -310,24 +312,11 @@ async function editTask(i) {
   await loadTasksData();
 }
 
-async function checkSubtask(i, statusIndex, status) {
-  let indexOfStatus = statusIndex;
-  let boolTypeOfStatus = status;
-  if (boolTypeOfStatus == true) {
-    putData(
-      `tasks/${tasks[i].firebaseid}/subtasks/${indexOfStatus}/done`,
-      false
-    );
+async function checkSubtask(i, statusIndex) {
+  let checkbox = document.getElementById("subtask" + i + statusIndex);
+  if (checkbox.checked) {
+    putData(`tasks/${tasks[i].firebaseid}/subtasks/${statusIndex}/done`, true);
   } else {
-    putData(
-      `tasks/${tasks[i].firebaseid}/subtasks/${indexOfStatus}/done`,
-      true
-    );
+    putData(`tasks/${tasks[i].firebaseid}/subtasks/${statusIndex}/done`, false);
   }
-  await loadTasksData();
-  renderSubTasksInDetail(i);
 }
-
-/* putData(`tasks/${tasks[i].firebaseid}/subtasks/${index}/done`, true)
-
-putData(`tasks/-OJ5GDx5VKkTJ9QdDmv1/subtasks/0/done`, false); */
