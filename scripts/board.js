@@ -336,15 +336,19 @@ async function editTask(i) {
 
 function getSelectedContacts(i) {
   selectedContacts = [];
-  let contactKeys = Object.keys(tasks[i].contacts);
-  for (let index = 0; index < contactKeys.length; index++) {
-    selectedContacts.push({
-      firebaseid: contactKeys[index],
-      color: tasks[i].contacts[contactKeys[index]]["color"],
-      email: tasks[i].contacts[contactKeys[index]]["email"],
-      name: tasks[i].contacts[contactKeys[index]]["name"],
-      phone: tasks[i].contacts[contactKeys[index]]["phone"],
-    });
+  if (tasks[i].contacts != undefined) {
+    let contactKeys = Object.keys(tasks[i].contacts);
+    for (let index = 0; index < contactKeys.length; index++) {
+      selectedContacts.push({
+        firebaseid: contactKeys[index],
+        color: tasks[i].contacts[contactKeys[index]]["color"],
+        email: tasks[i].contacts[contactKeys[index]]["email"],
+        name: tasks[i].contacts[contactKeys[index]]["name"],
+        phone: tasks[i].contacts[contactKeys[index]]["phone"],
+      });
+    }
+  } else {
+    return;
   }
 }
 
@@ -372,10 +376,14 @@ async function checkSubtask(i, statusIndex) {
 
 function getSubtasks(i) {
   subtasks = [];
-  let subtaskKeys = Object.keys(tasks[i].subtasks);
-  for (let index = 0; index < subtaskKeys.length; index++) {
-    subtasks.push(tasks[i].subtasks[subtaskKeys[index]]["title"]);
-    statusSubtasks.push(tasks[i].subtasks[subtaskKeys[index]]["done"]);
+  if (tasks[i].subtasks != undefined) {
+    let subtaskKeys = Object.keys(tasks[i].subtasks);
+    for (let index = 0; index < subtaskKeys.length; index++) {
+      subtasks.push(tasks[i].subtasks[subtaskKeys[index]]["title"]);
+      statusSubtasks.push(tasks[i].subtasks[subtaskKeys[index]]["done"]);
+    }
+  } else {
+    return;
   }
 }
 
