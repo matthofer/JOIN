@@ -1,6 +1,7 @@
 let tasks = [];
 let searchedTasks = [];
 let currentDraggedElement;
+let statusSubtasks = [];
 
 async function initBoard() {
   await loadTasksData();
@@ -225,6 +226,8 @@ function openTaskDetails(i) {
 }
 
 async function closeEditTaskOverlay() {
+  subtasks = [];
+  statusSubtasks = [];
   selectedContacts = [];
   await loadTasksData();
   renderTasks(tasks);
@@ -316,12 +319,14 @@ async function editTask(i) {
   changePrio(tasks[i].prio, tasks[i].prio + "SVG");
   await initAddTaskForEdit();
   await loadTasksData();
-  getContactObject(i);
+  getSelectedContacts(i);
   renderSelectedContacts();
   markCheckBoxInEdit(selectedContacts);
+  getSubtasks(i);
+  renderSubtasks();
 }
 
-function getContactObject(i) {
+function getSelectedContacts(i) {
   selectedContacts = [];
   let contactKeys = Object.keys(tasks[i].contacts);
   for (let index = 0; index < contactKeys.length; index++) {
@@ -354,5 +359,14 @@ async function checkSubtask(i, statusIndex) {
     putData(`tasks/${tasks[i].firebaseid}/subtasks/${statusIndex}/done`, true);
   } else {
     putData(`tasks/${tasks[i].firebaseid}/subtasks/${statusIndex}/done`, false);
+  }
+}
+
+function getSubtasks(i) {
+  subtasks = [];
+  let subtaskKeys = Object.keys(tasks[i].subtasks);
+  for (let index = 0; index < subtaskKeys.length; index++) {
+    subtasks.push(tasks[i].subtasks[subtaskKeys[index]]["title"]);
+    statusSubtasks.push(tasks[i].subtasks[subtaskKeys[index]]["done"]);
   }
 }

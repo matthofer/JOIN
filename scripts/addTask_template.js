@@ -1,8 +1,12 @@
 function contactDropdownTemplate(contact, contactIndex) {
-    return `
-        <div class="dropDownContact" onclick='event.stopPropagation(); markCheckbox(${JSON.stringify(contact)}, ${contactIndex})' id="contact${contactIndex}">
+  return `
+        <div class="dropDownContact" onclick='event.stopPropagation(); markCheckbox(${JSON.stringify(
+          contact
+        )}, ${contactIndex})' id="contact${contactIndex}">
             <div class="dropDownLeft">
-                <div class="initials" style="background-color: ${contact.color};">${getIntialsOfContact(contact.name)}</div>
+                <div class="initials" style="background-color: ${
+                  contact.color
+                };">${getIntialsOfContact(contact.name)}</div>
                 <div class="contactName">${contact.name}</div>
             </div>
                 <input type="checkbox" name="checkbox" id="checkbox${contactIndex}">
@@ -12,7 +16,7 @@ function contactDropdownTemplate(contact, contactIndex) {
 }
 
 function categorysDropdownTemplate(categorys, categorysIndex) {
-    return `
+  return `
     <div onclick="selectCategory(${categorysIndex})" class="singleCategory">
         <span id="category${categorysIndex}">${categorys}</span>
     </div>
@@ -20,7 +24,7 @@ function categorysDropdownTemplate(categorys, categorysIndex) {
 }
 
 function subtasksTemplate(subtask, subtasksIndex) {
-    return `
+  return `
     <div ondblclick="editSubtask(${subtasksIndex})" onmouseover="showSubtaskMenu(${subtasksIndex})" 
     onmouseleave="closeSubtaskMenu(${subtasksIndex})" class="singleSubtask hover" id="singleSubtask${subtasksIndex}">
         <div class="singleSubtaskLeft">
