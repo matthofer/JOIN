@@ -9,6 +9,14 @@ async function initBoard() {
   highlightNavLink("boardLink", "boardLinkResp");
 }
 
+async function initAddTaskForEdit() {
+  await loadContactsData();
+  renderDropdownContacts();
+  changePrio("medium", "mediumSVG");
+  submitSubtaskWithEnter();
+  initLoad();
+}
+
 async function loadTasksData(path = "/tasks") {
   tasks = [];
   id = 0;
@@ -306,7 +314,7 @@ async function editTask(i) {
   document.getElementById("taskEditContainer").innerHTML = editTaskTemplate(i);
   document.getElementById("overlayAddTask").innerHTML = "";
   changePrio(tasks[i].prio, tasks[i].prio + "SVG");
-  await initAddTask();
+  await initAddTaskForEdit();
   await loadTasksData();
   getContactObject(i);
   renderSelectedContacts();
