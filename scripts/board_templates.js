@@ -171,6 +171,16 @@ function editTaskTemplate(i) {
                               <textarea name="description" id="description" onblur="getBlueBorder('description')"
                                   placeholder="Enter a Description">${tasks[i].dscr}</textarea>
                           </div>
+                          <div class="titles dNone">
+                              <span>Category <p>*</p></span>
+                              <input readonly id="categorysDropdown"
+                                  onclick="toggleDropdownCategorys(); event.stopPropagation()" type="text"
+                                  name="category" placeholder="Select task category"
+                                  onblur="getBlueBorder('categorysDropdown')">
+                              <div class="categoryDropdown" id="categorys"></div>
+                              <p id="categoryValidation" class="required d-none">This field is required</p>
+
+                          </div>
 
                       </div>
 

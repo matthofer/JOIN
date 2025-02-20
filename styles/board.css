@@ -566,6 +566,10 @@ input[name="searchResp"]:focus {
   border-color: #29abe2;
 }
 
+.dNone {
+  display: none !important;
+}
+
 .editWrapper {
   display: flex;
   flex-direction: column;
