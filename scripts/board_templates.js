@@ -267,8 +267,7 @@ function editTaskTemplate(i) {
               </form>
               <div class="bottomSection bottomSectionEditTask">
                       <div class="buttonArea">
-                          </button>
-                          <button class="submit">Ok
+                          <button onclick="updateTask(${i})" class="submit">Ok
                               <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                                   xmlns="http://www.w3.org/2000/svg">
                                   <path d="M1 8.96582L5 12.9658L13 1.46582" stroke="#2A3647" stroke-width="2"

@@ -225,6 +225,14 @@ function openTaskDetails(i) {
   document.getElementById("overlayEditTask").classList.remove("overlayClosed");
 }
 
+function renderTaskDetails(i) {
+  document.getElementById("taskEditContainer").innerHTML = "";
+  document.getElementById("taskEditContainer").innerHTML =
+    getTaskDetailTemplate(i);
+  renderContactsInTaskDetail(i);
+  renderSubTasksInDetail(i);
+}
+
 async function closeEditTaskOverlay() {
   subtasks = [];
   statusSubtasks = [];
@@ -368,5 +376,63 @@ function getSubtasks(i) {
   for (let index = 0; index < subtaskKeys.length; index++) {
     subtasks.push(tasks[i].subtasks[subtaskKeys[index]]["title"]);
     statusSubtasks.push(tasks[i].subtasks[subtaskKeys[index]]["done"]);
+  }
+}
+
+async function updateTask(i) {
+  let title = document.getElementById("title").value.length;
+  let date = document.getElementById("date").value.length;
+  let data = collectEditTaskData(i);
+  if (title > 0 && date > 0) {
+    validateInputFields("title", "titleValidation");
+    validateInputFields("date", "dateValidation");
+    await putData(`tasks/${tasks[i].firebaseid}`, data);
+    await loadTasksData();
+    renderTaskDetails(i);
+    showMessage("Task successfully edited");
+  } else {
+    validateInputFields("title", "titleValidation");
+    validateInputFields("date", "dateValidation");
+  }
+}
+
+function collectEditTaskData(i) {
+  let title = document.getElementById("title").value;
+  let description = document.getElementById("description").value;
+  let date = document.getElementById("date").value;
+  let prio = returnPrio();
+  let data = {
+    title: title,
+    description: description,
+    date: date,
+    category: tasks[i].category,
+    prio: prio,
+    assignTo: getContactsForFB(),
+    subtasks: getEditSubtasksForFB(),
+    type: tasks[i].type,
+  };
+  return data;
+}
+
+function getEditSubtasksForFB() {
+  checkSubtaskStatusArray();
+  let subtasksOBJ = {};
+  for (let i = 0; i < subtasks.length; i++) {
+    subtasksOBJ[i] = {
+      title: subtasks[i],
+      done: statusSubtasks[i],
+    };
+  }
+  return subtasksOBJ;
+}
+
+function checkSubtaskStatusArray() {
+  if (subtasks.length != statusSubtasks.length) {
+    let difference = subtasks.length - statusSubtasks.length;
+    for (let i = 0; i < difference; i++) {
+      statusSubtasks.push(false);
+    }
+  } else {
+    return;
   }
 }
