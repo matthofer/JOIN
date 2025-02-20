@@ -41,6 +41,10 @@ header {
   transform: translate(calc(50dvw - 75%), calc(50dvh - 60%));
 }
 
+.headerLogo .whiteLogo {
+  opacity: 1;
+}
+
 .headerSignUp {
   display: flex;
   gap: 26px;
@@ -268,7 +272,7 @@ footer {
   border: 1px solid red !important;
 }
 
-@keyframes logo{
+@keyframes logo {
   0% {
     height: 340px;
     width: 290px;
@@ -289,5 +293,35 @@ footer {
   100% {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+@keyframes logoResp {
+  0% {
+    opacity: 0;
+    height: 160px;
+    width: 110px;
+    transform: translate(calc(50dvw - 75%), calc(50dvh - 60%));
+  }
+  100% {
+    opacity: 1;
+    height: 78px;
+    width: 64px;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes whiteLogoFade {
+  0% {
+    opacity: 1;
+    height: 160px;
+    width: 110px;
+    transform: translate(calc(50dvw - 75%), calc(50dvh - 60%));
+  }
+  100% {
+    opacity: 0;
+    height: 78px;
+    width: 64px;
+    transform: translate(0, 0);
   }
 }

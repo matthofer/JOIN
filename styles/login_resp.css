@@ -1,202 +1,202 @@
 @media (max-width: 1260px) {
-    .headerSignUp {
-        margin-right: 0;
-    }
+  .headerSignUp {
+    margin-right: 0;
+  }
 }
 
+/* @media (max-width: 1024px) and (min-width: px) {
+
+} */
+
 @media (max-width: 650px) {
-    .headerSignUp {
-        display: none;
-    }
+  .headerSignUp {
+    display: none;
+  }
 
-    .signUpButton {
-        padding: 0;
-        height: 40px;
-        width: 100px;
-    }
+  .signUpButton {
+    padding: 0;
+    height: 40px;
+    width: 100px;
+  }
 
-    .headerLogo img {
-        height: 200px;
-        width: 150px;
-    }
+  .headerLogo img {
+    height: 160px;
+    width: 110px;
+    animation: logoResp 0.5s ease-in-out 0.5s forwards;
+    opacity: 0;
+  }
 
-    header {
-        padding: 34px;
-    }
+  .overlay {
+    background-color: #2a3647;
+  }
 
-    .loginContainer {
-        margin-bottom: 40px;
-    }
+  header {
+    padding: 34px;
+  }
 
-    .loginForm {
-        padding: 10px 20px;
-        margin-top: 8px;
-    }
+  .whiteLogo {
+    display: block !important;
+  }
 
-    .loginButtonsContainer {
-        flex-direction: column;
-        align-items: center;
-        gap: 21px;
-        margin-top: 38px;
-    }
+  .headerLogo .whiteLogo {
+    animation: whiteLogoFade 0.5s ease-in-out 0.5s forwards;
+  }
 
-    .loginButton {
-        width: 180px;
-        height: 51px;
-        padding: 0;
-    }
+  .loginContainer {
+    margin-bottom: 40px;
+  }
 
-    .guestLoginButton {
-        width: 180px;
-        height: 51px;
-        padding: 0;
-    }
+  .loginForm {
+    padding: 10px 20px;
+    margin-top: 8px;
+  }
 
-    h1 {
-        font-size: 47px;
-    }
+  .loginButtonsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 21px;
+    margin-top: 38px;
+  }
 
-    @keyframes logo{
-        0% {
-          height: 200px;
-          width: 150px;
-          transform: translate(calc(50dvw - 75%), calc(50dvh - 60%));
-        }
-      
-        100% {
-          height: 78px;
-          width: 64px;
-          transform: translate(0, 0);
-        }
-      }
+  .loginButton {
+    width: 180px;
+    height: 51px;
+    padding: 0;
+  }
 
-      .footerSignUp {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 12px;
-      }
+  .guestLoginButton {
+    width: 180px;
+    height: 51px;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 47px;
+  }
+
+  .footerSignUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
 }
 
 @media (max-width: 540px) {
-    h1 {
-        font-size: 34px;
-    }
+  h1 {
+    font-size: 34px;
+  }
 
-    .loginContainer {
-        margin-top: 0;
-    }
+  .loginContainer {
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 450px) {
-    .formGroup input {
-        width: 300px;
-    }
+  .formGroup input {
+    width: 300px;
+  }
 
-    .privacyLink a {
-        font-size: 14px;
-    }
+  .privacyLink a {
+    font-size: 14px;
+  }
 
-    .legalLink a {
-        font-size: 14px;
-    }
+  .legalLink a {
+    font-size: 14px;
+  }
 }
 
-
-
 @media (max-height: 667px) {
-    header {
-        padding: 24px;
-    }
+  header {
+    padding: 24px;
+  }
 
-    h1 {
-        font-size: 34px;
-    }
+  h1 {
+    font-size: 34px;
+  }
 
-    .loginContainer {
-        margin-bottom: 24px;
-        margin-top: 16px;
-    }
+  .loginContainer {
+    margin-bottom: 24px;
+    margin-top: 16px;
+  }
 
-    .loginForm {
-        padding: 10px 20px;
-        margin-top: 8px;
-    }
+  .loginForm {
+    padding: 10px 20px;
+    margin-top: 8px;
+  }
 
-    .loginButtonsContainer {
-        gap: 16px;
-        margin-top: 18px;
-    }
+  .loginButtonsContainer {
+    gap: 16px;
+    margin-top: 18px;
+  }
 
-    .loginButton {
-        width: 180px;
-        height: 40px;
-    }
+  .loginButton {
+    width: 180px;
+    height: 40px;
+  }
 
-    .guestLoginButton {
-        width: 180px;
-        height: 40px;
-    }
+  .guestLoginButton {
+    width: 180px;
+    height: 40px;
+  }
 }
 
 @media (max-width: 380px) {
-    .formGroup input {
-        width: 260px;
-    }
+  .formGroup input {
+    width: 260px;
+  }
 }
 
 @media (max-height: 740px) {
-    .loginContainer {
-        margin-bottom: 20px;
-        margin-top: 0;
-    }
+  .loginContainer {
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
 
-    .loginButtonsContainer {
-        gap: 14px;
-        margin-top: 10px;
-    }
-
+  .loginButtonsContainer {
+    gap: 14px;
+    margin-top: 10px;
+  }
 }
-
 
 @media (min-height: 1180px) {
-    h1 {
-        font-size: 74px;
-    }
+  h1 {
+    font-size: 74px;
+  }
 
-    .formGroup input {
-        width: 450px;
-        height: 50px;
-    }
+  .formGroup input {
+    width: 450px;
+    height: 50px;
+  }
 
-    .loginForm {
-        padding: 24px 70px;
-        gap: 24px;
-    }
+  .loginForm {
+    padding: 24px 70px;
+    gap: 24px;
+  }
 
-    .loginButton {
-        padding: 0;
-        height: 51px;
-        width: 100px;
-    }
+  .loginButton {
+    padding: 0;
+    height: 51px;
+    width: 100px;
+  }
 
-    .guestLoginButton {
-        padding: 0;
-        height: 51px;
-        width: 150px;
-    }
+  .guestLoginButton {
+    padding: 0;
+    height: 51px;
+    width: 150px;
+  }
 }
 
-@media (min-width: 1020px) and  (max-height: 610px) {
-    main {
-        margin-top: 12dvh;
-    }
+@media (min-width: 1020px) and (max-height: 610px) {
+  main {
+    margin-top: 12dvh;
+  }
 }
 
-@media (min-width: 1020px) and  (max-height: 850px) {
-    main {
-        margin-top: 10dvh;
-    }
+@media (min-width: 1020px) and (max-height: 850px) {
+  main {
+    margin-top: 10dvh;
+  }
 }
 
 /* TO-DO: Asus Zenbook Fold, Surface Pro 7, iPad Pro, iPad Air */
