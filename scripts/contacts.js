@@ -272,6 +272,7 @@ function closeSuccessMessage() {
 
 async function deleteContact(i) {
   let contactInfoRef = document.getElementById("contactInfo");
+  await deleteContactFromTasks(i);
   await deleteData(`/contacts/${contacts[i].firebaseid}`);
   contactInfoRef.innerHTML = "";
   await loadContactsData();
@@ -334,6 +335,7 @@ async function updateContact(i, editedName, editedMail, editedPhone) {
 
 async function deleteContactInEditMode(i) {
   let contactInfoRef = document.getElementById("contactInfo");
+  await deleteContactFromTasks(i);
   await deleteData(`/contacts/${contacts[i].firebaseid}`);
   contactInfoRef.innerHTML = "";
   await loadContactsData();
@@ -344,6 +346,7 @@ async function deleteContactInEditMode(i) {
 
 async function deleteContactInMobileInfo(i, event) {
   let contactInfoRef = document.getElementById("mobileContactInfo");
+  await deleteContactFromTasks(i);
   await deleteData(`/contacts/${contacts[i].firebaseid}`);
   contactInfoRef.innerHTML = "";
   await loadContactsData();
@@ -355,6 +358,7 @@ async function deleteContactInMobileInfo(i, event) {
 
 async function deleteContactInMobileEditMode(i, event) {
   let contactInfoRef = document.getElementById("mobileContactInfo");
+  await deleteContactFromTasks(i);
   await deleteData(`/contacts/${contacts[i].firebaseid}`);
   contactInfoRef.innerHTML = "";
   await loadContactsData();
@@ -380,17 +384,25 @@ function getFirebaseIdOfTasks(searchInput) {
   for (let i = 0; i < tasks.length; i++) {
     let taskFirebaseId = tasks[i].firebaseid;
     let contactsArr = tasks[i].contacts;
-    let contactsArrKeys = Object.keys(contactsArr);
-    if (contactsArrKeys.includes(searchInput)) {
-      result.push(taskFirebaseId);
+    if (contactsArr != undefined) {
+      let contactsArrKeys = Object.keys(contactsArr);
+      if (contactsArrKeys.includes(searchInput)) {
+        result.push(taskFirebaseId);
+      }
     }
   }
-  console.log(result);
   return result;
 }
 
-function deleteContactFromTasks(i) {
+async function deleteContactFromTasks(i) {
   let contactFirebaseId = contacts[i].firebaseid;
-  let tasksWhereContactIncluded = getFirebaseIdOfTasks(contactFirebaseId);
-  console.log(tasksWhereContactIncluded);
+  let tasksContactIncluded = getFirebaseIdOfTasks(contactFirebaseId);
+  if (tasksContactIncluded.length > 0) {
+    for (let i = 0; i < tasksContactIncluded.length; i++) {
+      let taskId = tasksContactIncluded[i];
+      await deleteData(`tasks/${taskId}/assignTo/${contactFirebaseId}`);
+    }
+  } else {
+    return;
+  }
 }

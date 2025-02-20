@@ -607,10 +607,13 @@ input[name="searchResp"]:focus {
   display: inline-block;
 }
 
-.subtaskCheckbox input[name="checkbox"]:checked + label {
-  background-image: url(../assets/icons/checkbox-ticked.svg);
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(120deg)
-    brightness(107%) contrast(103%);
+.subTaskCheckBoxEdit {
+  height: 16px;
+  width: 16px;
+}
+
+.subTaskCheckBoxEdit:checked {
+  background-color: #2a3647 !important;
 }
 
 .addTaskOverlayContainerHeadEdit {
