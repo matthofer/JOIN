@@ -159,7 +159,7 @@ function editTaskTemplate(i) {
                 </div>
                 <form id="addTaskForm">
                   <div class="formWrapper editFormWrapper">
-                      <div class="leftColumn">
+                      <div class="leftColumn leftColumnEdit">
                           <div class="titles">
                               <span>Title <p>*</p></span>
                               <input value="${tasks[i].title}" name="title" type="text" placeholder="Enter a title" id="title" onblur="getBlueBorder('title')">
@@ -184,7 +184,7 @@ function editTaskTemplate(i) {
 
                       </div>
 
-                      <div class="rightColumn">
+                      <div class="rightColumn rightColumnEdit">
                           <div class="titles">
                               <span>Due date <p>*</p></span>
                               <input value="${tasks[i].date}" type="text" name="date" id="date" placeholder="dd/mm/yyyy"
@@ -245,7 +245,7 @@ function editTaskTemplate(i) {
                               <div class="initialsContacts" id="initialsContacts"></div>
                           </div>
 
-                          <div class="titles">
+                          <div class="titles subtasksEdit">
                               <span>Subtasks</span>
                               <input onkeyup="changeSubtasksIcons()" type="text" id="subtasks" name="subtask"
                                   placeholder="Add new subtask">
@@ -264,8 +264,8 @@ function editTaskTemplate(i) {
                       </div>
                       
                   </div>
-
-                  <div class="bottomSection bottomSectionEditTask">
+              </form>
+              <div class="bottomSection bottomSectionEditTask">
                       <div class="buttonArea">
                           </button>
                           <button class="submit">Ok
@@ -277,7 +277,6 @@ function editTaskTemplate(i) {
                           </button>
                       </div>
                   </div>
-              </form>
             </div>`;
 }
 

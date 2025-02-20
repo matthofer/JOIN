@@ -397,7 +397,7 @@ input[name="searchResp"] {
   width: clamp(300px, 100%, 500px);
   border-radius: 30px;
   background-color: #ffffff;
-  padding: 12px;
+  padding: 18px;
   gap: 24px;
 }
 
@@ -580,13 +580,15 @@ input[name="searchResp"]:focus {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  max-height: 650px;
   margin-top: 0 !important;
   padding: 12px;
   gap: 16px;
 }
 
 .bottomSectionEditTask {
-  padding-top: 0 !important;
+  padding-top: 16px !important;
+  padding-right: 16px !important;
 }
 
 .subTaskCheckBoxEdit {
@@ -635,4 +637,16 @@ input[name="searchResp"]:focus {
   background: #cbcccc;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.leftColumnEdit {
+  gap: 16px;
+}
+
+.rightColumnEdit {
+  gap: 16px;
+}
+
+.subtasksEdit {
+  margin-top: 80px;
 }
