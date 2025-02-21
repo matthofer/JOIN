@@ -15,3 +15,16 @@ function highlightNavLink(idDesktop, idMobile) {
   document.getElementById(idDesktop).style.backgroundColor = "#091931";
   document.getElementById(idMobile).style.backgroundColor = "#091931";
 }
+
+
+function toggleBurgerMenu(){
+  let btn = document.getElementById('burgerMenu');
+  btn.classList.toggle('slideBurgerMenu');
+}
+
+function logOut(){
+  sessionStorage.removeItem('userName')
+  sessionStorage.removeItem('userInitials')
+  sessionStorage.removeItem('loggedIn')
+  sessionStorage.removeItem('animationPlayed')
+}
