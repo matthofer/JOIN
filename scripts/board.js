@@ -13,7 +13,6 @@ async function initBoard() {
 async function initAddTaskForEdit() {
   await loadContactsData();
   renderDropdownContacts();
-  changePrio("medium", "mediumSVG");
   submitSubtaskWithEnter();
   initLoad();
 }
