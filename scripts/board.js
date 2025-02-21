@@ -130,7 +130,7 @@ function renderContactIntials(task, i) {
     let leftPos = 0;
     let counter = 0;
     for (let index = 0; index < contactKeys.length; index++) {
-      if (index <= 4) {
+      if (index <= 3) {
         let name = task.contacts[contactKeys[index]].name;
         let intials = getIntialsOfContact(name);
         let color = task.contacts[contactKeys[index]].color;
