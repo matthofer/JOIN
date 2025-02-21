@@ -596,8 +596,15 @@ input[name="searchResp"]:focus {
 }
 
 /* Taskdetail checkbox */
+.subtasksListItem input[name="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  left: 250px;
+  width: 0;
+  height: 0;
+}
 
-.subtaskCheckbox label {
+.subtasksListItem label {
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -605,6 +612,10 @@ input[name="searchResp"]:focus {
   background-repeat: no-repeat;
   background-position: 95%;
   display: inline-block;
+}
+
+.subtasksListItem input[name="checkbox"]:checked + label {
+  background-image: url(../assets/icons/checkbox-ticked.svg);
 }
 
 .subTaskCheckBoxEdit {

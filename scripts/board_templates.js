@@ -136,6 +136,26 @@ function getDetialSubtaskListItemTemplate(status, title, i, statusIndex) {
     return ` <div class="subtasksListItem">
               <input id="subtask${
                 i + statusIndex
+              }" class="subTaskCheckBoxEdit" onclick="checkSubtask(${i}, '${statusIndex}'); event.stopPropagation()" name="checkbox" type="checkbox" checked>
+              <label for="subtask${i + statusIndex}"></label>
+              <p>${title}</p>
+            </div>`;
+  } else {
+    return ` <div class="subtasksListItem">
+              <input id="subtask${
+                i + statusIndex
+              }" class="subTaskCheckBoxEdit" onclick="checkSubtask(${i}, '${statusIndex}'); event.stopPropagation()" name="checkbox" type="checkbox" >
+              <label for="subtask${i + statusIndex}"></label>
+              <p>${title}</p>
+            </div>`;
+  }
+}
+
+/* function getDetialSubtaskListItemTemplate(status, title, i, statusIndex) {
+  if (status === true) {
+    return ` <div class="subtasksListItem">
+              <input id="subtask${
+                i + statusIndex
               }" class="subTaskCheckBoxEdit" onclick="checkSubtask(${i}, '${statusIndex}'); event.stopPropagation()" type="checkbox" checked>
               <p>${title}</p>
             </div>`;
@@ -147,7 +167,7 @@ function getDetialSubtaskListItemTemplate(status, title, i, statusIndex) {
               <p>${title}</p>
             </div>`;
   }
-}
+} */
 
 function editTaskTemplate(i) {
   return `  <div class="editWrapper">
@@ -404,9 +424,6 @@ function getAddTaskTemplate() {
                               </svg>           
                       </div>
                   </div>
-
-               
-
                   <div class="bottomSection bottomSectionResp">
                       <div class="information">
                           <p>*</p>
