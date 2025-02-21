@@ -13,6 +13,7 @@ async function init() {
   initLoad();
   highlightNavLink("contactsLink", "contactsLinkResp");
   await loadTasksData();
+  window.addEventListener("resize", reSize);
 }
 
 /**
@@ -402,6 +403,15 @@ async function deleteContactFromTasks(i) {
       let taskId = tasksContactIncluded[i];
       await deleteData(`tasks/${taskId}/assignTo/${contactFirebaseId}`);
     }
+  } else {
+    return;
+  }
+}
+
+function reSize() {
+  let width = window.innerWidth;
+  if (width > 1400) {
+    closeMobileInfo();
   } else {
     return;
   }
