@@ -25,10 +25,11 @@ function getTaskTemplate(task, i) {
   }</div>
                     <div class="taskTitleAndDscr">
                         <p id="taskTitle" class="taskTitle">${task.title}</p>
-                        <p id="taskDscr" class="taskDscr">${task.dscr.substr(
-                          0,
-                          40
-                        )}...</p>
+                        <p id="taskDscr" class="taskDscr">${
+                          task.dscr.length >= 65
+                            ? task.dscr.substr(0, 65) + "..."
+                            : task.dscr
+                        }</p>
                     </div>
                     <div id="subtaskStatus${
                       task.type
