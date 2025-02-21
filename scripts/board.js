@@ -25,23 +25,28 @@ async function loadTasksData(path = "/tasks") {
     let taskResponseToJson = await taskResponse.json();
     let taskKeys = Object.keys(taskResponseToJson);
     for (let i = 0; i < taskKeys.length; i++) {
-      tasks.push({
-        firebaseid: taskKeys[i],
-        id: id,
-        type: taskResponseToJson[taskKeys[i]].type,
-        category: taskResponseToJson[taskKeys[i]].category,
-        title: taskResponseToJson[taskKeys[i]].title,
-        dscr: taskResponseToJson[taskKeys[i]].description,
-        date: taskResponseToJson[taskKeys[i]].date,
-        prio: taskResponseToJson[taskKeys[i]].prio,
-        contacts: taskResponseToJson[taskKeys[i]].assignTo,
-        subtasks: taskResponseToJson[taskKeys[i]].subtasks,
-      });
+      let taskKey = taskKeys[i];
+      fillTasksArray(taskResponseToJson, taskKey);
       id++;
     }
   } catch (error) {
     showMessage("Error during loading of data");
   }
+}
+
+function fillTasksArray(taskResponseToJson, taskKey) {
+  tasks.push({
+    firebaseid: taskKey,
+    id: id,
+    type: taskResponseToJson[taskKey].type,
+    category: taskResponseToJson[taskKey].category,
+    title: taskResponseToJson[taskKey].title,
+    dscr: taskResponseToJson[taskKey].description,
+    date: taskResponseToJson[taskKey].date,
+    prio: taskResponseToJson[taskKey].prio,
+    contacts: taskResponseToJson[taskKey].assignTo,
+    subtasks: taskResponseToJson[taskKey].subtasks,
+  });
 }
 
 function renderTasks(taskArray) {
