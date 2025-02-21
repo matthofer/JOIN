@@ -52,6 +52,7 @@ function findUser(users, email, password) {
 }
 
 function handleSuccessfulLogin(user) {
+  openPage("summary.html");
   sessionStorage.setItem("userName", user.name);
   sessionStorage.setItem("userInitials", getInitials(user.name));
   sessionStorage.setItem("loggedIn", true);
@@ -59,8 +60,8 @@ function handleSuccessfulLogin(user) {
   document.getElementById("email").value = "";
 }
 
-function guestLogin(){
-  openPage('summary.html');
+function guestLogin() {
+  openPage("summary.html");
   sessionStorage.setItem("loggedIn", false);
   sessionStorage.setItem("animationPlayed", false);
   sessionStorage.setItem("userName", "");
