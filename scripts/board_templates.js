@@ -30,7 +30,7 @@ function getTaskTemplate(task, i) {
                           40
                         )}...</p>
                     </div>
-                    <div id= "subtaskStatus${i}"class="subtaskStatus">
+                    <div id="subtaskStatus${i}"class="subtaskStatus">
                         <div class="progressBar">
                           <div id="statusBar${
                             task.type
