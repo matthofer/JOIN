@@ -30,6 +30,16 @@ function closeDropDownContacts() {
   }
 }
 
+function closeDropDownContactsBoard() {
+  let dropdown = document.getElementById("contacts");
+  let category = document.getElementById("categorys");
+  if (dropdown || category) {
+    closeDropDownContacts();
+  } else {
+    return;
+  }
+}
+
 function toggleDropdownContacts() {
   let dropdown = document.getElementById("contacts");
   if (dropdown.classList.contains("dropdown")) {
