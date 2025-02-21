@@ -30,7 +30,7 @@ function getTaskTemplate(task, i) {
                           40
                         )}...</p>
                     </div>
-                    <div class="subtaskStatus">
+                    <div id= "subtaskStatus${i}"class="subtaskStatus">
                         <div class="progressBar">
                           <div id="statusBar${
                             task.type
@@ -79,6 +79,10 @@ function getRemainingIntialsTemplate(counter, lenContacts, leftPos) {
 
 function getSubTaskTextTemplate(doneSubTasks, amountSubTasks) {
   return `<p id="subTaskFrom">${doneSubTasks}</p>/<p id="subTaskTo">${amountSubTasks}</p>`;
+}
+
+function getNoSubTaskTextTemplate() {
+  return `<p>No Subtasks</p>`;
 }
 
 function getTaskDetailTemplate(i) {
@@ -150,24 +154,6 @@ function getDetialSubtaskListItemTemplate(status, title, i, statusIndex) {
             </div>`;
   }
 }
-
-/* function getDetialSubtaskListItemTemplate(status, title, i, statusIndex) {
-  if (status === true) {
-    return ` <div class="subtasksListItem">
-              <input id="subtask${
-                i + statusIndex
-              }" class="subTaskCheckBoxEdit" onclick="checkSubtask(${i}, '${statusIndex}'); event.stopPropagation()" type="checkbox" checked>
-              <p>${title}</p>
-            </div>`;
-  } else {
-    return ` <div class="subtasksListItem">
-              <input id="subtask${
-                i + statusIndex
-              }" class="subTaskCheckBoxEdit" onclick="checkSubtask(${i}, '${statusIndex}'); event.stopPropagation()" type="checkbox" >
-              <p>${title}</p>
-            </div>`;
-  }
-} */
 
 function editTaskTemplate(i) {
   return `  <div class="editWrapper">
