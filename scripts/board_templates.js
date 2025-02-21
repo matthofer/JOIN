@@ -407,12 +407,12 @@ function getAddTaskTemplate() {
 
                
 
-                  <div class="bottomSection">
+                  <div class="bottomSection bottomSectionResp">
                       <div class="information">
                           <p>*</p>
                           <span>This field is required</span>
                       </div>
-                      <div class="buttonArea">
+                      <div class="buttonArea buttonAreaResp">
                           <button onclick="clearForm()" class="clear" type="button">Clear
                               <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                   xmlns="http://www.w3.org/2000/svg">

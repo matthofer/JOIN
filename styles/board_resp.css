@@ -208,6 +208,23 @@ main {
     padding-left: 16px;
     padding-right: 16px;
   }
+
+  .addTaskOverlayContainer {
+    height: 700px;
+    padding: 16px;
+  }
+
+  .bottomSectionResp {
+    padding-top: 60px !important;
+  }
+
+  .buttonAreaResp {
+    padding-right: 30px;
+  }
+
+  .overlay {
+    height: 100dvh;
+  }
 }
 
 @media (max-width: 1200px) {
