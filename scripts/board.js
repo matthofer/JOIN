@@ -173,6 +173,7 @@ function renderSubTasks(task, i) {
       getSubTaskTextTemplate(amountDone, amountSubTasks);
     updateStatusBar(amountDone, amountSubTasks, task, i);
   } else {
+    document.getElementById("subtaskStatus" + task.type + i).innerHTML = "";
     return;
   }
 }
