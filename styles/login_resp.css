@@ -4,9 +4,26 @@
   }
 }
 
-/* @media (max-width: 1024px) and (min-width: px) {
+@media (max-width: 1024px) {
+  .headerLogo img {
+    height: 160px;
+    width: 110px;
+    animation: logoResp 0.5s ease-in-out 0.5s forwards;
+    opacity: 0;
+  }
 
-} */
+  .overlay {
+    background-color: #2a3647;
+  }
+
+  .whiteLogo {
+    display: block !important;
+  }
+
+  .headerLogo .whiteLogo {
+    animation: whiteLogoFade 0.5s ease-in-out 0.5s forwards;
+  }
+}
 
 @media (max-width: 650px) {
   .headerSignUp {
@@ -19,27 +36,8 @@
     width: 100px;
   }
 
-  .headerLogo img {
-    height: 160px;
-    width: 110px;
-    animation: logoResp 0.5s ease-in-out 0.5s forwards;
-    opacity: 0;
-  }
-
-  .overlay {
-    background-color: #2a3647;
-  }
-
   header {
     padding: 34px;
-  }
-
-  .whiteLogo {
-    display: block !important;
-  }
-
-  .headerLogo .whiteLogo {
-    animation: whiteLogoFade 0.5s ease-in-out 0.5s forwards;
   }
 
   .loginContainer {
