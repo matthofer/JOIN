@@ -664,3 +664,8 @@ input[name="searchResp"]:focus {
 .subtasksEdit {
   margin-top: 80px;
 }
+
+.taskHead {
+  display: flex;
+  justify-content: space-between;
+}

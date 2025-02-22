@@ -20,9 +20,14 @@ function getTaskTemplate(task, i) {
     task.id
   })" class="taskWrapper">
                 <div class="task">
-                    <div id="category" class="category${task.category[0]}">${
+                    <div class="taskHead">
+                      <div id="category" class="category${task.category[0]}">${
     task.category
   }</div>
+                      <img onclick="openTaskMoveDialogMobile(${
+                        task.id
+                      }); event.stopPropagation();" class="moveTaskMobile dNone" src="./assets/icons/move_vert_dark.svg"/>
+                    </div>
                     <div class="taskTitleAndDscr">
                         <p id="taskTitle" class="taskTitle">${task.title}</p>
                         <p id="taskDscr" class="taskDscr">${

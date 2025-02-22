@@ -449,3 +449,7 @@ function checkSubtaskStatusArray() {
     return;
   }
 }
+
+function openTaskMoveDialogMobile(i) {
+  console.log(tasks[i]);
+}
