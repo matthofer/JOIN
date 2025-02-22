@@ -27,21 +27,31 @@ function getTaskTemplate(task, i) {
                       <div class="mobileMoveContainer">
                         <img onclick="openCloseTaskMoveDialogMobile(${
                           task.id
-                        }); event.stopPropagation();" class="moveTaskMobile" src="./assets/icons/move_vert_dark.svg"/>
-                        <div id="moveDialog${task.id}" class="moveDialog dNone">
+                        }); event.stopPropagation()" class="moveTaskMobile" src="./assets/icons/move_vert_dark.svg"/>
+                        <div onclick="event.stopPropagation()" id="moveDialog${
+                          task.id
+                        }" class="moveDialog dNone">
                           <p>Move to</p>
-                          <p class="moveTarget">• Todo</p>
-                          <p class="moveTarget">• In Progress</p>
-                          <p class="moveTarget">• Await feedback</p>
-                          <p class="moveTarget">• Done</p>
+                          <p onclick="moveToInMobile(${
+                            task.id
+                          }, 'todo'); event.stopPropagation()" class="moveTarget">• Todo</p>
+                          <p onclick="moveToInMobile(${
+                            task.id
+                          }, 'inProgress'); event.stopPropagation()" class="moveTarget">• In Progress</p>
+                          <p onclick="moveToInMobile(${
+                            task.id
+                          }, 'awaitFeedback'); event.stopPropagation()" class="moveTarget">• Await feedback</p>
+                          <p onclick="moveToInMobile(${
+                            task.id
+                          }, 'done'); event.stopPropagation()" class="moveTarget">• Done</p>
                         </div>
                       </div>
                     </div>
                     <div class="taskTitleAndDscr">
                         <p id="taskTitle" class="taskTitle">${task.title}</p>
                         <p id="taskDscr" class="taskDscr">${
-                          task.dscr.length >= 65
-                            ? task.dscr.substr(0, 65) + "..."
+                          task.dscr.length >= 40
+                            ? task.dscr.substr(0, 40) + "..."
                             : task.dscr
                         }</p>
                     </div>

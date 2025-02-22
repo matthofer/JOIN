@@ -454,3 +454,9 @@ function openCloseTaskMoveDialogMobile(i) {
   let dialogRef = document.getElementById("moveDialog" + tasks[i].id);
   dialogRef.classList.toggle("dNone");
 }
+
+function moveToInMobile(taskId, category) {
+  tasks[taskId].type = category;
+  renderTasks(tasks);
+  putData(`tasks/${tasks[taskId].firebaseid}/type`, category);
+}
