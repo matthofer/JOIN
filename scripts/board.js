@@ -450,6 +450,7 @@ function checkSubtaskStatusArray() {
   }
 }
 
-function openTaskMoveDialogMobile(i) {
-  console.log(tasks[i]);
+function openCloseTaskMoveDialogMobile(i) {
+  let dialogRef = document.getElementById("moveDialog" + tasks[i].id);
+  dialogRef.classList.toggle("dNone");
 }

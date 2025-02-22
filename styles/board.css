@@ -669,3 +669,33 @@ input[name="searchResp"]:focus {
   display: flex;
   justify-content: space-between;
 }
+
+.mobileMoveContainer {
+  display: none;
+}
+
+.moveTaskMobile:hover {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(93%) saturate(423%)
+    hue-rotate(173deg) brightness(92%) contrast(94%);
+}
+
+.moveDialog {
+  background-color: #2a3647;
+  position: absolute;
+  padding: 8px;
+  top: 40px;
+  right: 30px;
+  width: 150px;
+  border-radius: 10px 0 10px 10px;
+}
+
+.moveDialog p {
+  color: #cdcdcd;
+  padding-bottom: 6px;
+  font-size: 14px;
+}
+
+.moveTarget:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

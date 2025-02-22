@@ -421,6 +421,10 @@ main {
     cursor: pointer;
   }
 
+  .mobileMoveContainer {
+    display: flex;
+  }
+
   ::-webkit-scrollbar {
     width: 2px;
   }
