@@ -193,11 +193,15 @@ main {
 
 /*Responsiv */
 @media (max-width: 1260px) {
+  .overlay {
+    height: calc(100dvh - 80px) !important;
+  }
+
   .taskEditContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: clamp(300px, 100%, 700px);
+    height: clamp(300px, 100%, 800px);
     width: clamp(300px, 100%, 425px);
     padding: 16px;
   }
@@ -224,10 +228,6 @@ main {
     padding-top: 60px !important;
   }
 
-  .buttonAreaResp {
-    padding-right: 30px;
-  }
-
   .overlay {
     height: 100dvh;
   }
@@ -246,7 +246,6 @@ main {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 9;
   }
 
   .mainContent {
@@ -448,12 +447,12 @@ main {
 }
 
 @media (max-width: 850px) {
-  .buttonAreaResp {
-    width: 0 !important;
-  }
-
   .formEdit {
     padding-top: 0;
+  }
+
+  .subtasksEdit {
+    margin-top: 20px;
   }
 }
 
