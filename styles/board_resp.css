@@ -185,6 +185,12 @@ main {
   text-align: center;
 }
 
+.buttonAreaResp {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
 /*Responsiv */
 @media (max-width: 1260px) {
   .taskEditContainer {
@@ -441,6 +447,22 @@ main {
   }
 }
 
+@media (max-width: 850px) {
+  .buttonAreaResp {
+    width: 0 !important;
+  }
+
+  .formEdit {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .taskEditContainer {
+    width: clamp(300px, 80%, 425px);
+  }
+}
+
 @media (max-width: 360px) {
   .navSvg {
     width: 25px;
@@ -471,6 +493,9 @@ main {
     width: clamp(300px, 100%, 425px);
   }
 
+  .overlay {
+    height: calc(100dvh - -80px);
+  }
   /* .overlayContent {
     flex-direction: column;
     height: clamp(550px, 75%, 760px);
