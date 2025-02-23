@@ -259,6 +259,7 @@ header {
   background-color: #ffffff;
   height: 96px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
 .headerText {
@@ -499,6 +500,7 @@ main {
   transition: all 100ms ease-in-out;
   padding-left: 64px;
   padding-right: 64px;
+  z-index: 1;
 }
 
 .overlayContent {
@@ -776,12 +778,12 @@ main {
   position: absolute;
   top: 72px;
   right: 15px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   z-index: 9;
 }
 
 .burgerMenu a {
-  color: #CDCDCD;
+  color: #cdcdcd;
   padding: 8px 16px;
   /* border-radius: 8px; */
   border-top-left-radius: 20px;
@@ -796,7 +798,7 @@ main {
   background-color: #29abe2;
 }
 
-.slideBurgerMenu{
+.slideBurgerMenu {
   transform: translateX(200px);
   pointer-events: none;
   opacity: 0;
@@ -810,11 +812,11 @@ main {
   color: white !important;
 }
 
-.markedLink img{
+.markedLink img {
   filter: brightness(200%);
 }
 
-.policyLinks{
+.policyLinks {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -826,12 +828,12 @@ main {
   padding-bottom: 6px;
 }
 
-.policyLinks a{
+.policyLinks a {
   color: #cdcdcd;
   text-decoration: none;
   font-size: 16px;
 }
 
-.policyLinks:hover a{
+.policyLinks:hover a {
   color: #29abe2;
 }
