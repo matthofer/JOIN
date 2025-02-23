@@ -235,7 +235,7 @@ main {
 }
 
 @media (max-width: 1200px) {
-  .helpDesktop{
+  .helpDesktop {
     display: none;
   }
 
@@ -251,6 +251,7 @@ main {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
   }
 
   .mainContent {
@@ -451,8 +452,8 @@ main {
   }
 }
 
-@media(min-width: 1200px){
-  .help{
+@media (min-width: 1200px) {
+  .help {
     display: none;
   }
 }
