@@ -12,10 +12,9 @@ function initLoad() {
 }
 
 function highlightNavLink(idDesktop, idMobile) {
-  document.getElementById(idDesktop).style.backgroundColor = "#091931";
-  document.getElementById(idMobile).style.backgroundColor = "#091931";
+  document.getElementById(idDesktop).classList.add('markedLink')
+  document.getElementById(idMobile).classList.add('markedLink')
 }
-
 
 function toggleBurgerMenu(){
   let btn = document.getElementById('burgerMenu');

@@ -246,6 +246,20 @@ main {
   opacity: 0;
 }
 
+.markedLink {
+  background-color: #091931;
+}
+
+.markedLink a {
+  color: white !important;
+}
+
+.markedLink img{
+  filter: brightness(200%);
+}
+
+
+
 /*Responsiv */
 
 @media(min-width: 850px){

@@ -10,6 +10,8 @@ async function initAddTask() {
   renderCategorys();
   submitSubtaskWithEnter();
   initLoad();
+  highlightNavLink("taskLink", "taskLinkResp");
+
 }
 
 function toggleDropdownCategorys() {
