@@ -258,6 +258,29 @@ main {
   filter: brightness(200%);
 }
 
+.policyLinks{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  padding-left: 64px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.policyLinks a{
+  color: #cdcdcd;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.policyLinks:hover a{
+  color: #29abe2;
+}
+
+
 
 
 /*Responsiv */
