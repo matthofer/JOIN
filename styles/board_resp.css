@@ -488,6 +488,10 @@ main {
   .buttonAreaResp {
     padding-top: 0px;
   }
+
+  .bottomSectionEditTask {
+    padding-top: 16px !important;
+  }
 }
 
 @media (max-width: 450px) {
@@ -516,6 +520,11 @@ main {
 }
 
 @media (max-height: 670px) {
+  .formEdit {
+    overflow-y: auto;
+    height: clamp(300px, 100%, 470px);
+  }
+
   .taskEditContainer {
     overflow-y: auto;
     height: clamp(300px, 100%, 470px);
@@ -523,6 +532,11 @@ main {
   }
 
   .overlay {
+    height: calc(100dvh - -80px);
+  }
+
+  #overlayAddTask {
+    height: clamp(300px, 100%, 470px);
     height: calc(100dvh - -80px);
   }
 }
