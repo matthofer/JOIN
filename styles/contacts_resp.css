@@ -281,9 +281,9 @@
 }
 
 @media (max-width: 1100px) {
-  .helpDesktop{
+  .helpDesktop {
     display: none;
-   }
+  }
 
   .stdPadding {
     padding-left: 16px;
@@ -311,10 +311,6 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-  }
-
-  .respAddButton:hover {
-    background-color: #29abe2;
   }
 
   .contactScrollContainer {
@@ -365,10 +361,6 @@
     align-items: center;
     border-radius: 60px;
     cursor: pointer;
-  }
-
-  .respEditButton:hover {
-    background-color: #29abe2;
   }
 
   .respContactBtnContainer {
@@ -669,12 +661,11 @@
   }
 }
 
-@media(min-width: 1100px){
-  .help{
+@media (min-width: 1100px) {
+  .help {
     display: none;
   }
 }
 
 @media (max-width: 850px) {
-
 }

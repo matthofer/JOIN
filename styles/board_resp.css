@@ -196,6 +196,7 @@ main {
 @media (max-width: 1260px) {
   .overlay {
     height: calc(100dvh - 80px) !important;
+    z-index: 1;
   }
 
   .taskEditContainer {
