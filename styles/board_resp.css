@@ -189,6 +189,8 @@ main {
 .buttonAreaResp {
   display: flex;
   justify-content: flex-end;
+  gap: 16px;
+  padding-top: 24px;
   width: 100%;
 }
 
@@ -222,7 +224,7 @@ main {
   }
 
   .addTaskOverlayContainer {
-    height: 700px;
+    height: 750px;
     padding: 16px;
   }
 
@@ -451,6 +453,11 @@ main {
     border-radius: 20px;
     border: 1px solid #ffffff00;
   }
+
+  .message {
+    left: calc(50% - 155px);
+    z-index: 1;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -460,12 +467,26 @@ main {
 }
 
 @media (max-width: 850px) {
+  .formWrapperResp {
+    overflow-y: auto;
+    height: 450px;
+  }
+
   .formEdit {
     padding-top: 0;
   }
 
   .subtasksEdit {
     margin-top: 20px;
+  }
+
+  .addTaskOverlayContainer {
+    height: 700px;
+    padding: 16px;
+  }
+
+  .buttonAreaResp {
+    padding-top: 0px;
   }
 }
 
@@ -495,10 +516,6 @@ main {
 }
 
 @media (max-height: 670px) {
-  /*  .overlay {
-    hei;
-  } */
-
   .taskEditContainer {
     overflow-y: auto;
     height: clamp(300px, 100%, 470px);
@@ -508,9 +525,4 @@ main {
   .overlay {
     height: calc(100dvh - -80px);
   }
-  /* .overlayContent {
-    flex-direction: column;
-    height: clamp(550px, 75%, 760px);
-    width: clamp(350px, 90%, 396px);
-  } */
 }

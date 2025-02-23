@@ -323,7 +323,7 @@ function getAddTaskTemplate() {
                   />
                 </div>
                 <form id="addTaskForm">
-                  <div class="formWrapper">
+                  <div class="formWrapper formWrapperResp">
                       <div class="leftColumn">
                           <div class="titles">
                               <span>Title <p>*</p></span>
@@ -443,7 +443,7 @@ function getAddTaskTemplate() {
                           <p>*</p>
                           <span>This field is required</span>
                       </div>
-                      <div class="buttonArea buttonAreaResp">
+                      <div class="buttonAreaResp">
                           <button onclick="clearForm()" class="clear" type="button">Clear
                               <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                   xmlns="http://www.w3.org/2000/svg">
