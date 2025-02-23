@@ -394,7 +394,7 @@ input[name="searchResp"] {
   width: clamp(300px, 100%, 500px);
   border-radius: 30px;
   background-color: #ffffff;
-  padding: 18px;
+  padding: 12px;
   gap: 24px;
 }
 
@@ -529,7 +529,7 @@ input[name="detailSubtask"] {
 }
 
 .detailContactsList::-webkit-scrollbar-thumb {
-  background: #29abe2;
+  background: #a8a8a8;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -544,7 +544,7 @@ input[name="detailSubtask"] {
 }
 
 .subtasksList::-webkit-scrollbar-thumb {
-  background: #29abe2;
+  background: #a8a8a8;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -794,4 +794,12 @@ input[name="searchResp"]:focus {
 
 .policyLinks:hover a {
   color: #29abe2;
+}
+
+.subScroll::-webkit-scrollbar-track {
+  background: #ffffff !important;
+}
+
+.renderedSubtasks::-webkit-scrollbar-thumb {
+  border: 8px solid #ffffff !important;
 }

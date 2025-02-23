@@ -291,7 +291,7 @@ function editTaskTemplate(i) {
                                   <img onclick="saveSubtasks()" src="./assets/icons/checkBlue.svg" alt=""
                                       srcset="">
                               </div>
-                              <div class="renderedSubtasks" id="renderedSubtasks">
+                              <div class="renderedSubtasks subScroll" id="renderedSubtasks">
                               </div>
                           </div>
                       </div>
