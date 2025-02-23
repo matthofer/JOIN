@@ -1,16 +1,28 @@
 const checkbox = document.getElementById("customCheckbox");
 const uncheckedIcon = document.querySelector(".unchecked");
 const checkedIcon = document.querySelector(".checked");
-const FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
+const FB_URL =
+  "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
 let isPasswordVisible = false;
 let isConfirmPasswordVisible = false;
+
+let initialColors = [
+  "#9327FF",
+  "#6E52FF",
+  "#FC71FF",
+  "#FFBB2B",
+  "#1FD7C1",
+  "#FF7A00",
+  "#462F8A",
+  "#00BEE8",
+];
 
 checkbox.addEventListener("change", () => {
   if (checkbox.checked) {
     uncheckedIcon.classList.add("d-none");
     checkedIcon.classList.remove("d-none");
   } else {
-    checkedIcon.classList.add("d-none")
+    checkedIcon.classList.add("d-none");
     uncheckedIcon.classList.remove("d-none");
   }
 });
@@ -18,6 +30,7 @@ checkbox.addEventListener("change", () => {
 async function createUser(name, email, password) {
   const user = createUserObject(name, email, password);
   const response = await sendUserData(user);
+  await createNewContact(name, email);
 
   if (response.ok) {
     return true;
@@ -69,14 +82,16 @@ function validateFormInputs(name, email, password, confirmPassword) {
 
 async function handleSignup() {
   const { name, email, password, confirmPassword } = getFormValues();
-  
-  if (await takenMail() === true) {
+
+  if ((await takenMail()) === true) {
     return;
   }
 
   if (validateFormInputs(name, email, password, confirmPassword)) {
     await createUser(name, email, password);
-    showToastMessage("You Signed Up successfully. <br> Redirecting to Log In...");
+    showToastMessage(
+      "You Signed Up successfully. <br> Redirecting to Log In..."
+    );
     setTimeout(() => {
       redirectToLoginPage();
       clearFormFields();
@@ -109,7 +124,12 @@ function validateInputs(name, email, password, confirmPassword, id) {
 
 function checkEmptyInput(name, email, password, confirmPassword, id) {
   let errorElement = document.getElementById(id);
-  if (name === "" || email === "" || password === "" || confirmPassword === "") {
+  if (
+    name === "" ||
+    email === "" ||
+    password === "" ||
+    confirmPassword === ""
+  ) {
     errorElement.innerHTML = "<p>Please fill in all input fields!</p>";
     showRedBorder();
     setTimeout(() => {
@@ -185,7 +205,13 @@ function checkPrivacyPolicyTick() {
   }
 }
 
-function toggleIcons(inputId, lockIconId, eyeIconId, crossedEyeIconId, isVisible) {
+function toggleIcons(
+  inputId,
+  lockIconId,
+  eyeIconId,
+  crossedEyeIconId,
+  isVisible
+) {
   let input = document.getElementById(inputId).value;
   let lockIcon = document.getElementById(lockIconId);
   let eyeIcon = document.getElementById(eyeIconId);
@@ -202,13 +228,24 @@ function toggleIcons(inputId, lockIconId, eyeIconId, crossedEyeIconId, isVisible
 }
 
 function checkPasswordInput() {
-  toggleIcons("password", "lockIcon", "eyeIcon", "crossedEyeIcon", isPasswordVisible);
+  toggleIcons(
+    "password",
+    "lockIcon",
+    "eyeIcon",
+    "crossedEyeIcon",
+    isPasswordVisible
+  );
 }
 
 function checkConfirmPasswordInput() {
-  toggleIcons("confirmPassword", "confirmLockIcon", "confirmEyeIcon", "confirmCrossedEyeIcon", isConfirmPasswordVisible);
+  toggleIcons(
+    "confirmPassword",
+    "confirmLockIcon",
+    "confirmEyeIcon",
+    "confirmCrossedEyeIcon",
+    isConfirmPasswordVisible
+  );
 }
-
 
 function showPassword() {
   let passwordInput = document.getElementById("password");
@@ -307,9 +344,7 @@ async function fetchUsers() {
 }
 
 function findUser(users, email) {
-  return Object.values(users).find(
-    (user) => user.email === email
-  );
+  return Object.values(users).find((user) => user.email === email);
 }
 
 function showTakenMailMessage() {
@@ -320,4 +355,24 @@ function showTakenMailMessage() {
   setTimeout(() => {
     errorElement.innerHTML = "";
   }, 4000);
+}
+
+async function createNewContact(name, email) {
+  let newUserObj = {
+    color: getRandomInitialColor(),
+    email: email,
+    name: name,
+    phone: "+49",
+  };
+  try {
+    await postData("contacts/", newUserObj);
+  } catch (error) {
+    showToastMessage("Error while saving the data");
+  }
+}
+
+function getRandomInitialColor() {
+  let randIndex = Math.floor(Math.random() * initialColors.length);
+  let randomColor = initialColors[randIndex];
+  return randomColor;
 }
