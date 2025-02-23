@@ -28,3 +28,13 @@ function logOut(){
   sessionStorage.removeItem('loggedIn')
   sessionStorage.removeItem('animationPlayed')
 }
+
+function closeBurgerMenu(){
+  let openMenu = document.getElementById('burgerMenu');
+  if (!openMenu.classList.contains('slideBurgerMenu')) {
+    toggleBurgerMenu()
+  }
+  else{
+    return
+  }
+}

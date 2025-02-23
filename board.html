@@ -27,7 +27,7 @@
       href="./assets/icons/fav_join_logo.png"
     />
   </head>
-  <body onload="initBoard()">
+  <body onload="initBoard()" onclick="closeBurgerMenu()">
     <div id="overallContent" class="overallContent">
       <div class="sidebar">
         <div class="sidebarTop">
@@ -96,7 +96,7 @@
             <h3 class="headerText">Kanban Project Management Tool</h3>
             <div class="headerRight">
               <a class="helpDesktop" href="./help.html"><img src="./assets/icons/help.svg" alt="" srcset="" /></a>
-              <div onclick="toggleBurgerMenu()" class="userIcon" id="userInitials"></div>
+              <div onclick="event.stopPropagation(); toggleBurgerMenu()" class="userIcon" id="userInitials"></div>
               <div class="burgerMenu slideBurgerMenu" id="burgerMenu">
                 <a class="help" href="./help.html">Help</a>
                 <a href="./legal-notice.html">Legal Notice</a>

@@ -281,6 +281,10 @@
 }
 
 @media (max-width: 1100px) {
+  .helpDesktop{
+    display: none;
+   }
+
   .stdPadding {
     padding-left: 16px;
     padding-right: 16px;
@@ -663,4 +667,14 @@
     height: clamp(550px, 75%, 760px);
     width: clamp(350px, 90%, 396px);
   }
+}
+
+@media(min-width: 1100px){
+  .help{
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+
 }
