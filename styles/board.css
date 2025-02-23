@@ -382,6 +382,7 @@ input[name="searchResp"] {
 
 .dragAreaHighlight {
   background-color: rgb(240, 238, 238);
+  border: 1px dashed lightgrey;
 }
 
 .taskEditContainer {
