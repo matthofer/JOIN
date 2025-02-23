@@ -156,12 +156,12 @@
     /* gap: 32px; */
 }
 
-.midLeft{
+.midLeft {
     min-width: 45%;
     justify-content: center;
 }
 
-.midRight{
+.midRight {
     min-width: 45%;
     justify-content: center;
     text-align: center;
@@ -286,7 +286,7 @@
     /* line-height: 24px; */
 }
 
-.description{
+.description {
     font-size: 16px !important;
     font-weight: 300 !important;
 }
@@ -301,23 +301,44 @@
 
 .greetingSection p {
     font-weight: 500;
-    /* font-size: 2vw; */
-    /* font-size: 47px; */
     font-size: clamp(34px, 2.65vw, 47px);
-    /* line-height: 56.4px; */
     color: #2A3647;
     text-wrap: nowrap;
 }
 
-.greetingSection span{
-font-weight: 700;
-/* font-size: 64px; */
-font-size: clamp(48px, 3.55vw, 64px);
-/* line-height: 76.8px; */
-color: #29ABE2;
-text-wrap: nowrap;
+.greetingSection span {
+    font-weight: 700;
+    font-size: clamp(48px, 3.55vw, 64px);
+
+    color: #29ABE2;
+    text-wrap: nowrap;
 }
 
-.blueDividerHorizontal{
+.blueDividerHorizontal {
+    display: none;
+}
+
+.overlayAnimation {
+    width: 100dvw;
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    height: 100dvh;
+    padding: 0;
+    background-color: #f6f7f8;
+    animation: summary 1.5s ease-out 1s forwards;
+    pointer-events: none;
+}
+
+@keyframes summary {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.d-none{
     display: none;
 }

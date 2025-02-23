@@ -11,6 +11,7 @@ async function init() {
   greeting();
   highlightNavLink("summaryLink", "summaryLinkResp");
   playAnimation();
+  window.addEventListener("resize", checkAnimation);
 }
 
 async function getAmountofAllTasks() {
@@ -126,19 +127,6 @@ function greeting() {
   }
 }
 
-function playAnimation(){
-    let animation = sessionStorage.getItem('animationPlayed');
-    let width = window.innerWidth;
-    let html = document.getElementById('OverlayGreeting');
-    if (animation === 'false' && width < 850) {
-    setTimeout(() => {
-      html.classList.add('animation');
-    }, 1000);
-    } else{
-     
-    }
-    sessionStorage.setItem('animationPlayed', true);
-}
 
 function morningGreet(name) {
   return `
@@ -177,4 +165,28 @@ function eveningGreetGuest() {
   return `
     <p>Good evening!</p>
   `;
+}
+
+function playAnimation() {
+  let overlay = document.getElementById('OverlayGreeting');
+  let width = window.innerWidth;
+  if (width < 850) {
+    sessionStorage.setItem("animationPlayed", true);
+  } else{
+    overlay.classList.remove('overlayAnimation');
+    sessionStorage.setItem("animationPlayed", true);
+  }
+}
+
+
+function checkAnimation() {
+  let overlay = document.getElementById('OverlayGreeting');
+  let width = window.innerWidth;
+  if (width < 850) {
+    overlay.classList.add('d-none');
+  } else {
+    overlay.classList.remove('overlayAnimation');
+    overlay.classList.remove('d-none');
+  }
+
 }
