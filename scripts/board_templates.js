@@ -190,7 +190,7 @@ function editTaskTemplate(i) {
                     src="./assets/icons/close.svg"
                   />
                 </div>
-                <form id="addTaskForm" class="formEdit">
+                <div id="addTaskForm" class="formEdit">
                   <div class="formWrapper editFormWrapper">
                       <div class="leftColumn leftColumnEdit">
                           <div class="titles">
@@ -308,7 +308,7 @@ function editTaskTemplate(i) {
                           </button>
                       </div>
                   </div>
-              </form>
+              </div>
               
             </div>`;
 }

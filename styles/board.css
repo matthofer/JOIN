@@ -725,7 +725,6 @@ input[name="searchResp"]:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
 }
 
-
 .burgerMenu {
   width: 150px;
   height: fit-content;
@@ -740,12 +739,12 @@ input[name="searchResp"]:focus {
   position: absolute;
   top: 72px;
   right: 15px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   z-index: 9;
 }
 
 .burgerMenu a {
-  color: #CDCDCD;
+  color: #cdcdcd;
   padding: 8px 16px;
   /* border-radius: 8px; */
   border-top-left-radius: 20px;
@@ -760,7 +759,7 @@ input[name="searchResp"]:focus {
   background-color: #29abe2;
 }
 
-.slideBurgerMenu{
+.slideBurgerMenu {
   transform: translateX(200px);
   pointer-events: none;
   opacity: 0;
@@ -774,11 +773,11 @@ input[name="searchResp"]:focus {
   color: white !important;
 }
 
-.markedLink img{
+.markedLink img {
   filter: brightness(200%);
 }
 
-.policyLinks{
+.policyLinks {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -790,12 +789,12 @@ input[name="searchResp"]:focus {
   padding-bottom: 6px;
 }
 
-.policyLinks a{
+.policyLinks a {
   color: #cdcdcd;
   text-decoration: none;
   font-size: 16px;
 }
 
-.policyLinks:hover a{
+.policyLinks:hover a {
   color: #29abe2;
 }
