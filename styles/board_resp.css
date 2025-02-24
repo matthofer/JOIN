@@ -143,7 +143,9 @@ header {
   flex-shrink: 0;
   background-color: #ffffff;
   height: 96px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  /* border-bottom: 2px solid rgba(0, 0, 0, 0.1); */
+  box-shadow: 18px 3px 19px 9px #cdcdcd;
+z-index: 1;
 }
 
 .headerText {
