@@ -126,7 +126,7 @@
   align-items: center;
   justify-content: center;
   font-size: 19px;
-  border: #2a3647 3px solid;
+  border: #2a3647 2px solid;
   height: 48px;
   width: 48px;
   border-radius: 30px;
@@ -235,12 +235,14 @@ main {
   .overlay {
     height: 100dvh;
   }
-}
 
-@media (max-width: 1200px) {
   .helpDesktop {
     display: none;
   }
+
+}
+
+@media (max-width: 1200px) {
 
   .topBar {
     margin-top: 100px;
@@ -460,7 +462,7 @@ main {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1260px) {
   .help {
     display: none;
   }

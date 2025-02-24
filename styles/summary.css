@@ -342,3 +342,11 @@
 .d-none{
     display: none;
 }
+
+.helpDesktopSummary img:hover{
+    transform: scale(1.1);
+  }
+
+  .userIcon:hover{
+    background-color: #cdcdcd;
+  }

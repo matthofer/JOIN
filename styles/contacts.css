@@ -849,3 +849,11 @@ main {
 .policyLinks:hover a {
   color: #29abe2;
 }
+
+.helpDesktop img:hover{
+  transform: scale(1.1);
+}
+
+.userIcon:hover{
+  background-color: #cdcdcd;
+}

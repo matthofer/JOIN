@@ -1,6 +1,16 @@
 /*Responsiv */
+@media(min-width: 1400px){
+  .help{
+    display: none;
+  }
+}
+
 
 @media (max-width: 1400px) {
+  .helpDesktop{
+    display: none;
+   }
+
   .contactScrollContainer {
     left: 0px;
     padding-bottom: 120px;
@@ -672,13 +682,4 @@
     height: clamp(550px, 75%, 760px);
     width: clamp(350px, 90%, 396px);
   }
-}
-
-@media (min-width: 1100px) {
-  .help {
-    display: none;
-  }
-}
-
-@media (max-width: 850px) {
 }

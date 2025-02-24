@@ -1,4 +1,28 @@
+@media(min-width: 1260px){
+    .helpAddTask{
+      display: none;
+    }
+  }
+  
+ 
+
+
 @media (max-width: 1260px) {
+    .headerLogoResp {
+        display: flex;
+        height: 39px;
+        width: 32px;
+      }
+
+    .headerText {
+        display: none;
+      }
+    
+
+    .helpDesktopAddTask{
+        display: none;
+    }
+
     .sidebar {
         display: none;
     }

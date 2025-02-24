@@ -386,3 +386,11 @@
       transform: translateY(1000%);
       opacity: 0;
   }
+
+  .helpDesktopAddTask img:hover{
+    transform: scale(1.1);
+  }
+
+  .userIcon:hover{
+    background-color: #cdcdcd;
+  }

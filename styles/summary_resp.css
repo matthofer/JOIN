@@ -1,4 +1,26 @@
+@media(min-width: 1260px){
+    .helpSummary{
+      display: none;
+    }
+  }
+
 @media (max-width: 1260px) {
+    .headerLogoResp {
+        display: flex;
+        height: 39px;
+        width: 32px;
+      }
+
+    .headerText {
+        display: none;
+      }
+    
+
+    .helpDesktopSummary{
+        display: none;
+    }
+
+
     .stdPadding {
         padding-left: 48px;
         padding-right: 48px;
@@ -231,9 +253,17 @@
         padding-top: 0;
     }
 
+    .greetHeadline {
+        text-align: center;
+    }
+
     .infoSection {
         /* padding-top: 70px; */
         margin-top: 40px;
+    }
+
+    .overlayAnimation{
+        top: -135px;
     }
 }
 
@@ -244,5 +274,7 @@
         align-items: center;
         height: calc(100% - 80px);
     }
+
+    
 
 }

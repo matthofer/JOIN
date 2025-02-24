@@ -803,3 +803,7 @@ input[name="searchResp"]:focus {
 .renderedSubtasks::-webkit-scrollbar-thumb {
   border: 8px solid #ffffff !important;
 }
+
+.helpDesktop img:hover{
+  transform: scale(1.1);
+}
