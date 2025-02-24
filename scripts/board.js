@@ -189,6 +189,7 @@ function renderSubTasks(task, i) {
  */
 function startDragging(id) {
   currentDraggedElement = id;
+  document.getElementById("task" + id).classList.add("dragging");
 }
 
 /**
@@ -223,6 +224,10 @@ function moveTo(category) {
  */
 function highlight(id) {
   document.getElementById(id).classList.add("dragAreaHighlight");
+}
+
+function stopRotate(id) {
+  document.getElementById(id).classList.remove("dragging");
 }
 
 /**

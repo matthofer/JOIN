@@ -387,6 +387,11 @@ input[name="searchResp"] {
   border: 1px dashed lightgrey;
 }
 
+.dragging {
+  cursor: grabbing;
+  transform: rotate(5deg);
+}
+
 .taskEditContainer {
   position: fixed;
   display: flex;

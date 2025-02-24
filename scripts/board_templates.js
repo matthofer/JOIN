@@ -14,7 +14,9 @@ function fristLetterUpperCase(word) {
 }
 
 function getTaskTemplate(task, i) {
-  return `<div onclick="openTaskDetails(${
+  return `<div onmouseleave="stopRotate('task${task.id}')" id="task${
+    task.id
+  }" onclick="openTaskDetails(${
     task.id
   })" draggable="true" ondragstart="startDragging(${
     task.id
