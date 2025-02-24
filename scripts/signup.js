@@ -30,7 +30,6 @@ checkbox.addEventListener("change", () => {
 async function createUser(name, email, password) {
   const user = createUserObject(name, email, password);
   const response = await sendUserData(user);
-  await createNewContact(name, email);
 
   if (response.ok) {
     return true;
@@ -89,6 +88,7 @@ async function handleSignup() {
 
   if (validateFormInputs(name, email, password, confirmPassword)) {
     await createUser(name, email, password);
+    await createNewContact(name, email);
     showToastMessage(
       "You Signed Up successfully. <br> Redirecting to Log In..."
     );
@@ -111,6 +111,7 @@ function clearFormFields() {
 function validateInputs(name, email, password, confirmPassword, id) {
   if (
     checkEmptyInput(name, email, password, confirmPassword, id) &&
+    checkName(name) &&
     checkEmail(email, id) &&
     checkPassword(password, id) &&
     checkConfirmPassword(password, confirmPassword, id) &&
@@ -132,11 +133,10 @@ function checkEmptyInput(name, email, password, confirmPassword, id) {
   ) {
     errorElement.innerHTML = "<p>Please fill in all input fields!</p>";
     showRedBorder();
-    setTimeout(() => {
-      errorElement.innerHTML = "";
-    }, 4000);
     return false;
   } else {
+    removeRedBorders();
+    errorElement.innerHTML = "";
     return true;
   }
 }
@@ -147,11 +147,9 @@ function checkEmail(email, id) {
     errorElement.innerHTML =
       "<p>Please enter a valid email address<br>e.g. max.muster@web.de</p>";
     showRedBorderMail();
-    setTimeout(() => {
-      errorElement.innerHTML = "";
-    }, 4000);
     return false;
   } else {
+    errorElement.innerHTML = "";
     return true;
   }
 }
@@ -167,11 +165,9 @@ function checkPassword(password, id) {
     errorElement.innerHTML =
       "<p>Password must be at least 8 characters long!</p>";
     showRedBorderPassword();
-    setTimeout(() => {
-      errorElement.innerHTML = "";
-    }, 4000);
     return false;
   } else {
+    errorElement.innerHTML = "";
     return true;
   }
 }
@@ -182,11 +178,9 @@ function checkConfirmPassword(password, confirmPassword, id) {
     errorElement.innerHTML = "<p>Passwords do not match!</p>";
     showRedBorderPassword();
     showRedBorderConfirmPw();
-    setTimeout(() => {
-      errorElement.innerHTML = "";
-    }, 4000);
     return false;
   } else {
+    errorElement.innerHTML = "";
     return true;
   }
 }
@@ -196,11 +190,9 @@ function checkPrivacyPolicyTick() {
   let errorElement = document.getElementById("addErrorMessage");
   if (!checkbox.checked) {
     errorElement.innerHTML = "<p>Please accept the privacy policy!</p>";
-    setTimeout(() => {
-      errorElement.innerHTML = "";
-    }, 4000);
     return false;
   } else {
+    errorElement.innerHTML = "";
     return true;
   }
 }
@@ -281,33 +273,28 @@ function showRedBorder() {
 function showRedBorderName() {
   let inputName = document.getElementById("name");
   inputName.classList.add("redBorder");
-  setTimeout(() => {
-    inputName.classList.remove("redBorder");
-  }, 4000);
 }
 
 function showRedBorderMail() {
   let inputMail = document.getElementById("email");
   inputMail.classList.add("redBorder");
-  setTimeout(() => {
-    inputMail.classList.remove("redBorder");
-  }, 4000);
 }
 
 function showRedBorderPassword() {
   let inputPassword = document.getElementById("password");
   inputPassword.classList.add("redBorder");
-  setTimeout(() => {
-    inputPassword.classList.remove("redBorder");
-  }, 4000);
 }
 
 function showRedBorderConfirmPw() {
   let inputConfirmPassword = document.getElementById("confirmPassword");
   inputConfirmPassword.classList.add("redBorder");
-  setTimeout(() => {
-    inputConfirmPassword.classList.remove("redBorder");
-  }, 4000);
+}
+
+function removeRedBorders() {
+  let inputs = document.querySelectorAll("input");
+  inputs.forEach((input) => {
+    input.classList.remove("redBorder");
+  });
 }
 
 function showToastMessage(message) {
@@ -352,9 +339,6 @@ function showTakenMailMessage() {
   errorElement.innerHTML =
     "<p>Email address already taken! Please use a different one.</p>";
   showRedBorderMail();
-  setTimeout(() => {
-    errorElement.innerHTML = "";
-  }, 4000);
 }
 
 async function createNewContact(name, email) {
@@ -375,4 +359,20 @@ function getRandomInitialColor() {
   let randIndex = Math.floor(Math.random() * initialColors.length);
   let randomColor = initialColors[randIndex];
   return randomColor;
+}
+
+function validateName(name) {
+  let nameRegex = /^[a-zA-ZäöüÄÖÜß\s'-]+$/;
+  return nameRegex.test(name);
+}
+
+function checkName(name) {
+  if (!validateName(name)) {
+    document.getElementById("addErrorMessage").innerHTML =
+      "<p>Only letters are allowed in the name</p>";
+    showRedBorderName();
+    return false;
+  } else {
+    return true;
+  }
 }
