@@ -5,6 +5,21 @@
 function validateInputs(contactName, contactMail, contactPhone, id) {
   if (
     checkEmptyInput(contactName, contactMail, contactPhone, id) &&
+    checkIfContactNameNotExits(contactName, id) &&
+    checkName(contactName, id) &&
+    checkIfContactEmailNotExits(contactMail, id) &&
+    checkEmail(contactMail, id) &&
+    checkPhone(contactPhone, id)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validateInputsEdit(contactName, contactMail, contactPhone, id) {
+  if (
+    checkEmptyInput(contactName, contactMail, contactPhone, id) &&
     checkName(contactName, id) &&
     checkEmail(contactMail, id) &&
     checkPhone(contactPhone, id)
@@ -121,6 +136,47 @@ async function saveContact(contactName, contactMail, contactPhone) {
     await postData("contacts/", newUserObj);
   } catch (error) {
     showMessage("Error while saving the data");
+  }
+}
+
+/**
+ * This function checks if the email address not exists. If yes a error message will be displayed
+ *
+ * @param {string} contactMail - is the value of the email input field
+ * @param {string} id - id of the error message HTML tag
+ */
+function checkIfContactEmailNotExits(contactMail, id) {
+  let result = contacts.filter(
+    (contact) => contact.email.toLowerCase() === contactMail.toLowerCase()
+  );
+  if (result.length === 0) {
+    removeRedBordersMail();
+    return true;
+  } else {
+    document.getElementById(id).innerHTML +=
+      "<p>Email address already exists</p>";
+    showRedBordersMail();
+    return false;
+  }
+}
+
+/**
+ * This function checks if the contact Name not exists. If yes a error message will be displayed
+ *
+ * @param {string} contactMail - is the value of the email input field
+ * @param {string} id - id of the error message HTML tag
+ */
+function checkIfContactNameNotExits(contactName, id) {
+  let result = contacts.filter(
+    (contact) => contact.name.toLowerCase() === contactName.toLowerCase()
+  );
+  if (result.length === 0) {
+    removeRedBordersName();
+    return true;
+  } else {
+    document.getElementById(id).innerHTML += "<p>Name already exists</p>";
+    showRedBordersName();
+    return false;
   }
 }
 

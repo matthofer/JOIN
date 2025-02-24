@@ -311,8 +311,8 @@ async function editContact(i) {
   let name = document.getElementById("contactNameEdit").value;
   let mail = document.getElementById("contactMailEdit").value;
   let phone = document.getElementById("contactPhoneEdit").value;
-  let validationResult = validateInputs(name, mail, phone, "editErrorMessage");
-  if (validationResult) {
+  let valResult = validateInputsEdit(name, mail, phone, "editErrorMessage");
+  if (valResult) {
     await updateContact(i, name, mail, phone, "editErrorMessage");
     await loadContactsData();
     renderContacts();
