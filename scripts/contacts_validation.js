@@ -5,6 +5,7 @@
 function validateInputs(contactName, contactMail, contactPhone, id) {
   if (
     checkEmptyInput(contactName, contactMail, contactPhone, id) &&
+    checkName(contactName, id) &&
     checkEmail(contactMail, id) &&
     checkPhone(contactPhone, id)
   ) {
@@ -31,6 +32,18 @@ function checkEmptyInput(contactName, contactMail, contactPhone, id) {
   }
 }
 
+function checkName(contactName, id) {
+  if (!validateName(contactName)) {
+    document.getElementById(id).innerHTML +=
+      "<p>Only letters are allowed in the name</p>";
+    showRedBordersName();
+    return false;
+  } else {
+    removeRedBordersName();
+    return true;
+  }
+}
+
 /**
  * This function checks if the email is correct. If not a error message will be displayed
  *
@@ -42,7 +55,6 @@ function checkEmail(contactMail, id) {
     document.getElementById(id).innerHTML +=
       "<p>Please enter a valid email address<br>e.g. max.muster@web.de</p>";
     showRedBordersMail();
-
     return false;
   } else {
     removeRedBordersMail();
@@ -66,6 +78,16 @@ function checkPhone(contactPhone, id) {
     removeRedBordersPhone();
     return true;
   }
+}
+
+/**
+ * This function checks the name against a regular expression only letters are allowed
+ *
+ * @param {string} name - is the value of the name input field
+ */
+function validateName(name) {
+  let nameRegex = /^[a-zA-ZäöüÄÖÜß\s'-]+$/;
+  return nameRegex.test(name);
 }
 
 /**
@@ -126,6 +148,24 @@ function removeRedBorders() {
   document.getElementById("contactNameEdit").style.borderColor = "#ccc";
   document.getElementById("contactMailEdit").style.borderColor = "#ccc";
   document.getElementById("contactPhoneEdit").style.borderColor = "#ccc";
+}
+
+/**
+ * This function added the red border color to the mail input field if validation failed
+ *
+ */
+function showRedBordersName() {
+  document.getElementById("contactName").style.borderColor = "#f50000";
+  document.getElementById("contactNameEdit").style.borderColor = "#f50000";
+}
+
+/**
+ * This function removes the red border color to the mail input field if validation failed
+ *
+ */
+function removeRedBordersName() {
+  document.getElementById("contactName").style.borderColor = "#ccc";
+  document.getElementById("contactNameEdit").style.borderColor = "#ccc";
 }
 
 /**

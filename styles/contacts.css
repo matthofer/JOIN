@@ -378,6 +378,11 @@ main {
   border: 1px solid white;
 }
 
+.nameAndMail {
+  width: 250px;
+  overflow-wrap: break-word;
+}
+
 .initials {
   display: flex;
   justify-content: center;
@@ -431,6 +436,11 @@ main {
   color: white;
 }
 
+.nameAndButtons {
+  max-width: 430px;
+  overflow-wrap: break-word;
+}
+
 .nameAndButtons h2 {
   font-size: 47px;
   font-weight: 500;
@@ -468,6 +478,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 500px;
+  overflow-wrap: break-word;
 }
 
 .detailheader {
