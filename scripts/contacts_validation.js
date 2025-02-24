@@ -1,5 +1,10 @@
 /**
- * This function validates the inputs for add and edit function. Check criteria: all fields field email valid and phone valid
+ * This function validates the inputs for add the new contact function.
+ * Check criteria: all fields filled, name and email and phone valid
+ * @param {string} contactName - is the value of the name input field
+ * @param {string} contactMail - is the value of the mail input field
+ * @param {string} contactPhone - is the value of the phone input field
+ * @param {string} id - id of the error message HTML tag
  *
  */
 function validateInputs(contactName, contactMail, contactPhone, id) {
@@ -17,6 +22,15 @@ function validateInputs(contactName, contactMail, contactPhone, id) {
   }
 }
 
+/**
+ * This function validates the inputs for edit a contact function.
+ * Check criteria: all fields filled, name and email and phone valid
+ * @param {string} contactName - is the value of the name input field
+ * @param {string} contactMail - is the value of the mail input field
+ * @param {string} contactPhone - is the value of the phone input field
+ * @param {string} id - id of the error message HTML tag
+ *
+ */
 function validateInputsEdit(contactName, contactMail, contactPhone, id) {
   if (
     checkEmptyInput(contactName, contactMail, contactPhone, id) &&
