@@ -3,6 +3,11 @@ let searchedTasks = [];
 let currentDraggedElement;
 let statusSubtasks = [];
 
+/**
+ * This function initialize the board page first tasks were loaded from firebase and pushed in a global array. Then Tasks will be rendered.
+ * After that the logged in user will updated in header icon and the nav link highlighted
+ *
+ */
 async function initBoard() {
   await loadTasksData();
   renderTasks(tasks);
@@ -10,6 +15,10 @@ async function initBoard() {
   highlightNavLink("boardLink", "boardLinkResp");
 }
 
+/**
+ * This function initialize the neccesary function to use the functionalitys from the add task page.
+ *
+ */
 async function initAddTaskForEdit() {
   await loadContactsData();
   renderDropdownContacts();
@@ -17,6 +26,10 @@ async function initAddTaskForEdit() {
   initLoad();
 }
 
+/**
+ * This function loades the tasks from firebase an push the objects in the global tasks array
+ *
+ */
 async function loadTasksData(path = "/tasks") {
   tasks = [];
   id = 0;
@@ -34,6 +47,13 @@ async function loadTasksData(path = "/tasks") {
   }
 }
 
+/**
+ * This function pushes a object in the global tasks array in loadTasksData function
+ *
+ * @param {json} taskResponseToJson - the json with tasks from the firebase
+ * @param {string} taskKey - is a single taskkey of the taskKeys array
+ *
+ */
 function fillTasksArray(taskResponseToJson, taskKey) {
   tasks.push({
     firebaseid: taskKey,
@@ -49,6 +69,12 @@ function fillTasksArray(taskResponseToJson, taskKey) {
   });
 }
 
+/**
+ * This function renders all four task columns of the board: todo, in progress, await feedback and done
+ *
+ * @param {array} taskArray -the global task array
+ *
+ */
 function renderTasks(taskArray) {
   renderTodo(taskArray);
   renderInProgress(taskArray);
@@ -56,6 +82,12 @@ function renderTasks(taskArray) {
   renderDone(taskArray);
 }
 
+/**
+ * This function filter all todo tasks and render it in corrosponding html tag
+ *
+ * @param {array} taskArray -the global task array
+ *
+ */
 function renderTodo(taskArray) {
   let todo = taskArray.filter((task) => task.type == "todo");
   document.getElementById("todo").innerHTML = "";
@@ -71,6 +103,12 @@ function renderTodo(taskArray) {
   }
 }
 
+/**
+ * This function filter all in progress tasks and render it in corrosponding html tag
+ *
+ * @param {array} taskArray -the global task array
+ *
+ */
 function renderInProgress(taskArray) {
   let inProgress = taskArray.filter((task) => task.type == "inProgress");
   document.getElementById("inProgress").innerHTML = "";
@@ -90,6 +128,12 @@ function renderInProgress(taskArray) {
   }
 }
 
+/**
+ * This function filter all await feedback tasks and render it in corrosponding html tag
+ *
+ * @param {array} taskArray -the global task array
+ *
+ */
 function renderAwaitFeedback(taskArray) {
   let awaitFeedback = taskArray.filter((task) => task.type == "awaitFeedback");
   document.getElementById("awaitFeedback").innerHTML = "";
@@ -109,6 +153,12 @@ function renderAwaitFeedback(taskArray) {
   }
 }
 
+/**
+ * This function filter all done tasks and render it in corrosponding html tag
+ *
+ * @param {array} taskArray -the global task array
+ *
+ */
 function renderDone(taskArray) {
   let done = taskArray.filter((task) => task.type == "done");
   document.getElementById("done").innerHTML = "";
@@ -124,6 +174,13 @@ function renderDone(taskArray) {
   }
 }
 
+/**
+ * This function render all contact Intials in the task card
+ *
+ * @param {object} task - the single task object
+ * @param {number} i - the index of the object in global task array
+ *
+ */
 function renderContactIntials(task, i) {
   if (task.contacts != undefined) {
     let contactKeys = Object.keys(task.contacts);
@@ -150,6 +207,12 @@ function renderContactIntials(task, i) {
   }
 }
 
+/**
+ * This function return the Intials to the contacts of the tasks
+ *
+ * @param {string} contact - the name of the contact
+ *
+ */
 function getIntialsOfContact(contact) {
   let intials = "";
   let splittedContact = contact.split(" ");
@@ -159,6 +222,12 @@ function getIntialsOfContact(contact) {
   return intials;
 }
 
+/**
+ * This function renders the subtasks of the task
+ *
+ * @param {object} task - the single task object
+ * @param {number} i - the index of the object in global task array
+ */
 function renderSubTasks(task, i) {
   if (task.subtasks != undefined) {
     let subtasksKeys = Object.keys(task.subtasks);
@@ -178,14 +247,33 @@ function renderSubTasks(task, i) {
   }
 }
 
+/**
+ * This function assigns the value of the taskid to the variable currentDraggedElement when it dragging starts
+ *
+ * @param {number} id - id of the task element
+ *
+ */
 function startDragging(id) {
   currentDraggedElement = id;
 }
 
+/**
+ * allows drag and drop in the html container
+ *
+ * @param {Event} ev - event object
+ *
+ */
 function allowDrop(ev) {
   ev.preventDefault();
 }
 
+/**
+ * This function sets the category of the element to the cateogry where it is dropped.
+ * The tasks are then rendered again and the category is updated to the tasks in the firebase
+ *
+ * @param {string} category - category where an element is moved to
+ *
+ */
 function moveTo(category) {
   tasks[currentDraggedElement].type = category;
   renderTasks(tasks);
@@ -193,13 +281,32 @@ function moveTo(category) {
   putData(`tasks/${tasks[currentDraggedElement].firebaseid}/type`, category);
 }
 
+/**
+ * This function highlights the dragged area
+ *
+ * @param {number} id - id of the task element
+ *
+ */
 function highlight(id) {
   document.getElementById(id).classList.add("dragAreaHighlight");
 }
 
+/**
+ * This function remove the highlighting of the dragged area
+ *
+ * @param {number} id - id of the task element
+ *
+ */
 function removeHighlight(id) {
   document.getElementById(id).classList.remove("dragAreaHighlight");
 }
+
+/**
+ * This function remove the highlighting of the dragged area
+ *
+ * @param {number} id - id of the task element
+ *
+ */
 function updateStatusBar(amountDone, amountSubTasks, task, i) {
   let percent = (amountDone / amountSubTasks) * 100;
   percent = Math.round(percent);
