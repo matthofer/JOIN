@@ -303,6 +303,7 @@ input[name="searchResp"] {
   transition: all 100ms ease-in-out;
   padding-left: 64px;
   padding-right: 64px;
+  z-index: 1;
 }
 
 .overlayClosed {
@@ -342,6 +343,7 @@ input[name="searchResp"] {
   color: #ffffff;
   border-radius: 20px;
   transition: all 75ms ease-in-out;
+  z-index: 1;
 }
 
 .messageClosed {
@@ -804,6 +806,6 @@ input[name="searchResp"]:focus {
   border: 8px solid #ffffff !important;
 }
 
-.helpDesktop img:hover{
+.helpDesktop img:hover {
   transform: scale(1.1);
 }

@@ -17,6 +17,15 @@ async function initBoard() {
   highlightNavLink("boardLink", "boardLinkResp");
 }
 
+async function initAddTaskBoard() {
+  await loadContactsData();
+  renderDropdownContacts();
+  changePrio("medium", "mediumSVG");
+  renderCategorys();
+  submitSubtaskWithEnter();
+  initLoad();
+}
+
 /**
  * This function initialize the neccesary function to use the functionalitys from the add task page.
  *
@@ -251,7 +260,7 @@ async function openAddTaskOverlay(type) {
   let form = document.getElementById("addTaskForm");
   form.setAttribute("onsubmit", `submitForm('${type}'); return false;`);
   document.getElementById("overlayAddTask").classList.remove("overlayClosed");
-  await initAddTask();
+  await initAddTaskBoard();
   await loadTasksData();
 }
 
