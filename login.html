@@ -16,86 +16,88 @@
   </head>
   <body>
     <div class="overlay"></div>
-    <header>
-      <div class="headerLogo">
-        <img src="./assets/icons/logo-blue.svg" alt="" />
-        <img class="whiteLogo d-none" src="./assets/icons/logo.svg" alt="" />
-      </div>
-      <div class="headerSignUp">
-        <div class="signUpText">
-          <p>Not a Join user?</p>
+    <div class="loginWrapper">
+      <header>
+        <div class="headerLogo">
+          <img src="./assets/icons/logo-blue.svg" alt="" />
+          <img class="whiteLogo d-none" src="./assets/icons/logo.svg" alt="" />
         </div>
-        <button onclick="openPage('signup.html')" class="signUpButton">
-          Sign up
-        </button>
-      </div>
-    </header>
-    <main>
-      <div class="loginContainer">
-        <div class="loginForm">
-          <h1>Log in</h1>
-          <div class="separator"></div>
-          <div class="formGroup">
-            <input placeholder="Email" type="text" id="email" />
-            <img class="pointerEvent" src="./assets/icons/mail.svg" alt="" />
+        <div class="headerSignUp">
+          <div class="signUpText">
+            <p>Not a Join user?</p>
           </div>
-          <div class="formGroup">
-            <img
-              id="eyeIcon"
-              class="cursorPointer d-none"
-              onclick="showPassword()"
-              src="./assets/icons/visibility_on.svg"
-              alt=""
-            />
-            <img
-              id="crossedEyeIcon"
-              class="cursorPointer d-none"
-              onclick="showPassword()"
-              src="./assets/icons/visibility_off.svg"
-              alt=""
-            />
-            <img
-              class="pointerEvent"
-              id="lockIcon"
-              src="./assets/icons/lock.svg"
-              alt=""
-            />
-            <input
-              oninput="checkPasswordInput()"
-              placeholder="Password"
-              type="password"
-              id="password"
-              maxlength="20"
-            />
-          </div>
-          <div class="loginButtonsContainer">
-            <button onclick="loginUser()" class="loginButton" type="button">
-              Log in
-            </button>
-            <button onclick="guestLogin()" class="guestLoginButton">
-              Guest Log in
-            </button>
-          </div>
-          <div id="addErrorMessage"></div>
+          <button onclick="openPage('signup.html')" class="signUpButton">
+            Sign up
+          </button>
         </div>
-      </div>
-      <div class="footerSignUp">
-        <div class="signUpText">
-          <p>Not a Join user?</p>
+      </header>
+      <main>
+        <div class="loginContainer">
+          <div class="loginForm">
+            <h1>Log in</h1>
+            <div class="separator"></div>
+            <div class="formGroup">
+              <input placeholder="Email" type="text" id="email" />
+              <img class="pointerEvent" src="./assets/icons/mail.svg" alt="" />
+            </div>
+            <div class="formGroup">
+              <img
+                id="eyeIcon"
+                class="cursorPointer d-none"
+                onclick="showPassword()"
+                src="./assets/icons/visibility_on.svg"
+                alt=""
+              />
+              <img
+                id="crossedEyeIcon"
+                class="cursorPointer d-none"
+                onclick="showPassword()"
+                src="./assets/icons/visibility_off.svg"
+                alt=""
+              />
+              <img
+                class="pointerEvent"
+                id="lockIcon"
+                src="./assets/icons/lock.svg"
+                alt=""
+              />
+              <input
+                oninput="checkPasswordInput()"
+                placeholder="Password"
+                type="password"
+                id="password"
+                maxlength="20"
+              />
+            </div>
+            <div class="loginButtonsContainer">
+              <button onclick="loginUser()" class="loginButton" type="button">
+                Log in
+              </button>
+              <button onclick="guestLogin()" class="guestLoginButton">
+                Guest Log in
+              </button>
+            </div>
+            <div id="addErrorMessage"></div>
+          </div>
         </div>
-        <button onclick="openPage('signup.html')" class="signUpButton">
-          Sign up
-        </button>
-      </div>
-    </main>
-    <footer>
-      <div class="privacyLink">
-        <a href="./privacy_policy.html">Privacy Policy</a>
-      </div>
-      <div class="legalLink">
-        <a href="./legal_notice.html">Legal notice</a>
-      </div>
-    </footer>
-    <script src="./scripts/login.js"></script>
+        <div class="footerSignUp">
+          <div class="signUpText">
+            <p>Not a Join user?</p>
+          </div>
+          <button onclick="openPage('signup.html')" class="signUpButton">
+            Sign up
+          </button>
+        </div>
+      </main>
+      <footer>
+        <div class="privacyLink">
+          <a href="./privacy_policy.html">Privacy Policy</a>
+        </div>
+        <div class="legalLink">
+          <a href="./legal_notice.html">Legal notice</a>
+        </div>
+      </footer>
+      <script src="./scripts/login.js"></script>
+    </div>
   </body>
 </html>
