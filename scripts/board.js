@@ -2,6 +2,8 @@ let tasks = [];
 let searchedTasks = [];
 let currentDraggedElement;
 let statusSubtasks = [];
+let taskCategorys = ["todo", "inProgress", "awaitFeedback", "done"];
+let categorysEmpty = ["in to do", "in progress", "in await Feedback", "done"];
 
 /**
  * This function initialize the board page first tasks were loaded from firebase and pushed in a global array. Then Tasks will be rendered.
@@ -69,108 +71,24 @@ function fillTasksArray(taskResponseToJson, taskKey) {
   });
 }
 
-/**
- * This function renders all four task columns of the board: todo, in progress, await feedback and done
- *
- * @param {array} taskArray -the global task array
- *
- */
 function renderTasks(taskArray) {
-  renderTodo(taskArray);
-  renderInProgress(taskArray);
-  renderAwaitFeedback(taskArray);
-  renderDone(taskArray);
-}
-
-/**
- * This function filter all todo tasks and render it in corrosponding html tag
- *
- * @param {array} taskArray -the global task array
- *
- */
-function renderTodo(taskArray) {
-  let todo = taskArray.filter((task) => task.type == "todo");
-  document.getElementById("todo").innerHTML = "";
-  if (todo.length > 0) {
-    for (let i = 0; i < todo.length; i++) {
-      let taskObj = todo[i];
-      document.getElementById("todo").innerHTML += getTaskTemplate(taskObj, i);
-      renderContactIntials(taskObj, i);
-      renderSubTasks(taskObj, i);
+  for (let index = 0; index < taskCategorys.length; index++) {
+    let category = taskArray.filter(
+      (task) => task.type === taskCategorys[index]
+    );
+    document.getElementById(taskCategorys[index]).innerHTML = "";
+    if (category.length > 0) {
+      for (let i = 0; i < category.length; i++) {
+        let taskObj = category[i];
+        document.getElementById(taskCategorys[index]).innerHTML +=
+          getTaskTemplate(taskObj, i);
+        renderContactIntials(taskObj, i);
+        renderSubTasks(taskObj, i);
+      }
+    } else {
+      document.getElementById(taskCategorys[index]).innerHTML =
+        getNoTaskTemplate(categorysEmpty[index]);
     }
-  } else {
-    document.getElementById("todo").innerHTML = getNoTaskTemplate("in to do");
-  }
-}
-
-/**
- * This function filter all in progress tasks and render it in corrosponding html tag
- *
- * @param {array} taskArray -the global task array
- *
- */
-function renderInProgress(taskArray) {
-  let inProgress = taskArray.filter((task) => task.type == "inProgress");
-  document.getElementById("inProgress").innerHTML = "";
-  if (inProgress.length > 0) {
-    for (let i = 0; i < inProgress.length; i++) {
-      let taskObj = inProgress[i];
-      document.getElementById("inProgress").innerHTML += getTaskTemplate(
-        taskObj,
-        i
-      );
-      renderContactIntials(taskObj, i);
-      renderSubTasks(taskObj, i);
-    }
-  } else {
-    document.getElementById("inProgress").innerHTML =
-      getNoTaskTemplate("in progress");
-  }
-}
-
-/**
- * This function filter all await feedback tasks and render it in corrosponding html tag
- *
- * @param {array} taskArray -the global task array
- *
- */
-function renderAwaitFeedback(taskArray) {
-  let awaitFeedback = taskArray.filter((task) => task.type == "awaitFeedback");
-  document.getElementById("awaitFeedback").innerHTML = "";
-  if (awaitFeedback.length > 0) {
-    for (let i = 0; i < awaitFeedback.length; i++) {
-      let taskObj = awaitFeedback[i];
-      document.getElementById("awaitFeedback").innerHTML += getTaskTemplate(
-        taskObj,
-        i
-      );
-      renderContactIntials(taskObj, i);
-      renderSubTasks(taskObj, i);
-    }
-  } else {
-    document.getElementById("awaitFeedback").innerHTML =
-      getNoTaskTemplate("in await Feedback");
-  }
-}
-
-/**
- * This function filter all done tasks and render it in corrosponding html tag
- *
- * @param {array} taskArray -the global task array
- *
- */
-function renderDone(taskArray) {
-  let done = taskArray.filter((task) => task.type == "done");
-  document.getElementById("done").innerHTML = "";
-  if (done.length > 0) {
-    for (let i = 0; i < done.length; i++) {
-      let taskObj = done[i];
-      document.getElementById("done").innerHTML += getTaskTemplate(taskObj, i);
-      renderContactIntials(taskObj, i);
-      renderSubTasks(taskObj, i);
-    }
-  } else {
-    document.getElementById("done").innerHTML = getNoTaskTemplate("done");
   }
 }
 
