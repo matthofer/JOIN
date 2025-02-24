@@ -5,6 +5,7 @@ const FB_URL =
   "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
 let isPasswordVisible = false;
 let isConfirmPasswordVisible = false;
+let signUpButton = document.getElementById("signUpButton");
 
 let initialColors = [
   "#9327FF",
@@ -72,19 +73,14 @@ function getFormValues() {
 async function handleSignup() {
   const { name, email, password, confirmPassword } = getFormValues();
 
-  if ((await takenMail()) === true) {
-    return;
-  }
+  if ((await takenMail()) === true) {showRedBorderMail(); return;};
 
   if (validateFormInputs(name, email, password, confirmPassword)) {
     await createUser(name, email, password);
     await createNewContact(name, email);
-    showToastMessage(
-      "You Signed Up successfully. <br> Redirecting to Log In..."
-    );
-    setTimeout(() => {
-      redirectToLoginPage();
-      clearFormFields();
+    signUpButton.disabled = true;
+    showToastMessage("You Signed Up successfully. <br> Redirecting to Log In...");
+    setTimeout(() => {redirectToLoginPage(); clearFormFields(); signUpButton.disabled = false;
     }, 3000);
   }
 }

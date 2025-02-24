@@ -80,6 +80,11 @@
   .legalLink a {
     font-size: 14px;
   }
+
+  .message {
+    width: 280px;
+    left: calc(50% - 140px);
+  }
 }
 
 @media (max-width: 380px) {

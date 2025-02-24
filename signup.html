@@ -22,7 +22,10 @@
     <main>
       <div id="overlay" class="overlay d-none">
         <div id="message" class="message">
-          <p id="messageText"></p>
+          <p id="messageText">
+            You Signed Up successfully. <br />
+            Redirecting to Log In...
+          </p>
         </div>
       </div>
       <div class="loginContainer">
@@ -134,7 +137,12 @@
             <a href="./privacy_policy.html">Privacy Policy</a>
           </div>
           <div class="loginButtonsContainer">
-            <button onclick="handleSignup()" class="loginButton" type="button">
+            <button
+              id="signUpButton"
+              onclick="handleSignup()"
+              class="loginButton"
+              type="button"
+            >
               Sign up
             </button>
           </div>
