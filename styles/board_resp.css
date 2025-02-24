@@ -145,7 +145,7 @@ header {
   height: 96px;
   /* border-bottom: 2px solid rgba(0, 0, 0, 0.1); */
   box-shadow: 18px 3px 19px 9px #cdcdcd;
-z-index: 1;
+  z-index: 1;
 }
 
 .headerText {
@@ -201,6 +201,8 @@ main {
   .overlay {
     height: calc(100dvh - 80px) !important;
     z-index: 1;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .taskEditContainer {
@@ -220,14 +222,11 @@ main {
     font-size: 18px;
   }
 
-  .overlay {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
   .addTaskOverlayContainer {
-    height: 750px;
+    height: 100%;
+    width: 100%;
     padding: 16px;
+    border-radius: 0;
   }
 
   .bottomSectionResp {
@@ -241,11 +240,9 @@ main {
   .helpDesktop {
     display: none;
   }
-
 }
 
 @media (max-width: 1200px) {
-
   .topBar {
     margin-top: 100px;
   }
@@ -473,7 +470,7 @@ main {
 @media (max-width: 850px) {
   .formWrapperResp {
     overflow-y: auto;
-    height: 450px;
+    height: 500px;
   }
 
   .formEdit {
@@ -485,7 +482,7 @@ main {
   }
 
   .addTaskOverlayContainer {
-    height: 700px;
+    height: 100%;
     padding: 16px;
   }
 
@@ -496,11 +493,23 @@ main {
   .bottomSectionEditTask {
     padding-top: 16px !important;
   }
+
+  .bottomSectionResp {
+    padding-top: 40px !important;
+  }
 }
 
 @media (max-width: 450px) {
   .taskEditContainer {
-    width: clamp(300px, 80%, 425px);
+    width: clamp(300px, 95%, 425px);
+  }
+
+  input {
+    font-size: 16px !important;
+  }
+
+  textarea {
+    font-size: 16px !important;
   }
 }
 
@@ -531,8 +540,12 @@ main {
 
   .taskEditContainer {
     overflow-y: auto;
-    height: clamp(300px, 100%, 470px);
-    width: clamp(300px, 100%, 425px);
+    height: clamp(300px, 100%, 570px);
+    width: clamp(300px, 100%, 365px);
+  }
+
+  .taskEditContainer p {
+    font-size: 16px;
   }
 
   .overlay {
@@ -542,5 +555,9 @@ main {
   #overlayAddTask {
     height: clamp(300px, 100%, 470px);
     height: calc(100dvh - -80px);
+  }
+
+  .editWrapper {
+    justify-content: start;
   }
 }
