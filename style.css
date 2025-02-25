@@ -156,10 +156,8 @@ header {
   flex-shrink: 0;
   background-color: #ffffff;
   height: 96px;
-  /* border-bottom: 2px solid rgba(0, 0, 0, 0.1); */
-  /* -webkit-box-shadow: 5px 5px 15px 5px #000000;  */
-  box-shadow: 12px 0px 10px 8px #cdcdcd;
-  z-index: 1;  
+  box-shadow: 5px 0px 4px 1px #cdcdcd;
+  z-index: 1;
 }
 
 .headerText {
@@ -223,12 +221,12 @@ main {
   position: absolute;
   top: 72px;
   right: 15px;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   z-index: 9;
 }
 
 .burgerMenu a {
-  color: #CDCDCD;
+  color: #cdcdcd;
   padding: 8px 16px;
   /* border-radius: 8px; */
   border-top-left-radius: 20px;
@@ -288,7 +286,7 @@ main {
 }
 
 /*Responsiv */
-@media(min-width: 850px) {
+@media (min-width: 850px) {
   .help {
     display: none;
   }

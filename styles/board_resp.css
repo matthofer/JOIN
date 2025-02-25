@@ -143,8 +143,7 @@ header {
   flex-shrink: 0;
   background-color: #ffffff;
   height: 96px;
-  /* border-bottom: 2px solid rgba(0, 0, 0, 0.1); */
-  box-shadow: 12px 0px 10px 8px #cdcdcd;
+  box-shadow: 5px 0px 4px 1px #cdcdcd;
   z-index: 1;
 }
 
@@ -480,7 +479,7 @@ main {
     height: 580px;
   }
 
-  .editFromWrapper {
+  .editFormWrapper {
     padding-top: 0 !important;
   }
   .subtasksEdit {
@@ -511,7 +510,7 @@ main {
 
 @media (max-width: 500px) {
   .formWrapperResp {
-    height: 610px;
+    height: 680px;
   }
 }
 
@@ -550,25 +549,19 @@ main {
 
 @media (max-height: 895px) {
   .formWrapperResp {
-    height: 590px;
+    height: 480px;
   }
 
   .taskEditContainer {
     height: clamp(300px, 100%, 640px);
   }
 
-  .editFromWrapper {
-    max-height: 630px !important;
+  .editFormWrapper {
+    max-height: 630px;
   }
 }
 
-@media (max-height: 810px) {
-  .editFromWrapper {
-    max-height: 590px !important;
-  }
-}
-
-@media (max-height: 660px) {
+@media (max-height: 670px) {
   .formEdit {
     height: clamp(300px, 100%, 470px);
   }
@@ -578,7 +571,7 @@ main {
     width: clamp(300px, 100%, 365px);
   }
 
-  .editFromWrapper {
+  .editFormWrapper {
     max-height: 440px;
   }
   .taskEditContainer p {

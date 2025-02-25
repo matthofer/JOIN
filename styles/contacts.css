@@ -258,8 +258,7 @@ header {
   flex-shrink: 0;
   background-color: #ffffff;
   height: 96px;
-  /* border-bottom: 2px solid rgba(0, 0, 0, 0.1); */
-  box-shadow: 12px 0px 10px 8px #cdcdcd;
+  box-shadow: 5px 0px 4px 1px #cdcdcd;
 
   z-index: 1;
 }
@@ -852,10 +851,10 @@ main {
   color: #29abe2;
 }
 
-.helpDesktop img:hover{
+.helpDesktop img:hover {
   transform: scale(1.1);
 }
 
-.userIcon:hover{
+.userIcon:hover {
   background-color: #cdcdcd;
 }
