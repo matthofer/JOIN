@@ -407,6 +407,7 @@ main {
 
   .column {
     width: 100%;
+    padding-bottom: 0;
   }
 
   .boardColumns {
@@ -479,10 +480,9 @@ main {
     height: 580px;
   }
 
-  .formEdit {
+  .editFromWrapper {
     padding-top: 0 !important;
   }
-
   .subtasksEdit {
     margin-top: 20px;
   }
@@ -506,10 +506,6 @@ main {
 
   .bottomSectionResp {
     padding-top: 40px !important;
-  }
-
-  #addTaskForm {
-    padding-top: 90px;
   }
 }
 
