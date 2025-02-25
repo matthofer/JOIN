@@ -48,7 +48,7 @@ function getContactInfoTemplateDesktop(i, initials) {
                 <h3>Contact Information</h3>
                 <div class="contactDetails">
                   <p class="detailheader">Email</p>
-                  <p class="detailEmail">${contacts[i].email}</p>
+                  <a href="mailto:${contacts[i].email}" class="detailEmail">${contacts[i].email}</a>
                   <p class="detailheader">Phone</p>
                   <p>${contacts[i].phone}</p>
                 </div>`;
@@ -75,7 +75,7 @@ function getContactInfoTemplateMobile(i, initials) {
               <h3>Contact Information</h3>
               <div class="contactDetails">
                 <p class="detailheader">Email</p>
-                <p class="detailEmail">${contacts[i].email}</p>
+                <a href="mailto:${contacts[i].email}" class="detailEmail">${contacts[i].email}</a>
                 <p class="detailheader">Phone</p>
                 <p>${contacts[i].phone}</p>
               </div>
