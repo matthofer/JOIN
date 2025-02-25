@@ -1,5 +1,9 @@
 let FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
 
+/**
+ * This function starts when the HTML-Body is loaded
+ * 
+ */
 async function init() {
   initLoad();
   await getAmountofAllTasks();
@@ -15,6 +19,10 @@ async function init() {
   window.addEventListener("resize", checkAnimation);
 }
 
+/**
+ * This function count the total amount of all tasks
+ * 
+ */
 async function getAmountofAllTasks() {
   let tasks = document.getElementById("totalTasks");
   try {
@@ -27,10 +35,16 @@ async function getAmountofAllTasks() {
   }
 }
 
+/**
+ * This function count the total amount of tasks in a specific type
+ * 
+ * @param {*} id = the document id which the number of the amount gets rendered
+ * @param {*} type = the type of the Task e.g. "done"
+ */
+
 async function getAmountofTask(id, type) {
   let html = document.getElementById(id);
   let count = 0;
-
   try {
     let taskResponse = await fetch(FB_URL + "/tasks" + ".json");
     let taskResponseAsJson = await taskResponse.json();
@@ -47,6 +61,10 @@ async function getAmountofTask(id, type) {
   }
 }
 
+/**
+ * This function count the amount of all tasks which have the priority of "Urgent",
+ * and get the closest Urgencydate (compare with today)
+ */
 async function getAmountofUrgent() {
   let html = document.getElementById("urgent");
   let date = document.getElementById("deadline");
@@ -81,6 +99,12 @@ async function getAmountofUrgent() {
   }
 }
 
+/**
+ * This function formats the date of the closeds date which gets renderd 
+ * 
+ * @param {This function} dateString 
+ * @returns the formated date e.g. April 26, 2025
+ */
 function formatDate(dateString) {
   const date = new Date(dateString);
   const months = [
@@ -100,7 +124,11 @@ function formatDate(dateString) {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
-
+/**
+ * This function greet the user when he is logged in, greeting is depend on the daytime.
+ * Also when logged in as a guest, the greeting function works the same.
+ * 
+ */
 function greeting() {
   let guest = sessionStorage.getItem('loggedIn');
   let html = document.getElementById('greet');
@@ -128,59 +156,25 @@ function greeting() {
   }
 }
 
-
-function morningGreet(name) {
-  return `
-    <p>Good morning,</p>
-    <span>${name}</span>
-  `;
-}
-
-function morningGreetGuest() {
-  return `
-    <p>Good morning!</p>
-  `;
-}
-
-function middayGreet(name) {
-  return `
-    <p>Good afternoon,</p>
-    <span>${name}</span>
-  `;
-}
-
-function middayGreetGuest() {
-  return `
-    <p>Good afternoon!</p>
-  `;
-}
-
-function eveningGreet(name) {
-  return `
-    <p>Good evening,</p>
-    <span>${name}</span>
-  `;
-}
-
-function eveningGreetGuest() {
-  return `
-    <p>Good evening!</p>
-  `;
-}
-
+/**
+ * This function check if the greeting animation is already played. 
+ * 
+ */
 function checkAnimationPlayed(){
   let status = sessionStorage.getItem('animationPlayed');
   let overlay = document.getElementById('OverlayGreeting');
   if (status === "true") {
     overlay.classList.remove('overlayAnimation');
     overlay.classList.add('d-none');
-
   } else{
     playAnimation();
   }
 
 }
 
+/**
+ * This function runs the greeting animation at the beginning.
+ */
 function playAnimation() {
   let overlay = document.getElementById('OverlayGreeting');
   let width = window.innerWidth;
@@ -192,7 +186,10 @@ function playAnimation() {
   }
 }
 
-
+/**
+ * This function check the size of the window/screen and handle the animation between desktop and mobile. 
+ * 
+ */
 function checkAnimation() {
   let overlay = document.getElementById('OverlayGreeting');
   let width = window.innerWidth;
@@ -202,5 +199,70 @@ function checkAnimation() {
     overlay.classList.remove('overlayAnimation');
     overlay.classList.remove('d-none');
   }
+}
 
+/**
+ * This function greet the user at moring
+ * @param {} name = is the username which is logged in 
+ * @returns the greet and the name to render in a div
+ */
+function morningGreet(name) {
+  return `
+    <p>Good morning,</p>
+    <span>${name}</span>
+  `;
+}
+
+/**
+ * This function greet the guest at moring
+ * @returns the greet and the name to render in a div
+ */
+function morningGreetGuest() {
+  return `
+    <p>Good morning!</p>
+  `;
+}
+
+/**
+ * This function greet the user at midday
+ * @param {} name = is the username which is logged in 
+ * @returns 
+ */
+function middayGreet(name) {
+  return `
+    <p>Good afternoon,</p>
+    <span>${name}</span>
+  `;
+}
+
+/**
+ * This function greet the guest at midday
+ * @returns the greet and the name to render in a div
+ */
+function middayGreetGuest() {
+  return `
+    <p>Good afternoon!</p>
+  `;
+}
+
+/**
+ * This function greet the user at the evening
+ * @param {} name = is the username which is logged in 
+ * @returns 
+ */
+function eveningGreet(name) {
+  return `
+    <p>Good evening,</p>
+    <span>${name}</span>
+  `;
+}
+
+/**
+ * This function greet the guest at the evening
+ * @returns the greet and the name to render in a div
+ */
+function eveningGreetGuest() {
+  return `
+    <p>Good evening!</p>
+  `;
 }
