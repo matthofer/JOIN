@@ -1,20 +1,3 @@
-let intialColors = [
-  "#9327FF",
-  "#6E52FF",
-  "#FC71FF",
-  "#FFBB2B",
-  "#1FD7C1",
-  "#FF7A00",
-  "#462F8A",
-  "#00BEE8",
-];
-
-function getRandomIntialColor() {
-  let randIndex = Math.floor(Math.random() * intialColors.length);
-  let randomColor = intialColors[randIndex];
-  return randomColor;
-}
-
 function getContactHeaderTemplate(firstLetter) {
   return `  <div class="contactGroup">
                   <div class="firstLetterContainer">

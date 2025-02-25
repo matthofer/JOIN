@@ -1,6 +1,16 @@
 let FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
 let contacts = [];
 let activeContact = null;
+let intialColors = [
+  "#9327FF",
+  "#6E52FF",
+  "#FC71FF",
+  "#FFBB2B",
+  "#1FD7C1",
+  "#FF7A00",
+  "#462F8A",
+  "#00BEE8",
+];
 
 /**
  * This function initializes the contacts page. contacts are loaded and rendered from firebase.
@@ -291,4 +301,15 @@ function reSize() {
   } else {
     return;
   }
+}
+
+/**
+ * This function returns a random color from the global array intialColorsrenders
+ *
+ *@param {number} i - index of the object in contacts array
+ */
+function getRandomIntialColor() {
+  let randIndex = Math.floor(Math.random() * intialColors.length);
+  let randomColor = intialColors[randIndex];
+  return randomColor;
 }
