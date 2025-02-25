@@ -111,8 +111,16 @@
 }
 
 @media(max-width: 850px) {
-    ::-webkit-scrollbar{
+    /* ::-webkit-scrollbar{
         display: unset;
+    } */
+
+    .mainHeadline{
+        position: fixed;
+        top: 64px;
+        z-index: 3;
+        width: 100%;
+        background-color: #f6f7f8;
     }
 
     .information {
@@ -171,9 +179,9 @@
 }
 
 @media(max-width:500px) {
-    ::-webkit-scrollbar{
+    /* ::-webkit-scrollbar{
         display: unset;
-    }
+    } */
 
 
     .stdPadding {
