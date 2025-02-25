@@ -225,3 +225,17 @@ function checkSubtaskStatusArray() {
     return;
   }
 }
+
+/**
+ * This function closes the edit task overlay. By closing the
+ * By closing, the tasks in the board are rendered and thereby updated
+ *
+ */
+async function closeEditTaskOverlay() {
+  subtasks = [];
+  statusSubtasks = [];
+  selectedContacts = [];
+  await loadTasksData();
+  renderTasks(tasks);
+  document.getElementById("overlayEditTask").classList.add("overlayClosed");
+}

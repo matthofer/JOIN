@@ -183,6 +183,7 @@ function renderSubTasks(task, i) {
 
 /**
  * This function assigns the value of the taskid to the variable currentDraggedElement when it dragging starts
+ * And rotate the task card by adding the class dragging
  *
  * @param {number} id - id of the task element
  *
@@ -226,6 +227,12 @@ function highlight(id) {
   document.getElementById(id).classList.add("dragAreaHighlight");
 }
 
+/**
+ * This function removes the rotation of task element after dragging
+ *
+ * @param {number} id - id of the task element
+ *
+ */
 function stopRotate(id) {
   document.getElementById(id).classList.remove("dragging");
 }
@@ -304,20 +311,6 @@ function renderTaskDetails(i) {
     getTaskDetailTemplate(i);
   renderContactsInTaskDetail(i);
   renderSubTasksInDetail(i);
-}
-
-/**
- * This function closes the edit task overlay. By closing the
- * By closing, the tasks in the board are rendered and thereby updated
- *
- */
-async function closeEditTaskOverlay() {
-  subtasks = [];
-  statusSubtasks = [];
-  selectedContacts = [];
-  await loadTasksData();
-  renderTasks(tasks);
-  document.getElementById("overlayEditTask").classList.add("overlayClosed");
 }
 
 /**
