@@ -343,7 +343,7 @@ input[name="searchResp"] {
   color: #ffffff;
   border-radius: 20px;
   transition: all 75ms ease-in-out;
-  z-index: 1;
+  z-index: 2;
 }
 
 .messageClosed {

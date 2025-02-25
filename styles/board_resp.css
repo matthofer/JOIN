@@ -199,7 +199,7 @@ main {
 /*Responsiv */
 @media (max-width: 1260px) {
   .overlay {
-    height: calc(100dvh - 80px) !important;
+    height: 100dvh !important;
     z-index: 1;
     padding-left: 0px;
     padding-right: 0px;
@@ -209,8 +209,8 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: clamp(300px, 100%, 800px);
-    width: clamp(300px, 100%, 425px);
+    height: clamp(300px, 100%, 870px);
+    width: clamp(300px, 90%, 530px);
     padding: 16px;
   }
 
@@ -238,6 +238,14 @@ main {
   }
 
   .helpDesktop {
+    display: none;
+  }
+
+  .respNavbar {
+    z-index: 0;
+  }
+
+  .help {
     display: none;
   }
 }
@@ -456,25 +464,19 @@ main {
   }
 
   .message {
-    left: calc(50% - 155px);
-    z-index: 1;
-  }
-}
-
-@media (min-width: 1260px) {
-  .help {
-    display: none;
+    left: calc(50% - 165px);
+    z-index: 2;
   }
 }
 
 @media (max-width: 850px) {
   .formWrapperResp {
     overflow-y: auto;
-    height: 500px;
+    height: 580px;
   }
 
   .formEdit {
-    padding-top: 0;
+    padding-top: 0 !important;
   }
 
   .subtasksEdit {
@@ -486,16 +488,30 @@ main {
     padding: 16px;
   }
 
+  .addTaskOverlayContainer h1 {
+    background-color: #ffffff;
+  }
+
   .buttonAreaResp {
     padding-top: 0px;
   }
 
   .bottomSectionEditTask {
-    padding-top: 16px !important;
+    padding-top: 65px !important;
   }
 
   .bottomSectionResp {
     padding-top: 40px !important;
+  }
+
+  #addTaskForm {
+    padding-top: 90px;
+  }
+}
+
+@media (max-width: 500px) {
+  .formWrapperResp {
+    height: 610px;
   }
 }
 
@@ -532,18 +548,39 @@ main {
   }
 }
 
-@media (max-height: 670px) {
+@media (max-height: 895px) {
+  .formWrapperResp {
+    height: 590px;
+  }
+
+  .taskEditContainer {
+    height: clamp(300px, 100%, 640px);
+  }
+
+  .editFromWrapper {
+    max-height: 630px !important;
+  }
+}
+
+@media (max-height: 810px) {
+  .editFromWrapper {
+    max-height: 590px !important;
+  }
+}
+
+@media (max-height: 660px) {
   .formEdit {
-    overflow-y: auto;
     height: clamp(300px, 100%, 470px);
   }
 
   .taskEditContainer {
-    overflow-y: auto;
-    height: clamp(300px, 100%, 570px);
+    height: clamp(300px, 100%, 640px);
     width: clamp(300px, 100%, 365px);
   }
 
+  .editFromWrapper {
+    max-height: 440px;
+  }
   .taskEditContainer p {
     font-size: 16px;
   }
@@ -559,5 +596,9 @@ main {
 
   .editWrapper {
     justify-content: start;
+  }
+
+  .formWrapperResp {
+    height: 360px;
   }
 }
