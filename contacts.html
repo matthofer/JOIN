@@ -11,6 +11,7 @@
     <script src="./scripts/contacts_templates.js"></script>
     <script src="./scripts/firebase.js"></script>
     <script src="./scripts/board.js"></script>
+    <script src="./scripts/contacts_update_delete.js"></script>
     <script src="./scripts/contacts_validation.js"></script>
     <script src="./scripts/contacts.js"></script>
     <title>Contacts</title>
@@ -69,10 +70,18 @@
           </div>
         </div>
         <div class="sidebarBottom">
-          <div onclick="openPage('privacy-policy.html')" class="policyLinks" tabindex="0">
+          <div
+            onclick="openPage('privacy-policy.html')"
+            class="policyLinks"
+            tabindex="0"
+          >
             <a href="#">Privacy Policy</a>
           </div>
-          <div onclick="openPage('legal-notice.html')" class="policyLinks" tabindex="0">
+          <div
+            onclick="openPage('legal-notice.html')"
+            class="policyLinks"
+            tabindex="0"
+          >
             <a href="#">Legal notice</a>
           </div>
         </div>
@@ -83,8 +92,14 @@
             <img class="headerLogoResp" src="./assets/icons/resp_logo.svg" />
             <h3 class="headerText">Kanban Project Management Tool</h3>
             <div class="headerRight">
-              <a class="helpDesktop" href="./help.html"><img src="./assets/icons/help.svg" alt="" srcset="" /></a>
-              <div onclick="event.stopPropagation(); toggleBurgerMenu()" class="userIcon" id="userInitials"></div>
+              <a class="helpDesktop" href="./help.html"
+                ><img src="./assets/icons/help.svg" alt="" srcset=""
+              /></a>
+              <div
+                onclick="event.stopPropagation(); toggleBurgerMenu()"
+                class="userIcon"
+                id="userInitials"
+              ></div>
               <div class="burgerMenu slideBurgerMenu" id="burgerMenu">
                 <a class="help" href="./help.html">Help</a>
                 <a href="./legal-notice.html">Legal Notice</a>
