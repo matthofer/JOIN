@@ -94,50 +94,94 @@ function clearFormFields() {
   document.getElementById("email").value = "";
 }
 
-function toggleIcons(
-  inputId,
-  lockIconId,
-  eyeIconId,
-  crossedEyeIconId,
-  isVisible
-) {
-  let input = document.getElementById(inputId).value;
-  let lockIcon = document.getElementById(lockIconId);
-  let eyeIcon = document.getElementById(eyeIconId);
-  let crossedEyeIcon = document.getElementById(crossedEyeIconId);
+function checkPasswordInput() {
+  const passwordInput = document.getElementById("password");
+  let { eyeIcon, crossedEyeIcon, lockIcon } = getIcons();
 
-  if (input.length >= 1) {
-    lockIcon.classList.add("d-none");
-    if (!isVisible) crossedEyeIcon.classList.remove("d-none");
+  if (passwordInput.value.length === 0) {
+    resetPasswordVisibility(passwordInput, lockIcon, eyeIcon, crossedEyeIcon, "password");
   } else {
-    lockIcon.classList.remove("d-none");
-    crossedEyeIcon.classList.add("d-none");
-    eyeIcon.classList.add("d-none");
+    updateIcons(lockIcon, eyeIcon, crossedEyeIcon, isPasswordVisible);
+  }
+}
+
+function checkConfirmPasswordInput() {
+  const confirmPasswordInput = document.getElementById("confirmPassword");
+  let { eyeIcon, crossedEyeIcon, lockIcon } = getConfirmIcons();
+
+  if (confirmPasswordInput.value.length === 0) {
+    resetPasswordVisibility(confirmPasswordInput, lockIcon, eyeIcon, crossedEyeIcon, "confirmPassword");
+  } else {
+    updateIcons(lockIcon, eyeIcon, crossedEyeIcon, isConfirmPasswordVisible);
   }
 }
 
 function showPassword() {
-  let passwordInput = document.getElementById("password");
-  let eyeIcon = document.getElementById("eyeIcon");
-  let crossedEyeIcon = document.getElementById("crossedEyeIcon");
+  const passwordInput = document.getElementById("password");
+  let { eyeIcon, crossedEyeIcon } = getIcons();
 
   isPasswordVisible = !isPasswordVisible;
   passwordInput.type = isPasswordVisible ? "text" : "password";
-
-  eyeIcon.classList.toggle("d-none");
-  crossedEyeIcon.classList.toggle("d-none");
+  toggleVisibilityIcons(eyeIcon, crossedEyeIcon, isPasswordVisible);
 }
 
 function showConfirmPassword() {
-  let passwordInput = document.getElementById("confirmPassword");
-  let confirmEyeIcon = document.getElementById("confirmEyeIcon");
-  let confirmCrossedEyeIcon = document.getElementById("confirmCrossedEyeIcon");
+  const confirmPasswordInput = document.getElementById("confirmPassword");
+  let { eyeIcon, crossedEyeIcon } = getConfirmIcons();
 
   isConfirmPasswordVisible = !isConfirmPasswordVisible;
-  passwordInput.type = isConfirmPasswordVisible ? "text" : "password";
+  confirmPasswordInput.type = isConfirmPasswordVisible ? "text" : "password";
+  toggleVisibilityIcons(eyeIcon, crossedEyeIcon, isConfirmPasswordVisible);
+}
 
-  confirmEyeIcon.classList.toggle("d-none");
-  confirmCrossedEyeIcon.classList.toggle("d-none");
+function getIcons() {
+  return {
+    eyeIcon: document.getElementById("eyeIcon"),
+    crossedEyeIcon: document.getElementById("crossedEyeIcon"),
+    lockIcon: document.getElementById("lockIcon"),
+  };
+}
+
+function getConfirmIcons() {
+  return {
+    eyeIcon: document.getElementById("confirmEyeIcon"),
+    crossedEyeIcon: document.getElementById("confirmCrossedEyeIcon"),
+    lockIcon: document.getElementById("confirmLockIcon"),
+  };
+}
+
+function resetPasswordVisibility(input, lockIcon, eyeIcon, crossedEyeIcon, inputType) {
+  if (inputType === "password") {
+    isPasswordVisible = false;
+  } else if (inputType === "confirmPassword") {
+    isConfirmPasswordVisible = false;
+  }
+
+  input.type = "password";
+  lockIcon.classList.remove("d-none");
+  eyeIcon.classList.add("d-none");
+  crossedEyeIcon.classList.add("d-none");
+}
+
+function updateIcons(lockIcon, eyeIcon, crossedEyeIcon, isVisible) {
+  lockIcon.classList.add("d-none");
+  if (isVisible) {
+    eyeIcon.classList.remove("d-none");
+    crossedEyeIcon.classList.add("d-none");
+  } else {
+    eyeIcon.classList.add("d-none");
+    crossedEyeIcon.classList.remove("d-none");
+  }
+}
+
+function toggleVisibilityIcons(eyeIcon, crossedEyeIcon, isVisible) {
+  if (isVisible) {
+    eyeIcon.classList.remove("d-none");
+    crossedEyeIcon.classList.add("d-none");
+  } else {
+    eyeIcon.classList.add("d-none");
+    crossedEyeIcon.classList.remove("d-none");
+  }
 }
 
 function showRedBorder() {

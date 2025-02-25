@@ -114,26 +114,6 @@ function checkPrivacyPolicyTick() {
   }
 }
 
-function checkPasswordInput() {
-  toggleIcons(
-    "password",
-    "lockIcon",
-    "eyeIcon",
-    "crossedEyeIcon",
-    isPasswordVisible
-  );
-}
-
-function checkConfirmPasswordInput() {
-  toggleIcons(
-    "confirmPassword",
-    "confirmLockIcon",
-    "confirmEyeIcon",
-    "confirmCrossedEyeIcon",
-    isConfirmPasswordVisible
-  );
-}
-
 async function takenMail() {
   let email = document.getElementById("email").value;
 

@@ -1,3 +1,7 @@
+/**
+ * This function the icons at the inputfield
+ * 
+ */
 function changeSubtasksIcons() {
   let input = document.getElementById("subtasks");
   let subtasksMenu = document.getElementById("subtasksMenu");
@@ -10,12 +14,20 @@ function changeSubtasksIcons() {
   }
 }
 
+/**
+ * This function clear the inputfield 
+ * 
+ */
 function clearSubtasksInput() {
   let input = document.getElementById("subtasks");
   input.value = "";
   changeSubtasksIcons();
 }
 
+/**
+ * This function save the Subtask -- Value from the Inputfield
+ * 
+ */
 function saveSubtasks() {
   let input = document.getElementById("subtasks");
   let maessage = document.getElementById("subtaskValidation");
@@ -30,6 +42,10 @@ function saveSubtasks() {
   }
 }
 
+/**
+ * This function render the SubtaskArray in a DIV
+ * 
+ */
 function renderSubtasks() {
   let html = document.getElementById("renderedSubtasks");
   html.innerHTML = "";
@@ -43,21 +59,41 @@ function renderSubtasks() {
   }
 }
 
+/**
+ * This function shows the Subtaskmenu 
+ * 
+ * @param {*} subtasksIndex = Index from the single Subtask from the Array
+ */
 function showSubtaskMenu(subtasksIndex) {
   let menu = document.getElementById(`singleSubtaskMenu${subtasksIndex}`);
   menu.classList.remove("d-none");
 }
 
+/**
+ * This function close the Subtaskmenu 
+ * 
+ * @param {*} subtasksIndex = Index from the single Subtask from the Array
+ */
 function closeSubtaskMenu(subtasksIndex) {
   let menu = document.getElementById(`singleSubtaskMenu${subtasksIndex}`);
   menu.classList.add("d-none");
 }
 
+/**
+ * This function delete a single Subtask
+ * 
+ * @param {*} subtasksIndex = Index from the single Subtask from the Array
+ */
 function deleteSubtask(subtasksIndex) {
   subtasks.splice(subtasksIndex, 1);
   renderSubtasks();
 }
 
+/**
+ * This function allows a doubleclick to edit a single Subtask
+ * 
+ * @param {*} subtasksIndex = Index from the single Subtask from the Array
+ */
 function editSubtaskDBLClick(subtasksIndex) {
   let subTask = document.getElementById(`editSpan${subtasksIndex}`);
   subTask.setAttribute("contenteditable", "true");
@@ -65,6 +101,11 @@ function editSubtaskDBLClick(subtasksIndex) {
   editSubtaskWithEnter(subtasksIndex);
 }
 
+/**
+ * This function is for to edit a existing Subtask
+ * 
+ * @param {*} subtasksIndex = Index from the single Subtask from the Array
+ */
 function editSubtask(subtasksIndex) {
   let subTask = document.getElementById(`singleSubtask${subtasksIndex}`);
   let span = document.getElementById(`editSpan${subtasksIndex}`);
@@ -79,6 +120,11 @@ function editSubtask(subtasksIndex) {
   editSubtaskWithEnter(subtasksIndex);
 }
 
+/**
+ * This function saves the edited Subtask and render the Subtask Div
+ * 
+ * @param {*} subtasksIndex = Index from the single Subtask from the Array
+ */
 function saveEditedSubtask(subtasksIndex) {
   let hoverMenu = document.getElementById(`singleSubtaskMenu${subtasksIndex}`);
   let spanInput = document.getElementById(`editSpan${subtasksIndex}`).innerHTML;
@@ -87,6 +133,10 @@ function saveEditedSubtask(subtasksIndex) {
   renderSubtasks();
 }
 
+/**
+ * This function allows to save the Subtask with the Enter Keypress
+ * 
+ */
 function submitSubtaskWithEnter() {
   let input = document.getElementById("subtasks");
   if (input) {
@@ -99,6 +149,11 @@ function submitSubtaskWithEnter() {
   }
 }
 
+/**
+ * This function allows to save the edited Subtask with the Enter Keypress
+ * 
+ * @param {*} subtasksIndex = Index from the single Subtask from the Array
+ */
 function editSubtaskWithEnter(subtasksIndex) {
   let input = document.getElementById(`editSpan${subtasksIndex}`);
   if (input) {
