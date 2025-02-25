@@ -1,3 +1,6 @@
+/**
+ * This function open the dropdown menu for the Contacts.
+ */
 function openDropdownContacts() {
   checkSelectedContacts();
   let dropdown = document.getElementById("contacts");
@@ -12,6 +15,9 @@ function openDropdownContacts() {
   }
 }
 
+/**
+ * This function close the dropdown menu for the contacts
+ */
 function closeDropDownContacts() {
   let dropdown = document.getElementById("contacts");
   let category = document.getElementById("categorys");
@@ -30,6 +36,11 @@ function closeDropDownContacts() {
   }
 }
 
+/**
+ * This function close the dropdown menus contacts or catgory at the board template when clicking somewhere outside from the form
+ * 
+ * @returns nothing -- just stop the function when the id is not available
+ */
 function closeDropDownContactsBoard() {
   let dropdown = document.getElementById("contacts");
   let category = document.getElementById("categorys");
@@ -40,6 +51,10 @@ function closeDropDownContactsBoard() {
   }
 }
 
+/**
+ * This function close the dropdown menus contacts when clicking somewhere outside from the form
+ * 
+ */
 function toggleDropdownContacts() {
   let dropdown = document.getElementById("contacts");
   if (dropdown.classList.contains("dropdown")) {
@@ -49,6 +64,10 @@ function toggleDropdownContacts() {
   }
 }
 
+/**
+ * This function render the contacts into the dropdown menu.
+ * 
+ */
 function renderDropdownContacts() {
   let html = document.getElementById("contacts");
   contacts.sort((a, b) => a.name.localeCompare(b.name));
@@ -58,6 +77,12 @@ function renderDropdownContacts() {
   }
 }
 
+/**
+ * This function highlight the selected contact in the dropdown menu.
+ * 
+ * @param {*} singleContact = is a single contact from the for-loop of all contacts 
+ * @param {*} contactIndex = is the index of the singleContact.
+ */
 function markCheckbox(singleContact, contactIndex) {
   let input = document.getElementById("contactsDropdown");
   let checkbox = document.getElementById(`checkbox${contactIndex}`);
@@ -82,6 +107,10 @@ function markCheckbox(singleContact, contactIndex) {
   filterContacts();
 }
 
+/**
+ * This function clears all selected and marked contacts when the form gets cleared.
+ * 
+ */
 function clearContacts() {
   let contacts = document.getElementById("contacts");
   let singleContact = contacts.querySelectorAll(".dropdownContactBlueBG");
@@ -94,6 +123,15 @@ function clearContacts() {
   });
 }
 
+/**
+ * This function syncs the UI and check if the contcats are checked.
+ * If not, this function add the class to mark the contacts and turn the checkbox on true. 
+ * If the Conatct is not in the selectedContacts Array, he gets pushed.
+ * selected contacts gets rendered. 
+ * 
+ * @param {*} singleContact = is a single contact from the for-loop of all contacts 
+ * @param {*} contactIndex = is the index of the singleContact.
+ */
 function syncCheckbox(singleContact, contactIndex) {
   let checkbox = document.getElementById(`checkbox${contactIndex}`);
   let contact = document.getElementById(`contact${contactIndex}`);
@@ -109,10 +147,19 @@ function syncCheckbox(singleContact, contactIndex) {
   renderSelectedContacts();
 }
 
+/**
+ * This function gets the firebase Id od the singleContact
+ * 
+ * @param {*} singleContact = is a single contact from the for-loop of all contacts 
+ * @returns the firebase ID
+ */
 function getContactID(singleContact) {
   return singleContact.firebaseid;
 }
 
+/**
+ * This function render the selected Conatcts.
+ */
 function renderSelectedContacts() {
   let contactInitials = document.getElementById("initialsContacts");
   contactInitials.innerHTML = "";
@@ -129,6 +176,11 @@ function renderSelectedContacts() {
   }
 }
 
+/**
+ * This function compare the Arrays SelectedContacts and CurrentlyContacts by each contact on his FirebaseID.
+ * When a Contact is founded,so he gets marked and the dropdown menu gets synced
+ * 
+ */
 function checkSelectedContacts() {
   for (
     let contactsIndex = 0;
@@ -154,6 +206,11 @@ function checkSelectedContacts() {
   }
 }
 
+/**
+ * This function filter the Contacts for the Dropdown menu.
+ * Value from Input gets filtered 
+ * 
+ */
 function filterContacts() {
   let valueInput = document
     .getElementById("contactsDropdown")
@@ -175,6 +232,10 @@ function filterContacts() {
   }
 }
 
+/**
+ * This function render the filtered Contacts in the dropdown Menu
+ * @param {*} filteredContacts = array from Filterfunction
+ */
 function renderFilteredContact(filteredContacts) {
   let html = document.getElementById("contacts");
   html.innerHTML = "";
