@@ -17,6 +17,10 @@ async function initBoard() {
   highlightNavLink("boardLink", "boardLinkResp");
 }
 
+/**
+ * This function initialize the neccesary function to use the functionalitys from the add task page.
+ *
+ */
 async function initAddTaskBoard() {
   await loadContactsData();
   renderDropdownContacts();
@@ -27,7 +31,7 @@ async function initAddTaskBoard() {
 }
 
 /**
- * This function initialize the neccesary function to use the functionalitys from the add task page.
+ * This function initialize the neccesary function to use the functionalitys from the add task page in task edit.
  *
  */
 async function initAddTaskForEdit() {
