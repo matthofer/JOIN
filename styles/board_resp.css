@@ -199,9 +199,12 @@ main {
 @media (max-width: 1260px) {
   .overlay {
     height: 100dvh !important;
-    z-index: 2;
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  #overlayEditTask {
+    z-index: 2;
   }
 
   .taskEditContainer {
@@ -476,7 +479,12 @@ main {
 @media (max-width: 850px) {
   .formWrapperResp {
     overflow-y: auto;
-    height: 580px;
+    height: 670px;
+    margin-top: 0 !important;
+  }
+
+  .rightColumnAdd {
+    padding-top: 100px !important;
   }
 
   .editFormWrapper {
@@ -506,12 +514,27 @@ main {
   .bottomSectionResp {
     padding-top: 40px !important;
   }
+
+  .closeAddTask {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 @media (max-width: 500px) {
   .formWrapperResp {
     height: 680px;
     margin-top: 0 !important;
+  }
+
+  .boardHeadline {
+    font-size: 50px;
+  }
+
+  .respAddTask {
+    height: 35px;
+    width: 35px;
   }
 }
 

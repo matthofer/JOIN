@@ -319,14 +319,16 @@ function getAddTaskTemplate() {
   return `<div class="addTaskOverlayContainer">
                 <div class="addTaskOverlayContainerHead">
                   <h1 class="mainHeadline">Add Task</h1>
+                  <div class="closeAddTask">
                   <img
                     onclick="closeAddTaskOverlay()"
                     src="./assets/icons/close.svg"
                   />
+                  </div>
                 </div>
                 <form id="addTaskForm">
                   <div class="formWrapper formWrapperResp">
-                      <div class="leftColumn">
+                      <div class="leftColumn leftColumnAdd">
                           <div class="titles">
                               <span>Title <p>*</p></span>
                               <input name="title" type="text" placeholder="Enter a title" id="title" onblur="getBlueBorder('title')">
@@ -351,7 +353,7 @@ function getAddTaskTemplate() {
 
                       <div class="divider"></div>
 
-                      <div class="rightColumn">
+                      <div class="rightColumn rightColumnAdd">
                           <div class="titles">
                               <span>Due date <p>*</p></span>
                               <input type="text" name="date" id="date" placeholder="dd/mm/yyyy"
