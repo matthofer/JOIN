@@ -1,256 +1,243 @@
-@media(min-width: 1260px){
-    .helpAddTask{
-      display: none;
-    }
+@media (min-width: 1260px) {
+  .helpAddTask {
+    display: none;
   }
-  
- 
-
+}
 
 @media (max-width: 1260px) {
-    .headerLogoResp {
-        display: flex;
-        height: 39px;
-        width: 32px;
-      }
+  .headerLogoResp {
+    display: flex;
+    height: 39px;
+    width: 32px;
+  }
 
-    .headerText {
-        display: none;
-      }
-    
+  .headerText {
+    display: none;
+  }
 
-    .helpDesktopAddTask{
-        display: none;
-    }
+  .helpDesktopAddTask {
+    display: none;
+  }
 
-    .sidebar {
-        display: none;
-    }
+  .sidebar {
+    display: none;
+  }
 
-    .headerAndMain {
-        margin: 0;
-    }
+  .headerAndMain {
+    margin: 0;
+  }
 
-    .stdPadding {
-        padding: 0 32px;
-    }
+  .stdPadding {
+    padding: 0 32px;
+  }
 
-    .divider {
-        margin: 0 32px;
-    }
+  .divider {
+    margin: 0 32px;
+  }
 
-    .leftColumn {
-        min-width: 350px;
-    }
+  .leftColumn {
+    min-width: 350px;
+  }
 
-    .rightColumn {
-        min-width: 350px;
-    }
+  .rightColumn {
+    min-width: 350px;
+  }
 }
-
-
 
 @media (max-width: 1259.99px) {
-    .prioSection img {
-        margin-left: 6px;
-    }
+  .prioSection img {
+    margin-left: 6px;
+  }
 
-    .respNavbar {
-        display: flex;
-        height: 80px;
-    }
+  .respNavbar {
+    display: flex;
+    height: 80px;
+  }
 
-    .respNavbarContent {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
-    }
+  .respNavbarContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
 
-    .respNavButton {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        cursor: pointer;
-        height: 100%;
-        width: 90px;
-        border-radius: 16px;
-    }
+  .respNavButton {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    height: 100%;
+    width: 90px;
+    border-radius: 16px;
+  }
 
-    .respNavButton a {
-        text-decoration: none;
-        color: #cdcdcd;
-    }
+  .respNavButton a {
+    text-decoration: none;
+    color: #cdcdcd;
+  }
 
-    .respNavButton:hover {
-        background-color: #091931;
-    }
+  .respNavButton:hover {
+    background-color: #091931;
+  }
 
-    .respNavButton:hover .navSvg {
-        filter: brightness(0) invert(1);
-    }
+  .respNavButton:hover .navSvg {
+    filter: brightness(0) invert(1);
+  }
 
-    .respNavButton:hover a {
-        color: white;
-    }
+  .respNavButton:hover a {
+    color: white;
+  }
 
-    .respNavButton:focus {
-        background-color: #091931;
-    }
+  .respNavButton:focus {
+    background-color: #091931;
+  }
 
-    .respNavButton:focus a {
-        color: white;
-    }
+  .respNavButton:focus a {
+    color: white;
+  }
 
-    .respNavButton:focus .navSvg {
-        filter: brightness(0) invert(1);
-    }
+  .respNavButton:focus .navSvg {
+    filter: brightness(0) invert(1);
+  }
 }
 
-@media(max-width: 850px) {
-    /* ::-webkit-scrollbar{
+@media (max-width: 850px) {
+  .mainHeadline {
+    position: fixed;
+    top: 64px;
+    z-index: 3;
+    width: 100%;
+    background-color: #f6f7f8;
+  }
+
+  .information {
+    display: none;
+  }
+
+  .buttonArea {
+    position: fixed;
+    bottom: 72px;
+    right: 0;
+    width: 100%;
+    min-height: 50px;
+    justify-content: end;
+    background-color: #f6f7f8;
+    padding: 12px 32px 24px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .formWrapper {
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 100px;
+  }
+
+  .leftColumn {
+    min-width: unset;
+    max-width: unset;
+    gap: 32px;
+  }
+
+  .rightColumn {
+    padding-top: 12px;
+    min-width: unset;
+    max-width: unset;
+    gap: 32px;
+    padding-bottom: 70px;
+  }
+
+  form {
+    padding-top: 42px;
+  }
+
+  .contacts {
+    top: 64px;
+  }
+
+  .initialsContacts {
+    position: unset;
+  }
+
+  .toastMSG {
+    position: fixed;
+  }
+}
+
+@media (max-width: 500px) {
+  /* ::-webkit-scrollbar{
         display: unset;
     } */
 
-    .mainHeadline{
-        position: fixed;
-        top: 64px;
-        z-index: 3;
-        width: 100%;
-        background-color: #f6f7f8;
-    }
+  .stdPadding {
+    padding: 0 16px;
+  }
 
-    .information {
-        display: none;
-    }
+  .buttonArea {
+    padding: 12px 16px 24px;
+  }
 
-    .buttonArea {
-        position: fixed;
-        bottom: 72px;
-        right: 0;
-        width: 100%;
-        min-height: 50px;
-        justify-content: end;
-        background-color: #f6f7f8;
-        padding: 12px 32px 24px;
-    }
+  .mainHeadline {
+    font-size: 47px;
+    font-weight: 700;
+    line-height: 56.4px;
+  }
 
-    .divider {
-        display: none;
-    }
+  form {
+    padding-top: 42px;
+  }
 
-    .formWrapper {
-        flex-direction: column;
-        margin: 0 auto;
-    }
+  .titles {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+  }
 
-    .leftColumn {
-        min-width: unset;
-        max-width: unset;
-        gap: 32px;
-    }
+  input {
+    height: 40px;
+  }
 
-    .rightColumn {
-        padding-top: 12px;
-        min-width: unset;
-        max-width: unset;
-        gap: 32px;
-        padding-bottom: 70px;
-    }
+  textarea {
+    height: 80px;
+  }
 
-    form {
-        padding-top: 42px;
-    }
+  ::placeholder {
+    font-size: 16px;
+  }
 
-    .contacts {
-        top: 64px;
-    }
+  input[name="contactsDropdown"]::placeholder {
+    font-size: 16px;
+  }
 
-    .initialsContacts{
-        position: unset;
-    }
+  input[name="category"]::placeholder {
+    font-size: 16px;
+  }
 
-    .toastMSG {
-        position: fixed;
-    }
-}
+  .prioSection button {
+    padding: 8px 4px;
+    font-size: 14px;
+  }
 
-@media(max-width:500px) {
-    /* ::-webkit-scrollbar{
-        display: unset;
-    } */
+  .clear {
+    padding: 6px 10px;
+    font-size: 16px;
+  }
 
+  .submit {
+    padding: 6px 10px;
+    font-size: 16px;
+  }
 
-    .stdPadding {
-        padding: 0 16px;
-    }
+  .subtasksMenu {
+    top: 41px;
+  }
 
-    .buttonArea {
-        padding: 12px 16px 24px;
-    }
-
-    .mainHeadline {
-        font-size: 47px;
-        font-weight: 700;
-        line-height: 56.4px;
-    }
-
-    form {
-        padding-top: 42px;
-    }
-
-    .titles {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 19.2px;
-    }
-
-    input{
-        height: 40px;
-    }
-
-    textarea{
-        height: 80px;
-    }
-
-    ::placeholder{
-        font-size: 16px;
-    }
-
-    input[name="contactsDropdown"]::placeholder {
-        font-size: 16px;
-    }
-
-    input[name="category"]::placeholder {
-        font-size: 16px;
-    }
-
-    .prioSection button{
-        padding: 8px 4px;
-        font-size: 14px;
-    }
-
-    .clear {
-        padding: 6px 10px;
-        font-size: 16px;
-
-    }
-
-    .submit {
-        padding: 6px 10px;
-        font-size: 16px;
-
-    }
-
-    .subtasksMenu{
-        top: 41px;
-    }
-
-
-    .renderedSubtasks{
-        height: 150px;
-    }
+  .renderedSubtasks {
+    height: 150px;
+  }
 }

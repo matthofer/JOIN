@@ -248,6 +248,14 @@ main {
   .help {
     display: none;
   }
+
+  .column {
+    padding-bottom: 80px;
+  }
+
+  .mobileMoveContainer {
+    display: flex;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -442,10 +450,6 @@ main {
     background: #7c7d7e;
     border-radius: 10px;
     cursor: pointer;
-  }
-
-  .mobileMoveContainer {
-    display: flex;
   }
 
   ::-webkit-scrollbar {
