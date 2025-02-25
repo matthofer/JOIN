@@ -802,6 +802,9 @@ input[name="searchResp"]:focus {
 .policyLinks:hover a {
   color: #29abe2;
 }
+.subScroll {
+  --sb-track-color: #ffffff !important;
+}
 
 .subScroll::-webkit-scrollbar-track {
   background: #ffffff !important;
@@ -813,4 +816,8 @@ input[name="searchResp"]:focus {
 
 .helpDesktop img:hover {
   transform: scale(1.1);
+}
+
+.renderedSubtasksBoard {
+  --sb-track-color: #ffffff !important;
 }

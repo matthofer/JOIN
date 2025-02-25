@@ -430,7 +430,7 @@ function getAddTaskTemplate() {
                                   <img onclick="saveSubtasks()" src="./assets/icons/checkBlue.svg" alt=""
                                       srcset="">
                               </div>
-                              <div class="renderedSubtasks" id="renderedSubtasks">
+                              <div class="renderedSubtasks renderedSubtasksBoard" id="renderedSubtasks">
                               </div>
                           </div>
                       </div>
