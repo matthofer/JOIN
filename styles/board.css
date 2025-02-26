@@ -415,6 +415,11 @@ input[name="searchResp"] {
   cursor: pointer;
 }
 
+.taskDetailHeader img:hover{
+  background-color: lightgrey;
+  border-radius: 50%;
+}
+
 .taskEditContainer h2 {
   font-size: 52px;
 }
@@ -820,4 +825,9 @@ input[name="searchResp"]:focus {
 
 .renderedSubtasksBoard {
   --sb-track-color: #ffffff !important;
+}
+
+.closeAddTask img:hover {
+  background-color: lightgrey;
+  border-radius: 50%;
 }
