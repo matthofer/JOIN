@@ -228,10 +228,6 @@ main {
     padding-top: 60px !important;
   }
 
-  .helpDesktop {
-    display: none;
-  }
-
   .respNavbar {
     z-index: 1;
   }
@@ -247,38 +243,6 @@ main {
   .formWrapperResp {
     margin-top: 100px !important;
   }
-}
-
-@media (max-width: 1200px) {
-  .mobileMoveContainer {
-    display: flex;
-  }
-  .addTaskOverlayContainer {
-    height: 100%;
-    width: 100%;
-    padding: 16px;
-    border-radius: 0;
-  }
-
-  .topBar {
-    margin-top: 100px;
-  }
-
-  .boardColumns {
-    padding-bottom: 64px;
-  }
-
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-  }
-
-  .mainContent {
-    margin-top: 60px;
-    margin-bottom: 100px;
-  }
 
   .sidebar {
     display: none;
@@ -288,23 +252,14 @@ main {
     margin-left: 0;
   }
 
-  .headerText {
-    display: none;
-  }
-
-  .helpIcon {
-    display: none;
+  .mobileMoveContainer {
+    display: flex;
   }
 
   .headerLogoResp {
     display: flex;
     height: 39px;
     width: 32px;
-  }
-
-  .stdPadding {
-    padding-left: 16px;
-    padding-right: 16px;
   }
 
   .respNavbar {
@@ -360,6 +315,62 @@ main {
   .respNavButton:focus .navSvg {
     filter: brightness(0) invert(1);
   }
+
+  .helpDesktopBoard {
+    display: none;
+  }
+
+  .stdPadding {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+@media (min-width: 1259.999px) {
+  .helpBoard {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 1200px) {
+  
+  .addTaskOverlayContainer {
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+    border-radius: 0;
+  }
+
+  .topBar {
+    margin-top: 100px;
+  }
+
+  .boardColumns {
+    padding-bottom: 64px;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .mainContent {
+    margin-top: 60px;
+    margin-bottom: 100px;
+  }
+
+  .headerText {
+    display: none;
+  }
+
+  .helpIcon {
+    display: none;
+  }
 }
 
 @media (max-width: 950px) {
@@ -377,6 +388,10 @@ main {
   .overallContent {
     overflow-x: auto;
     overflow-y: auto;
+  }
+
+  .inputAndSearch {
+    margin-right: 0;
   }
 
   .searchInput {

@@ -170,10 +170,6 @@
 }
 
 @media (max-width: 500px) {
-  /* ::-webkit-scrollbar{
-        display: unset;
-    } */
-
   .stdPadding {
     padding: 0 16px;
   }
