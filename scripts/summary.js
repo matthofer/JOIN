@@ -17,6 +17,7 @@ async function init() {
   // playAnimation();
   checkAnimationPlayed();
   window.addEventListener("resize", checkAnimation);
+  checkAnimation();
 }
 
 /**

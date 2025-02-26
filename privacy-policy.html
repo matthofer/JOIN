@@ -13,8 +13,9 @@
       href="./assets/icons/fav_join_logo.png"
     />
     <script src="./script.js"></script>
+    <script src="./scripts/privacyLoggedIn.js"></script>
   </head>
-  <body onload="initLoad()" onclick="closeBurgerMenu()">
+  <body onload="init()" onclick="closeBurgerMenu()">
 
     <div class="content">
 
@@ -41,7 +42,7 @@
           </div>
         </div>
         <div class="sidebarBottom">
-          <div onclick="openPage('privacy-policy.html')" class="policyLinks" tabindex="0">
+          <div id="privacyLink" onclick="openPage('privacy-policy.html')" class="policyLinks" tabindex="0">
             <a href="#">Privacy Policy</a>
           </div>
           <div onclick="openPage('legal-notice.html')" class="policyLinks" tabindex="0">
