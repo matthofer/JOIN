@@ -15,7 +15,11 @@ async function postData(path, data = {}) {
       body: JSON.stringify(data),
     });
   } catch (error) {
-    console.log(error);
+    document.getElementById("headerMsg").innerHTML =
+      getFirebaseErrorMsgTemplate(
+        error,
+        "Error during inserting data in firebase. Please repeat or try again later"
+      );
   }
 }
 
@@ -27,13 +31,21 @@ async function postData(path, data = {}) {
  */
 
 async function putData(path, data = {}) {
-  await fetch(FB_URL + path + ".json", {
-    method: "PUT",
-    header: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+  try {
+    await fetch(FB_URL + path + ".json", {
+      method: "PUT",
+      header: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  } catch (error) {
+    document.getElementById("headerMsg").innerHTML =
+      getFirebaseErrorMsgTemplate(
+        error,
+        "Error during updating data in firebase. Please repeat or try again later"
+      );
+  }
 }
 
 /**
@@ -42,8 +54,20 @@ async function putData(path, data = {}) {
  * @param {string} path - This the path to a specific object in firebase for example `/users/${users[i].firebaseid}`
  */
 async function deleteData(path) {
-  let response = await fetch(FB_URL + path + ".json", {
-    method: "DELETE",
-  });
-  return (responseToJson = await response.json());
+  try {
+    let response = await fetch(FB_URL + path + ".json", {
+      method: "DELETE",
+    });
+    return (responseToJson = await response.json());
+  } catch (error) {
+    document.getElementById("headerMsg").innerHTML =
+      getFirebaseErrorMsgTemplate(
+        error,
+        "Error during deletion of data in firebase. Please repeat or try again later"
+      );
+  }
+}
+
+function getFirebaseErrorMsgTemplate(error, msg) {
+  return `"<p style='color: red'>${error}: ${msg}</p>";`;
 }
