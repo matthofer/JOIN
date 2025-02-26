@@ -326,17 +326,13 @@ main {
   }
 }
 
-
 @media (min-width: 1259.999px) {
   .helpBoard {
     display: none;
   }
 }
 
-
-
 @media (max-width: 1200px) {
-  
   .addTaskOverlayContainer {
     height: 100%;
     width: 100%;
@@ -599,6 +595,12 @@ main {
   }
 }
 
+@media (max-height: 845px) {
+  .editFormWrapper {
+    max-height: 580px;
+  }
+}
+
 @media (max-height: 670px) {
   .formEdit {
     height: clamp(300px, 100%, 470px);
@@ -630,6 +632,6 @@ main {
   }
 
   .formWrapperResp {
-    height: 360px;
+    height: 390px;
   }
 }
