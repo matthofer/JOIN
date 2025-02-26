@@ -1,3 +1,8 @@
+/**
+ * This function returns a formatted date -> XX/XX/XXXX
+ *
+ * @param {date} date - date value
+ */
 function formatDate(date) {
   let year = date.substr(0, 4);
   let month = date[5] + date[6];
@@ -6,6 +11,11 @@ function formatDate(date) {
   return formattedDate;
 }
 
+/**
+ * This function returns a string with the first letter in upper case
+ *
+ * @param {string} word - any string
+ */
 function fristLetterUpperCase(word) {
   let firstLetter = word[0];
   let firstLetterCap = firstLetter.toUpperCase();
@@ -13,6 +23,13 @@ function fristLetterUpperCase(word) {
   return (capitalizedWord = firstLetterCap + remainingLetters);
 }
 
+/**
+ * This function returns the html template of a single task element
+ *
+ * @param {object} task - a object from the global tasks array
+ * @param {number} i - the index of the object in the global tasks array
+ *
+ */
 function getTaskTemplate(task, i) {
   return `<div onmouseleave="stopRotate('task${task.id}')" id="task${
     task.id
@@ -90,30 +107,69 @@ function getTaskTemplate(task, i) {
                   </div>`;
 }
 
+/**
+ * This function returns the html template a no task element. This will be used if a board column is empty
+ *
+ * @param {string} type - the type of the tasks e.g. to do
+ *
+ */
 function getNoTaskTemplate(type) {
   return `<div class="noTask">
                 <p>No Tasks ${type}</p>
           </div>`;
 }
 
+/**
+ * This function returns the html template a contact intial for the task card
+ *
+ * @param {string} initials - initials of the contact
+ * @param {string} color - color for the contact icon
+ * @param {string} leftPos - for positioning the contact icons in a overlapping way
+ *
+ */
 function getIntialTemplateForBoard(intials, color, leftPos) {
   return `<div class="intial iPos" style="background-color: ${color}; left: ${leftPos}px">${intials}</div>`;
 }
 
+/**
+ * This function returns the html template for the remaining contact intial of the task card
+ *
+ * @param {number} counter - the number of contact icons which are already displayed
+ * @param {number} lenContacts - the amount of contacts which are belongs to the task
+ * @param {string} leftPos - for positioning the contact icons in a overlapping way
+ *
+ */
 function getRemainingIntialsTemplate(counter, lenContacts, leftPos) {
   return `<div class="intial iPos" style="left: ${leftPos}px">+${
     lenContacts - counter
   }</div>`;
 }
 
+/**
+ * This function returns the html template for display the status of done and open subtasks in the task
+ *
+ * @param {number} doneSubTasks - number of done subtasks
+ * @param {number} amountSubTasks - amount of subtasks in the task
+ *
+ */
 function getSubTaskTextTemplate(doneSubTasks, amountSubTasks) {
   return `<p id="subTaskFrom">${doneSubTasks}</p>/<p id="subTaskTo">${amountSubTasks}</p>`;
 }
 
+/**
+ * This function returns the html template if no subtask is in the task
+ *
+ */
 function getNoSubTaskTextTemplate() {
   return `<p>No Subtasks</p>`;
 }
 
+/**
+ * This function returns the html template for the task detail
+ *
+ * @param {number} i - index of the task in global task array
+ *
+ */
 function getTaskDetailTemplate(i) {
   return `<div class="taskDetailHeader">
                   <div id="category" class="category${tasks[i].category[0]}">${
@@ -157,13 +213,28 @@ function getTaskDetailTemplate(i) {
                 </div>`;
 }
 
-function getDetialContactListItemTemplate(name, intials, color) {
+/**
+ * This function returns the html template for a contact intial icon
+ *
+ * @param {string} name - name of the contact
+ * @param {string} initials - initials of the contact
+ * @param {string} color - color of the contact icon
+ */
+function getDetialContactListItemTemplate(name, initials, color) {
   return `<div class="detialContactListItem">
-            <div class="intial" style="background-color: ${color}">${intials}</div>
+            <div class="intial" style="background-color: ${color}">${initials}</div>
             <p>${name}</p>
           </div>`;
 }
 
+/**
+ * This function returns the html template for a checkbox in task details
+ *
+ * @param {boolean} status - status of subtask
+ * @param {string} title - title of subtask
+ * @param {number} i - index of the task in global task array
+ * @param {number} statusIndex - index of the subtask in the subtask array of the task
+ */
 function getDetialSubtaskListItemTemplate(status, title, i, statusIndex) {
   if (status === true) {
     return ` <div class="subtasksListItem">
@@ -184,6 +255,12 @@ function getDetialSubtaskListItemTemplate(status, title, i, statusIndex) {
   }
 }
 
+/**
+ * This function returns the html template for editing a task
+ *
+ * @param {number} i - index of the task in global task array
+ *
+ */
 function editTaskTemplate(i) {
   return `  <div class="editWrapper">
                 <div class="addTaskOverlayContainerHeadEdit">
@@ -315,6 +392,12 @@ function editTaskTemplate(i) {
             </div>`;
 }
 
+/**
+ * This function returns the html template for add task to use it in the board
+ *
+ * @param {number} i - index of the task in global task array
+ *
+ */
 function getAddTaskTemplate() {
   return `<div class="addTaskOverlayContainer">
                 <div class="addTaskOverlayContainerHead">

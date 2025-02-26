@@ -1,3 +1,7 @@
+/**
+ * This function returns the header element in the contact list with the letter inside
+ * @param {string} firstLetter - firstletter of a contact
+ */
 function getContactHeaderTemplate(firstLetter) {
   return `  <div class="contactGroup">
                   <div class="firstLetterContainer">
@@ -10,6 +14,11 @@ function getContactHeaderTemplate(firstLetter) {
               </div>`;
 }
 
+/**
+ * This function returns html template for a contact list element
+ * @param {number} i - index of the element in contact array
+ * @param {string} initials - intials of the contact
+ */
 function getSingleContactTemplate(i, intials) {
   return ` <div id="singleContact${i}" onclick="openDetails(${i}, 'singleContact${i}')" class="singleContactContainer"> 
               <div class="singleContact" tabindex="0">
@@ -22,6 +31,12 @@ function getSingleContactTemplate(i, intials) {
             </div>`;
 }
 
+/**
+ * This function returns html template for a contact info view
+ *
+ * @param {number} i - index of the element in contact array
+ * @param {string} initials - intials of the contact
+ */
 function getContactInfoTemplateDesktop(i, initials) {
   return `<div class="general">
                   <div id="bigInitial${i}" class="intialBig">${initials}</div>
@@ -54,6 +69,12 @@ function getContactInfoTemplateDesktop(i, initials) {
                 </div>`;
 }
 
+/**
+ * This function returns html template for a contact info view in mobile
+ *
+ * @param {number} i - index of the element in contact array
+ * @param {string} initials - intials of the contact
+ */
 function getContactInfoTemplateMobile(i, initials) {
   return `<div class="respDetailHeader">
               <div class="respDetailHeadText">
@@ -95,6 +116,12 @@ function getContactInfoTemplateMobile(i, initials) {
             </div>`;
 }
 
+/**
+ * This function returns html template for the buttons in contact info view
+ *
+ * @param {number} i - index of the element in contact array
+ *
+ */
 function getEditButtonsTemplate(i) {
   return `  <div onclick="deleteContactInMobileEditMode(${i}, event)" class="overLayButton delete">
                 <p>Delete</p>
@@ -105,6 +132,12 @@ function getEditButtonsTemplate(i) {
             </div>`;
 }
 
+/**
+ * This function returns html template for the intials of a contact
+ *
+ * @param {number} i - index of the element in contact array
+ * @param {string} initials - intials of the contact
+ */
 function getIntialsTemplate(i, initials) {
   return `<div id="editInitial${i}" class="intialBig">${initials}</div>`;
 }
