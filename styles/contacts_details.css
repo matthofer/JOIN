@@ -1,6 +1,6 @@
 .contactInfo {
   margin-top: 32px;
-  transition: all .4s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .general {
@@ -107,7 +107,7 @@
   height: 100dvh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  transition: all .4s ease-in-out;
+  transition: all 0.1s ease-in-out;
   padding-left: 64px;
   padding-right: 64px;
   z-index: 1;

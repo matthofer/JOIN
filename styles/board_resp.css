@@ -198,7 +198,7 @@ main {
 /*Responsiv */
 @media (max-width: 1260px) {
   .overlay {
-    height: 100dvh !important;
+    height: calc(100dvh - 80px) !important;
     padding-left: 0px;
     padding-right: 0px;
   }
