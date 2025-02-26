@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/legalNotice.css" />
     <link rel="stylesheet" href="./styles/unLogged.css" />
+    <script src="./script.js"></script>
+    <script src="./scripts/legalUnlogged.js"></script>
     <title>Legal Notice</title>
     <link
       rel="icon"
@@ -15,24 +17,24 @@
     />
   </head>
 
-  <body>
+  <body onload="init()">
     <div class="content">
       <div class="sidebar">
         <div class="sidebarTop">
           <img class="sidebarLogo" src="./assets/icons/logo.svg" alt="Logo" />
           <div class="navContent">
-            <div class="navButton" tabindex="0">
+            <div onclick="openPage('login.html')" class="navButton" tabindex="0">
               <img class="navSvg" src="./assets/icons/login.svg" alt="" />
-              <a href="./login.html">Log In</a>
+              <a href="#">Log In</a>
             </div>
           </div>
         </div>
         <div class="sidebarBottom">
-          <div class="navButton" tabindex="0">
-            <a href="./privacy_policy.html">Privacy Policy</a>
+          <div onclick="openPage('privacy_policy.html')" class="navButton" tabindex="0">
+            <a href="#">Privacy Policy</a>
           </div>
-          <div class="navButton" tabindex="0">
-            <a href="./legal_notice.html">Legal notice</a>
+          <div id="legalLink" onclick="openPage('legal_notice.html')" class="navButton" tabindex="0">
+            <a href="#">Legal notice</a>
           </div>
         </div>
       </div>
@@ -151,21 +153,22 @@
 
       <div class="respNavbar">
         <div class="respNavbarContent">
-          <div class="respNavButton" tabindex="0">
-            <img class="navSvg" src="./assets/icons/login.svg" alt="" />
-            <a href="./login.html">Log In</a>
+
+          <div onclick="openPage('login.html')" class="respNavButton" tabindex="0">
+              <img class="navSvg" src="./assets/icons/login.svg" alt="" />
+              <a href="#">Log In</a>
           </div>
 
           <div class="mobileFooter">
-            <div class="respNavButtonMid">
-              <a href="./privacy_policy.html">Privacy Policy</a>
-            </div>
+              <div onclick="openPage('privacy_policy.html')" class="respNavButtonMid">
+                  <a href="#">Privacy Policy</a>
+              </div>
 
-            <div class="respNavButtonRight">
-              <a href="./legal_notice.html">Legal Notice</a>
-            </div>
+              <div id="legalLinkResp" onclick="openPage('legal_notice.html')" class="respNavButtonRight">
+                  <a href="#">Legal Notice</a>
+              </div>
           </div>
-        </div>
+      </div>
       </div>
     </div>
   </body>
