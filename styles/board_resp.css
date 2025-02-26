@@ -102,7 +102,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  max-width: 1920px;
+  max-width: calc(1920px - 232px);
 }
 
 .headerLogoResp {

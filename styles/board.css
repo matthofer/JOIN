@@ -17,8 +17,7 @@
 
 .boardContent {
   background-color: #f6f7f8;
-  max-width: 1920px;
-}
+  max-width: calc(1920px - 232px);}
 
 .boardHeadline {
   font-size: 61px;

@@ -115,8 +115,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  max-width: 1920px;
-}
+  max-width: calc(1920px - 232px);}
 
 .headerLogoResp {
   display: none;
@@ -176,8 +175,7 @@ main {
 
 .mainContent {
   background-color: #f6f7f8;
-  max-width: 1920px;
-}
+  max-width: calc(1920px - 232px);}
 
 .mainHeadline {
   font-size: 51px;
