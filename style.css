@@ -148,6 +148,10 @@
   cursor: pointer;
 }
 
+.userIcon:hover {
+  background-color: #cdcdcd;
+}
+
 .helpIcon {
   cursor: pointer;
 }
