@@ -14,10 +14,8 @@ async function init() {
   await getAmountofTask("done", "done");
   greeting();
   highlightNavLink("summaryLink", "summaryLinkResp");
-  // playAnimation();
   checkAnimationPlayed();
   window.addEventListener("resize", checkAnimation);
-  checkAnimation();
 }
 
 /**
@@ -164,9 +162,12 @@ function greeting() {
 function checkAnimationPlayed(){
   let status = sessionStorage.getItem('animationPlayed');
   let overlay = document.getElementById('OverlayGreeting');
+  let width = window.innerWidth;
   if (status === "true") {
     overlay.classList.remove('overlayAnimation');
+    if (width < 850) {
     overlay.classList.add('d-none');
+    }
   } else{
     playAnimation();
   }
