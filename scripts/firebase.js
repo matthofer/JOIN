@@ -6,13 +6,17 @@
  */
 
 async function postData(path, data = {}) {
-  await fetch(FB_URL + path + ".json", {
-    method: "POST",
-    header: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+  try {
+    await fetch(FB_URL + path + ".json", {
+      method: "POST",
+      header: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 /**
