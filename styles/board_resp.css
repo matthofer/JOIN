@@ -205,6 +205,8 @@ main {
 
   #overlayEditTask {
     z-index: 2;
+
+    height: 100dvh !important;
   }
 
   .taskEditContainer {
@@ -526,6 +528,10 @@ main {
     display: flex;
     justify-content: flex-end;
   }
+
+  .taskEditContainer h2 {
+    font-size: 34px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -598,6 +604,10 @@ main {
 }
 
 @media (max-height: 670px) {
+  .taskEditContainer h2 {
+    font-size: 26px;
+  }
+
   .formEdit {
     height: clamp(300px, 100%, 470px);
   }
