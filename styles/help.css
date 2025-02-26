@@ -37,11 +37,9 @@
     margin-bottom: 16px;
   }
 
-
 .lightBlueFont{
     color: #29ABE2;
 }
-
 
 .mainContent{
     position: fixed;
@@ -57,6 +55,13 @@
     cursor: pointer;
     float: right;
     background-color: #f6f7f8;
+}
+
+.backBTN:hover{
+  transform: scale(1.1);
+  background-color: lightgray;
+  border-radius: 50%;
+  aspect-ratio: 1/1 !important;
 }
 
 .mainHeadline{
@@ -75,7 +80,20 @@
   overflow-x: hidden;
 }
 
+.headerAndMainHelp{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100dvh;
+  margin-left: 232px;
+  overflow-x: hidden;
+}
+
 @media (max-width: 850px) {
+  .headerAndMainHelp{
+    margin-left: 0;
+  }
+
     .mainContent{
         position: unset;
     }
