@@ -13,7 +13,7 @@ let intialColors = [
 ];
 
 /**
- * This function initializes the contacts page. contacts are loaded and rendered from firebase.
+ * This function initializes the contacts page. Contacts are loaded from firebase and will be rendered
  * Then the user icon is updated based on the login and the navigation link of the page is highlighted
  *
  */
@@ -27,7 +27,7 @@ async function init() {
 }
 
 /**
- * This function load the contacts data from firebase and push it to contacts array.
+ * This function load the contacts data from firebase and push it to the global contacts array.
  *
  * @param {string} path - This the path to the object in firebase for example "contacts/"
  */

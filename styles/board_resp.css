@@ -224,13 +224,6 @@ main {
     font-size: 18px;
   }
 
-  .addTaskOverlayContainer {
-    height: 100%;
-    width: 100%;
-    padding: 16px;
-    border-radius: 0;
-  }
-
   .bottomSectionResp {
     padding-top: 60px !important;
   }
@@ -261,6 +254,13 @@ main {
 }
 
 @media (max-width: 1200px) {
+  .addTaskOverlayContainer {
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+    border-radius: 0;
+  }
+
   .topBar {
     margin-top: 100px;
   }
@@ -479,7 +479,7 @@ main {
 @media (max-width: 850px) {
   .formWrapperResp {
     overflow-y: auto;
-    height: 670px;
+    height: 630px;
     margin-top: 0 !important;
   }
 
@@ -524,7 +524,7 @@ main {
 
 @media (max-width: 500px) {
   .formWrapperResp {
-    height: 680px;
+    height: 640px;
     margin-top: 0 !important;
   }
 
