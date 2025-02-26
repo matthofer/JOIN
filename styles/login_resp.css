@@ -27,10 +27,6 @@
     margin-right: 38px;
   }
 
-  /* .headerLogo .whiteLogo {
-    animation: whiteLogoFade 0.5s ease-in-out 0.5s forwards;
-  } */
-
   @keyframes logo {
     0% {
       opacity: 0;
