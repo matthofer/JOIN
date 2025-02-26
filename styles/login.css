@@ -36,11 +36,10 @@ header {
   background-color: #f6f7f8;
   padding-left: 64px;
   padding-right: 64px;
-  padding-top: 90px;
-  padding-bottom: 60px;
+  padding-top: 30px;
 }
 
-.headerLogo img {
+.blueLogo {
   position: absolute;
   z-index: 1001;
   animation: logo 0.5s ease-in-out 0.5s forwards;
@@ -48,13 +47,28 @@ header {
   width: 290px;
   top: 50%;
   left: 50%;
-  transform: translate(-85%, -85%);
-  margin-top: 90px;
-  margin-left: 90px;
-  margin-right: 90px;
+  transform: translate(-80%, -60%);
+  margin-top: 30px;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
-.headerLogo .whiteLogo {
+.whiteLogo {
+  opacity: 0;
+  animation: whiteLogoFade 0.5s ease-in-out 0.5s forwards;
+  position: absolute;
+  z-index: 1001;
+  height: 160px;
+  width: 110px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-80%, -60%);
+  margin-top: 30px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.headerLogo {
   opacity: 1;
 }
 
@@ -99,15 +113,18 @@ header {
 }
 
 main {
-  margin-top: 10dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 85%;
+  flex: 1;
 }
 
 .loginContainer {
   display: flex;
   justify-content: center;
-  flex: 1;
-  margin-top: 32px;
-  margin-bottom: 80px;
+  align-items: center;
 }
 
 .loginForm {
@@ -291,7 +308,7 @@ footer {
     width: 290px;
     top: 50%;
     left: 50%;
-    transform: translate(-85%, -85%);
+    transform: translate(-80%, -60%);
   }
 
   100% {
@@ -313,33 +330,14 @@ footer {
   }
 }
 
-@keyframes logoResp {
+@keyframes whiteLogoFade {
   0% {
     opacity: 0;
     height: 160px;
     width: 110px;
     top: 50%;
     left: 50%;
-    transform: translate(-85%, -85%);
-  }
-  100% {
-    opacity: 1;
-    height: 78px;
-    width: 64px;
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes whiteLogoFade {
-  0% {
-    opacity: 1;
-    height: 160px;
-    width: 110px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-85%, -85%);
+    transform: translate(-85%, -75%);
   }
   100% {
     opacity: 0;

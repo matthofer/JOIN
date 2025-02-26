@@ -5,12 +5,11 @@
 }
 
 @media (max-width: 1024px) {
-  .headerLogo img {
+  .blueLogo {
     height: 160px;
     width: 110px;
-    animation: logoResp 0.5s ease-in-out 0.5s forwards;
     opacity: 0;
-    transform: translate(-85%, -85%);
+    transform: translate(-85%, -75%);
     margin-top: 38px;
     margin-left: 38px;
     margin-right: 38px;
@@ -21,11 +20,53 @@
   }
 
   .whiteLogo {
-    display: block !important;
+    opacity: 1;
+    transform: translate(-85%, -75%);
+    margin-top: 38px;
+    margin-left: 38px;
+    margin-right: 38px;
   }
 
-  .headerLogo .whiteLogo {
+  /* .headerLogo .whiteLogo {
     animation: whiteLogoFade 0.5s ease-in-out 0.5s forwards;
+  } */
+
+  @keyframes logo {
+    0% {
+      opacity: 0;
+      height: 160px;
+      width: 110px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-85%, -75%);
+    }
+    100% {
+      opacity: 1;
+      height: 78px;
+      width: 64px;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes whiteLogoFade {
+    0% {
+      opacity: 1;
+      height: 160px;
+      width: 110px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-85%, -75%);
+    }
+    100% {
+      opacity: 0;
+      height: 78px;
+      width: 64px;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+    }
   }
 
   header {
@@ -46,9 +87,6 @@
 
   header {
     padding: 34px;
-  }
-
-  .loginContainer {
     margin-bottom: 40px;
   }
 
@@ -85,6 +123,7 @@
     justify-content: center;
     align-items: center;
     gap: 12px;
+    margin-top: 20px;
   }
 }
 
@@ -110,6 +149,10 @@
   .legalLink a {
     font-size: 14px;
   }
+
+  header {
+    margin-bottom: 35px;
+  }
 }
 
 @media (max-height: 667px) {
@@ -119,11 +162,6 @@
 
   h1 {
     font-size: 34px;
-  }
-
-  .loginContainer {
-    margin-bottom: 24px;
-    margin-top: 16px;
   }
 
   .loginForm {
@@ -154,11 +192,6 @@
 }
 
 @media (max-height: 740px) {
-  .loginContainer {
-    margin-bottom: 20px;
-    margin-top: 0;
-  }
-
   .loginButtonsContainer {
     gap: 14px;
     margin-top: 10px;
@@ -191,25 +224,13 @@
     height: 51px;
     width: 150px;
   }
-}
 
-@media (min-width: 1020px) and (max-height: 610px) {
   main {
-    margin-top: 12dvh;
-  }
-}
-
-@media (min-width: 1020px) and (max-height: 850px) {
-  main {
-    margin-top: 10dvh;
+    height: 87%;
   }
 }
 
 @media (min-height: 1180px) and (min-width: 1921px) {
-  main {
-    margin-top: 16vh;
-  }
-
   h1 {
     font-size: 86px;
   }
@@ -228,8 +249,8 @@
     height: 26px;
   }
 
-  .headerLogo img {
-    transform: translate(-85%, -85%);
+  .blueLogo {
+    transform: translate(-80%, -60%);
   }
 
   @keyframes logo {
@@ -238,7 +259,7 @@
       width: 290px;
       top: 50%;
       left: 50%;
-      transform: translate(-85%, -85%);
+      transform: translate(-80%, -60%);
     }
 
     100% {
@@ -253,10 +274,10 @@
 
 @media (min-height: 800px) and (max-height: 801px) and (min-width: 1280px) {
   main {
-    margin-top: 8vh;
+    height: 82%;
   }
 
-  .headerLogo img {
+  .blueLogo {
     transform: translate(-90%, -80%);
   }
 
@@ -276,5 +297,17 @@
       left: 0;
       transform: translate(0, 0);
     }
+  }
+}
+
+@media (min-height: 600px) and (max-height: 601px) and (min-width: 1024px) {
+  main {
+    height: 69%;
+  }
+}
+
+@media (max-height: 920px) and (min-width: 1920px) {
+  main {
+    height: 80%;
   }
 }
