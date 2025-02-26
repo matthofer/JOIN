@@ -1,7 +1,16 @@
+/**
+ * 
+ * This function open a new Page by click on the Div
+ * @param {*} htmlFileName = filepath which gets open e.g. "login.html"
+ */
 function openPage(htmlFileName) {
   window.location = htmlFileName;
 }
 
+/**
+ * This function gets the Userinitials and put them in the Header
+ * 
+ */
 function initLoad() {
   let userInitials = sessionStorage.getItem("userInitials");
   if (userInitials) {
@@ -11,16 +20,30 @@ function initLoad() {
   }
 }
 
+/**
+ * This function highlight the current page at the sidebar or mobilefooter
+ * 
+ * @param {*} idDesktop 
+ * @param {*} idMobile 
+ */
 function highlightNavLink(idDesktop, idMobile) {
   document.getElementById(idDesktop).classList.add('markedLink')
   document.getElementById(idMobile).classList.add('markedLink')
 }
 
+/**
+ * This function toggle the BurgerMenu at the Header
+ * 
+ */
 function toggleBurgerMenu(){
   let btn = document.getElementById('burgerMenu');
   btn.classList.toggle('slideBurgerMenu');
 }
 
+/**
+ * This function log the user out and clears the sessionstorage
+ * 
+ */
 function logOut(){
   sessionStorage.removeItem('userName')
   sessionStorage.removeItem('userInitials')
@@ -28,6 +51,11 @@ function logOut(){
   sessionStorage.removeItem('animationPlayed')
 }
 
+/**
+ * This function closes the BurgerMenu even when clicking outside from the menu 
+ * 
+ * @returns nothing just stop the function when the burgermenu is not open 
+ */
 function closeBurgerMenu(){
   let openMenu = document.getElementById('burgerMenu');
   if (!openMenu.classList.contains('slideBurgerMenu')) {
