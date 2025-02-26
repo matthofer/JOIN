@@ -14,153 +14,155 @@
     />
   </head>
   <body>
-    <header>
-      <div class="headerLogo">
-        <img src="./assets/icons/logo-blue.svg" alt="Logo" />
-      </div>
-    </header>
-    <main>
-      <div id="overlay" class="overlay d-none">
-        <div id="message" class="message">
-          <p id="messageText">
-            You Signed Up successfully. <br />
-            Redirecting to Log In...
-          </p>
+    <div class="signUpWrapper">
+      <header>
+        <div class="headerLogo">
+          <img src="./assets/icons/logo-blue.svg" alt="Logo" />
         </div>
-      </div>
-      <div class="loginContainer">
-        <div class="loginForm">
-          <div class="signUpHeader">
-            <a href="./login.html">
+      </header>
+      <main>
+        <div id="overlay" class="overlay d-none">
+          <div id="message" class="message">
+            <p id="messageText">
+              You Signed Up successfully. <br />
+              Redirecting to Log In...
+            </p>
+          </div>
+        </div>
+        <div class="signUpContainer">
+          <div class="loginForm">
+            <div class="signUpHeader">
+              <a href="./login.html">
+                <img
+                  class="returnButton"
+                  src="./assets/icons/back-arrow-signup.svg"
+                  alt="Back"
+                />
+              </a>
+              <h1>Sign up</h1>
+            </div>
+            <div class="separator"></div>
+            <div class="formGroup">
+              <input placeholder="Name" type="text" id="name" />
               <img
-                class="returnButton"
-                src="./assets/icons/back-arrow-signup.svg"
-                alt="Back"
+                class="pointerEvent"
+                src="./assets/icons/person.svg"
+                alt="Name"
               />
-            </a>
-            <h1>Sign up</h1>
-          </div>
-          <div class="separator"></div>
-          <div class="formGroup">
-            <input placeholder="Name" type="text" id="name" />
-            <img
-              class="pointerEvent"
-              src="./assets/icons/person.svg"
-              alt="Name"
-            />
-          </div>
-          <div class="formGroup">
-            <input placeholder="Email" type="text" id="email" />
-            <img
-              class="pointerEvent"
-              src="./assets/icons/mail.svg"
-              alt="Email"
-            />
-          </div>
-          <div class="formGroup">
-            <img
-              id="eyeIcon"
-              class="cursorPointer d-none"
-              onclick="showPassword()"
-              src="./assets/icons/visibility_on.svg"
-              alt="hidePassword"
-            />
-            <img
-              id="crossedEyeIcon"
-              class="cursorPointer d-none"
-              onclick="showPassword()"
-              src="./assets/icons/visibility_off.svg"
-              alt="showPassword"
-            />
-            <img
-              id="lockIcon"
-              class="pointerEvent"
-              src="./assets/icons/lock.svg"
-              alt="Password"
-            />
-            <input
-              oninput="checkPasswordInput()"
-              placeholder="Password"
-              type="password"
-              id="password"
-              maxlength="20"
-            />
-          </div>
-          <div class="formGroup">
-            <img
-              id="confirmEyeIcon"
-              class="cursorPointer d-none"
-              onclick="showConfirmPassword()"
-              src="./assets/icons/visibility_on.svg"
-              alt="hidePassword"
-            />
-            <img
-              id="confirmCrossedEyeIcon"
-              class="cursorPointer d-none"
-              onclick="showConfirmPassword()"
-              src="./assets/icons/visibility_off.svg"
-              alt="showPassword"
-            />
-            <img
-              id="confirmLockIcon"
-              class="pointerEvent"
-              src="./assets/icons/lock.svg"
-              alt="Password"
-            />
-            <input
-              oninput="checkConfirmPasswordInput()"
-              placeholder="Confirm Password"
-              type="password"
-              id="confirmPassword"
-              maxlength="20"
-            />
-          </div>
-          <div class="privacyCheckbox">
-            <label for="customCheckbox" class="customCheckbox">
+            </div>
+            <div class="formGroup">
+              <input placeholder="Email" type="text" id="email" />
+              <img
+                class="pointerEvent"
+                src="./assets/icons/mail.svg"
+                alt="Email"
+              />
+            </div>
+            <div class="formGroup">
+              <img
+                id="eyeIcon"
+                class="cursorPointer d-none"
+                onclick="showPassword()"
+                src="./assets/icons/visibility_on.svg"
+                alt="hidePassword"
+              />
+              <img
+                id="crossedEyeIcon"
+                class="cursorPointer d-none"
+                onclick="showPassword()"
+                src="./assets/icons/visibility_off.svg"
+                alt="showPassword"
+              />
+              <img
+                id="lockIcon"
+                class="pointerEvent"
+                src="./assets/icons/lock.svg"
+                alt="Password"
+              />
               <input
-                type="checkbox"
-                id="customCheckbox"
-                class="originalCheckbox"
+                oninput="checkPasswordInput()"
+                placeholder="Password"
+                type="password"
+                id="password"
+                maxlength="20"
+              />
+            </div>
+            <div class="formGroup">
+              <img
+                id="confirmEyeIcon"
+                class="cursorPointer d-none"
+                onclick="showConfirmPassword()"
+                src="./assets/icons/visibility_on.svg"
+                alt="hidePassword"
               />
               <img
-                src="./assets/icons/checkbox-unticked.svg"
-                alt="Unchecked"
-                class="checkboxIcon unchecked"
+                id="confirmCrossedEyeIcon"
+                class="cursorPointer d-none"
+                onclick="showConfirmPassword()"
+                src="./assets/icons/visibility_off.svg"
+                alt="showPassword"
               />
               <img
-                src="./assets/icons/checkbox-ticked.svg"
-                alt="Checked"
-                class="checkboxIcon checked d-none"
+                id="confirmLockIcon"
+                class="pointerEvent"
+                src="./assets/icons/lock.svg"
+                alt="Password"
               />
-            </label>
-            <span>I accept the</span>
-            <a href="./privacy_policy.html">Privacy Policy</a>
+              <input
+                oninput="checkConfirmPasswordInput()"
+                placeholder="Confirm Password"
+                type="password"
+                id="confirmPassword"
+                maxlength="20"
+              />
+            </div>
+            <div class="privacyCheckbox">
+              <label for="customCheckbox" class="customCheckbox">
+                <input
+                  type="checkbox"
+                  id="customCheckbox"
+                  class="originalCheckbox"
+                />
+                <img
+                  src="./assets/icons/checkbox-unticked.svg"
+                  alt="Unchecked"
+                  class="checkboxIcon unchecked"
+                />
+                <img
+                  src="./assets/icons/checkbox-ticked.svg"
+                  alt="Checked"
+                  class="checkboxIcon checked d-none"
+                />
+              </label>
+              <span>I accept the</span>
+              <a href="./privacy_policy.html">Privacy Policy</a>
+            </div>
+            <div class="loginButtonsContainer">
+              <button
+                id="signUpButton"
+                onclick="handleSignup()"
+                class="loginButton"
+                type="button"
+              >
+                Sign up
+              </button>
+            </div>
+            <div id="addErrorMessage"></div>
           </div>
-          <div class="loginButtonsContainer">
-            <button
-              id="signUpButton"
-              onclick="handleSignup()"
-              class="loginButton"
-              type="button"
-            >
-              Sign up
-            </button>
-          </div>
-          <div id="addErrorMessage"></div>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div class="privacyLink">
-        <a href="./privacy_policy.html">Privacy Policy</a>
-      </div>
-      <div class="legalLink">
-        <a href="./legal_notice.html">Legal notice</a>
-      </div>
-    </footer>
-    <script src="./script.js"></script>
-    <script src="./scripts/signup.js"></script>
-    <script src="./scripts/firebase.js"></script>
-    <script src="./scripts/signup_validation.js"></script>
+      </main>
+      <footer>
+        <div class="privacyLink">
+          <a href="./privacy_policy.html">Privacy Policy</a>
+        </div>
+        <div class="legalLink">
+          <a href="./legal_notice.html">Legal notice</a>
+        </div>
+      </footer>
+      <script src="./script.js"></script>
+      <script src="./scripts/signup.js"></script>
+      <script src="./scripts/firebase.js"></script>
+      <script src="./scripts/signup_validation.js"></script>
+    </div>
   </body>
 </html>

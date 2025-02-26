@@ -10,9 +10,9 @@
     width: 110px;
     opacity: 0;
     transform: translate(-85%, -75%);
-    margin-top: 38px;
-    margin-left: 38px;
-    margin-right: 38px;
+    margin-top: 34px;
+    margin-left: 34px;
+    margin-right: 34px;
   }
 
   .overlay {
@@ -22,9 +22,9 @@
   .whiteLogo {
     opacity: 1;
     transform: translate(-85%, -75%);
-    margin-top: 38px;
-    margin-left: 38px;
-    margin-right: 38px;
+    margin-top: 34px;
+    margin-left: 34px;
+    margin-right: 34px;
   }
 
   @keyframes logo {

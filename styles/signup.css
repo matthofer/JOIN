@@ -11,13 +11,19 @@ body {
   margin: 0 auto;
 }
 
+.signUpWrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 100dvh;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   background-color: #f6f7f8;
   padding-left: 64px;
   padding-right: 64px;
-  padding-top: 64px;
+  padding-top: 30px;
 }
 
 .headerLogo img {
@@ -29,12 +35,20 @@ header {
   padding-right: 64px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 66%;
+  flex: 1;
+}
+
 .loginContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex: 1;
-  margin-top: 0px;
-  margin-bottom: 80px;
 }
 
 .loginForm {
