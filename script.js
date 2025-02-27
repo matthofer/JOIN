@@ -85,6 +85,10 @@ function getCurrentDate() {
   return `${year}-${month}-${day}`;
 }
 
+/**
+ * This function sets the current date in the min attribute of the add task date picker
+ *
+ */
 function setCurrentDateInDatePicker() {
   const currentDate = getCurrentDate();
   document.getElementById("date").min = currentDate;
