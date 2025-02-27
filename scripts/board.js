@@ -28,6 +28,7 @@ async function initAddTaskBoard() {
   renderCategorys();
   submitSubtaskWithEnter();
   initLoad();
+  setCurrentDateInDatePicker();
 }
 
 /**
@@ -39,6 +40,7 @@ async function initAddTaskForEdit() {
   renderDropdownContacts();
   submitSubtaskWithEnter();
   initLoad();
+  setCurrentDateInDatePicker();
 }
 
 /**

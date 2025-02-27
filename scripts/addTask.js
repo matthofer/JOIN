@@ -5,8 +5,8 @@ let currentlyContacts = [];
 
 /**
  * This function starts when the HTML-Body is loaded
- *  
- * 
+ *
+ *
  */
 async function initAddTask() {
   await loadContactsData();
@@ -16,11 +16,12 @@ async function initAddTask() {
   submitSubtaskWithEnter();
   initLoad();
   highlightNavLink("taskLink", "taskLinkResp");
+  setCurrentDateInDatePicker();
 }
 
 /**
  * This function change the pirority Button
- * 
+ *
  * @param {*} id = id fron the Button
  * @param {*} svg = svg from the Button
  */
@@ -51,8 +52,8 @@ function changePrio(id, svg) {
 
 /**
  * This function read the current Prioriy
- * 
-* @returns the current Priority
+ *
+ * @returns the current Priority
  */
 function returnPrio() {
   let buttons = ["urgent", "medium", "low"];
@@ -65,9 +66,9 @@ function returnPrio() {
 
 /**
  *This function close the Category Dropdown
- *  
+ *
  */
- function toggleDropdownCategorys() {
+function toggleDropdownCategorys() {
   let dropdown = document.getElementById("categorys");
   let inputImg = document.getElementById("categorysDropdown");
   dropdown.classList.toggle("dropdown");
@@ -81,8 +82,8 @@ function returnPrio() {
 }
 
 /**
- * This function render the Category in the dropdown menu 
- * 
+ * This function render the Category in the dropdown menu
+ *
  */
 function renderCategorys() {
   let html = document.getElementById("categorys");
@@ -99,7 +100,7 @@ function renderCategorys() {
 
 /**
  * This function put the selected Category in the Inputfield
- * 
+ *
  * @param {*} categorysIndex = the index of a single Category
  */
 function selectCategory(categorysIndex) {
@@ -111,7 +112,7 @@ function selectCategory(categorysIndex) {
 
 /**
  * This function clears a Inputfield
- * 
+ *
  * @param {*} id = id from the Inputfield
  */
 function clearInput(id) {
@@ -139,10 +140,9 @@ function clearForm() {
   renderSubtasks();
 }
 
-
 /**
- * This function validate the InputFields 
- * 
+ * This function validate the InputFields
+ *
  * @param {*} id = Id from the Input
  * @param {*} infoId = Id from the ValidateMeassage
  */
@@ -162,8 +162,8 @@ function validateInputFields(id, infoId) {
 
 /**
  * This function set the border Blue from a InputField
- * 
- * @param {*} id = ID from the Input 
+ *
+ * @param {*} id = ID from the Input
  */
 function getBlueBorder(id) {
   setTimeout(() => {
@@ -177,9 +177,9 @@ function getBlueBorder(id) {
 }
 
 /**
- * This function collect the Data from the entire Form 
- * 
-* @param {*} specificType = type from the Task e.g. "done"
+ * This function collect the Data from the entire Form
+ *
+ * @param {*} specificType = type from the Task e.g. "done"
  * @returns entire form as a object
  */
 function collectData(specificType) {
@@ -204,7 +204,7 @@ function collectData(specificType) {
 
 /**
  * This function gets the right contact data
- * 
+ *
  * @returns the contacts data as a object
  */
 function getContactsForFB() {
@@ -222,8 +222,8 @@ function getContactsForFB() {
 
 /**
  * This function collect all Subtask and add to them a "done = false"
- * 
- * @returns the subtasks as a Object 
+ *
+ * @returns the subtasks as a Object
  */
 function getSubtasksForFB() {
   let subtasksOBJ = {};
@@ -239,7 +239,7 @@ function getSubtasksForFB() {
 
 /**
  * This function shows a toastMeassage when a new task is created
- * 
+ *
  */
 function showToast() {
   let toast = document.getElementById("toastMSG");
@@ -251,7 +251,7 @@ function showToast() {
 
 /**
  * This function validate the form, post the data as a object to firebase, clear the form and show the toastMeassage
- * 
+ *
  * @param {*} type = type from a Task e.g. "done"
  */
 async function submitForm(type) {
