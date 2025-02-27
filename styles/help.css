@@ -89,6 +89,10 @@
   overflow-x: hidden;
 }
 
+.policyWidth {
+  max-width: 100% !important;
+}
+
 @media (max-width: 850px) {
   .headerAndMainHelp{
     margin-left: 0;
@@ -100,5 +104,15 @@
 
     .helpList{
         gap: 12px;
+    }
+}
+
+@media (min-width: 1920px) {
+  .textWrapper {
+    width: clamp(1000px, 100%, 1564px);  
+  }
+    .headlineWrapper{
+      width: clamp(1000px, 100%, 1564px);  
+
     }
 }

@@ -1,60 +1,68 @@
 .mainContent {
-    --sb-track-color: #f6f7f8;
-    --sb-thumb-color: #a8a8a8;
-    --sb-size: 20px;
-  }
-  
-  .mainContent::-webkit-scrollbar {
-    width: var(--sb-size)
-  }
-  
-  .mainContent::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-    border-radius: 20px;
-  }
-  
-  .mainContent::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border-radius: 20px;
-    border: 8px solid #f6f7f8;
-  }
-  
-  @supports not selector(::-webkit-scrollbar) {
-    .mainContent {
-      scrollbar-color: var(--sb-thumb-color)
-                       var(--sb-track-color);
-    }
-  }
-
-  .mainContent{
-    position: fixed;
-    left: 232px;
-    top: 96px;
-    bottom: 0px;
-    overflow-y: scroll;
+  --sb-track-color: #f6f7f8;
+  --sb-thumb-color: #a8a8a8;
+  --sb-size: 20px;
 }
 
-.legalWrapper{
-    font-weight: 400;
+.mainContent::-webkit-scrollbar {
+  width: var(--sb-size)
 }
 
-.lightBlueFont{
-    color: #29ABE2;
-    text-decoration: none;
+.mainContent::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 20px;
 }
 
-ul{
-    padding-left: 16px;
+.mainContent::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 20px;
+  border: 8px solid #f6f7f8;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .mainContent {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+.mainContent {
+  position: fixed;
+  left: 232px;
+  top: 96px;
+  bottom: 0px;
+  overflow-y: scroll;
+}
+
+.policyWidth {
+  max-width: 100% !important;
+}
+
+.legalWrapper {
+  font-weight: 400;
+}
+
+.lightBlueFont {
+  color: #29ABE2;
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 16px;
 }
 
 
 @media (max-width: 850px) {
-    .mainContent{
-        position: unset;
-    }
+  .mainContent {
+    position: unset;
+  }
 
-    .mainHeadline{
-        font-size: 42px;
-    }
+  .mainHeadline {
+    font-size: 42px;
+  }
 
+}
+
+@media (min-width: 1920px) {
+  .textWrapper {
+    width: clamp(1000px, 100%, 1564px);  }
 }

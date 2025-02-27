@@ -1,231 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./styles/fonts.css" />
-    <link rel="stylesheet" href="./styles/help.css" />
-    <title>Help</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="./assets/icons/fav_join_logo.png"
-    />
-    <script src="./script.js"></script>
-  </head>
 
-  <body onload="initLoad()" onclick="closeBurgerMenu()">
-    <div class="contentHelp">
-      <div class="sidebar">
-        <div class="sidebarTop">
-          <img class="sidebarLogo" src="./assets/icons/logo.svg" alt="Logo" />
-          <div class="navContent">
-            <div onclick="openPage('summary.html')" class="navButton" tabindex="0">
-              <img class="navSvg" src="./assets/icons/summary_grey.svg" alt="" />
-              <a href="#">Summary</a>
-            </div>
-            <div id="taskLink" onclick="openPage('addTask.html')" class="navButton" tabindex="0">
-              <img class="navSvg" src="./assets/icons/add-task-grey.svg" alt="" />
-              <a href="#">Add Task</a>
-            </div>
-            <div onclick="openPage('board.html')" class="navButton" tabindex="0">
-              <img class="navSvg" src="./assets/icons/board-grey.svg" alt="" />
-              <a href="#">Board</a>
-            </div>
-            <div onclick="openPage('contacts.html')" class="navButton" tabindex="0">
-              <img class="navSvg" src="./assets/icons/contacts-grey.svg" alt="" />
-              <a href="#">Contacts</a>
-            </div>
-          </div>
-        </div>
-        <div class="sidebarBottom">
-          <div onclick="openPage('privacy-policy.html')" class="policyLinks" tabindex="0">
-            <a href="#">Privacy Policy</a>
-          </div>
-          <div onclick="openPage('legal-notice.html')" class="policyLinks" tabindex="0">
-            <a href="#">Legal notice</a>
-          </div>
-        </div>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./styles/fonts.css" />
+  <link rel="stylesheet" href="./styles/help.css" />
+  <title>Help</title>
+  <link rel="icon" type="image/x-icon" href="./assets/icons/fav_join_logo.png" />
+  <script src="./script.js"></script>
+</head>
 
-      <div class="headerAndMainHelp">
-        <header>
-          <div class="headerContent stdPadding">
-            <img class="headerLogoResp" src="./assets/icons/resp_logo.svg" />
-            <h3 class="headerText">Kanban Project Management Tool</h3>
-            <div class="headerRight">
-              <a class="helpDesktop" href="./help.html"><img src="./assets/icons/help.svg" alt="" srcset="" /></a>
-              <div onclick="event.stopPropagation(); toggleBurgerMenu()" class="userIcon" id="userInitials"></div>
-              <div class="burgerMenu slideBurgerMenu" id="burgerMenu">
-                <a class="help" href="./help.html">Help</a>
-                <a href="./legal-notice.html">Legal Notice</a>
-                <a href="./privacy-policy.html">Privacy Policy</a>
-                <a onclick="logOut()" href="./login.html">Log out</a>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        <main>
-          <div class="mainContent stdPadding">
-            <div class="headlineWrapper">
-              <h1 class="mainHeadline">Help</h1>
-              <button class="backBTN" onclick="history.back()">
-                <img
-                  src="./assets/icons/arrow-left-line.svg"
-                  alt="Lightblue back button"
-                  srcset=""
-                />
-              </button>
-            </div>
-
-            <div class="helpWrapper">
-              <br />
-              <br />
-              <br />
-              Welcome to the help page for
-              <span class="lightBlueFont">Join</span>, your guide to using our
-              kanban project management tool. Here, we'll provide an overview of
-              what <span class="lightBlueFont">Join</span> is, how it can
-              benefit you, and how to use it. <br /><br />
-              <h2>What is Join?</h2>
-              <br />
-              <span class="lightBlueFont">Join</span> is a kanban-based project
-              management tool designed and built by a group of dedicated
-              students as part of their web development bootcamp at the
-              Developer Akademie.
-              <br />
-              <br />
-              Kanban, a Japanese term meaning "billboard", is a highly effective
-              method to visualize work, limit work-in-progress, and maximize
-              efficiency (or flow).
-              <span class="lightBlueFont">Join</span> leverages the principles
-              of kanban to help users manage their tasks and projects in an
-              intuitive, visual interface.
-              <br />
-              <br />
-              It is important to note that
-              <span class="lightBlueFont">Join</span> is designed as an
-              educational exercise and is not intended for extensive business
-              usage. While we strive to ensure the best possible user
-              experience, we cannot guarantee consistent availability,
-              reliability, accuracy, or other aspects of quality regarding
-              <span class="lightBlueFont">Join</span>.
-              <br />
-              <br />
-              <br />
-              <h2>How to use it</h2>
-              <br />
-              <br />
-              Here is a step-by-step guide on how to use
-              <span class="lightBlueFont">Join</span>:
-              <br />
-              <br />
-              <div class="helpList">
-                <div>
-                  <h2>1.</h2>
-                </div>
-                <div>
-                  <h3>Exploring the Board</h3>
-                  When you log in to <span class="lightBlueFont">Join</span>,
-                  you'll find a default board. This board represents your
-                  project and contains four default lists: "To Do", "In
-                  Progress", “Await feedback” and "Done".
-                </div>
-              </div>
-
-              <div class="helpList">
-                <div>
-                  <h2>2.</h2>
-                </div>
-                <div>
-                  <h3>Creating Contacts</h3>
-                  In <span class="lightBlueFont">Join</span>, you can add
-                  contacts to collaborate on your projects. Go to the "Contacts"
-                  section, click on "New contact", and fill in the required
-                  information. Once added, these contacts can be assigned tasks
-                  and they can interact with the tasks on the board.
-                </div>
-              </div>
-
-              <div class="helpList">
-                <div>
-                  <h2>3.</h2>
-                </div>
-                <div>
-                  <h3>Adding Cards</h3>
-                  Now that you've added your contacts, you can start adding
-                  cards. Cards represent individual tasks. Click the "+" button
-                  under the appropriate list to create a new card. Fill in the
-                  task details in the card, like task name, description, due
-                  date, assignees, etc.
-                </div>
-              </div>
-
-              <div class="helpList">
-                <div>
-                  <h2>4.</h2>
-                </div>
-                <div>
-                  <h3>Moving Cards</h3>
-                  As the task moves from one stage to another, you can reflect
-                  that on the board by dragging and dropping the card from one
-                  list to another.
-                </div>
-              </div>
-
-              <div class="helpList">
-                <div>
-                  <h2>5.</h2>
-                </div>
-                <div>
-                  <h3>Deleting Cards</h3>
-                  Once a task is completed, you can either move it to the "Done"
-                  list or delete it. Deleting a card will permanently remove it
-                  from the board. Please exercise caution when deleting cards,
-                  as this action is irreversible. Remember that using
-                  <span class="lightBlueFont">Join</span> effectively requires
-                  consistent updates from you and your team to ensure the board
-                  reflects the current state of your project. Have more
-                  questions about <span class="lightBlueFont">Join</span>? Feel
-                  free to contact us at [Your Contact Email]. We're here to help
-                  you!
-                </div>
-              </div>
-              <br />
-              <br />
-              <br />
-              <h3>Enjoy using Join!</h3>
-              <br />
-              <br />
-              <br />
-            </div>
-          </div>
-        </main>
-      </div>
-
-      <div class="respNavbar">
-        <div class="respNavbarContent">
-          <div onclick="openPage('summary.html')" class="respNavButton" tabindex="0">
+<body onload="initLoad()" onclick="closeBurgerMenu()">
+  <div class="contentHelp">
+    <div class="sidebar">
+      <div class="sidebarTop">
+        <img class="sidebarLogo" src="./assets/icons/logo.svg" alt="Logo" />
+        <div class="navContent">
+          <div onclick="openPage('summary.html')" class="navButton" tabindex="0">
             <img class="navSvg" src="./assets/icons/summary_grey.svg" alt="" />
             <a href="#">Summary</a>
           </div>
-          <div onclick="openPage('board.html')" class="respNavButton" tabindex="0">
+          <div id="taskLink" onclick="openPage('addTask.html')" class="navButton" tabindex="0">
+            <img class="navSvg" src="./assets/icons/add-task-grey.svg" alt="" />
+            <a href="#">Add Task</a>
+          </div>
+          <div onclick="openPage('board.html')" class="navButton" tabindex="0">
             <img class="navSvg" src="./assets/icons/board-grey.svg" alt="" />
             <a href="#">Board</a>
           </div>
-          <div id="taskLinkResp" onclick="openPage('addtask.html')" class="respNavButton" tabindex="0">
-            <img class="navSvg" src="./assets/icons/add-task-grey.svg" alt="" />
-            <a href="#">Add Tasks</a>
-          </div>
-          <div onclick="openPage('contacts.html')" class="respNavButton" tabindex="0">
+          <div onclick="openPage('contacts.html')" class="navButton" tabindex="0">
             <img class="navSvg" src="./assets/icons/contacts-grey.svg" alt="" />
-            <a href="#">contacts</a>
+            <a href="#">Contacts</a>
           </div>
         </div>
       </div>
+      <div class="sidebarBottom">
+        <div onclick="openPage('privacy-policy.html')" class="policyLinks" tabindex="0">
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div onclick="openPage('legal-notice.html')" class="policyLinks" tabindex="0">
+          <a href="#">Legal notice</a>
+        </div>
+      </div>
     </div>
-  </body>
+  </div>
+
+  <div class="headerAndMainHelp">
+    <header>
+      <div class="headerContent stdPadding">
+        <img class="headerLogoResp" src="./assets/icons/resp_logo.svg" />
+        <h3 class="headerText">Kanban Project Management Tool</h3>
+        <div class="headerRight">
+          <a class="helpDesktop" href="./help.html"><img src="./assets/icons/help.svg" alt="" srcset="" /></a>
+          <div onclick="event.stopPropagation(); toggleBurgerMenu()" class="userIcon" id="userInitials"></div>
+          <div class="burgerMenu slideBurgerMenu" id="burgerMenu">
+            <a class="help" href="./help.html">Help</a>
+            <a href="./legal-notice.html">Legal Notice</a>
+            <a href="./privacy-policy.html">Privacy Policy</a>
+            <a onclick="logOut()" href="./login.html">Log out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="mainContent stdPadding policyWidth">
+        <div class="headlineWrapper">
+          <h1 class="mainHeadline">Help</h1>
+          <button class="backBTN" onclick="history.back()">
+            <img src="./assets/icons/arrow-left-line.svg" alt="Lightblue back button" srcset="" />
+          </button>
+        </div>
+
+        <div class="helpWrapper">
+          <div class="textWrapper">
+            <br />
+            <br />
+            <br />
+            Welcome to the help page for
+            <span class="lightBlueFont">Join</span>, your guide to using our
+            kanban project management tool. Here, we'll provide an overview of
+            what <span class="lightBlueFont">Join</span> is, how it can
+            benefit you, and how to use it. <br /><br />
+            <h2>What is Join?</h2>
+            <br />
+            <span class="lightBlueFont">Join</span> is a kanban-based project
+            management tool designed and built by a group of dedicated
+            students as part of their web development bootcamp at the
+            Developer Akademie.
+            <br />
+            <br />
+            Kanban, a Japanese term meaning "billboard", is a highly effective
+            method to visualize work, limit work-in-progress, and maximize
+            efficiency (or flow).
+            <span class="lightBlueFont">Join</span> leverages the principles
+            of kanban to help users manage their tasks and projects in an
+            intuitive, visual interface.
+            <br />
+            <br />
+            It is important to note that
+            <span class="lightBlueFont">Join</span> is designed as an
+            educational exercise and is not intended for extensive business
+            usage. While we strive to ensure the best possible user
+            experience, we cannot guarantee consistent availability,
+            reliability, accuracy, or other aspects of quality regarding
+            <span class="lightBlueFont">Join</span>.
+            <br />
+            <br />
+            <br />
+            <h2>How to use it</h2>
+            <br />
+            <br />
+            Here is a step-by-step guide on how to use
+            <span class="lightBlueFont">Join</span>:
+            <br />
+            <br />
+            <div class="helpList">
+              <div>
+                <h2>1.</h2>
+              </div>
+              <div>
+                <h3>Exploring the Board</h3>
+                When you log in to <span class="lightBlueFont">Join</span>,
+                you'll find a default board. This board represents your
+                project and contains four default lists: "To Do", "In
+                Progress", “Await feedback” and "Done".
+              </div>
+            </div>
+
+            <div class="helpList">
+              <div>
+                <h2>2.</h2>
+              </div>
+              <div>
+                <h3>Creating Contacts</h3>
+                In <span class="lightBlueFont">Join</span>, you can add
+                contacts to collaborate on your projects. Go to the "Contacts"
+                section, click on "New contact", and fill in the required
+                information. Once added, these contacts can be assigned tasks
+                and they can interact with the tasks on the board.
+              </div>
+            </div>
+
+            <div class="helpList">
+              <div>
+                <h2>3.</h2>
+              </div>
+              <div>
+                <h3>Adding Cards</h3>
+                Now that you've added your contacts, you can start adding
+                cards. Cards represent individual tasks. Click the "+" button
+                under the appropriate list to create a new card. Fill in the
+                task details in the card, like task name, description, due
+                date, assignees, etc.
+              </div>
+            </div>
+
+            <div class="helpList">
+              <div>
+                <h2>4.</h2>
+              </div>
+              <div>
+                <h3>Moving Cards</h3>
+                As the task moves from one stage to another, you can reflect
+                that on the board by dragging and dropping the card from one
+                list to another.
+              </div>
+            </div>
+
+            <div class="helpList">
+              <div>
+                <h2>5.</h2>
+              </div>
+              <div>
+                <h3>Deleting Cards</h3>
+                Once a task is completed, you can either move it to the "Done"
+                list or delete it. Deleting a card will permanently remove it
+                from the board. Please exercise caution when deleting cards,
+                as this action is irreversible. Remember that using
+                <span class="lightBlueFont">Join</span> effectively requires
+                consistent updates from you and your team to ensure the board
+                reflects the current state of your project. Have more
+                questions about <span class="lightBlueFont">Join</span>? Feel
+                free to contact us at [Your Contact Email]. We're here to help
+                you!
+              </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <h3>Enjoy using Join!</h3>
+            <br />
+            <br />
+            <br />
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="respNavbar">
+    <div class="respNavbarContent">
+      <div onclick="openPage('summary.html')" class="respNavButton" tabindex="0">
+        <img class="navSvg" src="./assets/icons/summary_grey.svg" alt="" />
+        <a href="#">Summary</a>
+      </div>
+      <div onclick="openPage('board.html')" class="respNavButton" tabindex="0">
+        <img class="navSvg" src="./assets/icons/board-grey.svg" alt="" />
+        <a href="#">Board</a>
+      </div>
+      <div id="taskLinkResp" onclick="openPage('addtask.html')" class="respNavButton" tabindex="0">
+        <img class="navSvg" src="./assets/icons/add-task-grey.svg" alt="" />
+        <a href="#">Add Tasks</a>
+      </div>
+      <div onclick="openPage('contacts.html')" class="respNavButton" tabindex="0">
+        <img class="navSvg" src="./assets/icons/contacts-grey.svg" alt="" />
+        <a href="#">contacts</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
 </html>
