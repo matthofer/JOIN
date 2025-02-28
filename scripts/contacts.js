@@ -1,4 +1,5 @@
-let FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
+let FB_URL =
+  "https://join-7aef3-default-rtdb.europe-west1.firebasedatabase.app/";
 let contacts = [];
 let activeContact = null;
 let intialColors = [

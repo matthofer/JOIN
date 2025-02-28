@@ -1,5 +1,5 @@
 const FB_URL =
-  "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
+  "https://join-7aef3-default-rtdb.europe-west1.firebasedatabase.app/";
 let isPasswordVisible = false;
 let isConfirmPasswordVisible = false;
 let signUpButton = document.getElementById("signUpButton");
@@ -20,7 +20,7 @@ let initialColors = [
 
 /**
  * Creates a new user with the provided name, email, and password.
- * 
+ *
  * @param {string} name - The name of the user.
  * @param {string} email - The email of the user.
  * @param {string} password - The password of the user.
@@ -38,7 +38,7 @@ async function createUser(name, email, password) {
 
 /**
  * Creates a user object with the provided name, email, and password and returns it.
- * 
+ *
  * @param {string} name - The name of the user.
  * @param {string} email - The email of the user.
  * @param {string} password - The password of the user.
@@ -53,7 +53,7 @@ function createUserObject(name, email, password) {
 
 /**
  * Sends user data to the database.
- * 
+ *
  * @param {Object} user - The user object to be sent.
  */
 async function sendUserData(user) {
@@ -72,7 +72,7 @@ async function sendUserData(user) {
 
 /**
  * Retrieves form values from the input fields and returns them as an object.
- * 
+ *
  */
 function getFormValues() {
   return {
@@ -98,7 +98,9 @@ async function handleSignup() {
     await createUser(name, email, password);
     await createNewContact(name, email);
     signUpButton.disabled = true;
-    showToastMessage("You Signed Up successfully. <br> Redirecting to Log In...");
+    showToastMessage(
+      "You Signed Up successfully. <br> Redirecting to Log In..."
+    );
     setTimeout(() => {
       redirectToLoginPage();
       clearFormFields();
@@ -130,7 +132,13 @@ function checkPasswordInput() {
   let { eyeIcon, crossedEyeIcon, lockIcon } = getIcons();
 
   if (passwordInput.value.length === 0) {
-    resetPasswordVisibility(passwordInput, lockIcon, eyeIcon, crossedEyeIcon, "password");
+    resetPasswordVisibility(
+      passwordInput,
+      lockIcon,
+      eyeIcon,
+      crossedEyeIcon,
+      "password"
+    );
   } else {
     updateIcons(lockIcon, eyeIcon, crossedEyeIcon, isPasswordVisible);
   }
@@ -144,7 +152,13 @@ function checkConfirmPasswordInput() {
   let { eyeIcon, crossedEyeIcon, lockIcon } = getConfirmIcons();
 
   if (confirmPasswordInput.value.length === 0) {
-    resetPasswordVisibility(confirmPasswordInput, lockIcon, eyeIcon, crossedEyeIcon, "confirmPassword");
+    resetPasswordVisibility(
+      confirmPasswordInput,
+      lockIcon,
+      eyeIcon,
+      crossedEyeIcon,
+      "confirmPassword"
+    );
   } else {
     updateIcons(lockIcon, eyeIcon, crossedEyeIcon, isConfirmPasswordVisible);
   }
@@ -176,7 +190,7 @@ function showConfirmPassword() {
 
 /**
  * Retrieves the icon elements for the password input field and returns them.
- * 
+ *
  */
 function getIcons() {
   return {
@@ -188,7 +202,7 @@ function getIcons() {
 
 /**
  * Retrieves the icon elements for the confirm password input field and returns them.
- * 
+ *
  */
 function getConfirmIcons() {
   return {
@@ -206,7 +220,13 @@ function getConfirmIcons() {
  * @param {HTMLElement} crossedEyeIcon - The crossed eye icon element.
  * @param {string} inputType - The type of input ("password" or "confirmPassword").
  */
-function resetPasswordVisibility(input, lockIcon, eyeIcon, crossedEyeIcon, inputType) {
+function resetPasswordVisibility(
+  input,
+  lockIcon,
+  eyeIcon,
+  crossedEyeIcon,
+  inputType
+) {
   if (inputType === "password") {
     isPasswordVisible = false;
   } else if (inputType === "confirmPassword") {
@@ -325,7 +345,7 @@ function showToastMessage(message) {
 
 /**
  * Fetches all users from the database.
- * 
+ *
  */
 async function fetchUsers() {
   let response = await fetch(FB_URL + "/users.json");
@@ -366,7 +386,7 @@ checkbox.addEventListener("change", () => {
 
 /**
  * Creates a new contact with the provided name and email.
- * 
+ *
  * @param {string} name - The name of the contact.
  * @param {string} email - The email of the contact.
  */
@@ -386,7 +406,7 @@ async function createNewContact(name, email) {
 
 /**
  * Returns a random color from the `initialColors` array.
- * 
+ *
  */
 function getRandomInitialColor() {
   let randIndex = Math.floor(Math.random() * initialColors.length);

@@ -1,8 +1,9 @@
-let FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
+let FB_URL =
+  "https://join-7aef3-default-rtdb.europe-west1.firebasedatabase.app/";
 
 /**
  * This function starts when the HTML-Body is loaded
- * 
+ *
  */
 async function init() {
   initLoad();
@@ -20,7 +21,7 @@ async function init() {
 
 /**
  * This function count the total amount of all tasks
- * 
+ *
  */
 async function getAmountofAllTasks() {
   let tasks = document.getElementById("totalTasks");
@@ -36,7 +37,7 @@ async function getAmountofAllTasks() {
 
 /**
  * This function count the total amount of tasks in a specific type
- * 
+ *
  * @param {*} id = the document id which the number of the amount gets rendered
  * @param {*} type = the type of the Task e.g. "done"
  */
@@ -99,9 +100,9 @@ async function getAmountofUrgent() {
 }
 
 /**
- * This function formats the date of the closeds date which gets renderd 
- * 
- * @param {This function} dateString 
+ * This function formats the date of the closeds date which gets renderd
+ *
+ * @param {This function} dateString
  * @returns the formated date e.g. April 26, 2025
  */
 function formatDate(dateString) {
@@ -126,11 +127,11 @@ function formatDate(dateString) {
 /**
  * This function greet the user when he is logged in, greeting is depend on the daytime.
  * Also when logged in as a guest, the greeting function works the same.
- * 
+ *
  */
 function greeting() {
-  let guest = sessionStorage.getItem('loggedIn');
-  let html = document.getElementById('greet');
+  let guest = sessionStorage.getItem("loggedIn");
+  let html = document.getElementById("greet");
   let name = sessionStorage.getItem("userName");
   let time = new Date();
   let hours = time.getHours();
@@ -156,56 +157,55 @@ function greeting() {
 }
 
 /**
- * This function check if the greeting animation is already played. 
- * 
+ * This function check if the greeting animation is already played.
+ *
  */
-function checkAnimationPlayed(){
-  let status = sessionStorage.getItem('animationPlayed');
-  let overlay = document.getElementById('OverlayGreeting');
+function checkAnimationPlayed() {
+  let status = sessionStorage.getItem("animationPlayed");
+  let overlay = document.getElementById("OverlayGreeting");
   let width = window.innerWidth;
   if (status === "true") {
-    overlay.classList.remove('overlayAnimation');
+    overlay.classList.remove("overlayAnimation");
     if (width < 850) {
-    overlay.classList.add('d-none');
+      overlay.classList.add("d-none");
     }
-  } else{
+  } else {
     playAnimation();
   }
-
 }
 
 /**
  * This function runs the greeting animation at the beginning.
  */
 function playAnimation() {
-  let overlay = document.getElementById('OverlayGreeting');
+  let overlay = document.getElementById("OverlayGreeting");
   let width = window.innerWidth;
   if (width < 850) {
     sessionStorage.setItem("animationPlayed", true);
-  } else{
-    overlay.classList.remove('overlayAnimation');
+  } else {
+    overlay.classList.remove("overlayAnimation");
     sessionStorage.setItem("animationPlayed", true);
   }
 }
 
 /**
- * This function check the size of the window/screen and handle the animation between desktop and mobile. 
- * 
+ * This function check the size of the window/screen and handle the animation between desktop and mobile.
+ *
  */
 function checkAnimation() {
-  let overlay = document.getElementById('OverlayGreeting');
+  let overlay = document.getElementById("OverlayGreeting");
   let width = window.innerWidth;
   if (width < 850) {
-    overlay.classList.add('d-none');
+    overlay.classList.add("d-none");
   } else {
-    overlay.classList.remove('overlayAnimation');
-    overlay.classList.remove('d-none');
+    overlay.classList.remove("overlayAnimation");
+    overlay.classList.remove("d-none");
   }
 }
 
 /**
  * This function greet the user at moring
- * @param {} name = is the username which is logged in 
+ * @param {} name = is the username which is logged in
  * @returns the greet and the name to render in a div
  */
 function morningGreet(name) {
@@ -227,8 +227,8 @@ function morningGreetGuest() {
 
 /**
  * This function greet the user at midday
- * @param {} name = is the username which is logged in 
- * @returns 
+ * @param {} name = is the username which is logged in
+ * @returns
  */
 function middayGreet(name) {
   return `
@@ -249,8 +249,8 @@ function middayGreetGuest() {
 
 /**
  * This function greet the user at the evening
- * @param {} name = is the username which is logged in 
- * @returns 
+ * @param {} name = is the username which is logged in
+ * @returns
  */
 function eveningGreet(name) {
   return `

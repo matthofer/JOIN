@@ -1,4 +1,5 @@
-let FB_URL = "https://join-427-default-rtdb.europe-west1.firebasedatabase.app/";
+let FB_URL =
+  "https://join-7aef3-default-rtdb.europe-west1.firebasedatabase.app/";
 let isPasswordVisible = false;
 
 /**
@@ -227,7 +228,7 @@ function showLoginError() {
 
 /**
  * Checks the password input field and updates the icons based on its state.
- * 
+ *
  */
 function checkPasswordInput() {
   const passwordInput = document.getElementById("password");
@@ -242,7 +243,7 @@ function checkPasswordInput() {
 
 /**
  * Toggles the visibility of the password and updates the icons.
- * 
+ *
  */
 function showPassword() {
   const passwordInput = document.getElementById("password");
@@ -255,7 +256,7 @@ function showPassword() {
 
 /**
  * Retrieves the icon elements for the password input field and returns them as an object.
- * 
+ *
  */
 function getIcons() {
   return {
@@ -267,13 +268,18 @@ function getIcons() {
 
 /**
  * Resets the password visibility state and updates the icons.
- * 
+ *
  * @param {HTMLElement} passwordInput - The password input element.
  * @param {HTMLElement} lockIcon - The lock icon element.
  * @param {HTMLElement} eyeIcon - The eye icon element.
  * @param {HTMLElement} crossedEyeIcon - The crossed eye icon element.
  */
-function resetPasswordVisibility(passwordInput, lockIcon, eyeIcon, crossedEyeIcon) {
+function resetPasswordVisibility(
+  passwordInput,
+  lockIcon,
+  eyeIcon,
+  crossedEyeIcon
+) {
   isPasswordVisible = false;
   passwordInput.type = "password";
   lockIcon.classList.remove("d-none");
@@ -283,7 +289,7 @@ function resetPasswordVisibility(passwordInput, lockIcon, eyeIcon, crossedEyeIco
 
 /**
  * Updates the icons based on the password's visibility state.
- * 
+ *
  * @param {HTMLElement} passwordInput - The password input element.
  * @param {HTMLElement} lockIcon - The lock icon element.
  * @param {HTMLElement} eyeIcon - The eye icon element.
@@ -302,7 +308,7 @@ function updateIcons(passwordInput, lockIcon, eyeIcon, crossedEyeIcon) {
 
 /**
  * Toggles the visibility of the eye icons based on the password's visibility state.
- * 
+ *
  * @param {HTMLElement} eyeIcon - The eye icon element.
  * @param {HTMLElement} crossedEyeIcon - The crossed eye icon element.
  */
