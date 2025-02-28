@@ -44,12 +44,12 @@ function getTaskTemplate(task, i) {
     task.category
   }</div>
                       <div class="mobileMoveContainer">
-                        <img onclick="openCloseTaskMoveDialogMobile(${
+                        <div id="moveBtn" onclick="openCloseTaskMoveDialogMobile(${
                           task.id
-                        }); event.stopPropagation()" class="moveTaskMobile" src="./assets/icons/move_vert_dark.svg"/>
-                        <div onclick="event.stopPropagation()" id="moveDialog${
-                          task.id
-                        }" class="moveDialog dNone">
+                        });event.stopPropagation()">
+                          <img  class="moveTaskMobile" src="./assets/icons/move_vert_dark.svg"/>
+                        </div>
+                        <div id="moveDialog${task.id}" class="moveDialog dNone">
                           <p>Move to</p>
                           <p onclick="moveToInMobile(${
                             task.id

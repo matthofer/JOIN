@@ -17,7 +17,8 @@
 
 .boardContent {
   background-color: #f6f7f8;
-  max-width: calc(1920px - 232px);}
+  max-width: calc(1920px - 232px);
+}
 
 .boardHeadline {
   font-size: 61px;
@@ -175,6 +176,7 @@ input[name="searchResp"] {
 }
 
 .task {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -415,7 +417,7 @@ input[name="searchResp"] {
   cursor: pointer;
 }
 
-.taskDetailHeader img:hover{
+.taskDetailHeader img:hover {
   background-color: lightgrey;
   border-radius: 50%;
 }
@@ -685,6 +687,8 @@ input[name="searchResp"]:focus {
 .moveTaskMobile {
   height: 28px;
   width: 28px;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .moveDialog {
@@ -830,4 +834,8 @@ input[name="searchResp"]:focus {
 .closeAddTask img:hover {
   background-color: lightgrey;
   border-radius: 50%;
+}
+
+#moveBtn {
+  z-index: 5;
 }
