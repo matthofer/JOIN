@@ -215,7 +215,7 @@ main {
     justify-content: space-between;
     height: clamp(300px, 100%, 870px);
     width: clamp(300px, 90%, 530px);
-    padding: 16px;
+    padding: 24px;
   }
 
   .taskEditContainer h2 {
@@ -256,6 +256,8 @@ main {
 
   .mobileMoveContainer {
     display: flex;
+    pointer-events: auto;
+    cursor: pointer;
   }
 
   .headerLogoResp {
@@ -532,6 +534,10 @@ main {
   .taskEditContainer h2 {
     font-size: 34px;
   }
+
+  .taskEditContainer {
+    padding: 16px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -639,5 +645,11 @@ main {
 
   .formWrapperResp {
     height: 390px;
+  }
+}
+
+@media (min-width: 1260px) and (max-height: 670px) {
+  .overlay {
+    height: 100dvh;
   }
 }
