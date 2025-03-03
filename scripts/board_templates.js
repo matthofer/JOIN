@@ -300,7 +300,7 @@ function editTaskTemplate(i) {
                           <div class="titles">
                               <span>Due date <p>*</p></span>
                               <input value="${tasks[i].date}" type="text" name="date" id="date" placeholder="dd/mm/yyyy"
-                                  onfocus="(this.type='date')" onblur="if (!this.value) this.type='text'; getBlueBorder('date')"
+                                  onfocus="(this.type='date')" ontouchstart="(this.type='date')" onblur="if (!this.value) this.type='text'; getBlueBorder('date')"
                                   >
                               <p id="dateValidation" class="required d-none">This field is required</p>
 
@@ -436,11 +436,11 @@ function getAddTaskTemplate() {
 
                       <div class="divider"></div>
 
-                      <div class="rightColumn rightColumnAdd">
+                      <div class="rightColumn rightColumnAddTask">
                           <div class="titles">
                               <span>Due date <p>*</p></span>
                               <input type="text" name="date" id="date" placeholder="dd/mm/yyyy"
-                                  onfocus="(this.type='date')" onblur="if (!this.value) this.type='text'; getBlueBorder('date')"
+                                  onfocus="(this.type='date')" ontouchstart="(this.type='date')" onblur="if (!this.value) this.type='text'; getBlueBorder('date')"
                                   >
                               <p id="dateValidation" class="required d-none">This field is required</p>
 
